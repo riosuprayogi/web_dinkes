@@ -1,0 +1,18 @@
+.zoom {
+	padding: 50px 50px 50px 30px;
+	transition: transform .2s;
+	width: 200px;
+	height: 200px;
+    align-self: center;
+	/*margin: 0 auto;*/
+}
+
+.zoom img {
+	width: 230%;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  transform: scale(1.2); 
+}
