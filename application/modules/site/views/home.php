@@ -401,9 +401,140 @@
     </section>
 </div>
 
-
-
 <section id="berita-section" class="services1 cid-news mbr-fullscreen">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- <div class="row">
+                    <div class="col-md-12">
+                        <div class="card-img">
+                            <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/rilis.png" alt="" style="padding-bottom: 10px;">
+                        </div>
+                    </div>
+                </div>
+ -->
+                <!-- <div class="row">
+                    <div class="col-md-12">
+                        <div id="owl-carousel-siaran" class="owl-carousel owl-theme">
+                            <?php
+                            $link_kota = 'https://tangerangkota.go.id/';
+                            if (!empty($siaran)) {
+                                foreach ($siaran as $ber) {
+                            ?>
+                                    <div class="item">
+                                        <div class="rny-post-slide">
+                                            <div class="post-img">
+                                                <a href="<?php echo base_url('artikel/detail/') . $ber['id_berita'] . '/' . $ber['slug']; ?>">
+                                                    <img src="<?php echo $link_kota . $ber['foto']; ?>">
+                                                </a>
+                                            </div>
+                                            <div class="post-content">
+                                                <div class="post-date">
+                                                    <span class="month"><?php echo indonesian_date($ber['created_on']); ?></span>
+                                                </div>
+                                                <h5 class="post-title"><a href="<?php echo base_url('artikel/detail/') . $ber['id_berita'] . '/' . $ber['slug']; ?>"><?php echo $ber['judul']; ?></a></h5>
+
+                                                <div class="post-description" style="overflow: hidden;
+                                                                        text-overflow: ellipsis;
+                                                                        display: -webkit-box;
+                                                                        -webkit-line-clamp: 8; 
+                                                                        -webkit-box-orient: vertical;">
+                                                    <?php echo $ber['intro']; ?>
+                                                </div>
+
+                                                <span class="rny-bacalagi"><a href="<?php echo base_url('artikel/detail/') . $ber['id_berita'] . '/' . $ber['slug']; ?>">Selengkapnya</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                            <?php }
+                            } ?>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card-img">
+                            <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-bottom: 10px;">
+                        </div>
+                    </div>
+                </div>
+
+                                    <div class="container info">
+                        <div class="row align-items-start">
+                          <?php foreach ($berita3 as $f) : ?>
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                              <div class="card berita" style="width: 16rem; height: 450px; overflow: hidden;">
+                                <a href="<?= base_url('home/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
+
+                                  <?php if (count($f["path_foto_artikel"]) > 0) {
+                                    foreach ($f["path_foto_artikel"] as $k) {
+                                  ?>
+                                      <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
+                                  <?php
+                                    }
+                                  } ?>
+                                  <div class="card-body">
+                                    <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
+                                    <b><?= $f["judul_berita"] ?></b>
+                                    <p><?= $f["isi_berita"] ?></p>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          <?php endforeach; ?>
+                        </div>
+                      </div>
+
+               <!--  <div class="row">
+                    <div class="col-md-12">
+                        <div id="owl-carousel-berita" class="owl-carousel owl-theme"> -->
+                          <!--   <?php
+                            if (!empty($berita2)) {
+                                foreach ($berita2 as $ber) {
+                                    // var_dump($ber);
+                                    // die();
+                            ?> -->
+                                    <!-- <div class="item"> -->
+                                       <!--  <div class="rny-post-slide">
+                                            <div class="post-img">
+                                                <a href="<?php echo base_url('artikel/detail/') . $ber['id_berita'] . '/' . $ber['slug']; ?>">
+                                                    <img src="<?php echo $link_kota . $ber['foto']; ?>">
+                                                </a>
+                                            </div>
+                                            <div class="post-content">
+                                                <div class="post-date">
+                                                    <span class="month"><?php echo indonesian_date($ber['created_on']); ?></span>
+                                                </div>
+                                                <h5 class="post-title"><a href="<?php echo base_url('artikel/detail/') . $ber['id_berita'] . '/' . $ber['slug']; ?>"><?php echo $ber['judul']; ?></a></h5>
+
+                                                <div class="post-description" style="overflow: hidden;
+                                                                        text-overflow: ellipsis;
+                                                                        display: -webkit-box;
+                                                                        -webkit-line-clamp: 8; 
+                                                                        -webkit-box-orient: vertical;">
+                                                    <?php echo $ber['tgl_jam']; ?>
+                                                </div>
+
+                                                <span class="rny-bacalagi"><a href="<?php echo base_url('artikel/detail/') . $ber['id_berita'] . '/' . $ber['slug']; ?>">Selengkapnya</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                            <?php }
+                            } ?>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<!-- <section id="berita-section" class="services1 cid-news mbr-fullscreen">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -506,7 +637,7 @@
 
         </div>
     </div>
-</section>
+</section> -->
 
 <section id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620">
     <div class="mbr-overlay" style="opacity: 0.50;background-color: rgba(239, 240, 240, 0.75);"></div>

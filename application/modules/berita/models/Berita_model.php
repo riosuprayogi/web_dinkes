@@ -19,6 +19,19 @@ class Berita_model extends CI_Model
 		return $this->db->get($table);
 	}
 
+   public function get_isi_berita(){
+      $this->db->select('t_berita.*, t_foto_berita.*');
+      $this->db->from('t_berita');
+      $this->db->join('t_foto_berita', 't_foto_berita.id_berita = t_berita.id_berita');
+
+      $this->db->where('status', 'show');
+      // $query = $this->db->get()->result();
+      $query = $this->db->get();
+      // var_dump($query);
+      // die();
+      return $query->row_array();
+    }
+
 
 	public function insert_data($data, $table)
 	{

@@ -84,7 +84,7 @@
     $(document).ready(function() {
         var id = <?= $key ?>;
         $('#tt').treegrid({
-                url:'<?php echo base_url('informasi_rencana/ajax_trees?key=') ?>'+id,
+                url:'<?php echo base_url('ir_Rka/ajax_trees?key=') ?>'+id,
                 
                 idField:'id',
                 treeField:'name',

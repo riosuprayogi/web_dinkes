@@ -10,6 +10,7 @@ class Site extends MX_Controller {
 		$this->load->model('user/User_model', '', TRUE);
 		$this->load->model('menu/Menu_level_model', '', TRUE);
 		$this->load->model('profil/Profil_model', 'main_model', TRUE);
+		$this->load->model('berita/Berita_model', 'berita', TRUE);
 
 		
 	}
@@ -46,30 +47,65 @@ class Site extends MX_Controller {
 		// $videos =  @$hasil['video'];
 		
 
-		if ($this->session->id_user == "") {
+		// if ($this->session->id_user == "") {
 			// $this->logout();
 			// $this->template->render_home('home/index');
 			$data['title'] = 'PPID Kota Tangerang';
 			$data['profil'] = $this->main_model->get_isi('intro');
-			$data['profil_image'] = $this->main_model->get_isi_file('profil');
-			$data['struktur'] = $this->main_model->get_isi_struktur('struktur');
-			$data['visi'] = $this->main_model->get_isi_file('visi');
-			$data['kepwal'] = $this->main_model->get_isi_file('kepwal');
-			$data['maklumat'] = $this->main_model->get_isi_file('maklumat');
-			$data['kontak'] =$this->main_model->get_kontak();
-			$data['image'] = $this->main_model->get_banner();
-			// $data['latest_news'] = $result;
-			$data['siaran'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_siaran/');
-			$data['banner'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_banner/');
+			// $data['profil_image'] = $this->main_model->get_isi_file('profil');
+			// $data['struktur'] = $this->main_model->get_isi_struktur('struktur');
+			// $data['visi'] = $this->main_model->get_isi_file('visi');
+			// $data['kepwal'] = $this->main_model->get_isi_file('kepwal');
+			// $data['maklumat'] = $this->main_model->get_isi_file('maklumat');
+			// $data['kontak'] =$this->main_model->get_kontak();
+			// $data['image'] = $this->main_model->get_banner();
+			// // $data['latest_news'] = $result;
+			// $data['siaran'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_siaran/');
+			// $data['banner'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_banner/');
 			
-			// $data['banner'] = $this->site->get_curl('https://tangerangkota.go.id/banner/api-banner/');
-
-			$data['berita'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_berita/');
+			// // $data['banner'] = $this->site->get_curl('https://tangerangkota.go.id/banner/api-banner/');
+			// $data['berita2'] = $this->berita->get_isi_berita();
+			// $data['berita'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_berita/');
 			
-			$data['video_tng'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_tng/');
-			$data['video_humas'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_humas/');
+			// $data['video_tng'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_tng/');
+			// $data['video_humas'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_humas/');
 
+			$listProfiles = $this->db->query("SELECT t_berita.*, t_foto_berita.*
 
+			                                        FROM t_berita 
+			                                        JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
+			                                        -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
+			                                        WHERE t_berita.status = 'show' ORDER BY tgl_jam DESC LIMIT 4");
+			// var_dump($listProfiles);
+			//             	die();
+
+			        $arrProfile = [];
+			        $arr = [];
+			        foreach ($listProfiles->result_array() as $key => $row) {
+
+			            $result = $this->db->query("SELECT * FROM t_foto_berita WHERE id_berita=" . $row['id_berita'] . "")->result_array();
+			            	// var_dump($result);
+			            	// die();
+			            if ($result) {
+
+			                $arr = array(
+			                    "id_berita" => $row["id_berita"],
+			                    // "kategori_artikel" => $row["kategori_artikel"],
+			                    "judul_berita" => $row["judul_berita"],
+			                    "isi_berita" => $row["isi_berita"],
+			                    // "nama_admin"  =>  $row["nama_admin"],
+			                    // "publish" => $row["publish"],
+			                    "tgl_jam" => $row["tgl_jam"],
+			                    "path_foto_artikel" => $result
+			                );
+			                array_push($arrProfile, $arr);
+			            }
+			        }
+
+			        $data["berita3"] = $arrProfile;
+
+// var_dump($data1);
+// die();
 
 
 			// json_decode($)
@@ -78,10 +114,10 @@ class Site extends MX_Controller {
 
 			$this->template->render_home('site/home',$data);
 
-		} else {
+		// } else {
 
-			$this->template->render('site/index');
-		}
+			// $this->template->render('site/index');
+		// }
 	}
 
 	public function login() {

@@ -6,7 +6,7 @@ class Ir_Rka extends MX_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->module('template');
-		$this->load->model('ir_rka/Ir_Rka_model', 'main_model', TRUE);
+		$this->load->model('ir_rka/Ir_Rka_model', 'main_model2', TRUE);
 		$this->load->model('skpd/Skpd_model','skpd',TRUE);
 		$this->load->model('site/Site_model', 'site', TRUE);
 		$this->load->helper('admin');
@@ -62,9 +62,9 @@ class Ir_Rka extends MX_Controller {
 		);
 		if(!$this->input->post('id')){
 
-			$this->main_model->insert($data);
+			$this->main_model2->insert($data);
 		}else{
-			$this->main_model->update($where, $data);
+			$this->main_model2->update($where, $data);
 		}
 		$this->template->ajax(array('status'=>true));
 	}
@@ -73,13 +73,13 @@ class Ir_Rka extends MX_Controller {
 		$data = (object) array();
 		// $data->skpd = $this->skpd->get_all();
 		// $data->kategori = $this->main_model->get_all_kategori();
-		$data->jenis = $this->main_model->get_jenis();
+		$data->jenis = $this->main_model2->get_jenis();
 		$this->template->ajax($data);
 	}
 
 	public function ajax_cek($id){
 		// echo $id;
-		$cek = $this->main_model->cek_keberatan($id);
+		$cek = $this->main_model2->cek_keberatan($id);
 		if( $cek > 0){
 			$ada = 'ada';
 		}else{
@@ -96,7 +96,7 @@ class Ir_Rka extends MX_Controller {
 		$filter = $_GET['filter'];
 
 		$data = array();
-		$keberatan = $this->main_model->get($start, $length, $sort, $order, $filter);
+		$keberatan = $this->main_model2->get($start, $length, $sort, $order, $filter);
 		$number = $_GET['start'] + 1;
 
 		foreach ($keberatan as $row) {
@@ -111,7 +111,7 @@ class Ir_Rka extends MX_Controller {
 				</div>
 			';
 			$data[] = $row;
-			$child = $this->main_model->get_child_by_id_jenis($row->id_jenis_informasi);
+			$child = $this->main_model2->get_child_by_id_jenis($row->id_jenis_informasi);
 			$numbers = 1;
 			foreach($child as $chl){
 				$chl->no = '<div style="text-align:center">'.$numbers++.'</div>';
@@ -124,7 +124,7 @@ class Ir_Rka extends MX_Controller {
 				';
 				
 				
-				$file = $this->main_model->get_file_by_id_informasi($chl->id_informasi);
+				$file = $this->main_model2->get_file_by_id_informasi($chl->id_informasi);
 				$filex = array();
 				$chl->file = '';
 				if($file >0){
@@ -145,8 +145,8 @@ class Ir_Rka extends MX_Controller {
 
 		$output = array(
 			'draw' => $_GET['draw'],
-			'recordsTotal' => $this->main_model->count_all(),
-			'recordsFiltered' => $this->main_model->count_filtered($filter),
+			'recordsTotal' => $this->main_model2->count_all(),
+			'recordsFiltered' => $this->main_model2->count_filtered($filter),
 			'data' => $data,
 			'post' => $_GET,
 		);
@@ -157,7 +157,7 @@ class Ir_Rka extends MX_Controller {
 
 	public function ajax_tree(){
 
-		$hasil = $this->main_model->get_tree();
+		$hasil = $this->main_model2->get_tree();
 		// echo json_encode($hasil);die;
 		foreach ($hasil as $key => $value)
 				{
@@ -263,14 +263,14 @@ class Ir_Rka extends MX_Controller {
 	}
 
 	public function get_data_jenis($id){
-		$data = $this->main_model->get_data_jenis($id);
+		$data = $this->main_model2->get_data_jenis($id);
 		$this->template->ajax($data);
 	}
 
 	public function ajax_trees(){
 		$id = $this->input->get('key');
 			
-		$hasil = $this->main_model->get_tree_byid(htmlentities($id));
+		$hasil = $this->main_model2->get_tree_byid(htmlentities($id));
 		// echo $this->db->last_query();die;
 		if (!IS_AJAX) {
          $this->load->view('site/404');
@@ -362,24 +362,24 @@ class Ir_Rka extends MX_Controller {
 		
 	function has_child($id){
 		// $rs = mysql_query("select count(*) from products where parentId=$id");
-		$rs = $this->db->query('select count(*) from c_dokumen_informasi where parent_id='.$id.'')->result_array();
+		$rs = $this->db->query('select count(*) from c_dokumen_informasi_rencana where parent_id='.$id.'')->result_array();
 		$row = $rs;
 		return $row[0] > 0 ? true : false;
 	}
 
 	public function ajax_edit($id){
 
-		$data = $this->main_model->get_by_id($id);
+		$data = $this->main_model2->get_by_id($id);
 		// echo $this->db->last_query();die;
 		// $data->skpd = $this->skpd->get_all();
-		$data->kategori = $this->main_model->get_all_kategori();
-		$data->jenis = $this->main_model->get_jenis();
+		$data->kategori = $this->main_model2->get_all_kategori();
+		$data->jenis = $this->main_model2->get_jenis();
 		$this->template->ajax($data);
 	}
 
 	public function ajax_delete(){
 		$key = $this->input->get('key');
-		$data = $this->main_model->delete($key);
+		$data = $this->main_model2->delete($key);
 		
 		if($data){
 			$this->template->ajax(array('status'=>TRUE));
@@ -390,15 +390,15 @@ class Ir_Rka extends MX_Controller {
 
 	public function ajax_edit_jenis($id){
 
-		$data = $this->main_model->get_by_id($id);
+		$data = $this->main_model2->get_by_id($id);
 		$this->template->ajax($data);
 	}
 
 	public function ajax_edit_parent($id){
 
-		$data = $this->main_model->get_child_by_id_informasi($id);
+		$data = $this->main_mode2->get_child_by_id_informasi($id);
 		// $data->file = $this->main_model->get_file_by_id_informasi($id);
-		$data->jenis = $this->main_model->get_jenis();
+		$data->jenis = $this->main_model2->get_jenis();
 
 		$this->template->ajax($data);
 	}
@@ -412,9 +412,9 @@ class Ir_Rka extends MX_Controller {
 		);
 		if(!$this->input->post('id_jenis')){
 
-			$this->main_model->insert_jenis($data);
+			$this->main_model2->insert_jenis($data);
 		}else{
-			$this->main_model->update_jenis($where, $data);
+			$this->main_model2->update_jenis($where, $data);
 		}
 		$this->template->ajax(array('status'=>true));
 	}
@@ -458,9 +458,9 @@ class Ir_Rka extends MX_Controller {
 
 		if(!$this->input->post('id_informasi')){
 
-			$this->main_model->insert_informasi($data);
+			$this->main_model2->insert_informasi($data);
 		}else{
-			$this->main_model->update_informasi($where, $data);
+			$this->main_model2->update_informasi($where, $data);
 		}
 		$this->template->ajax(array('status'=>TRUE));
 		// echo json_encode($data+$where);
@@ -495,7 +495,7 @@ class Ir_Rka extends MX_Controller {
 						'file' => $uploadPath.$fileData['file_name'],
 					);
 					
-					$this->main_model->insert_file($data);
+					$this->main_model2->insert_file($data);
 					// echo json_encode($data);
 					
 				}else{

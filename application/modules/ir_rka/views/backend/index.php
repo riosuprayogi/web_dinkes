@@ -127,7 +127,7 @@ $(document).ready(function() {
 	get_data_jenis(<?= $this->uri->segment(3);?>);
 
 	$('#tt').treegrid({
-					url:'<?php echo base_url('dokumen/ajax_trees?key=') ?>'+'<?= $this->uri->segment(3);?>',
+					url:'<?php echo base_url('ir/ajax_trees?key=') ?>'+'<?= $this->uri->segment(3);?>',
 					idField:'id',
 					treeField:'name',
 					columns:[[
@@ -653,7 +653,7 @@ function edit(id){
 	$('.help-block').empty(); // clear error string
 
 	//Ajax Load data from ajax
-	$.ajax({ url : "<?php echo site_url('dokumen/ajax_edit/')?>/" + id,
+	$.ajax({ url : "<?php echo site_url('ir_Rka/ajax_edit/')?>/" + id,
 		type: "GET",
 		dataType: "JSON",
 		async: false,
@@ -714,7 +714,7 @@ function save_jenis(){
 	$('#btnSave').attr('disabled',true); //set button disable
 	var url;
 
-	url = "<?php echo site_url('dokumen/ajax_insert_jenis')?>";
+	url = "<?php echo site_url('ir_Rka/ajax_insert_jenis')?>";
 
 	// ajax adding data to database
 	$.ajax({ 
@@ -761,7 +761,7 @@ function save_parent() {
 	$('#btnSave').attr('disabled', true); //set button disable
 	var url;
 
-	url = "<?php echo site_url('dokumen/ajax_insert_parent')?>";
+	url = "<?php echo site_url('ir_Rka/ajax_insert_parent')?>";
 	Swal.fire({
 		title: 'Apa Anda Yakin?',
 		text: "Apa Anda Yakin Menyimpan Data?",
@@ -820,7 +820,7 @@ function save_file(){
 	$('#btnSave').attr('disabled',true); //set button disable
 	var url;
 
-	url = "<?php echo site_url('dokumen/ajax_inserts')?>";
+	url = "<?php echo site_url('ir_Rka/ajax_inserts')?>";
 
 	// ajax adding data to database
 	$.ajax({ 
@@ -869,7 +869,7 @@ function save(){
 	$('#btnSave').attr('disabled',true); //set button disable
 	var url;
 
-	url = "<?php echo site_url('dokumen/ajax_insert')?>";
+	url = "<?php echo site_url('ir_Rka/ajax_insert')?>";
 	Swal.fire({
 		title: 'Apa Anda Yakin?',
 		text: "Apa Anda Yakin Menyimpan Data?",
@@ -929,7 +929,7 @@ function send(){
 	$('#btnSave').attr('disabled',true); //set button disable
 	var url;
 
-	url = "<?php echo site_url('dokumen/ajax_putusan')?>";
+	url = "<?php echo site_url('ir_Rka/ajax_putusan')?>";
 
 	// ajax adding data to putusan
 	$.ajax({ 
@@ -1003,7 +1003,7 @@ function hapus_daftar(id){
 		cancelButtonText: 'Tidak'
 	}).then((result) => {
 		if (result.value) {
-			$.ajax({ url : "<?php echo site_url('dokumen/ajax_delete?key=')?>"+id,
+			$.ajax({ url : "<?php echo site_url('ir_Rka/ajax_delete?key=')?>"+id,
 				type: "POST",
 				dataType: "JSON",
 				async: false,

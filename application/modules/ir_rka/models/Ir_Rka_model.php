@@ -46,14 +46,14 @@ class Ir_Rka_model extends CI_Model {
 	public function insert_informasi($data){
         $this->db->set('cby', $this->session->id_user);
 		$this->db->set('cdd', date('Y-m-d H:i:s'));
-		$this->db->insert('c_dokumen_informasi',$data);
+		$this->db->insert('c_dokumen_informasi_rencana',$data);
 		return $this->db->insert_id();
 	}
 
 	public function update_informasi($where, $data){
 		$this->db->set('uby', $this->session->id_user);
 		$this->db->set('udd', date('Y-m-d H:i:s'));
-		$this->db->update('c_dokumen_informasi', $data, $where);
+		$this->db->update('c_dokumen_informasi_rencana', $data, $where);
 		return $this->db->affected_rows();
 	}
 
@@ -68,7 +68,7 @@ class Ir_Rka_model extends CI_Model {
 
 	public function get_child_by_id_informasi($id){
 		$this->db->select('*');
-		$this->db->from('c_dokumen_informasi');
+		$this->db->from('c_dokumen_informasi_rencana');
 		$this->db->where('id_informasi', $id);
 		$query = $this->db->get();
 		return $query->row();
@@ -132,7 +132,7 @@ class Ir_Rka_model extends CI_Model {
 
 	public function get_tree(){
 		$this->db->select('*');
-		$this->db->from('c_dokumen_informasi');
+		$this->db->from('c_dokumen_informasi_rencana');
 		$this->db->where('hapus','0');
 		$result = $this->db->get()->result();
 		return $result;
@@ -140,7 +140,7 @@ class Ir_Rka_model extends CI_Model {
 
 	public function get_tree_byid($id){
 		$this->db->select('*');
-		$this->db->from('c_dokumen_informasi');
+		$this->db->from('c_dokumen_informasi_rencana');
 		if($id == '99'){
 		$this->db->where('id_jenis_informasi','5');
 		$this->db->where('hapus','0');
@@ -187,7 +187,7 @@ class Ir_Rka_model extends CI_Model {
 		$where = array(
 			'id_informasi' => $id,
 		);
-		$this->db->update('c_dokumen_informasi', $data, $where);
+		$this->db->update('c_dokumen_informasi_rencana', $data, $where);
 		return $this->db->affected_rows();
 	}
 
