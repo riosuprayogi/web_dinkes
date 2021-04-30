@@ -109,12 +109,20 @@
                                     <label for=""> Keterangan Foto</label>
                                     <input type="text" id="ket_foto" name="ket_foto[]" class="form-control" value="" placeholder="Masukkan Keterangan" required>
                                 </div>
-                                <button type="button" style="margin-left: auto;" class="btn btn-primary ml-4 addServiceEdit">Tambah</button>
+                                <!-- <button type="button" style="margin-left: auto;" class="btn btn-primary ml-4 addServiceEdit">Tambah</button>
                                 <div class="col-sm-1 text-right">
-                                </div>
-                                <hr>
+                                </div> -->
+
                             </div>
+
                             <div id="imageMultiEdit"></div>
+
+                            <div class="card-footer">
+                                <!-- <button type="submit" class="btn btn-info">Sign in</button> -->
+                                <button type="button" class="btn btn-primary float-right addServiceEdit">Tambah Foto</button>
+                            </div>
+
+                            <br>
 
 
                             <div class="form-group row">
@@ -123,7 +131,7 @@
                                         <table class="table table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th scope="col" style="width: 3%;">Urutan</th>
+                                                    <!-- <th scope="col" style="width: 3%;">Urutan</th> -->
                                                     <th scope="col" style="width: 300px;">Image Profil</th>
                                                     <th scope="col">Ket. Image</th>
                                                     <th scope="col" style="width: 3%;">Aksi</th>
@@ -137,7 +145,7 @@
                                                 ?>
                                                         <tr>
                                                             <input type="hidden" class="form-control" name="id_detail_path_detail_foto_update[]" value="<?= $k["id_detail_foto"]; ?>">
-                                                            <td><?= $k["urutan"] ?></td>
+                                                            <!-- <td><?= $k["urutan"] ?></td> -->
                                                             <td>
                                                                 <?php if ($k["path_detail_foto"] != NULL) {
                                                                 ?>
@@ -299,18 +307,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row mt-3">
-                                    <label for="urutan" class="col-sm-1 col-form-label">Urutan</label>
-                                    <div class="col-sm-2">
-                                        <input type="text" class="form-control" id="urutan" name="urutan[]" value="" autocomplete="off">
-                                    </div>
-                                    <label for="ket_foto" class="col-sm-1 col-form-label">Ket. Foto</label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="ket_foto" name="ket_foto[]" value="" autocomplete="off">
-                                    </div>
+                              
                                 </div>
                             </div>
                         </div>
+                        <div class="form-group">
+                                    <label for=""> Keterangan Foto</label>
+                                    <input type="text" id="ket_foto" name="ket_foto[]" class="form-control" value="" placeholder="Masukkan Keterangan" required>
+                                </div>
 `;
             $(wrapper).append(html);
         });

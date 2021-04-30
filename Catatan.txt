@@ -1,0 +1,33 @@
+-- Web Dinkes --
+1. Berita (Template no 1) kat
+ -
+ -
+ -
+ -
+ -
+ -
+ -
+2. Agenda (Calender) user menambahkan agenda, dan muncul di calender
+3. Galery (template No3)
+4. RKA - Download Area (tmplt 2)
+5. DPA - Download Area (tmplt 2)
+6. Renstra - Download Area (tmplt 2)
+7. Renja - Download Area (tmplt 2)
+8. Berita (
+
+
+
+di navbar 
+
+- profile
+-
+-
+-
+-
+
+- Informasi Rencana
+  - RKA
+  - DPA
+  - dll
+
+9. Service

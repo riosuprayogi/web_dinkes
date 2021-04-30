@@ -1,0 +1,15 @@
+note
+1. *) Tidak di sarankan upload (pdf,xls,doc,txt). (dihapus) **OK
+2. Hapus Keterangan foto di tambah berita **OK
+3. galery -> 
+4. url video -> ambil dari youtube **OK
+5. di informasi rencana -> validasi link
+6. ketika tambah foto munculnya di atas **OK
+
+
+<div style="padding:2px; border:1px solid #eee; margin:2px 2px">
+													<iframe width="460" height="215" src="<?= ($f["link_video"]) ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+													<a target="blank" src="<?= ($f["link_video"]) ?>">
+														<img src="<?= ($f["link_video"]) ?>" alt="<?= $f["ket_foto"]; ?>" width="100%">
+													</a>
+												</div> 

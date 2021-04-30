@@ -276,16 +276,22 @@
 															<input type="file" class="custom-file-input upload_custom" id="customFileUpload1" data-count_image="1" name="path_foto_artikel[]" style="display: none;">
 															<?= form_error('path_foto_artikel', '<small class="text-danger pl-0">', '</small>'); ?>
 															<span style="font-style: italic; color:red;">*) Format photo (jpg,jpeg,png) ukuran file max 2 Mb.</span><br>
-															<span style="font-style: italic; color:red;">*) Tidak di sarankan upload (pdf,xls,doc,txt).</span>
+
 														</div>
 														<div class="col-sm-3 mt-3">
 															<button class="btn btn-primary" onclick="open_file(1)" data-count_image="1" type="button">Pilih Gambar</button>
 														</div>
+
 													</div>
 												</div>
 											</div>
-											<div class="form-group row mt-3">
-												<!-- <label for="urutan" class="col-sm-1 col-form-label">Urutan</label>
+
+										</div>
+									</div>
+
+									<div id="imageMulti"></div>
+									<div class="form-group row mt-3">
+										<!-- <label for="urutan" class="col-sm-1 col-form-label">Urutan</label>
 												<div class="col-sm-2">
 													<input type="text" class="form-control" id="urutan" name="urutan[]" value="" autocomplete="off">
 												</div>
@@ -293,15 +299,16 @@
 												<div class="col-sm-4">
 													<input type="text" class="form-control" id="ket_foto" name="ket_foto[]" value="" autocomplete="off">
 												</div> -->
-												<div class="col-sm-1 text-right">
-													<button type="button" class="btn btn-primary ml-4 addService">Tambah</button>
-												</div>
-											</div>
-										</div>
+										<!-- <div class="col-sm-5 text-right">
+											<button type="button" class="btn btn-primary ml-3 addService">Tambah Foto</button>
+										</div> -->
 									</div>
-									<div id="imageMulti"></div>
+									<div class="card-footer">
+										<!-- <button type="submit" class="btn btn-info">Sign in</button> -->
+										<button type="button" class="btn btn-primary float-right addService">Tambah Foto</button>
+									</div>
 
-
+									<hr>
 
 									<div class="form-group">
 										<label for=""> Isi Berita</label>
@@ -317,10 +324,10 @@
 										</select>
 									</div>
 
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<label for=""> Admin</label>
 										<input type="text" name="id_admin" class="form-control" placeholder="Masukkan Kategori" required>
-									</div>
+									</div> -->
 								</div>
 
 							</div>
@@ -385,7 +392,7 @@
                                                 <input type="text" class="form-control" id="image-label` + countimagefield + `" readonly required>
                                                 <input type="file" class="custom-file-input upload_custom" id="customFileUpload` + countimagefield + `" data-count_image="` + countimagefield + `" name="path_foto_artikel[]" style="display: none;">
                                                 <span style="font-style: italic; color:red;">*) Format photo (jpg,jpeg,png) ukuran file max 2 Mb.</span><br>
-                                                <span style="font-style: italic; color:red;">*) Tidak di sarankan upload (pdf,xls,doc,txt).</span>
+                                                
                                             </div>
                                             <div class="col-sm-3 mt-3">
                                                 <button class="btn btn-primary" data-count_image="` + countimagefield + `"  onclick="open_file(` + countimagefield + `)" type="button">Pilih Gambar</button>

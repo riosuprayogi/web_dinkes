@@ -284,13 +284,19 @@
 											<label for=""> Keterangan Foto</label>
 											<input type="text" id="ket_foto" name="ket_foto[]" class="form-control" value="" placeholder="Masukkan Keterangan" required>
 										</div>
-										<button type="button" style="margin-left: auto;" class="btn btn-primary ml-4 addService">Tambah</button>
+										<!--
+										<button type="button" style="margin-left: auto;" class="btn btn-primary ml-4 addService">Tambah Foto</button>
 										<div class="col-sm-1 text-right">
 										</div>
-										<hr>
+										<hr> -->
 									</div>
 
 									<div id="imageMulti"></div>
+
+									<div class="card-footer">
+										<!-- <button type="submit" class="btn btn-info">Sign in</button> -->
+										<button type="button" class="btn btn-primary float-right addService">Tambah Foto</button>
+									</div>
 
 									<div class="form-group">
 										<label for=""> Status</label>
@@ -392,10 +398,7 @@
 											<label for=""> Keterangan Foto</label>
 											<input type="text" id="ket_foto" name="ket_foto[]" class="form-control" value="" placeholder="Masukkan Keterangan" required>
 										</div>
-										<button type="button" style="margin-left: auto;" class="btn btn-primary ml-4 addService">Tambah</button>
-										<div class="col-sm-1 text-right">
-										</div>
-										<hr>
+									
 									</div>
 `;
 			$(wrapper).append(html);

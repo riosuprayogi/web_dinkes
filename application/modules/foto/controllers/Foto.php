@@ -237,6 +237,8 @@ class Foto extends MX_Controller
 	}
 
 
+
+
 	public function updateDataAksi()
 	{
 		date_default_timezone_set('Asia/Jakarta');
@@ -406,6 +408,10 @@ class Foto extends MX_Controller
 			}
 
 			$file = $_FILES;
+
+
+
+
 			if (!empty($file['path_detail_foto']['name'][0])) {
 
 				$count = count($_FILES['path_detail_foto']['name']);

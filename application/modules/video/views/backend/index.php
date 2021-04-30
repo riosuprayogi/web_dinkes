@@ -33,6 +33,34 @@
 		});
 	}
 
+	function edit(id) {
+		save_method = 'edit';
+		$('#form1')[0].reset(); // reset form on modals
+		$('.form-group').removeClass('has-error'); // clear error class
+		$('.col-md-12').removeClass('has-error'); // clear error class
+		$('.help-block').empty(); // clear error string
+
+		//Ajax Load data from ajax
+		$.ajax({
+			url: "<?php echo site_url('video/ajax_edit/') ?>/" + id,
+			type: "GET",
+			dataType: "JSON",
+			async: false,
+			success: function(data) {
+
+				$('[name="nama_video"]').val(data.nama_video);
+				$('[name="link_video"]').val(data.link_video);
+				$('[name="status"]').val(data.status);
+
+				$('#modal_form').modal('show'); // show bootstrap modal when complete loaded
+				$('.modal-title').text('Ubah'); // Set title to Bootstrap modal title
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				alert('Error get data from ajax');
+			}
+		});
+	}
+
 	function save() {
 		var form = $('#form1')[0]; // You need to use standard javascript object here
 		var formData = new FormData(form);
@@ -174,49 +202,23 @@
 					<tbody>
 						<!-- dataTable ga bisa pake tr disini -->
 
-						<?php $i = 1;
-						foreach ($t_video_galery as $ia) : ?>
+						<?php $i = 1; ?>
+						<?php foreach ($video as $v) : ?>
 							<tr>
-								<td><?= $i++ ?></td>
-								<td><?= substr($ia["nama_album_video"], 0, 50); ?></td>
+								<td><?= $i; ?></td>
+								<td><?= $v->nama_video ?></td>
+								<td><iframe width="220" height="115" src="<?= $v->link_video; ?>">
+									</iframe></td>
+								<td><?= $v->status ?></td>
+								<td><?= $v->tgl_jam ?></td>
 								<td>
-									<?php if ($ia["t_detail_video_galery"] != NULL) {
-										if (count($ia["t_detail_video_galery"]) > 0) {
-											foreach ($ia["t_detail_video_galery"] as $f) {
-									?>
-												<div style="padding:2px; border:1px solid #eee; margin:2px 2px">
-													<iframe width="460" height="215" src="<?= ($f["link_video"]) ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-													<a target="blank" src="<?= ($f["link_video"]) ?>">
-														<img src="<?= ($f["link_video"]) ?>" alt="<?= $f["ket_foto"]; ?>" width="100%">
-													</a>
-												</div>
-										<?php
-											}
-										}
-									} else { ?>
-										<div style="padding:2px; border:1px solid #eee; margin:2px 2px">
-											<a href="javascript:void(0)">
-												<img src="<?= base_url('assets/backend/img/not-found.jpg'); ?>" alt="" width="100%">
-											</a>
-										</div>
-									<?php } ?>
-								</td>
-								<!-- <td><?= $ia["nama_admin"] ?></td> -->
-								<td><?= $ia["status"] ?></td>
-								<td><?= date('d-M-Y H:i:s', strtotime($ia["tgl_jam"])); ?></td>
-								<td>
-									<center>
-										<button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
-											<i class="fas fa-cogs"></i>
-										</button>
-										<div class="dropdown-menu">
-											<a class="dropdown-item" href="<?= base_url(); ?>foto/edit/<?= $ia["id_album_video"] ?>" onclick="return confirm('Apakah anda yakin akan mengubah?');"><i class="fas fa-edit"></i> Ubah</a>
-
-											<a class="dropdown-item" href="<?= base_url(); ?>foto/ajax_delete/<?= $ia["id_album_video"] ?>" onclick="return confirm('Apakah anda yakin akan menghapus?');"><i class="fas fa-trash"></i> Hapus</a>
-										</div>
-									</center>
+									<a href="javascript:void(0)" onclick="edit('<?= $v->id_video ?>')">
+										<i class="fas fa-edit bg-primary p-2 text-white rounded" data-toggle="tooltip" title="Edit"></i>
+										<!-- <a href="<?= base_url(); ?>backend/admin/kategoriartikel/hapusKategori/<?= $v->id_video ?>" onclick="return confirm('Yakin gak nih mau di hapus ?');">
+                                            <i class="fas fa-trash-alt bg-danger p-2 text-white rounded" data-toggle="tooltip" title="Delete"></i> -->
 								</td>
 							</tr>
+							<?php $i++; ?>
 						<?php endforeach; ?>
 						<!-- dataTable ga bisa pake tr disini -->
 					</tbody>
@@ -244,30 +246,15 @@
 									<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
 
 									<div class="form-group">
-										<label for=""> Nama Album Video</label>
-										<input type="text" name="nama_album_video" class="form-control" placeholder="Masukkan Nama Album Video" required>
+										<label for=""> Judul Video</label>
+										<input type="text" name="nama_video" class="form-control" placeholder="Masukkan Nama Album Video" required>
 									</div>
 
-									<div class="col-md-12">
-										<!-- <label for="urutan" class="col-sm-1 col-form-label">Urutan</label>
-												<div class="col-sm-2">
-													<input type="text" class="form-control" id="urutan" name="urutan[]" value="" autocomplete="off">
-												</div> -->
-										<!-- <label for="ket_foto" class="col-sm-1 col-form-label">Ket. Image</label> -->
-										<!-- <div class="col-sm-4">
-											<input type="text" class="form-control" id="ket_foto" name="ket_foto[]" value="" autocomplete="off">
-										</div> -->
-										<div class="form-group">
-											<label for=""> Link Video</label>
-											<input type="text" id="link_video" name="link_video[]" class="form-control" value="" placeholder="Masukkan URL Video" required>
-										</div>
-										<button type="button" style="margin-left: auto;" class="btn btn-primary ml-4 addService">Tambah</button>
-										<div class="col-sm-1 text-right">
-										</div>
-										<hr>
+									<div class="form-group">
+										<label for=""> Url Video</label>
+										<input type="url" name="link_video" class="form-control" placeholder="Masukkan Nama Url Video" required>
 									</div>
 
-									<div id="linkMulti"></div>
 
 									<div class="form-group">
 										<label for=""> Status</label>

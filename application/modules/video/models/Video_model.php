@@ -59,9 +59,9 @@ class Video_model extends CI_Model
 		return $query->row();
 	}
 
-	public function insert_kategori($data)
+	public function insert_video($data)
 	{
-		$this->db->insert('t_kategori', $data);
+		$this->db->insert('t_video', $data);
 		return $this->db->insert_id();
 	}
 
@@ -69,7 +69,7 @@ class Video_model extends CI_Model
 	{
 		// $this->db->set('uby', $this->session->id_user);
 		// $this->db->set('udd', date('Y-m-d H:i:s'));
-		$this->db->update('t_video_galery', $data, $where);
+		$this->db->update('t_video', $data, $where);
 		return $this->db->affected_rows();
 	}
 
@@ -131,9 +131,9 @@ class Video_model extends CI_Model
 
 	public function get_by_id($id)
 	{
-		$this->db->select('t_berita.*');
-		$this->db->from('t_berita');
-		$this->db->where('id_berita', $id);
+		$this->db->select('t_video.*');
+		$this->db->from('t_video');
+		$this->db->where('id_video', $id);
 		$query = $this->db->get();
 		return $query->row();
 	}

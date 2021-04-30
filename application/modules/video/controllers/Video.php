@@ -27,37 +27,7 @@ class Video extends MX_Controller
 	public function index()
 	{
 		$data['title'] = "Input Artikel";
-
-		// $listProfiles = $this->db->query("SELECT web_artikel.*, web_kategori_artikel.*, web_admin.nama_admin
-		//                                 FROM web_artikel
-		//                                 JOIN web_kategori_artikel ON web_artikel.id_kat_artikel = web_kategori_artikel.id_kat_artikel
-		//                                 JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
-		//                                 ORDER BY tgl_jam DESC");
-		$listProfiles = $this->db->query("SELECT t_video_galery.*
-                                        FROM t_video_galery
-										WHERE t_video_galery.trash='0' 
-										ORDER BY t_video_galery.tgl_jam DESC
-                                        ");
-		$arrProfile = [];
-		$arr = [];
-		foreach ($listProfiles->result_array() as $key => $row) {
-			$result = $this->db->query("SELECT * FROM t_detail_video_galery WHERE id_video_galery=" . $row['id_album_video'] . "")->result_array();
-
-			if ($result) {
-				$arr = array(
-					"id_album_video"        => $row["id_album_video"],
-					"nama_album_video"    => $row["nama_album_video"],
-					"status"  => $row["status"],
-					"id_admin"     => $row["id_admin"],
-					"tgl_jam"           => $row["tgl_jam"],
-					// "path_detail_foto" => $result
-					"t_detail_video_galery" => $result
-				);
-				array_push($arrProfile, $arr);
-			}
-		}
-
-		$data["t_video_galery"] = $arrProfile;
+		$data['video'] = $this->db->query("SELECT * FROM t_video")->result();
 
 		// var_dump($data);
 		// die();
@@ -90,58 +60,24 @@ class Video extends MX_Controller
 
 	public function ajax_insert()
 	{
+		date_default_timezone_set('Asia/Jakarta');
+		$dateTime = date('Y-m-d H:i:s');
 		$data = array(
-			'nama_album_video' => $this->input->post('nama_album_video', TRUE),
+			'nama_video' => $this->input->post('nama_video', TRUE),
+			'link_video' => $this->input->post('link_video', TRUE),
 			'status' => $this->input->post('status', TRUE),
-			'id_admin' => $this->input->post('id_admin', TRUE),
+			'tgl_jam'           => $dateTime
 		);
 		$where = array(
-			'id' => $this->input->post('id'),
+			'id_video' => $this->input->post('id'),
 		);
 
-
 		if (!$this->input->post('id')) {
-			$id = $this->main_model->insert_album($data);
-			if ($id) {
-				$count = count($_FILES['link_video']['name']);
-				$tempArr = [];
-				for ($i = 0; $i < $count; $i++) {
-					$_FILES['upload_File']['name'] = $_FILES['link_video']['name'][$i];
-					$_FILES['upload_File']['name'] = $_FILES['link_video']['name'][$i];
-					$_FILES['upload_File']['type'] = $_FILES['link_video']['type'][$i];
-					$_FILES['upload_File']['tmp_name'] = $_FILES['link_video']['tmp_name'][$i];
-					$_FILES['upload_File']['error'] = $_FILES['link_video']['error'][$i];
-					$_FILES['upload_File']['size'] = $_FILES['link_video']['size'][$i];
-
-					$uploadPath = './assets/backend/img/img_galery/';
-					$config['upload_path'] = $uploadPath;
-					$config['file_name']  = md5(date("YmdHms") . '_' . rand(100, 999));
-					$config['allowed_types'] = 'gif|jpg|png|jpeg';
-					$this->load->library('upload', $config);
-					$this->upload->initialize($config);
-					if ($this->upload->do_upload('upload_File')) {
-						$ket_video   = $this->input->post('ket_foto')[$i];
-						$link_video   = $this->input->post('link_video')[$i];
-						$fileData = $this->upload->data();
-						$foto = $fileData['file_name'];
-						$data2 = array(
-							'id_video_galery' => $id,
-							'link_video' => $link_video,
-							'ket_video'          => $ket_video
-						);
-						$this->main_model->insert_url($data2);
-						$tempArr["file_name"] = 'success' . $_FILES['upload_File']['name'];
-					} else {
-						$status = 'foto' . $this->upload->display_errors();
-						$tempArr["file_name"] = $status;
-					}
-				}
-				$this->template->ajax(array('status' => true, 'name' => $tempArr));
-			}
+			$this->main_model->insert_video($data);
 		} else {
-			$this->main_model->update_album($where, $data);
-			$this->template->ajax(array('status' => true));
+			$this->main_model->update_kategori($where, $data);
 		}
+		$this->template->ajax(array('status' => true));
 	}
 
 
@@ -192,10 +128,10 @@ class Video extends MX_Controller
 		);
 		$this->template->ajax($output);
 	}
+
 	public function ajax_edit($id)
 	{
 		$data = $this->main_model->get_by_id($id);
-		$data->kategori = $this->main_model->get_kategori();
 		$this->template->ajax($data);
 	}
 
@@ -206,7 +142,7 @@ class Video extends MX_Controller
 		);
 		$this->main_model->update_album(array('id' => $id), $data);
 		$this->template->ajax(array('status' => true));
-		redirect("foto");
+		redirect("video");
 	}
 
 	public function edit($id)

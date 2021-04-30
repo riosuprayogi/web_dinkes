@@ -117,10 +117,12 @@ class Berita extends MX_Controller
 					$_FILES['upload_File']['tmp_name'] = $_FILES['path_foto_artikel']['tmp_name'][$i];
 					$_FILES['upload_File']['error'] = $_FILES['path_foto_artikel']['error'][$i];
 					$_FILES['upload_File']['size'] = $_FILES['path_foto_artikel']['size'][$i];
+
 					$uploadPath = './assets/backend/img/img_berita/';
 					$config['upload_path'] = $uploadPath;
 					$config['file_name']  = md5(date("YmdHms") . '_' . rand(100, 999));
 					$config['allowed_types'] = 'gif|jpg|png|jpeg';
+
 					$this->load->library('upload', $config);
 					$this->upload->initialize($config);
 					if ($this->upload->do_upload('upload_File')) {
@@ -241,6 +243,145 @@ class Berita extends MX_Controller
 
 
 	public function updateDataAksi()
+	{
+		date_default_timezone_set('Asia/Jakarta');
+		$dateTime = date('Y-m-d H:i:s');
+		$this->_rules();
+		if ($this->form_validation->run() == FALSE) {
+			$this->edit($id = null);
+		} else {
+
+			$id             = $this->input->post('id_berita');
+			$id_kategori = $this->input->post('id_kategori');
+			$judul_berita  = $this->input->post('judul_berita');
+			$isi_berita    = $this->input->post('isi_berita');
+			$status        = $this->input->post('status');
+			$id_admin        = $this->input->post('id_admin');
+
+			$data = array(
+				'id_kategori'    => $id_kategori,
+				'judul_berita'     => $judul_berita,
+				'isi_berita'       => $isi_berita,
+				'status'           => $status,
+				'id_admin'          => $id_admin,
+				'tgl_jam'           => $dateTime
+			);
+
+			$where = array(
+				'id_berita' => $id
+			);
+
+			$this->main_model->update_data('t_berita', $data, $where);
+
+			// looping untuk update keterangan image
+			for ($i = 0; $i < count($this->input->post('id_detail_path_foto_artikel_update')); $i++) {
+
+				$id_detail_path_foto_artikel_update  = $this->input->post('id_detail_path_foto_artikel_update')[$i];
+				$ket_foto_update        = $this->input->post('ket_foto_update')[$i];
+
+				$data = array(
+					'ket_foto'     => $ket_foto_update
+				);
+				$where = array(
+					'id_foto_berita' => $id_detail_path_foto_artikel_update
+				);
+				$this->main_model->update_data('t_foto_berita', $data, $where);
+			}
+
+			$file = $_FILES;
+			if (!empty($file['path_foto_artikel']['name'][0])) {
+
+				$count = count($_FILES['path_foto_artikel']['name']);
+
+				$config['upload_path']      = './assets/backend/img/img_berita';
+				$config['allowed_types']    = 'jpg|png|jpeg|gif';
+				$config['max_size']         = '2048';
+				$config['encrypt_name']     = 'TRUE';
+				// $config['file_name']        = $_FILES['path_foto_artikel']['name'][$i];
+
+				for ($i = 0; $i < $count; $i++) {
+
+					if ($_FILES['path_foto_artikel']['name'][$i]) {
+
+						$_FILES['file']['name']     = $_FILES['path_foto_artikel']['name'][$i];
+						$_FILES['file']['type']     = $_FILES['path_foto_artikel']['type'][$i];
+						$_FILES['file']['tmp_name'] = $_FILES['path_foto_artikel']['tmp_name'][$i];
+						$_FILES['file']['error']    = $_FILES['path_foto_artikel']['error'][$i];
+						$_FILES['file']['size']     = $_FILES['path_foto_artikel']['size'][$i];
+
+						// $config['upload_path']      = './assets/backend/img/img_artikel';
+						// $config['allowed_types']    = 'jpg|png|jpeg|gif';
+						// $config['encrypt_name']     = 'TRUE';
+						// $config['max_size']         = '2048';
+						// $config['file_name']        = $_FILES['path_foto_artikel']['name'][$i];
+
+						$this->load->library('upload', $config);
+						if (!$this->upload->do_upload('file')) {
+							$this->session->set_flashdata(
+								'pesan',
+								'<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <strong>Maaf :(!</strong> Uploawdawdawdad gagal, format photo (jpg,jpeg,png) ukuran file max 2 Mb.
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>'
+							);
+							return $this->edit($id);
+						} else {
+							//         $path_foto_artikel = $this->upload->data('file_name');
+							//     }
+							// }
+							// $id         = $this->input->post('id_artikel');
+							// $urutan     = $this->input->post('urutan')[$i];
+							// $ket_foto   = $this->input->post('ket_foto')[$i];
+
+							$uploadData = $this->upload->data();
+							$path_foto_artikel = $uploadData['file_name'];
+							// $ket_foto  = $this->input->post('ket_foto')[$i];
+							// $urutan     = $this->input->post('urutan')[$i];
+
+							$data = array(
+								'id_berita'        => $id,
+								'path_foto_artikel' => $path_foto_artikel,
+								// 'urutan'            => $urutan,
+								// 'ket_foto'          => $ket_foto
+							);
+						}
+					}
+					$this->main_model->insert_data($data, 't_foto_berita');
+				}
+			}
+
+			// $id_foto_artikel = $this->input->post('id_foto_artikel');
+			// $id = $this->input->post('id_artikel');
+			// $urutan = $this->input->post('urutan');
+			// $ket_foto = $this->input->post('ket_foto');
+			// $data = array(
+			//     'id_artikel' => $id,
+			//     'urutan' => $urutan,
+			//     'ket_foto' => $ket_foto
+			// );
+
+			// $where = array(
+			//     'id_foto_artikel' => $id_foto_artikel
+			// );
+			// $this->Inputartikel_model->update_data('web_foto_artikel', $data, $where);
+			$this->session->set_flashdata(
+				'pesan',
+				'<div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Selamatt!</strong> Anda Berhasil Mengupdate Data baru.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>'
+			);
+			redirect('berita');
+		}
+	}
+
+
+
+	public function updateDataAksiz()
 	{
 		date_default_timezone_set('Asia/Jakarta');
 		$dateTime = date('Y-m-d H:i:s');
