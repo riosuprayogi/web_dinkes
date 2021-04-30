@@ -51,7 +51,7 @@ class Site extends MX_Controller {
 			// $this->logout();
 			// $this->template->render_home('home/index');
 			$data['title'] = 'PPID Kota Tangerang';
-			// $data['profil'] = $this->main_model->get_isi('intro');
+			$data['profil'] = $this->main_model->get_isi('intro');
 			$data['profil_image'] = $this->main_model->get_isi_file('profil');
 			$data['struktur'] = $this->main_model->get_isi_struktur('struktur');
 			$data['visi'] = $this->main_model->get_isi_file('visi');
