@@ -3,26 +3,228 @@
 	var table;
 	var table2;
 
+	$(document).ready(function() {
+
+
+		var pesan = "Silahkan Masukan";
+
+		$('#form2').validate({
+			rules: {
+				status_putusan: {
+					required: true
+				},
+
+				pesan: {
+					required: true,
+					minlength: 5
+				},
+
+			},
+			messages: {
+				pesan: {
+					required: pesan + " Alamat",
+					minlength: "Your alamat must be at least 5 characters long"
+				},
+				status_putusan: pesan + " Email",
+
+			},
+			errorElement: 'span',
+			errorPlacement: function(error, element) {
+				error.addClass('invalid-feedback');
+				element.closest('.form-group').append(error);
+			},
+			highlight: function(element, errorClass, validClass) {
+				$(element).addClass('is-invalid');
+			},
+			unhighlight: function(element, errorClass, validClass) {
+				$(element).removeClass('is-invalid');
+			},
+			submitHandler: function(form) {
+				send();
+			}
+		});
+
+		//   $('#form1').validate({
+		//       rules: {
+
+		//         alamat: {
+		//           required: true,
+		//           minlength: 5
+		//         },
+		//         nama: {
+		//           required: true
+		//         },
+		//         no_fax: {
+		//           required: true
+		//         },
+		//         email: {
+		//           required: true,
+		//           email: true,
+		//         },
+
+
+
+		//       },
+		//       messages: {
+		//         alamat: {
+		//           required: pesan+" Alamat",
+		//           minlength: "Your alamat must be at least 5 characters long"
+		//         },
+		//         tujuan: {
+		//           required: pesan+" Tujuan Informasi",
+		//           minlength: "Your alamat must be at least 5 characters long"
+		//         },
+		//         rincian: {
+		//           required: pesan+" Rincian",
+		//           minlength: "Your alamat must be at least 5 characters long"
+		//         },
+		//         email : pesan+" Email",
+		//         nik : pesan+" NIK",
+		//         name : pesan+" Nama",
+		//         no_tlp : pesan+" No Telepon",
+		//         kategori : pesan+" Kategori",
+		//         ktp : pesan+" KTP",
+		//         kuasa : pesan+" Surat Kuasa",
+		//         ktp_kuasa : pesan+" KTP Pemberi Kuasa",
+		//         keterangan : pesan+" Surat Keterangan",
+		//         akta : pesan+" Akta",
+		//         pengesahan : pesan+" Surat Pengesahan",
+		//         cara_memperoleh : pesan+" Cara Memperoleh Informasi",
+		//         bentuk_informasi : pesan+" Bentuk Informasi",
+
+		//       },
+		//       errorElement: 'span',
+		//       errorPlacement: function (error, element) {
+		//       error.addClass('invalid-feedback');
+		//       element.closest('.form-group').append(error);
+		//       },
+		//       highlight: function (element, errorClass, validClass) {
+		//       $(element).addClass('is-invalid');
+		//       },
+		//       unhighlight: function (element, errorClass, validClass) {
+		//       $(element).removeClass('is-invalid');
+		//       },
+		//       submitHandler: function (form) {
+		//       save();
+		//       }
+		//     });
+
+		table = $('#table').DataTable({
+			paginationType: 'full_numbers',
+			processing: true,
+			serverSide: true,
+			filter: false,
+			autoWidth: false,
+			ajax: {
+				url: '<?php echo site_url('kategori/ajax_list') ?>',
+				type: 'GET',
+				data: function(data) {
+					data.filter = {
+						'nama_kategori': $('#filter_kategori').val(),
+					};
+				}
+			},
+			language: {
+				sProcessing: '<img src="<?php echo base_url('assets/img/process.gif') ?>" width="20px"> Sedang memproses...',
+				sLengthMenu: 'Tampilkan _MENU_ entri',
+				sZeroRecords: 'Tidak ditemukan data yang sesuai',
+				sInfo: 'Menampilkan _START_ sampai _END_ dari _TOTAL_ entri',
+				sInfoEmpty: 'Menampilkan 0 sampai 0 dari 0 entri',
+				sInfoFiltered: '(disaring dari _MAX_ entri keseluruhan)',
+				sInfoPostFix: '',
+				sSearch: 'Cari:',
+				sUrl: '',
+				oPaginate: {
+					sFirst: '<<',
+					sPrevious: '<',
+					sNext: '>',
+					sLast: '>>'
+				}
+			},
+			order: [1, 'asc'],
+			columns: [{
+					'data': 'no',
+					'orderable': false
+				},
+				// {
+				// 	'data': 'id_kategori',
+				// 	'visible': true
+				// },
+				{
+					'data': 'nama_kategori'
+				},
+				{
+					'data': 'aksi',
+					'orderable': false
+				}
+			]
+		});
+
+
+		$('[name="username"]').change(function() {
+			$(this).parent().parent().removeClass('has-error');
+			$(this).next().empty();
+		});
+
+		$('[name="nama"]').change(function() {
+			$(this).parent().parent().removeClass('has-error');
+			$(this).next().empty();
+		});
+
+		$('[name="app_id"]').change(function() {
+			$(this).parent().removeClass('has-error');
+			$(this).next().next().empty();
+			if ($(this).val())
+				$('#appname').val($(this).find('option:selected').text());
+		});
+		$('[name="access"]').change(function() {
+			$(this).parent().removeClass('has-error');
+			$(this).next().next().empty();
+		});
+
+		$('[name="nama_skpd"]').change(function() {
+			$(this).parent().parent().removeClass('has-error');
+			$(this).next().empty();
+		});
+
+		$("#filter_no_permohonan").keyup(function(event) {
+			if (event.keyCode == 13) {
+				reload_table();
+			}
+		});
+
+		$("#filter_nama").keyup(function(event) {
+			if (event.keyCode == 13) {
+				reload_table();
+			}
+		});
+
+		$("#filter_kategori").change(function() {
+			reload_table();
+		});
+
+
+	});
+
+	function reload_table() {
+		table.ajax.reload(null, false);
+	}
+
 	function add() {
 		save_method = 'add';
 		$('#form1')[0].reset(); // reset form on modals
 		$('.form-group').removeClass('has-error'); // clear error class
-		$('#files').html('<li class="text-muted text-center empty">No files uploaded.</li>');
 		$('.col-md-12').removeClass('has-error'); // clear error class
 		$('.help-block').empty(); // clear error string
 
 		//Ajax Load data from ajax
 		$.ajax({
-			url: "<?php echo site_url('foto/ajax_add/') ?>",
+			url: "<?php echo site_url('video/ajax_add/') ?>",
 			type: "GET",
 			dataType: "JSON",
 			async: false,
 			success: function(data) {
 
-				$('#files').on("click", ".hapus_data", function(e) {
-					e.preventDefault();
-					$(this).parents('li').last().remove();
-				});
 
 				$('#modal_form').modal('show'); // show bootstrap modal
 				$('.modal-title').text('Tambah'); // Set Title to Bootstrap modal title
@@ -31,6 +233,15 @@
 				alert('Error get data from ajax');
 			}
 		});
+	}
+
+	function clear() {
+		$('.preview-ktps').css('display', 'none');
+		$('.preview-kuasas').css('display', 'none');
+		$('.preview-ktp_kuasas').css('display', 'none');
+		$('.preview-keterangans').css('display', 'none');
+		$('.preview-aktas').css('display', 'none');
+		$('.preview-pengesahans').css('display', 'none');
 	}
 
 	function edit(id) {
@@ -47,7 +258,7 @@
 			dataType: "JSON",
 			async: false,
 			success: function(data) {
-
+				$('[name="id"]').val(data.id_video);
 				$('[name="nama_video"]').val(data.nama_video);
 				$('[name="link_video"]').val(data.link_video);
 				$('[name="status"]').val(data.status);
@@ -90,7 +301,7 @@
 					contentType: false,
 					processData: false, //async: false,
 					success: function(data) {
-						console.log(data)
+
 						if (data.status) {
 							Swal.fire({
 								title: 'Berhasil',
@@ -106,15 +317,49 @@
 						$('#btnSave').text('Simpan'); //change button text
 						$('#btnSave').attr('disabled', false); //set button enable
 
+
 					},
 					error: function(jqXHR, textStatus, errorThrown) {
 						alert('Error adding / update data');
 						$('#btnSave').text('Simpan'); //change button text
 						$('#btnSave').attr('disabled', false); //set button enable
+
 					}
 				});
 			}
 		});
+	}
+
+	function edit(id) {
+		save_method = 'edit';
+		$('#form1')[0].reset(); // reset form on modals
+		$('.form-group').removeClass('has-error'); // clear error class
+		$('.col-md-12').removeClass('has-error'); // clear error class
+		$('.help-block').empty(); // clear error string
+
+		//Ajax Load data from ajax
+		$.ajax({
+			url: "<?php echo site_url('video/ajax_edit/') ?>/" + id,
+			type: "GET",
+			dataType: "JSON",
+			async: false,
+			success: function(data) {
+				$('[name="id"]').val(data.id_video);
+				$('[name="nama_video"]').val(data.nama_video);
+				$('[name="link_video"]').val(data.link_video);
+				$('[name="status"]').val(data.status);
+
+				$('#modal_form').modal('show'); // show bootstrap modal when complete loaded
+				$('.modal-title').text('Ubah'); // Set title to Bootstrap modal title
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				alert('Error get data from ajax');
+			}
+		});
+	}
+
+	function goBack() {
+		window.history.back();
 	}
 
 	function del(id) {
@@ -130,7 +375,7 @@
 		}).then((result) => {
 			if (result.value) {
 				$.ajax({
-					url: "<?php echo site_url('berita/ajax_delete') ?>/" + id,
+					url: "<?php echo site_url('video/ajax_delete') ?>/" + id,
 					type: "GET",
 					dataType: "JSON",
 					async: false,
@@ -212,10 +457,18 @@
 								<td><?= $v->status ?></td>
 								<td><?= $v->tgl_jam ?></td>
 								<td>
-									<a href="javascript:void(0)" onclick="edit('<?= $v->id_video ?>')">
-										<i class="fas fa-edit bg-primary p-2 text-white rounded" data-toggle="tooltip" title="Edit"></i>
-										<!-- <a href="<?= base_url(); ?>backend/admin/kategoriartikel/hapusKategori/<?= $v->id_video ?>" onclick="return confirm('Yakin gak nih mau di hapus ?');">
-                                            <i class="fas fa-trash-alt bg-danger p-2 text-white rounded" data-toggle="tooltip" title="Delete"></i> -->
+									<center>
+										<button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+											<i class="fas fa-cogs"></i>
+										</button>
+										<div class="dropdown-menu">
+											<a class="dropdown-item" href="javascript:void(0)" onclick="edit('<?= $v->id_video ?>')"><i class="fas fa-edit"></i> Edit</a>
+											<a class="dropdown-item" href="javascript:void(0)" onclick="del('<?= $v->id_video ?>')"><i class="fas fa-trash"></i> Hapus</a>
+										</div>
+									</center>
+
+
+
 								</td>
 							</tr>
 							<?php $i++; ?>
@@ -229,14 +482,15 @@
 </div>
 
 
+<!-- Bootstrap modal -->
 <div class="modal fade" id="modal_form" role="dialog">
-	<div class="modal-dialog modal-xl">
+	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h3 class="modal-title"></h3>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			</div>
-			<form role="form" id="form1" class="form-validate-summernote" method="post" enctype="multipart/form-data">
+			<form role="form" id="form1" class="form-validate-summernote">
 				<div class="modal-body form">
 					<div class="form-body">
 						<div class="container-fluid">
@@ -244,17 +498,15 @@
 								<div class="col-md-12">
 									<input type="hidden" value="" id="id" name="id">
 									<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
-
 									<div class="form-group">
 										<label for=""> Judul Video</label>
-										<input type="text" name="nama_video" class="form-control" placeholder="Masukkan Nama Album Video" required>
+										<input type="text" name="nama_video" class="form-control" placeholder="Masukkan Kategori" required>
 									</div>
 
 									<div class="form-group">
-										<label for=""> Url Video</label>
-										<input type="url" name="link_video" class="form-control" placeholder="Masukkan Nama Url Video" required>
+										<label for=""> Link Video</label>
+										<input type="text" name="link_video" class="form-control" placeholder="Masukkan Kategori" required>
 									</div>
-
 
 									<div class="form-group">
 										<label for=""> Status</label>
@@ -265,10 +517,6 @@
 										</select>
 									</div>
 
-									<div class="form-group">
-										<label for=""> Admin</label>
-										<input type="text" name="id_admin" class="form-control" placeholder="Masukkan Kategori" required>
-									</div>
 								</div>
 
 							</div>
@@ -343,6 +591,14 @@
 
 
 <script>
+	var save_method; //for save method string
+	var table;
+	var table2;
+
+	function reload_table() {
+		table.ajax.reload(null, false);
+	}
+
 	$(function() {
 
 		/* Summernote Validation */

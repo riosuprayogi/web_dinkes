@@ -27,7 +27,7 @@ class Video extends MX_Controller
 	public function index()
 	{
 		$data['title'] = "Input Artikel";
-		$data['video'] = $this->db->query("SELECT * FROM t_video")->result();
+		$data['video'] = $this->db->query("SELECT * FROM t_video WHERE trash='0'")->result();
 
 		// var_dump($data);
 		// die();
@@ -60,13 +60,11 @@ class Video extends MX_Controller
 
 	public function ajax_insert()
 	{
-		date_default_timezone_set('Asia/Jakarta');
-		$dateTime = date('Y-m-d H:i:s');
 		$data = array(
 			'nama_video' => $this->input->post('nama_video', TRUE),
 			'link_video' => $this->input->post('link_video', TRUE),
 			'status' => $this->input->post('status', TRUE),
-			'tgl_jam'           => $dateTime
+			'tgl_jam' => $this->input->post('tgl_jam', TRUE)
 		);
 		$where = array(
 			'id_video' => $this->input->post('id'),
@@ -75,7 +73,7 @@ class Video extends MX_Controller
 		if (!$this->input->post('id')) {
 			$this->main_model->insert_video($data);
 		} else {
-			$this->main_model->update_kategori($where, $data);
+			$this->main_model->update_video($where, $data);
 		}
 		$this->template->ajax(array('status' => true));
 	}
@@ -90,45 +88,6 @@ class Video extends MX_Controller
 		$this->template->ajax($data);
 	}
 
-	public function ajax_list()
-	{
-		$start = isset($_GET['start']) ? intval($_GET['start']) : 0;
-		$length = isset($_GET['length']) ? intval($_GET['length']) : 10;
-		$sort = isset($_GET['columns'][$_GET['order'][0]['column']]['data']) ? strval($_GET['columns'][$_GET['order'][0]['column']]['data']) : 'nama';
-		$order = isset($_GET['order'][0]['dir']) ? strval($_GET['order'][0]['dir']) : 'asc';
-		$filter = $_GET['filter'];
-
-		$data = array();
-		$album = $this->main_model->get($start, $length, $sort, $order, $filter);
-		$number = $_GET['start'] + 1;
-
-		foreach ($album as $row) {
-			$row->no = $number++;
-			$row->foto = base_url($row["photo"]);
-			$row->aksi = '
-					<center>
-					<button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
-							<i class="fas fa-cogs"></i>
-						</button>
-						<div class="dropdown-menu">
-						<a class="dropdown-item" href="javascript:void(0)" onclick="edit('  . $row->id_berita . ')"><i class="fas fa-edit"></i> Edit</a>
-						<a class="dropdown-item" href="javascript:void(0)" onclick="del(' . $row->id_berita . ')"><i class="fas fa-trash"></i> Hapus</a>
-						</div>
-					</center>
-				';
-			$data[] = $row;
-		}
-
-		$output = array(
-			'draw' => $_GET['draw'],
-			'recordsTotal' => $this->main_model->count_all(),
-			'recordsFiltered' => $this->main_model->count_filtered($filter),
-			'data' => $data,
-			'GET' => $_GET,
-		);
-		$this->template->ajax($output);
-	}
-
 	public function ajax_edit($id)
 	{
 		$data = $this->main_model->get_by_id($id);
@@ -140,9 +99,8 @@ class Video extends MX_Controller
 		$data = array(
 			'trash' => '1',
 		);
-		$this->main_model->update_album(array('id' => $id), $data);
+		$this->main_model->update_video(array('id_video' => $id), $data);
 		$this->template->ajax(array('status' => true));
-		redirect("video");
 	}
 
 	public function edit($id)

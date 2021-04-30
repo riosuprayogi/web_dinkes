@@ -65,14 +65,6 @@ class Video_model extends CI_Model
 		return $this->db->insert_id();
 	}
 
-	public function update_album($where, $data)
-	{
-		// $this->db->set('uby', $this->session->id_user);
-		// $this->db->set('udd', date('Y-m-d H:i:s'));
-		$this->db->update('t_video', $data, $where);
-		return $this->db->affected_rows();
-	}
-
 	public function insert_url($data)
 	{
 		$this->db->insert('t_detail_video_galery', $data);
@@ -86,11 +78,11 @@ class Video_model extends CI_Model
 		return $this->db->insert_id();
 	}
 
-	public function update_kategori($where, $data)
+	public function update_video($where, $data)
 	{
 		// $this->db->set('uby', $this->session->id_user);
 		// $this->db->set('udd', date('Y-m-d H:i:s'));
-		$this->db->update('t_kategori', $data, $where);
+		$this->db->update('t_video', $data, $where);
 		return $this->db->affected_rows();
 	}
 
