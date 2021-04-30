@@ -42,14 +42,7 @@ class Foto_model extends CI_Model
 		return $query->result();
 	}
 
-	public function get_kategori()
-	{
-		$this->db->select('*');
-		$this->db->from('t_kategori');
-		$this->db->where('trash', '0');
-		$query = $this->db->get();
-		return $query->result();
-	}
+	
 
 	public function get_cara()
 	{
