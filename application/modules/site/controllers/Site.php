@@ -52,23 +52,23 @@ class Site extends MX_Controller {
 			// $this->template->render_home('home/index');
 			$data['title'] = 'PPID Kota Tangerang';
 			$data['profil'] = $this->main_model->get_isi('intro');
-			// $data['profil_image'] = $this->main_model->get_isi_file('profil');
-			// $data['struktur'] = $this->main_model->get_isi_struktur('struktur');
-			// $data['visi'] = $this->main_model->get_isi_file('visi');
-			// $data['kepwal'] = $this->main_model->get_isi_file('kepwal');
-			// $data['maklumat'] = $this->main_model->get_isi_file('maklumat');
-			// $data['kontak'] =$this->main_model->get_kontak();
-			// $data['image'] = $this->main_model->get_banner();
-			// // $data['latest_news'] = $result;
-			// $data['siaran'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_siaran/');
-			// $data['banner'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_banner/');
+			$data['profil_image'] = $this->main_model->get_isi_file('profil');
+			$data['struktur'] = $this->main_model->get_isi_struktur('struktur');
+			$data['visi'] = $this->main_model->get_isi_file('visi');
+			$data['kepwal'] = $this->main_model->get_isi_file('kepwal');
+			$data['maklumat'] = $this->main_model->get_isi_file('maklumat');
+			$data['kontak'] =$this->main_model->get_kontak();
+			$data['image'] = $this->main_model->get_banner();
+			// $data['latest_news'] = $result;
+			$data['siaran'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_siaran/');
+			$data['banner'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_banner/');
 			
-			// // $data['banner'] = $this->site->get_curl('https://tangerangkota.go.id/banner/api-banner/');
-			// $data['berita2'] = $this->berita->get_isi_berita();
-			// $data['berita'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_berita/');
+			// $data['banner'] = $this->site->get_curl('https://tangerangkota.go.id/banner/api-banner/');
+			$data['berita2'] = $this->berita->get_isi_berita();
+			$data['berita'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_berita/');
 			
-			// $data['video_tng'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_tng/');
-			// $data['video_humas'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_humas/');
+			$data['video_tng'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_tng/');
+			$data['video_humas'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_humas/');
 
 			$listProfiles = $this->db->query("SELECT t_berita.*, t_foto_berita.*
 
