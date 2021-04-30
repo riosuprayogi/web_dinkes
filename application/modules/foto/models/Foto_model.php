@@ -86,14 +86,6 @@ class Foto_model extends CI_Model
 		return $this->db->insert_id();
 	}
 
-	public function update_kategori($where, $data)
-	{
-		// $this->db->set('uby', $this->session->id_user);
-		// $this->db->set('udd', date('Y-m-d H:i:s'));
-		$this->db->update('t_kategori', $data, $where);
-		return $this->db->affected_rows();
-	}
-
 	private function _get_query($filter = array())
 	{
 		$this->db->select('t_berita.*, t_kategori.nama_kategori');
