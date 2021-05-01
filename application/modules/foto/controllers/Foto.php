@@ -203,10 +203,12 @@ class Foto extends MX_Controller
 		$data = array(
 			'trash' => '1',
 		);
-		$this->main_model->update_album(array('id' => $id), $data);
+		$this->main_model->update_album(array('id_galery' => $id), $data);
 		$this->template->ajax(array('status' => true));
 		redirect("foto");
 	}
+
+
 
 	public function edit($id)
 	{

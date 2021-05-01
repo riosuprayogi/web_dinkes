@@ -42,6 +42,8 @@ class Foto_model extends CI_Model
 		return $query->result();
 	}
 
+	
+
 	public function get_cara()
 	{
 		$this->db->select('*');
@@ -84,14 +86,6 @@ class Foto_model extends CI_Model
 		$this->db->set('tgl_jam', date('Y-m-d H:i:s'));
 		$this->db->insert('t_foto_galery', $data);
 		return $this->db->insert_id();
-	}
-
-	public function update_kategori($where, $data)
-	{
-		// $this->db->set('uby', $this->session->id_user);
-		// $this->db->set('udd', date('Y-m-d H:i:s'));
-		$this->db->update('t_kategori', $data, $where);
-		return $this->db->affected_rows();
 	}
 
 	private function _get_query($filter = array())
