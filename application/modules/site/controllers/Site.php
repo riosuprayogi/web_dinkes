@@ -64,20 +64,20 @@ class Site extends MX_Controller {
 			$data['banner'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_banner/');
 			
 			// $data['banner'] = $this->site->get_curl('https://tangerangkota.go.id/banner/api-banner/');
-			$data['berita2'] = $this->berita->get_isi_berita();
+			// $data['berita2'] = $this->berita->get_isi_berita();
 			$data['berita'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_berita/');
 			
 			$data['video_tng'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_tng/');
 			$data['video_humas'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_humas/');
 
-			$listProfiles = $this->db->query("SELECT t_berita.*, t_foto_berita.*
+			$listProfiles = $this->db->query("SELECT t_berita.*, t_foto_berita.* 
 
 			                                        FROM t_berita 
 			                                        JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
 			                                        -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
-			                                        WHERE t_berita.status = 'show' AND trash='0' ORDER BY tgl_jam DESC LIMIT 4");
+			                                        WHERE t_berita.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC LIMIT 4");
 			// var_dump($listProfiles);
-			//             	die();
+			            	// die();
 
 			        $arrProfile = [];
 			        $arr = [];
@@ -119,6 +119,27 @@ class Site extends MX_Controller {
 			// $this->template->render('site/index');
 		// }
 	}
+
+
+	  public function detail($id)
+    {
+        $data['foto'] = $this->db->query("SELECT t_berita.*, t_foto_berita.*
+                                            FROM t_berita
+                                            JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
+                                            WHERE t_berita.id_berita = '$id' AND t_berita.status = 'show'")->result();
+
+        $data["detailBerita"] = $this->db->query("SELECT * FROM t_berita WHERE id_berita = '$id' AND status = 'show'")->result();
+        // var_dump($data);
+        // die();
+        $data['title'] = "Detail Artikel";
+        $this->template->render_home('site/detail',$data);
+        // $data ['detailFeatured'] = $this->crudBaznas->getById($id);
+        // $data ['image'] = $this->crudBaznas->imgById($id);
+        // $this->load->view('templates_users/header', $data);
+        // $this->load->view('templates_users/navbar');
+        // $this->load->view('users/detailBerita', $data);
+        // $this->load->view('templates_users/footer');
+    }
 
 	public function login() {
 		if ($this->session->id_user)

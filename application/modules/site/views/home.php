@@ -1,3 +1,10 @@
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<!-- <link href="<?php echo base_url('assets/home/css/hover.css')?>" rel="stylesheet"> -->
+<link href="<?php echo base_url('assets/home/css/hover2.css')?>" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>   
+     AOS.init(); 
+</script>
 <style>
     .footer {
         display: block;
@@ -400,11 +407,70 @@
     </div>
     </section>
 </div>
+<!-- <div class="wrapper">
+  <div class="zoom-effect">
+    <div class="kotak">
+      <img src="http://www.malasngoding.com/wp-content/uploads/2016/02/gambar.jpg" />
+    </div>
+  </div>
+</div> -->
 
-<section id="berita-section" class="services1 cid-news mbr-fullscreen">
+<section class="featured" style="background-color: white;" data-aos="fade-right">
+  <div class="container mb-3 mt-4">
+    <div class="row">
+      <div class="col-12 text-center">
+        <!-- <?php foreach ($berita3 as $ka) : ?> -->
+          <!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
+        <!-- <?php endforeach; ?> -->
+      </div>
+    </div>
+  </div>
+  <div class="row">
+                    <div class="col-md-12">
+                        <div class="card-img">
+                            <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-bottom: 10px;">
+                        </div>
+                    </div>
+                </div>
+  <div class="container info">
+    <div class="row align-items-start">
+      <?php foreach ($berita3 as $f) : ?>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: #00FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
+            <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
+
+              <?php if (count($f["path_foto_artikel"]) > 0) {
+                foreach ($f["path_foto_artikel"] as $k) {
+              ?>
+                  <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
+              <?php
+                }
+              } ?>
+              <div class="card-body" style="text-align: left;" >
+                <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
+                <b><?= $f["judul_berita"] ?></b>
+                <p><?= $f["isi_berita"] ?></p>
+              </div>
+              
+              <br>
+            </a>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- <section id="berita-section" class="services1 cid-news mbr-fullscreen">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
+
+ -->
+
+
+
+
                 <!-- <div class="row">
                     <div class="col-md-12">
                         <div class="card-img">
@@ -451,23 +517,23 @@
                         </div>
                     </div>
                 </div> -->
-            </div>
+            <!-- </div> -->
 
-            <div class="col-md-12">
+            <!-- <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card-img">
                             <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-bottom: 10px;">
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                                    <div class="container info">
+                       <!--  <div class="container info">
                         <div class="row align-items-start">
                           <?php foreach ($berita3 as $f) : ?>
                             <div class="col-lg-3 col-md-6 col-sm-12">
                               <div class="card berita" style="width: 16rem; height: 450px; overflow: hidden;">
-                                <a href="<?= base_url('home/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
+                                <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
 
                                   <?php if (count($f["path_foto_artikel"]) > 0) {
                                     foreach ($f["path_foto_artikel"] as $k) {
@@ -486,7 +552,7 @@
                             </div>
                           <?php endforeach; ?>
                         </div>
-                      </div>
+                      </div> -->
 
                <!--  <div class="row">
                     <div class="col-md-12">
@@ -526,13 +592,13 @@
                             } ?>
                         </div>
                     </div> -->
-                </div>
+         <!--        </div>
             </div>
 
 
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- <section id="berita-section" class="services1 cid-news mbr-fullscreen">
     <div class="container">
