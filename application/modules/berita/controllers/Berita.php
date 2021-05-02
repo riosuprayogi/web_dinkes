@@ -242,7 +242,7 @@ class Berita extends MX_Controller
 	}
 
 
-	public function updateDataAksi()
+	public function updateDataAksix()
 	{
 		date_default_timezone_set('Asia/Jakarta');
 		$dateTime = date('Y-m-d H:i:s');
@@ -381,7 +381,7 @@ class Berita extends MX_Controller
 
 
 
-	public function updateDataAksiz()
+	public function updateDataAksi()
 	{
 		date_default_timezone_set('Asia/Jakarta');
 		$dateTime = date('Y-m-d H:i:s');
