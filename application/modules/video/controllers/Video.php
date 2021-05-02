@@ -60,11 +60,13 @@ class Video extends MX_Controller
 
 	public function ajax_insert()
 	{
+		date_default_timezone_set('Asia/Jakarta');
+		$dateTime = date('Y-m-d H:i:s');
 		$data = array(
 			'nama_video' => $this->input->post('nama_video', TRUE),
 			'link_video' => $this->input->post('link_video', TRUE),
 			'status' => $this->input->post('status', TRUE),
-			'tgl_jam' => $this->input->post('tgl_jam', TRUE)
+			'tgl_jam'  => $dateTime
 		);
 		$where = array(
 			'id_video' => $this->input->post('id'),

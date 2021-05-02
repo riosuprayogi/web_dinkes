@@ -436,7 +436,7 @@
 						</tr>
 						<tr>
 							<th>No</th>
-							<th style="width:15%">Nama Album Video</th>
+							<th style="width:15%">Judul Video</th>
 							<th width="100px">Video Url</th>
 							<th>Status</th>
 							<th>Tanggal/Jam</th>
@@ -452,7 +452,7 @@
 							<tr>
 								<td><?= $i; ?></td>
 								<td><?= $v->nama_video ?></td>
-								<td><iframe width="220" height="115" src="<?= $v->link_video; ?>">
+								<td><iframe width="280" height="180" src="<?= $v->link_video; ?>">
 									</iframe></td>
 								<td><?= $v->status ?></td>
 								<td><?= $v->tgl_jam ?></td>
