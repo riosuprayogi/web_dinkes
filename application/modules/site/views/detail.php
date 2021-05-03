@@ -378,51 +378,57 @@
 <section id="berita-section" class="services1 cid-news mbr-fullscreen">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+
+            <div class="col-md-9">
                 <div class="card-img">
                             <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-bottom: 10px;">
-                        </div>
-                <div class="container">
-    <div class="row" style="padding-top: -100px">
-        <div class="col-lg-4 offset-lg-4 col-md-6 col-sm-12">
-<center>
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-aos="zoom-out">
-                <ol class="carousel-indicators">
-                    <?php foreach ($foto as $b => $value) : ?>
-                        <?php if ($b == 0) : ?>
-                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $b ?>" class="active"></li>
-                        <?php else : ?>
-                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $b ?>"></li>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                </ol>
-                <div class="carousel-inner">
-                    <?php foreach ($foto as $b => $value) : ?>
-                        <?php if ($b == 0) : ?>
-                            <div class="carousel-item active">
-                                <img src="<?= base_url('assets/backend/img/img_berita/' . $value->path_foto_artikel) ?>" class="d-block w-100" alt="Banner">
-                            </div>
-                        <?php else : ?>
-                            <div class="carousel-item">
-                                <img src="<?= base_url('assets/backend/img/img_berita/' . $value->path_foto_artikel) ?>" class="d-block w-100" alt="Banner">
-                            </div>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
+                            
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </a>
-            </div>
-                </center>
-        </div>
-    </div>
-<hr>
-<br>
+ 
+
+                        
+                <div class="row">
+                <div class="container">
+                     <div class="row" style="padding-top: -100px">
+                         <div class="col-lg-4 offset-lg-4 col-md-6 col-sm-12">
+
+                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-aos="zoom-out">
+                                <ol class="carousel-indicators">
+                                    <?php foreach ($foto as $b => $value) : ?>
+                                        <?php if ($b == 0) : ?>
+                                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $b ?>" class="active"></li>
+                                        <?php else : ?>
+                                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $b ?>"></li>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <?php foreach ($foto as $b => $value) : ?>
+                                        <?php if ($b == 0) : ?>
+                                            <div class="carousel-item active">
+                                                <img src="<?= base_url('assets/backend/img/img_berita/' . $value->path_foto_artikel) ?>" class="d-block w-100" alt="Banner">
+                                            </div>
+                                        <?php else : ?>
+                                            <div class="carousel-item">
+                                                <img src="<?= base_url('assets/backend/img/img_berita/' . $value->path_foto_artikel) ?>" class="d-block w-100" alt="Banner">
+                                            </div>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </a>
+                            </div>
+                                
+                        </div>
+                    </div>
+                <hr>
+                <br>
             <?php foreach ($detailBerita as $detail) : ?>
                 <span data-aos="fade-up">Publish <?= date('d M Y H:i:s', strtotime($detail->tgl_jam)) ?></span><br>
                 <h3 class="mt-3"><?= $detail->judul_berita; ?></h3>
@@ -480,8 +486,10 @@
                     </div>
                 </div> -->
             </div>
-
-            <div class="col-md-12">
+            <div class="col-md-3" style="background: blue">
+<p>asasasasa</p>
+</div>
+            <!-- <div class="col-md-12"> -->
                 <!-- <div class="row">
                     <div class="col-md-12">
                         <div class="card-img">
@@ -530,7 +538,7 @@
                             } ?>
                         </div>
                     </div> -->
-                </div>
+                <!-- </div> -->
             </div>
 
 

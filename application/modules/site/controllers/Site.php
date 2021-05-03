@@ -104,7 +104,9 @@ class Site extends MX_Controller {
 
 			        $data["berita3"] = $arrProfile;
 
-// var_dump($data1);
+ $data7["videoBerita"] = $this->db->query("SELECT * FROM t_video WHERE id_video = '18' AND status = 'show'")->result();
+
+// var_dump($data7);
 // die();
 
 

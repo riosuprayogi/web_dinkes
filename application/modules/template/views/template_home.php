@@ -134,6 +134,9 @@
 			}
 		}
 	</style>
+
+
+
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="mainNav">
 		<div class="container-fluid">
 			<a class="navbar-brand js-scroll-trigger" href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/home2/images/Dinkes-Logo.png" alt=""></a>
@@ -144,6 +147,21 @@
 					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="<?= base_url() ?>">Beranda</a>
 					</li>
+					<li class="nav-item dropdown">
+				        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				          INFORMASI
+				        </a>
+				        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				          <a class="dropdown-item" href="<?= base_url('permohonan/kuisioner') ?>">RKA</a>
+				           <a class="dropdown-item" href="<?= base_url('daftar_informasi') ?>">DPA</a>
+				           <a class="dropdown-item" href="<?= base_url('daftar_informasi') ?>">RENSTRA</a>
+				           <a class="dropdown-item" href="<?= base_url('daftar_informasi') ?>">RENJA</a>
+				          <!-- <a class="dropdown-item" href="#">Another action</a>
+				          <div class="dropdown-divider"></div>
+				          <a class="dropdown-item" href="#">Something else here</a> -->
+				        </div>
+      				</li>
+					
 					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="<?= base_url('profil_page') ?>">Profil</a>
 					</li>
@@ -158,18 +176,18 @@
 					<a class="nav-link js-scroll-trigger" href="<?= base_url('data_dokumen') ?>">Data & Dokumen</a>
 				    </li> -->
 
-					<li class="nav-item">
+					<!-- <li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="<?= base_url('permohonan/kuisioner') ?>">RKA</a>
-					</li>
-					<li class="nav-item">
+					</li> -->
+					<!-- <li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="<?= base_url('daftar_informasi') ?>">DPA</a>
-					</li>
-					<li class="nav-item">
+					</li> -->
+					<!-- <li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="<?= base_url('daftar_informasi') ?>">RENSTRA</a>
-					</li>
-					<li class="nav-item">
+					</li> -->
+					<!-- <li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="<?= base_url('daftar_informasi') ?>">RENJA</a>
-					</li>
+					</li> -->
 				</ul>
 			</div>
 

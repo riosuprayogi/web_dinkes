@@ -436,7 +436,7 @@
     <div class="row align-items-start">
       <?php foreach ($berita3 as $f) : ?>
         <div class="col-lg-3 col-md-6 col-sm-12">
-          <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: #00FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
+          <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
             <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
 
               <?php if (count($f["path_foto_artikel"]) > 0) {
@@ -717,12 +717,13 @@
                 </div>
             </div>
             <!--Left-->
-            <div class="col-12 col-md-6">
+            <!-- ===================== -->
+          <!--   <div class="col-12 col-md-6">
                 <?php
                 foreach ($video_tng as $k => $v) :
                     if ($k == '0') :
-                ?>
-                        <div class="rny-vid-container">
+                ?> -->
+               <!--          <div class="rny-vid-container">
                             <iframe id="rny_vid_frame" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
                         </div>
                 <?php endif;
@@ -732,8 +733,8 @@
                 <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
                     <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_tngtv.png" alt="">
                 </div>
-
-                <div class="rny-vid-list-container">
+ -->
+              <!--   <div class="rny-vid-list-container">
                     <div class="rny-vid-list">
                         <?php foreach ($video_tng as $k => $v) : ?>
                             <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame').src='<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=1&rel=0&showinfo=0&autohide=1'">
@@ -747,31 +748,39 @@
                             </div>
                         <?php endforeach; ?>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- LEFT AND RIGHT ARROWS -->
-                <div class="rny-arrows">
+             <!--    <div class="rny-arrows">
                     <div class="rny-arrow-left"><i class="fa fa-chevron-left fa-lg"></i></div>
                     <div class="rny-arrow-right"><i class="fa fa-chevron-right fa-lg"></i></div>
                 </div>
 
-            </div>
-
+            </div> -->
+                <!-- ===================== -->
             <!--Right-->
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-12">
                 <?php
                 foreach ($video_humas as $k => $v) :
                     if ($k == '0') :
+                        // var_dump($video_humas);
+                        // die();
                 ?>
                         <div class="rny-vid-container-humas">
-                            <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
+                            <!-- <p><?= $v["judul_berita"] ?></p> -->
+                            <!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
+                            <iframe id="rny_vid_frame-humas" src="https://www.youtube.com/embed/OZ2GIqfs0SY" frameborder="0" width="560" height="315"></iframe>
+                            <!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>" frameborder="0" width="560" height="315"></iframe> -->
                         </div>
                 <?php endif;
                 endforeach;
                 ?>
 
-                <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
+                <!-- <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
                     <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_humas.png" alt="">
+                </div>  -->
+                <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
+                    <img class="logo-liputan" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt="">
                 </div>
 
                 <div class="rny-vid-list-container-humas">
@@ -814,7 +823,7 @@
             if (!empty($banner)) {
                 foreach ($banner as $b) {
             ?>
-                    <div class="col-lg-6 col-md-12 col-sm-12 p-5">
+                    <div class="col-lg-12 col-md-12 col-sm-12 p-5">
                         <div class="home-container">
                             <img src="<?php echo $link_kota . $b['foto']; ?>" alt="IMG-<?php echo $b['slug']; ?>" class="home-image">
 
@@ -845,9 +854,9 @@
                 <div class="card-body bg-transparent">
                     <div class="row">
                         <div class="col-md-4 align-center">
-                            <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
-                            <hr>
-                            <h3>Kota Tangerang</h3>
+                            <!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
+                            <hr> -->
+                          <!--   <h3>Kota Tangerang</h3>
                             <div class="row">
                                 <a class="align-center col-md-4" target="_blank" href="https://id-id.facebook.com/kotatng/">
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-07.png') ?>" alt="">
@@ -858,25 +867,25 @@
                                 <a class="align-center col-md-4" target="_blank" href="https://twitter.com/Kota_Tangerang">
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt="">
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
-                        <div class="col-md-4 align-center">
-                            <img class="medsos" src="<?= base_url('assets/img/logo kecil2-05.png') ?>" alt="">
+                        <div class="col-lg-4 align-center">
+                            <img class="medsos" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt="">
                             <hr>
-                            <h3>Humas</h3>
+                            <h3>DINKES</h3>
                             <div class="row">
-                                <a class="align-center col-md-4" target="_blank" href="https://www.youtube.com/channel/UCp4IOkXqQHD3VZQ2WgSjFbg">
+                                <a class="align-center col-md-4" target="_blank" href="https://www.youtube.com/channel/UCKGFxu_Sb2LFwMoi5h_zDow">
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-10.png') ?>" alt="">
                                 </a>
                                 <a class="align-center col-md-4" target="_blank" href="https://twitter.com/HumasTangerang">
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt="">
                                 </a>
-                                <a class="align-center col-md-4" target="_blank" href="https://www.instagram.com/humas_kota_tangerang/?hl=id">
+                                <a class="align-center col-md-4" target="_blank" href="https://www.instagram.com/dinkes.kotatangerang/?hl=id">
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-08.png') ?>" alt="">
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-4 align-center">
+                        <!-- <div class="col-md-4 align-center">
                             <img class="medsos" src="<?= base_url('assets/img/logo kecil2-06.png') ?>" alt="">
                             <hr>
                             <h3>Tangerang TV</h3>
@@ -885,7 +894,7 @@
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-10.png') ?>" alt="">
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
