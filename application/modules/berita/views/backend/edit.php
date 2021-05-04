@@ -100,29 +100,35 @@
                             </div>
                             <div id="imageMultiEdit"></div> -->
 
+
                             <div class="form-group row image_field">
-                                <label for="path_foto_artikel" class="col-sm-2 col-form-label">Photo</label>
+                                <label for="path_detail_foto" class="col-sm-2 col-form-label">Foto</label>
                                 <div class="col-sm-10">
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <img src="<?= base_url('assets/backend/img/img_berita/noimage.png') ?>" class="img-thumbnail" id="imgPreview1" style="height: 400px; height: 350px;" />
                                         </div>
-                                        <div class="col-sm-6">
-                                            <div class="custom-file">
-                                                <div class="col-sm-8">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="custom-file">
                                                     <input type="text" class="form-control" id="image-label1" readonly required>
                                                     <input type="file" class="custom-file-input upload_custom" id="customFileUpload1" data-count_image="1" name="path_foto_artikel[]" style="display: none;">
-                                                    <?= form_error('path_foto_artikel', '<small class="text-danger pl-0">', '</small>'); ?>
-                                                    <span style="font-style: italic; color:red;">*) Format photo (jpg,jpeg,png) ukuran file max 2 Mb.</span><br>
-
+                                                    <?= form_error('path_detail_foto', '<small class="text-danger pl-0">', '</small>'); ?>
                                                 </div>
-                                                <div class="col-sm-3 mt-3">
+                                                <div class="input-group-append">
                                                     <button class="btn btn-primary" onclick="open_file(1)" data-count_image="1" type="button">Pilih Gambar</button>
                                                 </div>
                                             </div>
+                                            <span style="font-style: italic; color:red;">*) Format photo (jpg,jpeg,png) ukuran file max 2 Mb.</span><br>
                                         </div>
                                     </div>
-                                    <div id="imageMultiEdit"></div>
+                                </div>
+                            </div>
+
+                            <div id="imageMultiEdit"></div>
+                            <div class="form-group row image_field">
+                                <label for="path_foto_artikel" class="col-sm-2 col-form-label"></label>
+                                <div class="col-sm-10">
                                     <!-- <div class="form-group row mt-3"> -->
                                     <!-- <label for="urutan" class="col-sm-1 col-form-label">Urutan</label>
                                         <div class="col-sm-2">
@@ -310,39 +316,31 @@
             console.log("jumlah image =" + countimagefield);
             var wrapper = $('#imageMultiEdit');
             var html = `
-        <div class="form-group row image_field">
-                            <label for="path_foto_artikel" class="col-sm-2 col-form-label"></label>
-                            <div class="col-sm-10">
-                                <div class="row">
-                                <div class="col-sm-4">
-                                        <img src="<?= base_url('assets/backend/img/img_berita/noimage.png') ?>" class="img-thumbnail" id="imgPreview` + countimagefield + `" style="height: 250px; height: 300px;" />
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="custom-file">
-                                            <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="image-label` + countimagefield + `" readonly required>
+
+            <div class="form-group row image_field">
+										<label for="path_detail_foto" class="col-sm-2 col-form-label"></label>
+										<div class="col-sm-10">
+											<div class="row">
+												<div class="col-sm-4">
+												<img src="<?= base_url('assets/backend/img/img_berita/noimage.png') ?>" class="img-thumbnail" id="imgPreview` + countimagefield + `" style="height: 250px; height: 300px;" />
+												</div>
+												<div class="form-group">
+													<!-- <label for="exampleInputFile">File input</label> -->
+													<div class="input-group">
+														<div class="custom-file">
+														<input type="text" class="form-control" id="image-label` + countimagefield + `" readonly required>
                                                 <input type="file" class="custom-file-input upload_custom" id="customFileUpload` + countimagefield + `" data-count_image="` + countimagefield + `" name="path_foto_artikel[]" style="display: none;">
-                                                <span style="font-style: italic; color:red;">*) Format photo (jpg,jpeg,png) ukuran file max 2 Mb.</span><br>
-                                                <span style="font-style: italic; color:red;">*) Tidak di sarankan upload (pdf,xls,doc,txt).</span>
-                                            </div>
-                                            <div class="col-sm-3 mt-3">
-                                                <button class="btn btn-primary" data-count_image="` + countimagefield + `"  onclick="open_file(` + countimagefield + `)" type="button">Pilih Gambar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row mt-3">
-                                    <label for="urutan" class="col-sm-1 col-form-label">Urutan</label>
-                                    <div class="col-sm-2">
-                                        <input type="text" class="form-control" id="urutan" name="urutan[]" value="" autocomplete="off">
-                                    </div>
-                                    <label for="ket_foto" class="col-sm-1 col-form-label">Ket. Foto</label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="ket_foto" name="ket_foto[]" value="" autocomplete="off">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+														<?= form_error('path_detail_foto', '<small class="text-danger pl-0">', '</small>'); ?>
+														</div>
+														<div class="input-group-append">
+														<button class="btn btn-primary" data-count_image="` + countimagefield + `"  onclick="open_file(` + countimagefield + `)" type="button">Pilih Gambar</button>
+														</div>
+													</div>
+													<span style="font-style: italic; color:red;">*) Format photo (jpg,jpeg,png) ukuran file max 2 Mb.</span><br>
+												</div>
+											</div>
+										</div>
+									</div>
 `;
             $(wrapper).append(html);
         });

@@ -399,12 +399,21 @@
                     <div class="mbr-figure rounded" style="padding:5px; background: rgba(255, 255, 255, 0.92); width: 40%;">
                         <div class="mbr-figure " style="height:100%; opacity:1.0;">
                             <img src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" style="width:50%; margin:auto;" alt="" media-simple="true">
-                            <center>
+                            <<<<<<< HEAD <center>
                                 <p style="text-align: center; ">
                                     <?php echo $profil['isi']; ?>
                                     <!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
                                 </p>
-                            </center>
+                                </center>
+                                =======
+                                <center>
+                                    <p style="text-align: center; ">
+                                        <?php echo $profil['isi']; ?>
+                                        <!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
+                                    </p>
+                                </center>
+                                <p>sas</p>
+                                >>>>>>> 5c4d537810507dc7894a1dd1e67b461fa1793f0a
                         </div>
 
                     </div>
