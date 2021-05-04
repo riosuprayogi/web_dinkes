@@ -477,53 +477,53 @@
 
 
 
-
+<!-- 
 <section class="featured" style="background-color: white;" data-aos="fade-right">
     <div class="container mb-3 mt-4">
         <div class="row">
             <div class="col-12 text-center">
                 <!-- <?php foreach ($berita3 as $ka) : ?> -->
-                <!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
-                <!-- <?php endforeach; ?> -->
-            </div>
+<!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
+<!-- <?php endforeach; ?> -->
+</div>
+</div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card-img">
+            <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-bottom: 10px;">
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card-img">
-                <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-bottom: 10px;">
-            </div>
-        </div>
-    </div>
+</div>
 
-    <div class="container info">
-        <div class="row align-items-start">
-            <?php foreach ($berita33 as $f) : ?>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
-                        <a href="<?= base_url('site/detail/' . $f["id_foto_galery"]) ?>" style="text-decoration: none; color: #000000">
+<div class="container info">
+    <div class="row align-items-start">
+        <?php foreach ($berita33 as $f) : ?>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
+                    <a href="<?= base_url('site/detail/' . $f["id_foto_galery"]) ?>" style="text-decoration: none; color: #000000">
 
-                            <?php if (count($f["path_detail_foto"]) > 0) {
-                                foreach ($f["path_detail_foto"] as $k) {
-                            ?>
-                                    <img src="<?= base_url('assets/backend/img/img_galery/' . $k["path_detail_foto"]) ?>" width="100%" height="250px">
-                            <?php
-                                }
-                            } ?>
-                            <div class="card-body" style="text-align: left;">
-                                <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
-                                <!-- <b><?= $f["judul_berita"] ?></b> -->
-                                <!-- <p><?= $f["isi_berita"] ?></p> -->
-                            </div>
+                        <?php if (count($f["path_detail_foto"]) > 0) {
+                            foreach ($f["path_detail_foto"] as $k) {
+                        ?>
+                                <img src="<?= base_url('assets/backend/img/img_galery/' . $k["path_detail_foto"]) ?>" width="100%" height="250px">
+                        <?php
+                            }
+                        } ?>
+                        <div class="card-body" style="text-align: left;">
+                            <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
+                            <!-- <b><?= $f["judul_berita"] ?></b> -->
+                            <!-- <p><?= $f["isi_berita"] ?></p> -->
+                        </div>
 
-                            <br>
-                        </a>
-                    </div>
+                        <br>
+                    </a>
                 </div>
-            <?php endforeach; ?>
-        </div>
+            </div>
+        <?php endforeach; ?>
     </div>
-    </center>
+</div>
+</center>
 </section>
 <!-- <div class="container">
     <div class="row">
@@ -612,7 +612,7 @@
 </div>
 </div>
 </section>
-
+-->
 
 
 
