@@ -448,11 +448,12 @@
 						<!-- dataTable ga bisa pake tr disini -->
 
 						<?php $i = 1; ?>
-						<?php foreach ($video as $v) : ?>
+						<?php foreach ($video as $v) :
+							$linkyutube = str_replace("watch?v=", "embed/", $v->link_video); ?>
 							<tr>
 								<td><?= $i; ?></td>
 								<td><?= $v->nama_video ?></td>
-								<td><iframe width="280" height="180" src="<?= $v->link_video; ?>">
+								<td><iframe width="280" height="180" src="<?= $linkyutube; ?>">
 									</iframe></td>
 								<td><?= $v->status ?></td>
 								<td><?= $v->tgl_jam ?></td>
