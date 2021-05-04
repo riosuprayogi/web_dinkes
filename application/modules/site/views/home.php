@@ -2,6 +2,14 @@
 <!-- <link href="<?php echo base_url('assets/home/css/hover.css')?>" rel="stylesheet"> -->
 <link href="<?php echo base_url('assets/home/css/hover2.css')?>" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+
+
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
 <script>   
      AOS.init(); 
 </script>
@@ -415,6 +423,8 @@
   </div>
 </div> -->
 
+
+
 <section class="featured" style="background-color: white;" data-aos="fade-right">
   <div class="container mb-3 mt-4">
     <div class="row">
@@ -432,6 +442,7 @@
                         </div>
                     </div>
                 </div>
+                
   <div class="container info">
     <div class="row align-items-start">
       <?php foreach ($berita3 as $f) : ?>
@@ -459,6 +470,7 @@
       <?php endforeach; ?>
     </div>
   </div>
+  </center>
 </section>
 
 <!-- <section id="berita-section" class="services1 cid-news mbr-fullscreen">
@@ -704,18 +716,125 @@
         </div>
     </div>
 </section> -->
+<!-- <section>
+    <div class="col-lg-12" >
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active" style="width: 30%" >
+      <?php foreach ($baznastv as $tv) : ?>
+          <div class="col-lg-12 col-md-12 col-sm-12 justify-content-center">
+            <div class="carousel-cell">
+              <div class="" style="margin: 10px; overflow:hidden;">
+                <div class="card-image embed-responsive">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="350" height="200" style="overflow-x: hidden;" src="<?= $tv->link_video ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                </div>
 
-<section id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620">
-    <div class="mbr-overlay" style="opacity: 0.50;background-color: rgba(239, 240, 240, 0.75);"></div>
+                <div class="card-content m-2">
+                  <span class="card-title">Baznas News | <?= $tv->nama_video ?></span><br>
+                  <a href="<?= $tv->link_video ?>" class="btn btn-success btn-sm mt-2">
+                    <i></i> Lihat Video
+                  </a>
+                  <p class="d-inline" style="margin-left: 70px;">Baznas Tv | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p>
+                </div>
 
-    <div class="container">
-        <div class="row">
-            <!--Titles-->
-            <div class="title col-12">
+              </div>
+            </div>
+          </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="carousel-item" style="width: 30%">
+      <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/wakil.png" class="d-block w-100" alt="gambar">
+    </div>
+    <div class="carousel-item" style="width: 30%">
+      <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/wakil.png" class="d-block w-100" alt="gambar">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+</section> -->
+
+
+<section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right">
+
+    
+
+
+  <!-- <div class="container">
+    <div class="row">
+      <div class="">
+        <h2>Video Baznas</h2>
+      </div>
+    </div>
+  </div> -->
+  <div class="container">
+    <div class="">
+        <div class="title col-lg-12">
                 <div class="card-img">
                     <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
                 </div>
             </div>
+      <div class="" data-flickity='{ "wrapAround": true }'>
+        <?php foreach ($baznastv as $tv) : ?>
+          <div class="col-md-8 col-sm-8    ">
+            <div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
+              <div class="" style="margin: 10px; overflow:hidden;">
+                <div class="card-image "><h3 style="text-transform: uppercase;"><center><b><?= $tv->nama_video ?></b></center></h3>
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="250" height="100" style="overflow-x: hidden; border-radius: 10px" src="<?= $tv->link_video ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                </div>
+
+                <div class="card-content">
+                    <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p>
+                  <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+                 <center> <a href="<?= $tv->link_video ?>" class="btn btn-success btn-sm mt-2" target="__blank">
+                    <i style="background-color: blue" ></i> Lihat Video
+                  </a></center>
+                  <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+                </div>
+
+              </div>
+            </div>
+          </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+</div>
+
+      </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- <section id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620">
+    <div class="mbr-overlay" style="opacity: 0.50;background-color: rgba(239, 240, 240, 0.75);"></div>
+
+    <div class="container">
+        <div class="row"> -->
+            <!--Titles-->
+            <!-- <div class="title col-12">
+                <div class="card-img">
+                    <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
+                </div>
+            </div> -->
             <!--Left-->
             <!-- ===================== -->
           <!--   <div class="col-12 col-md-6">
@@ -759,27 +878,27 @@
             </div> -->
                 <!-- ===================== -->
             <!--Right-->
-            <div class="col-12 col-md-12">
+           <!--  <div class="col-12 col-md-12">
                 <?php
                 foreach ($video_humas as $k => $v) :
                     if ($k == '0') :
                         // var_dump($video_humas);
                         // die();
-                ?>
-                        <div class="rny-vid-container-humas">
+                ?> -->
+                       <!--  <div class="rny-vid-container-humas"> -->
                             <!-- <p><?= $v["judul_berita"] ?></p> -->
                             <!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
-                            <iframe id="rny_vid_frame-humas" src="https://www.youtube.com/embed/OZ2GIqfs0SY" frameborder="0" width="560" height="315"></iframe>
+                            <!-- <iframe id="rny_vid_frame-humas" src="https://www.youtube.com/embed/OZ2GIqfs0SY" frameborder="0" width="560" height="315"></iframe> -->
                             <!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>" frameborder="0" width="560" height="315"></iframe> -->
-                        </div>
-                <?php endif;
+                        <!-- </div> -->
+              <!--   <?php endif;
                 endforeach;
-                ?>
+                ?> -->
 
                 <!-- <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
                     <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_humas.png" alt="">
                 </div>  -->
-                <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
+               <!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
                     <img class="logo-liputan" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt="">
                 </div>
 
@@ -797,10 +916,10 @@
                             </div>
                         <?php endforeach; ?>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- LEFT AND RIGHT ARROWS -->
-                <div class="rny-arrows">
+                <!-- <div class="rny-arrows">
                     <div class="rny-arrow-left-humas"><i class="fa fa-chevron-left fa-lg"></i></div>
                     <div class="rny-arrow-right-humas"><i class="fa fa-chevron-right fa-lg"></i></div>
                 </div>
@@ -808,7 +927,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <section class="mbr-section contacts2 cid-info mbr-fullscreen" id="info">
     <div class="container">
@@ -1253,6 +1372,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 <script>

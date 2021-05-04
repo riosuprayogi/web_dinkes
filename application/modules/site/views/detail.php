@@ -1,4 +1,5 @@
 
+
 <style>
     .footer {
         display: block;
@@ -375,12 +376,12 @@
 <!-- <section class="py-5"></section> -->
 
 
-<section id="berita-section" class="services1 cid-news mbr-fullscreen">
-    <div class="container">
+<section id="berita-section" class="services1 cid-news mbr-fullscreen" >
+    <div class="container" >
         <div class="row">
 
-            <div class="col-md-9">
-                <div class="card-img">
+            <div class="col-md-8" >
+                <div class="card-img" style="padding-left: 50px">
                             <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-bottom: 10px;">
                             
                 </div>
@@ -389,10 +390,11 @@
                         
                 <div class="row">
                 <div class="container">
-                     <div class="row" style="padding-top: -100px">
-                         <div class="col-lg-4 offset-lg-4 col-md-6 col-sm-12">
+                     <div class="" style="padding-top: -100px"><center>
+                         <div style="width: 300px; padding-left: 10px">
+                         <!-- <div class="col-md-6 offset-lg-2 col-sm-12"> -->
 
-                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-aos="zoom-out">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" >
                                 <ol class="carousel-indicators">
                                     <?php foreach ($foto as $b => $value) : ?>
                                         <?php if ($b == 0) : ?>
@@ -426,6 +428,7 @@
                             </div>
                                 
                         </div>
+                        </center>
                     </div>
                 <hr>
                 <br>
@@ -486,8 +489,40 @@
                     </div>
                 </div> -->
             </div>
-            <div class="col-md-3" style="background: blue">
-<p>asasasasa</p>
+           
+    <div class="col-sm-4" style="" >
+    <br><br>
+    <h2><center> Artikel Terkait</center></h2> <br>
+      <div class="container info">
+        <div class="row align-items-start">
+          <?php foreach ($berita4 as $f) : ?>
+            <div class="col-sm-12 col-md-12">
+              <div class="card berita" style="width: 19rem; height: 250px; overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
+                <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
+
+                  <?php if (count($f["path_foto_artikel"]) > 0) {
+                    foreach ($f["path_foto_artikel"] as $k) {
+                  ?>
+                      <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="35%" height="120px">
+                      <b style="font-size: 13px"><?= $f["judul_berita"] ?></b>
+                     <?= $f["isi_berita"] ?>
+                  <?php
+                    }
+                  } ?>
+                  <!-- <div class="col-md-12" > -->
+                  <div class="card-body"  >
+                    <!-- <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p> -->
+                    <!-- <b><?= $f["judul_berita"] ?></b> -->
+                    <!-- <p><?= $f["isi_berita"] ?></p> -->
+                  </div>
+                  <!-- </div> -->
+                  <br>
+                </a>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
 </div>
             <!-- <div class="col-md-12"> -->
                 <!-- <div class="row">

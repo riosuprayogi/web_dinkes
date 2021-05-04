@@ -70,10 +70,10 @@ class Site extends MX_Controller {
 			$data['video_tng'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_tng/');
 			$data['video_humas'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_humas/');
 
-			$listProfiles = $this->db->query("SELECT t_berita.*, t_foto_berita.* 
+			$listProfiles = $this->db->query("SELECT t_berita.*
 
 			                                        FROM t_berita 
-			                                        JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
+			                                        -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
 			                                        -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
 			                                        WHERE t_berita.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC LIMIT 4");
 			// var_dump($listProfiles);
@@ -104,7 +104,9 @@ class Site extends MX_Controller {
 
 			        $data["berita3"] = $arrProfile;
 
- $data7["videoBerita"] = $this->db->query("SELECT * FROM t_video WHERE id_video = '18' AND status = 'show'")->result();
+ // $data7["videoBerita"] = $this->db->query("SELECT * FROM t_video WHERE id_video = '18' AND status = 'show' ")->result();
+   // Query Untuk Video;
+ $data["baznastv"] = $this->db->query("SELECT * FROM t_video WHERE status = 'show' AND trash='0' ORDER BY tgl_jam DESC LIMIT 4")->result();
 
 // var_dump($data7);
 // die();
@@ -125,12 +127,53 @@ class Site extends MX_Controller {
 
 	  public function detail($id)
     {
+    	// ============== isi berita
         $data['foto'] = $this->db->query("SELECT t_berita.*, t_foto_berita.*
                                             FROM t_berita
                                             JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
                                             WHERE t_berita.id_berita = '$id' AND t_berita.status = 'show'")->result();
 
         $data["detailBerita"] = $this->db->query("SELECT * FROM t_berita WHERE id_berita = '$id' AND status = 'show'")->result();
+// ============== akhir isi berita
+
+
+
+        $listProfiles2 = $this->db->query("SELECT t_berita.* 
+
+			                                        FROM t_berita 
+			                                        -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
+			                                        -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
+			                                        WHERE t_berita.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC LIMIT 4");
+			// var_dump($listProfiles2);
+			            	// die();
+
+			        $arrProfile2 = [];
+			        $arr2 = [];
+			        foreach ($listProfiles2->result_array() as $key => $row) {
+
+			            $result = $this->db->query("SELECT *, MIN(urutan)AS urutan FROM t_foto_berita WHERE id_berita=" . $row['id_berita'] . "")->result_array();
+			            	// var_dump($result);
+			            	// die();
+			            if ($result) {
+
+			                $arr2 = array(
+			                    "id_berita" => $row["id_berita"],
+			                    // "kategori_artikel" => $row["kategori_artikel"],
+			                    "judul_berita" => $row["judul_berita"],
+			                    "isi_berita" => $row["isi_berita"],
+			                    // "nama_admin"  =>  $row["nama_admin"],
+			                    // "publish" => $row["publish"],
+			                    "tgl_jam" => $row["tgl_jam"],
+			                    "path_foto_artikel" => $result
+			                );
+			                array_push($arrProfile2, $arr2);
+
+			            }
+			        }
+
+			        $data["berita4"] = $arrProfile2;
+			        // var_dump($data4);
+			            	// die();
         // var_dump($data);
         // die();
         $data['title'] = "Detail Artikel";
