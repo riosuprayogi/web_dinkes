@@ -1,6 +1,6 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<!-- <link href="<?php echo base_url('assets/home/css/hover.css')?>" rel="stylesheet"> -->
-<link href="<?php echo base_url('assets/home/css/hover2.css')?>" rel="stylesheet">
+<!-- <link href="<?php echo base_url('assets/home/css/hover.css') ?>" rel="stylesheet"> -->
+<link href="<?php echo base_url('assets/home/css/hover2.css') ?>" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
@@ -10,8 +10,8 @@
 
 
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
-<script>   
-     AOS.init(); 
+<script>
+    AOS.init();
 </script>
 <style>
     .footer {
@@ -399,10 +399,12 @@
                     <div class="mbr-figure rounded" style="padding:5px; background: rgba(255, 255, 255, 0.92); width: 40%;">
                         <div class="mbr-figure " style="height:100%; opacity:1.0;">
                             <img src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" style="width:50%; margin:auto;" alt="" media-simple="true">
-                          <center>  <p style="text-align: center; ">
-                                <?php echo $profil['isi']; ?>
-                                <!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
-                            </p></center>
+                            <center>
+                                <p style="text-align: center; ">
+                                    <?php echo $profil['isi']; ?>
+                                    <!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
+                                </p>
+                            </center>
                         </div>
 
                     </div>
@@ -426,51 +428,51 @@
 
 
 <section class="featured" style="background-color: white;" data-aos="fade-right">
-  <div class="container mb-3 mt-4">
-    <div class="row">
-      <div class="col-12 text-center">
-        <!-- <?php foreach ($berita3 as $ka) : ?> -->
-          <!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
-        <!-- <?php endforeach; ?> -->
-      </div>
+    <div class="container mb-3 mt-4">
+        <div class="row">
+            <div class="col-12 text-center">
+                <!-- <?php foreach ($berita3 as $ka) : ?> -->
+                <!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
+                <!-- <?php endforeach; ?> -->
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="row">
-                    <div class="col-md-12">
-                        <div class="card-img">
-                            <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-bottom: 10px;">
-                        </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-img">
+                <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-bottom: 10px;">
+            </div>
+        </div>
+    </div>
+
+    <div class="container info">
+        <div class="row align-items-start">
+            <?php foreach ($berita3 as $f) : ?>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
+                        <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
+
+                            <?php if (count($f["path_foto_artikel"]) > 0) {
+                                foreach ($f["path_foto_artikel"] as $k) {
+                            ?>
+                                    <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>" width="100%" height="250px">
+                            <?php
+                                }
+                            } ?>
+                            <div class="card-body" style="text-align: left;">
+                                <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
+                                <b><?= $f["judul_berita"] ?></b>
+                                <p><?= $f["isi_berita"] ?></p>
+                            </div>
+
+                            <br>
+                        </a>
                     </div>
                 </div>
-                
-  <div class="container info">
-    <div class="row align-items-start">
-      <?php foreach ($berita3 as $f) : ?>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-          <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
-            <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
-
-              <?php if (count($f["path_foto_artikel"]) > 0) {
-                foreach ($f["path_foto_artikel"] as $k) {
-              ?>
-                  <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
-              <?php
-                }
-              } ?>
-              <div class="card-body" style="text-align: left;" >
-                <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
-                <b><?= $f["judul_berita"] ?></b>
-                <p><?= $f["isi_berita"] ?></p>
-              </div>
-              
-              <br>
-            </a>
-          </div>
+            <?php endforeach; ?>
         </div>
-      <?php endforeach; ?>
     </div>
-  </div>
-  </center>
+    </center>
 </section>
 
 
@@ -480,10 +482,10 @@
   <div class="container mb-3 mt-4">
     <div class="row">
       <div class="col-12 text-center"> -->
-        <!-- <?php foreach ($berita3 as $ka) : ?> -->
-          <!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
-        <!-- <?php endforeach; ?> -->
-   <!--    </div>
+<!-- <?php foreach ($berita3 as $ka) : ?> -->
+<!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
+<!-- <?php endforeach; ?> -->
+<!--    </div>
     </div>
   </div>
   <div class="row">
@@ -494,7 +496,7 @@
                     </div>
                 </div>
                  -->
-  <!-- <div class="container info">
+<!-- <div class="container info">
     <div class="row align-items-start">
       <?php foreach ($berita33 as $f) : ?>
         <div class="col-lg-3 col-md-6 col-sm-12">
@@ -502,17 +504,17 @@
             <a href="<?= base_url('site/detail/' . $f["id_foto_galery"]) ?>" style="text-decoration: none; color: #000000">
 
               <?php if (count($f["path_detail_foto"]) > 0) {
-                foreach ($f["path_detail_foto"] as $k) {
-              ?>
+                    foreach ($f["path_detail_foto"] as $k) {
+                ?>
                   <img src="<?= base_url('assets/backend/img/img_galery/' . $k["path_detail_foto"]) ?>"  width="100%" height="250px">
               <?php
-                }
-              } ?>
+                    }
+                } ?>
               <div class="card-body" style="text-align: left;" >
                 <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p> -->
-                <!-- <b><?= $f["judul_berita"] ?></b> -->
-                <!-- <p><?= $f["isi_berita"] ?></p> -->
-        <!--       </div>
+<!-- <b><?= $f["judul_berita"] ?></b> -->
+<!-- <p><?= $f["isi_berita"] ?></p> -->
+<!--       </div>
               
               <br>
             </a>
@@ -529,17 +531,17 @@
 
 <!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right"> -->
 
-    
 
 
-  <!-- <div class="container">
+
+<!-- <div class="container">
     <div class="row">
       <div class="">
         <h2>Video Baznas</h2>
       </div>
     </div>
   </div> -->
-  <!-- <div class="container">
+<!-- <div class="container">
     <div class="">
         <div class="title col-lg-12">
                 <div class="card-img">
@@ -552,21 +554,21 @@
             <div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
               <div class="" style="margin: 10px; overflow:hidden;">
                 <div class="card-image "><h3 style="text-transform: uppercase;"> -->
-                    <!-- <center><b><?= $tv->nama_video ?></b></center></h3> -->
-                  <!-- <div class="embed-responsive embed-responsive-16by9"> -->
-                    <!-- <iframe width="250" height="100" style="overflow-x: hidden; border-radius: 10px" src="<?= $tv->link_video ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-                    <!-- <img src="<?= base_url('assets/backend/img/img_galery/' . $k["path_detail_foto"]) ?>"> -->
-                 <!--  </div>
+<!-- <center><b><?= $tv->nama_video ?></b></center></h3> -->
+<!-- <div class="embed-responsive embed-responsive-16by9"> -->
+<!-- <iframe width="250" height="100" style="overflow-x: hidden; border-radius: 10px" src="<?= $tv->link_video ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+<!-- <img src="<?= base_url('assets/backend/img/img_galery/' . $k["path_detail_foto"]) ?>"> -->
+<!--  </div>
                 </div>
 
                 <div class="card-content"> -->
-                    <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-                  <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-                 <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
-                    <!-- <i style="background-color: blue" ></i> Lihat Video -->
-                  </a></center>
-                  <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-                <!-- </div> -->
+<!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+<!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+<!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
+<!-- <i style="background-color: blue" ></i> Lihat Video -->
+</a></center>
+<!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+<!-- </div> -->
 <!-- 
               </div>
             </div>
@@ -593,7 +595,7 @@
 
 
 
-                <!-- <div class="row">
+<!-- <div class="row">
                     <div class="col-md-12">
                         <div class="card-img">
                             <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/rilis.png" alt="" style="padding-bottom: 10px;">
@@ -601,7 +603,7 @@
                     </div>
                 </div>
  -->
-                <!-- <div class="row">
+<!-- <div class="row">
                     <div class="col-md-12">
                         <div id="owl-carousel-siaran" class="owl-carousel owl-theme">
                             <?php
@@ -639,9 +641,9 @@
                         </div>
                     </div>
                 </div> -->
-            <!-- </div> -->
+<!-- </div> -->
 
-            <!-- <div class="col-md-12">
+<!-- <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card-img">
@@ -650,7 +652,7 @@
                     </div>
                 </div> -->
 
-                       <!--  <div class="container info">
+<!--  <div class="container info">
                         <div class="row align-items-start">
                           <?php foreach ($berita3 as $f) : ?>
                             <div class="col-lg-3 col-md-6 col-sm-12">
@@ -658,12 +660,12 @@
                                 <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
 
                                   <?php if (count($f["path_foto_artikel"]) > 0) {
-                                    foreach ($f["path_foto_artikel"] as $k) {
-                                  ?>
+                                        foreach ($f["path_foto_artikel"] as $k) {
+                                    ?>
                                       <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
                                   <?php
-                                    }
-                                  } ?>
+                                        }
+                                    } ?>
                                   <div class="card-body">
                                     <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
                                     <b><?= $f["judul_berita"] ?></b>
@@ -676,17 +678,17 @@
                         </div>
                       </div> -->
 
-               <!--  <div class="row">
+<!--  <div class="row">
                     <div class="col-md-12">
                         <div id="owl-carousel-berita" class="owl-carousel owl-theme"> -->
-                          <!--   <?php
-                            if (!empty($berita2)) {
-                                foreach ($berita2 as $ber) {
-                                    // var_dump($ber);
-                                    // die();
-                            ?> -->
-                                    <!-- <div class="item"> -->
-                                       <!--  <div class="rny-post-slide">
+<!--   <?php
+        if (!empty($berita2)) {
+            foreach ($berita2 as $ber) {
+                // var_dump($ber);
+                // die();
+        ?> -->
+<!-- <div class="item"> -->
+<!--  <div class="rny-post-slide">
                                             <div class="post-img">
                                                 <a href="<?php echo base_url('artikel/detail/') . $ber['id_berita'] . '/' . $ber['slug']; ?>">
                                                     <img src="<?php echo $link_kota . $ber['foto']; ?>">
@@ -711,10 +713,10 @@
                                         </div>
                                     </div>
                             <?php }
-                            } ?>
+                    } ?>
                         </div>
                     </div> -->
-         <!--        </div>
+<!--        </div>
             </div>
 
 
@@ -883,54 +885,57 @@
 
 
 
-<section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right">
-
-    
+<section id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right">
 
 
-  <!-- <div class="container">
+
+
+    <!-- <div class="container">
     <div class="row">
       <div class="">
         <h2>Video Baznas</h2>
       </div>
     </div>
   </div> -->
-  <div class="container">
-    <div class="">
-        <div class="title col-lg-12">
+    <div class="container">
+        <div class="">
+            <div class="title col-lg-12">
                 <div class="card-img">
                     <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
                 </div>
             </div>
-      <div class="" data-flickity='{ "wrapAround": true }'>
-        <?php foreach ($baznastv as $tv) : ?>
-          <div class="col-md-8 col-sm-8    ">
-            <div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
-              <div class="" style="margin: 10px; overflow:hidden;">
-                <div class="card-image "><h3 style="text-transform: uppercase;"><center><b><?= $tv->nama_video ?></b></center></h3>
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe width="250" height="100" style="overflow-x: hidden; border-radius: 10px" src="<?= $tv->link_video ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  </div>
-                </div>
+            <div class="" data-flickity='{ "wrapAround": true }'>
+                <?php foreach ($baznastv as $tv) : ?>
+                    <div class="col-md-8 col-sm-8    ">
+                        <div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
+                            <div class="" style="margin: 10px; overflow:hidden;">
+                                <div class="card-image ">
+                                    <h3 style="text-transform: uppercase;">
+                                        <center><b><?= $tv->nama_video ?></b></center>
+                                    </h3>
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe width="250" height="100" style="overflow-x: hidden; border-radius: 10px" src="<?= $tv->link_video ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                </div>
 
-                <div class="card-content">
-                    <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p>
-                  <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-                 <center> <a href="<?= $tv->link_video ?>" class="btn btn-success btn-sm mt-2" target="__blank">
-                    <i style="background-color: blue" ></i> Lihat Video
-                  </a></center>
-                  <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-                </div>
+                                <div class="card-content">
+                                    <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p>
+                                    <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+                                    <center> <a href="<?= $tv->link_video ?>" class="btn btn-success btn-sm mt-2" target="__blank">
+                                            <i style="background-color: blue"></i> Lihat Video
+                                        </a></center>
+                                    <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+                                </div>
 
-              </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
-          </div>
-        <?php endforeach; ?>
+        </div>
     </div>
-</div>
-</div>
 
-      </div>
+    </div>
     </div>
 </section>
 
@@ -943,20 +948,20 @@
 
     <div class="container">
         <div class="row"> -->
-            <!--Titles-->
-            <!-- <div class="title col-12">
+<!--Titles-->
+<!-- <div class="title col-12">
                 <div class="card-img">
                     <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
                 </div>
             </div> -->
-            <!--Left-->
-            <!-- ===================== -->
-          <!--   <div class="col-12 col-md-6">
+<!--Left-->
+<!-- ===================== -->
+<!--   <div class="col-12 col-md-6">
                 <?php
                 foreach ($video_tng as $k => $v) :
                     if ($k == '0') :
                 ?> -->
-               <!--          <div class="rny-vid-container">
+<!--          <div class="rny-vid-container">
                             <iframe id="rny_vid_frame" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
                         </div>
                 <?php endif;
@@ -967,7 +972,7 @@
                     <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_tngtv.png" alt="">
                 </div>
  -->
-              <!--   <div class="rny-vid-list-container">
+<!--   <div class="rny-vid-list-container">
                     <div class="rny-vid-list">
                         <?php foreach ($video_tng as $k => $v) : ?>
                             <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame').src='<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=1&rel=0&showinfo=0&autohide=1'">
@@ -983,36 +988,36 @@
                     </div>
                 </div> -->
 
-                <!-- LEFT AND RIGHT ARROWS -->
-             <!--    <div class="rny-arrows">
+<!-- LEFT AND RIGHT ARROWS -->
+<!--    <div class="rny-arrows">
                     <div class="rny-arrow-left"><i class="fa fa-chevron-left fa-lg"></i></div>
                     <div class="rny-arrow-right"><i class="fa fa-chevron-right fa-lg"></i></div>
                 </div>
 
             </div> -->
-                <!-- ===================== -->
-            <!--Right-->
-           <!--  <div class="col-12 col-md-12">
+<!-- ===================== -->
+<!--Right-->
+<!--  <div class="col-12 col-md-12">
                 <?php
                 foreach ($video_humas as $k => $v) :
                     if ($k == '0') :
                         // var_dump($video_humas);
                         // die();
                 ?> -->
-                       <!--  <div class="rny-vid-container-humas"> -->
-                            <!-- <p><?= $v["judul_berita"] ?></p> -->
-                            <!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
-                            <!-- <iframe id="rny_vid_frame-humas" src="https://www.youtube.com/embed/OZ2GIqfs0SY" frameborder="0" width="560" height="315"></iframe> -->
-                            <!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>" frameborder="0" width="560" height="315"></iframe> -->
-                        <!-- </div> -->
-              <!--   <?php endif;
+<!--  <div class="rny-vid-container-humas"> -->
+<!-- <p><?= $v["judul_berita"] ?></p> -->
+<!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
+<!-- <iframe id="rny_vid_frame-humas" src="https://www.youtube.com/embed/OZ2GIqfs0SY" frameborder="0" width="560" height="315"></iframe> -->
+<!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>" frameborder="0" width="560" height="315"></iframe> -->
+<!-- </div> -->
+<!--   <?php endif;
                 endforeach;
-                ?> -->
+        ?> -->
 
-                <!-- <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
+<!-- <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
                     <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_humas.png" alt="">
                 </div>  -->
-               <!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
+<!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
                     <img class="logo-liputan" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt="">
                 </div>
 
@@ -1032,8 +1037,8 @@
                     </div>
                 </div> -->
 
-                <!-- LEFT AND RIGHT ARROWS -->
-                <!-- <div class="rny-arrows">
+<!-- LEFT AND RIGHT ARROWS -->
+<!-- <div class="rny-arrows">
                     <div class="rny-arrow-left-humas"><i class="fa fa-chevron-left fa-lg"></i></div>
                     <div class="rny-arrow-right-humas"><i class="fa fa-chevron-right fa-lg"></i></div>
                 </div>
@@ -1089,7 +1094,7 @@
                         <div class="col-md-4 align-center">
                             <!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
                             <hr> -->
-                          <!--   <h3>Kota Tangerang</h3>
+                            <!--   <h3>Kota Tangerang</h3>
                             <div class="row">
                                 <a class="align-center col-md-4" target="_blank" href="https://id-id.facebook.com/kotatng/">
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-07.png') ?>" alt="">
