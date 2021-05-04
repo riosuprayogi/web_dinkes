@@ -107,6 +107,42 @@ class Site extends MX_Controller {
 			        $data["berita3"] = $arrProfile;
 
 
+// ================= berita
+
+			$listProfiles = $this->db->query("SELECT t_foto_galery.*, t_detail_foto_galery.*
+
+			                                        FROM t_foto_galery 
+			                                        JOIN t_detail_foto_galery ON t_foto_galery.id_galery = t_detail_foto_galery.id_foto_galery
+			                                        -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
+			                                        WHERE t_foto_galery.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC LIMIT 4");
+			// var_dump($listProfiles);
+			            	// die();
+
+			        $arrProfile = [];
+			        $arr = [];
+			        foreach ($listProfiles->result_array() as $key => $row) {
+
+			            $result = $this->db->query("SELECT *, MIN(urutan)AS urutan FROM t_detail_foto_galery WHERE id_foto_galery=" . $row['id_foto_galery'] . "")->result_array();
+			            	// var_dump($result);
+			            	// die();
+			            if ($result) {
+
+			                $arr = array(
+			                    "id_foto_galery" => $row["id_foto_galery"],
+			                    // "kategori_artikel" => $row["kategori_artikel"],
+			                    "nama_album" => $row["nama_album"],
+			                    // "isi_berita" => $row["isi_berita"],
+			                    // "nama_admin"  =>  $row["nama_admin"],
+			                    // "publish" => $row["publish"],
+			                    "tgl_jam" => $row["tgl_jam"],
+			                    "path_detail_foto" => $result
+			                );
+			                array_push($arrProfile, $arr);
+			            }
+			        }
+
+			        $data["berita33"] = $arrProfile;
+
 
 
  // $data7["videoBerita"] = $this->db->query("SELECT * FROM t_video WHERE id_video = '18' AND status = 'show' ")->result();
@@ -148,7 +184,7 @@ class Site extends MX_Controller {
 			                                        FROM t_berita 
 			                                        -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
 			                                        -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
-			                                        WHERE t_berita.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC LIMIT 4");
+			                                        WHERE t_berita.status = 'show' AND trash='0'   ORDER BY tgl_jam DESC LIMIT 4");
 			// var_dump($listProfiles2);
 			            	// die();
 
@@ -163,7 +199,7 @@ class Site extends MX_Controller {
 
 			                $arr2 = array(
 			                    "id_berita" => $row["id_berita"],
-			                    // "kategori_artikel" => $row["kategori_artikel"],
+			                    // "id_kategori" => $row["id_kategori"],
 			                    "judul_berita" => $row["judul_berita"],
 			                    "isi_berita" => $row["isi_berita"],
 			                    // "nama_admin"  =>  $row["nama_admin"],

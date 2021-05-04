@@ -403,7 +403,6 @@
                                 <?php echo $profil['isi']; ?>
                                 <!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
                             </p></center>
-                            <p>sas</p>
                         </div>
 
                     </div>
@@ -473,6 +472,62 @@
   </div>
   </center>
 </section>
+
+
+
+
+<section class="featured" style="background-color: white;" data-aos="fade-right">
+  <div class="container mb-3 mt-4">
+    <div class="row">
+      <div class="col-12 text-center">
+        <!-- <?php foreach ($berita3 as $ka) : ?> -->
+          <!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
+        <!-- <?php endforeach; ?> -->
+      </div>
+    </div>
+  </div>
+  <div class="row">
+                    <div class="col-md-12">
+                        <div class="card-img">
+                            <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-bottom: 10px;">
+                        </div>
+                    </div>
+                </div>
+                
+  <div class="container info">
+    <div class="row align-items-start">
+      <?php foreach ($berita33 as $f) : ?>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
+            <a href="<?= base_url('site/detail/' . $f["id_foto_galery"]) ?>" style="text-decoration: none; color: #000000">
+
+              <?php if (count($f["path_detail_foto"]) > 0) {
+                foreach ($f["path_detail_foto"] as $k) {
+              ?>
+                  <img src="<?= base_url('assets/backend/img/img_galery/' . $k["path_detail_foto"]) ?>"  width="100%" height="250px">
+              <?php
+                }
+              } ?>
+              <div class="card-body" style="text-align: left;" >
+                <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
+                <!-- <b><?= $f["judul_berita"] ?></b> -->
+                <!-- <p><?= $f["isi_berita"] ?></p> -->
+              </div>
+              
+              <br>
+            </a>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+  </center>
+</section>
+
+
+
+
+
 
 <!-- <section id="berita-section" class="services1 cid-news mbr-fullscreen">
     <div class="container">
@@ -768,6 +823,10 @@
 </div>
 </div>
 </section> -->
+
+
+
+
 
 
 <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right">
