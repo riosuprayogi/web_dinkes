@@ -142,6 +142,8 @@ class Site extends MX_Controller {
 			        }
 
 			        $data["berita33"] = $arrProfile;
+			        // var_dump($dataa);
+			        // die();
 
 
 

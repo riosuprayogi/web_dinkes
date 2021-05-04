@@ -525,63 +525,92 @@
     </div>
     </center>
 </section>
-
-
-
-
-<section id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right">
-
-
-
-
-    <!-- <div class="container">
+<!-- <div class="container">
     <div class="row">
       <div class="">
         <h2>Video Baznas</h2>
       </div>
     </div>
   </div> -->
-    <div class="container">
-        <div class="">
-            <div class="title col-lg-12">
-                <div class="card-img">
-                    <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
-                </div>
-            </div>
-            <div class="" data-flickity='{ "wrapAround": true }'>
-                <?php foreach ($berita33 as $k) : ?>
-                    <div class="col-md-8 col-sm-8    ">
-                        <div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
-                            <div class="" style="margin: 10px; overflow:hidden;">
-                                <div class="card-image ">
-                                    <h3 style="text-transform: uppercase;">
-                                        <center><b><?= $k->nama_album ?></b></center>
-                                    </h3>
-                                    <div class="embed-responsive embed-responsive-16by9">
-                                        <!-- <iframe width="250" height="100" style="overflow-x: hidden; border-radius: 10px" src="<?= $tv->link_video ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-                                        <img src="<?= base_url('assets/backend/img/img_galery/' . $tv["path_detail_foto"]) ?>" width="100%" height="250px">
-                                    </div>
-                                </div>
+<div class="container">
+    <div class="">
+        <div class="title col-lg-12">
+            =======
+            <div class="container">
+                <div class="">
+                    <div class="title col-lg-12">
 
-                                <div class="card-content">
-                                    <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p>
-                                    <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-                                    <center> <a href="<?= $tv->link_video ?>" class="btn btn-success btn-sm mt-2" target="__blank">
-                                            <i style="background-color: blue"></i> Lihat Video
-                                        </a></center>
-                                    <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-                                </div>
-
-                            </div>
+                        <div class="card-img">
+                            <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
                         </div>
                     </div>
-                <?php endforeach; ?>
+                    <div class="" data-flickity='{ "wrapAround": true }'>
+                        <?php foreach ($berita33 as $k) : ?>
+                            <div class="col-md-8 col-sm-8    ">
+                                <div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
+                                    <div class="" style="margin: 10px; overflow:hidden;">
+                                        <div class="card-image ">
+                                            <h3 style="text-transform: uppercase;">
+                                                <center><b><?= $k->nama_album ?></b></center>
+                                            </h3>
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                <!-- <iframe width="250" height="100" style="overflow-x: hidden; border-radius: 10px" src="<?= $tv->link_video ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                                                <img src="<?= base_url('assets/backend/img/img_galery/' . $tv["path_detail_foto"]) ?>" width="100%" height="250px">
+                                            </div>
+                                        </div>
+
+                                        <div class="card-content">
+                                            <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p>
+                                            <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+                                            <center> <a href="<?= $tv->link_video ?>" class="btn btn-success btn-sm mt-2" target="__blank">
+                                                    <i style="background-color: blue"></i> Lihat Video
+                                                </a></center>
+                                            <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
             </div>
+
+        </div>
+
+        <div class="" data-flickity='{ "wrapAround": true }'>
+            <?php foreach ($berita33 as $c) : ?>
+                <div class="col-md-8 col-sm-8    ">
+                    <div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
+                        <div class="" style="margin: 10px; overflow:hidden;">
+                            <div class="card-image ">
+                                <h3 style="text-transform: uppercase;">
+                                    <!-- <center><b><?= $tv->nama_video ?></b></center></h3> -->
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <!-- <iframe width="250" height="100" style="overflow-x: hidden; border-radius: 10px" src="<?= $tv->link_video ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                                        <img src="<?= base_url('assets/backend/img/img_galery/' . $k["path_detail_foto"]) ?>">
+                                    </div>
+                            </div>
+
+                            <div class="card-content">
+                                <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+                                <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+                                <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank">
+                                        <i style="background-color: blue"></i> Lihat Video
+                                    </a></center>
+                                <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
+</div>
 
-    </div>
-    </div>
+</div>
+</div>
 </section>
 
 
