@@ -261,7 +261,7 @@
 															<input type="file" class="custom-file-input upload_custom" id="customFileUpload1" data-count_image="1" name="path_detail_foto[]" style="display: none;">
 															<?= form_error('path_detail_foto', '<small class="text-danger pl-0">', '</small>'); ?>
 															<span style="font-style: italic; color:red;">*) Format photo (jpg,jpeg,png) ukuran file max 2 Mb.</span><br>
-															<span style="font-style: italic; color:red;">*) Tidak di sarankan upload (pdf,xls,doc,txt).</span>
+
 														</div>
 														<div class="col-sm-3 mt-3">
 															<button class="btn btn-primary" onclick="open_file(1)" data-count_image="1" type="button">Pilih Gambar</button>
@@ -375,7 +375,7 @@
                                                 <input type="text" class="form-control" id="image-label` + countimagefield + `" readonly required>
                                                 <input type="file" class="custom-file-input upload_custom" id="customFileUpload` + countimagefield + `" data-count_image="` + countimagefield + `" name="path_detail_foto[]" style="display: none;">
                                                 <span style="font-style: italic; color:red;">*) Format photo (jpg,jpeg,png) ukuran file max 2 Mb.</span><br>
-                                                <span style="font-style: italic; color:red;">*) Tidak di sarankan upload (pdf,xls,doc,txt).</span>
+                                                
                                             </div>
                                             <div class="col-sm-3 mt-3">
                                                 <button class="btn btn-primary" data-count_image="` + countimagefield + `"  onclick="open_file(` + countimagefield + `)" type="button">Pilih Gambar</button>

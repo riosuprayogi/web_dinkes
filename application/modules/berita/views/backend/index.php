@@ -262,6 +262,22 @@
 										<input type="text" name="judul_berita" class="form-control" placeholder="Masukkan Judul Berita" required>
 									</div>
 
+
+
+									<div class="form-group">
+										<label for="exampleInputFile">File input</label>
+										<div class="input-group">
+											<div class="custom-file">
+												<input type="file" class="custom-file-input" id="exampleInputFile">
+												<label class="custom-file-label" for="exampleInputFile">Choose file</label>
+											</div>
+											<div class="input-group-append">
+												<span class="input-group-text">Upload</span>
+											</div>
+										</div>
+									</div>
+
+
 									<div class="form-group row image_field">
 										<label for="path_foto_artikel" class="col-sm-2 col-form-label">Photo Artikel</label>
 										<div class="col-sm-10">
@@ -270,6 +286,15 @@
 													<img src="<?= base_url('assets/backend/img/img_berita/noimage.png') ?>" class="img-thumbnail" id="imgPreview1" style="height: 400px; height: 350px;" />
 												</div>
 												<div class="col-sm-6">
+													<div class="input-group">
+														<div class="custom-file">
+															<input type="file" class="custom-file-input" id="exampleInputFile">
+															<label class="custom-file-label" for="exampleInputFile">Choose file</label>
+														</div>
+														<div class="input-group-append">
+															<span class="input-group-text">Upload</span>
+														</div>
+													</div>
 													<div class="custom-file">
 														<div class="col-sm-8">
 															<input type="text" class="form-control" id="image-label1" readonly required>
@@ -390,7 +415,7 @@
                                     <div class="col-sm-6">
                                         <div class="custom-file">
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="image-label` + countimagefield + `" readonly required>
+                                                <input type="text" class="form-control" id="image-label` + countimagefield + `" readonly>
                                                 <input type="file" class="custom-file-input upload_custom" id="customFileUpload` + countimagefield + `" data-count_image="` + countimagefield + `" name="path_foto_artikel[]" style="display: none;">
                                                 <span style="font-style: italic; color:red;">*) Format photo (jpg,jpeg,png) ukuran file max 2 Mb.</span><br>
                                                 

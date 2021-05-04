@@ -62,9 +62,10 @@ class Video extends MX_Controller
 	{
 		date_default_timezone_set('Asia/Jakarta');
 		$dateTime = date('Y-m-d H:i:s');
+		$linkyutube = str_replace("watch?v=", "embed/", $this->input->post('link_video', TRUE));
 		$data = array(
 			'nama_video' => $this->input->post('nama_video', TRUE),
-			'link_video' => $this->input->post('link_video', TRUE),
+			'link_video' => $linkyutube,
 			'status' => $this->input->post('status', TRUE),
 			'tgl_jam'  => $dateTime
 		);
