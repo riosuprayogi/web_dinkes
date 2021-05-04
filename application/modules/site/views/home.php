@@ -399,10 +399,10 @@
                     <div class="mbr-figure rounded" style="padding:5px; background: rgba(255, 255, 255, 0.92); width: 40%;">
                         <div class="mbr-figure " style="height:100%; opacity:1.0;">
                             <img src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" style="width:50%; margin:auto;" alt="" media-simple="true">
-                            <p style="text-align: center; ">
+                          <center>  <p style="text-align: center; ">
                                 <?php echo $profil['isi']; ?>
                                 <!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
-                            </p>
+                            </p></center>
                         </div>
 
                     </div>
@@ -929,7 +929,7 @@
     </div>
 </section> -->
 
-<section class="mbr-section contacts2 cid-info mbr-fullscreen" id="info">
+<!-- <section class="mbr-section contacts2 cid-info mbr-fullscreen" id="info">
     <div class="container">
         <div class="media-container-row align-center">
             <div class="card-img">
@@ -958,7 +958,7 @@
             } ?>
         </div>
     </div>
-</section>
+</section> -->
 
 
 <div class="container">

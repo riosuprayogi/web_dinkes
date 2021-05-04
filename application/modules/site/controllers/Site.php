@@ -61,7 +61,7 @@ class Site extends MX_Controller {
 			$data['image'] = $this->main_model->get_banner();
 			// $data['latest_news'] = $result;
 			$data['siaran'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_siaran/');
-			$data['banner'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_banner/');
+			// $data['banner'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_banner/');
 			
 			// $data['banner'] = $this->site->get_curl('https://tangerangkota.go.id/banner/api-banner/');
 			// $data['berita2'] = $this->berita->get_isi_berita();
@@ -69,6 +69,8 @@ class Site extends MX_Controller {
 			
 			$data['video_tng'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_tng/');
 			$data['video_humas'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_humas/');
+
+// ================= berita
 
 			$listProfiles = $this->db->query("SELECT t_berita.*
 
@@ -103,6 +105,9 @@ class Site extends MX_Controller {
 			        }
 
 			        $data["berita3"] = $arrProfile;
+
+
+
 
  // $data7["videoBerita"] = $this->db->query("SELECT * FROM t_video WHERE id_video = '18' AND status = 'show' ")->result();
    // Query Untuk Video;
