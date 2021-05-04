@@ -475,15 +475,15 @@
 
 
 
-
+<!-- 
 <section class="featured" style="background-color: white;" data-aos="fade-right">
   <div class="container mb-3 mt-4">
     <div class="row">
-      <div class="col-12 text-center">
+      <div class="col-12 text-center"> -->
         <!-- <?php foreach ($berita3 as $ka) : ?> -->
           <!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
         <!-- <?php endforeach; ?> -->
-      </div>
+   <!--    </div>
     </div>
   </div>
   <div class="row">
@@ -493,8 +493,8 @@
                         </div>
                     </div>
                 </div>
-                
-  <div class="container info">
+                 -->
+  <!-- <div class="container info">
     <div class="row align-items-start">
       <?php foreach ($berita33 as $f) : ?>
         <div class="col-lg-3 col-md-6 col-sm-12">
@@ -509,10 +509,10 @@
                 }
               } ?>
               <div class="card-body" style="text-align: left;" >
-                <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
+                <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p> -->
                 <!-- <b><?= $f["judul_berita"] ?></b> -->
                 <!-- <p><?= $f["isi_berita"] ?></p> -->
-              </div>
+        <!--       </div>
               
               <br>
             </a>
@@ -522,12 +522,12 @@
     </div>
   </div>
   </center>
-</section>
+</section> -->
 
 
 
 
-<section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right">
+<!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right"> -->
 
     
 
@@ -539,7 +539,7 @@
       </div>
     </div>
   </div> -->
-  <div class="container">
+  <!-- <div class="container">
     <div class="">
         <div class="title col-lg-12">
                 <div class="card-img">
@@ -551,23 +551,23 @@
           <div class="col-md-8 col-sm-8    ">
             <div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
               <div class="" style="margin: 10px; overflow:hidden;">
-                <div class="card-image "><h3 style="text-transform: uppercase;">
+                <div class="card-image "><h3 style="text-transform: uppercase;"> -->
                     <!-- <center><b><?= $tv->nama_video ?></b></center></h3> -->
-                  <div class="embed-responsive embed-responsive-16by9">
+                  <!-- <div class="embed-responsive embed-responsive-16by9"> -->
                     <!-- <iframe width="250" height="100" style="overflow-x: hidden; border-radius: 10px" src="<?= $tv->link_video ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-                    <img src="<?= base_url('assets/backend/img/img_galery/' . $k["path_detail_foto"]) ?>">
-                  </div>
+                    <!-- <img src="<?= base_url('assets/backend/img/img_galery/' . $k["path_detail_foto"]) ?>"> -->
+                 <!--  </div>
                 </div>
 
-                <div class="card-content">
+                <div class="card-content"> -->
                     <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
                   <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-                 <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank">
-                    <i style="background-color: blue" ></i> Lihat Video
+                 <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
+                    <!-- <i style="background-color: blue" ></i> Lihat Video -->
                   </a></center>
                   <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-                </div>
-
+                <!-- </div> -->
+<!-- 
               </div>
             </div>
           </div>
@@ -579,7 +579,7 @@
       </div>
     </div>
 </section>
-
+ -->
 
 
 
