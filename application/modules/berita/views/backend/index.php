@@ -263,8 +263,7 @@
 									</div>
 
 
-
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<label for="exampleInputFile">File input</label>
 										<div class="input-group">
 											<div class="custom-file">
@@ -275,26 +274,17 @@
 												<span class="input-group-text">Upload</span>
 											</div>
 										</div>
-									</div>
+									</div> -->
 
 
 									<div class="form-group row image_field">
-										<label for="path_foto_artikel" class="col-sm-2 col-form-label">Photo Artikel</label>
+										<label for="path_foto_artikel" class="col-sm-2 col-form-label">Foto Berita</label>
 										<div class="col-sm-10">
 											<div class="row">
 												<div class="col-sm-4">
 													<img src="<?= base_url('assets/backend/img/img_berita/noimage.png') ?>" class="img-thumbnail" id="imgPreview1" style="height: 400px; height: 350px;" />
 												</div>
 												<div class="col-sm-6">
-													<div class="input-group">
-														<div class="custom-file">
-															<input type="file" class="custom-file-input" id="exampleInputFile">
-															<label class="custom-file-label" for="exampleInputFile">Choose file</label>
-														</div>
-														<div class="input-group-append">
-															<span class="input-group-text">Upload</span>
-														</div>
-													</div>
 													<div class="custom-file">
 														<div class="col-sm-8">
 															<input type="text" class="form-control" id="image-label1" readonly required>

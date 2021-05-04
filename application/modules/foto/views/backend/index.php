@@ -282,7 +282,7 @@
 										</div> -->
 										<div class="form-group">
 											<label for=""> Keterangan Foto</label>
-											<input type="text" id="ket_foto" name="ket_foto[]" class="form-control" value="" placeholder="Masukkan Keterangan" required>
+											<input type="text" id="ket_foto" name="ket_foto[]" class="form-control" value="" placeholder="Masukkan Keterangan">
 										</div>
 										<!--
 										<button type="button" style="margin-left: auto;" class="btn btn-primary ml-4 addService">Tambah Foto</button>
@@ -307,10 +307,10 @@
 										</select>
 									</div>
 
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<label for=""> Admin</label>
 										<input type="text" name="id_admin" class="form-control" placeholder="Masukkan Kategori" required>
-									</div>
+									</div> -->
 								</div>
 
 							</div>
@@ -372,7 +372,7 @@
                                     <div class="col-sm-6">
                                         <div class="custom-file">
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="image-label` + countimagefield + `" readonly required>
+                                                <input type="text" class="form-control" id="image-label` + countimagefield + `" readonly>
                                                 <input type="file" class="custom-file-input upload_custom" id="customFileUpload` + countimagefield + `" data-count_image="` + countimagefield + `" name="path_detail_foto[]" style="display: none;">
                                                 <span style="font-style: italic; color:red;">*) Format photo (jpg,jpeg,png) ukuran file max 2 Mb.</span><br>
                                                 
@@ -396,7 +396,7 @@
 										</div> -->
 										<div class="form-group">
 											<label for=""> Keterangan Foto</label>
-											<input type="text" id="ket_foto" name="ket_foto[]" class="form-control" value="" placeholder="Masukkan Keterangan" required>
+											<input type="text" id="ket_foto" name="ket_foto[]" class="form-control" value="" placeholder="Masukkan Keterangan">
 										</div>
 									
 									</div>
