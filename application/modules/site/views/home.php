@@ -445,7 +445,25 @@
                 
   <div class="container info">
     <div class="row align-items-start">
-      <?php foreach ($berita3 as $f) : ?>
+      <?php 
+      
+
+      foreach ($berita3 as $f) : 
+                  // strip tags to avoid breaking any html
+            $string = strip_tags($f["isi_berita"]);
+            if (strlen($string) > 500) {
+
+                // truncate string
+                $stringCut = substr($string, 0, 500);
+                $endPoint = strrpos($stringCut, ' ');
+
+                //if the string doesn't contain any space then it will cut without word basis.
+                $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+                // $string .= '... <a href="/this/story">Read More</a>';
+            }
+            
+        
+     ?>
         <div class="col-lg-3 col-md-6 col-sm-12">
           <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
             <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
@@ -457,13 +475,15 @@
               <?php
                 }
               } ?>
-              <div class="card-body" style="text-align: left;" >
+              <div class="card-body">
                 <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
                 <b><?= $f["judul_berita"] ?></b>
-                <p><?= $f["isi_berita"] ?></p>
+
+                <p><?= $string?><span><br><br><a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a></span> </p>
+
               </div>
               
-              <br>
+              <!-- <br> -->
             </a>
           </div>
         </div>
@@ -905,7 +925,7 @@
       <div class="" data-flickity='{ "wrapAround": true }'>
         <?php foreach ($baznastv as $tv) : ?>
           <div class="col-md-8 col-sm-8    ">
-            <div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
+            <div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px; background-color: transparent; border-color: black;   padding: 10px;">
               <div class="" style="margin: 10px; overflow:hidden;">
                 <div class="card-image "><h3 style="text-transform: uppercase;"><center><b><?= $tv->nama_video ?></b></center></h3>
                   <div class="embed-responsive embed-responsive-16by9">

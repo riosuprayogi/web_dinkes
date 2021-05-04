@@ -15,7 +15,14 @@ class Site extends MX_Controller {
 		
 	}
 
-
+public function batas($string, $length){
+        if(strlen($string)<=($length)){
+            return $string;
+        } else {
+            $cetak = substr($string,0,$length). '...';
+            return $cetak;
+        }
+    }
 
 	public function index()
 	{
@@ -47,7 +54,7 @@ class Site extends MX_Controller {
 		// $videos =  @$hasil['video'];
 		
 
-		// if ($this->session->id_user == "") {
+		if ($this->session->id_user == "") {
 			// $this->logout();
 			// $this->template->render_home('home/index');
 			$data['title'] = 'PPID Kota Tangerang';
@@ -94,7 +101,7 @@ class Site extends MX_Controller {
 			                    "id_berita" => $row["id_berita"],
 			                    // "kategori_artikel" => $row["kategori_artikel"],
 			                    "judul_berita" => $row["judul_berita"],
-			                    "isi_berita" => $row["isi_berita"],
+			                    "isi_berita" => $this->batas($row["isi_berita"], 50),
 			                    // "nama_admin"  =>  $row["nama_admin"],
 			                    // "publish" => $row["publish"],
 			                    "tgl_jam" => $row["tgl_jam"],
@@ -105,6 +112,7 @@ class Site extends MX_Controller {
 			        }
 
 			        $data["berita3"] = $arrProfile;
+
 
 
 // ================= berita
@@ -153,7 +161,10 @@ class Site extends MX_Controller {
 
 // var_dump($data7);
 // die();
-
+/*echo "<pre>";
+print_r($data);
+echo "<pre>";
+die();*/
 
 			// json_decode($)
 			// echo json_encode($data);
@@ -161,10 +172,10 @@ class Site extends MX_Controller {
 
 			$this->template->render_home('site/home',$data);
 
-		// } else {
+		} else {
 
-			// $this->template->render('site/index');
-		// }
+			$this->template->render('site/index');
+		}
 	}
 
 
