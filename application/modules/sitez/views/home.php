@@ -399,12 +399,21 @@
                     <div class="mbr-figure rounded" style="padding:5px; background: rgba(255, 255, 255, 0.92); width: 40%;">
                         <div class="mbr-figure " style="height:100%; opacity:1.0;">
                             <img src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" style="width:50%; margin:auto;" alt="" media-simple="true">
-                            <center>
+                            <<<<<<< HEAD <center>
                                 <p style="text-align: center; ">
                                     <?php echo $profil['isi']; ?>
                                     <!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
                                 </p>
-                            </center>
+                                </center>
+                                =======
+                                <center>
+                                    <p style="text-align: center; ">
+                                        <?php echo $profil['isi']; ?>
+                                        <!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
+                                    </p>
+                                </center>
+                                <p>sas</p>
+                                >>>>>>> 5c4d537810507dc7894a1dd1e67b461fa1793f0a
                         </div>
 
                     </div>
@@ -527,62 +536,6 @@
 </section>
 
 
-
-
-<section id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right">
-
-
-
-
-    <!-- <div class="container">
-    <div class="row">
-      <div class="">
-        <h2>Video Baznas</h2>
-      </div>
-    </div>
-  </div> -->
-    <div class="container">
-        <div class="">
-            <div class="title col-lg-12">
-                <div class="card-img">
-                    <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
-                </div>
-            </div>
-            <div class="" data-flickity='{ "wrapAround": true }'>
-                <?php foreach ($berita33 as $k) : ?>
-                    <div class="col-md-8 col-sm-8    ">
-                        <div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
-                            <div class="" style="margin: 10px; overflow:hidden;">
-                                <div class="card-image ">
-                                    <h3 style="text-transform: uppercase;">
-                                        <center><b><?= $k->nama_album ?></b></center>
-                                    </h3>
-                                    <div class="embed-responsive embed-responsive-16by9">
-                                        <!-- <iframe width="250" height="100" style="overflow-x: hidden; border-radius: 10px" src="<?= $tv->link_video ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-                                        <img src="<?= base_url('assets/backend/img/img_galery/' . $tv["path_detail_foto"]) ?>" width="100%" height="250px">
-                                    </div>
-                                </div>
-
-                                <div class="card-content">
-                                    <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p>
-                                    <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-                                    <center> <a href="<?= $tv->link_video ?>" class="btn btn-success btn-sm mt-2" target="__blank">
-                                            <i style="background-color: blue"></i> Lihat Video
-                                        </a></center>
-                                    <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </div>
-
-    </div>
-    </div>
-</section>
 
 
 
@@ -883,10 +836,6 @@
 </section> -->
 
 
-
-
-
-
 <section id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right">
 
 
@@ -1185,15 +1134,15 @@
     </div>
 </section>
 <hr>
-<section id="visi-misi" class="cid-visi-misi mbr-fullscreen bg-white" data-rv-view="1620">
+<!-- <section id="visi-misi" class="cid-visi-misi mbr-fullscreen bg-white" data-rv-view="1620">
     <div class="container align-center">
         <div class="media-container-row align-center">
-            <!-- <div class="row float-center justify-content-md-center" style="width:100%; margin:auto; padding-top:50px;padding-bottom: 50px;">
-				<h2 class="mbr-section-title mbr-bold mbr-fonts-style">
-					<strong>Visi dan Misi PPID</strong>
+            <div class="row float-center justify-content-md-center" style="width:100%; margin:auto; padding-top:50px;padding-bottom: 50px;">
+                <h2 class="mbr-section-title mbr-bold mbr-fonts-style">
+                    <strong>Visi dan Misi PPID</strong>
                 </h2>
-			</div>
-            <img class="float-right" src="<?php echo base_url(); ?>assets/img/banner/PPID LOGO.png" style="width:150px; position:absolute; right: 10px;top: 28px;" alt="" media-simple="true"> -->
+            </div>
+            <img class="float-right" src="<?php echo base_url(); ?>assets/img/banner/PPID LOGO.png" style="width:150px; position:absolute; right: 10px;top: 28px;" alt="" media-simple="true">
         </div>
         <div class="media-container-row align-center">
             <div class="row justify-content-md-center" style="text-align:justify; color: #000000;">
@@ -1207,9 +1156,9 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <hr>
-<section id="maklumat" class="cid-struktur mbr-fullscreen" data-rv-view="1620">
+<!-- <section id="maklumat" class="cid-struktur mbr-fullscreen" data-rv-view="1620">
     <div class="container align-center">
 
 
@@ -1219,13 +1168,13 @@
                     <?php foreach ($maklumat as $row) { ?>
                         <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" media-simple="true" style="width: 100%;">
                     <?php } ?>
-                    <!-- <?= $maklumat['isi'] ?> -->
-                    <!-- <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/struktur_ppid.png" media-simple="true" style="width: 100%;"> -->
+                    <?= $maklumat['isi'] ?>
+                    <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/struktur_ppid.png" media-simple="true" style="width: 100%;">
                 </div>
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <script>
     $(document).ready(function() {
