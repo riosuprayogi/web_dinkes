@@ -183,7 +183,7 @@
 				  	<a class="nav-link js-scroll-trigger" href="<?= base_url('informasi_perencanaan') ?>">Informasi Perencanaan</a>
 				  </li>
 				  <li class="nav-item">
-				  	<a class="nav-link js-scroll-trigger" href="<?= base_url('dasar_hukum') ?>">Diklat</a>
+				  	<a class="nav-link js-scroll-trigger" href="<?= base_url('diklat') ?>">Diklat</a>
 				  </li>
 				  <li class="nav-item">
 				  	<a class="nav-link js-scroll-trigger" href="<?= base_url('dasar_hukum') ?>">RUP</a>

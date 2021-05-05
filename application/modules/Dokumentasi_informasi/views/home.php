@@ -11,7 +11,7 @@
 
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
 <script>   
- AOS.init(); 
+   AOS.init(); 
 </script>
 <style>
     .footer {
@@ -386,36 +386,13 @@
         background: rgba(255, 255, 255, 0.92);
         }
     </style> -->
-    <!-- <section class="py-5"></section> -->
-    <div style="background-image: url('<?= base_url('assets/img/banner/5.png') ?>') ; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
-        <section class= "cid-ppid" id="ppid" data-rv-view="1620" style="padding-top: 90px !important; background: rgba(207, 207, 207, 0.33);">
-            <div class="container-fluid ">
-                <div class="media-container-row ">
-                    <div class="col-12 col-md-12">
-                        <div class="media-container-row">
-                            <div class="mbr-figure" style="width: 30%;">
-                                <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/walikota.png" alt="" media-simple="true">
-                            </div>
-                            <div class="mbr-figure rounded" style="padding:5px; background: rgba(255, 255, 255, 0.92); width: 40%;">
-                                <div class="mbr-figure " style="height:100%; opacity:1.0;">
-                                    <img src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" style="width:50%; margin:auto;" alt="" media-simple="true">
-                                    <center>  <p style="text-align: center; ">
-                                        <?php echo $profil['isi']; ?>
-                                        <!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
-                                    </p></center>
-                                </div>
-
-                            </div>
-                            <div class="mbr-figure" style="width: 30%;">
-                                <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/wakil.png" alt="" media-simple="true">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
+    
+    <section>
+        <img class="img-responsive" src="<?= base_url('assets/media/image/gambar-pada-standing-banner-warna.jpg') ?>" alt="" style=" display: block;
+        width:100%;
+        height:100%;
+        object-fit: cover;">
+    </section>
 
     <!-- ==============================Berita Slider -->
     <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right" style="background-color: white">

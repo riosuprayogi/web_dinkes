@@ -1408,9 +1408,9 @@
                 </a>
                 <?php } ?> -->
             </div>
-            <div class="col-md-6">
+           <!--  <div class="col-md-6">
                 <img src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" style="width:50%; margin:auto;" alt="" media-simple="true">
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
