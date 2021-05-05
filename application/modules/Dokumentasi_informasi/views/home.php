@@ -482,7 +482,7 @@
                 <p><?= $string?>
                 <span><br><br>
 
-                    <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a>
+                    <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a>
                 </span>
             </p>
 
@@ -987,36 +987,36 @@
 
 
 
-<!-- <section id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620">
+<section id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620">
     <div class="mbr-overlay" style="opacity: 0.50;background-color: rgba(239, 240, 240, 0.75);"></div>
 
     <div class="container">
-        <div class="row"> -->
+        <div class="row">
             <!--Titles-->
-            <!-- <div class="title col-12">
+            <div class="title col-12">
                 <div class="card-img">
                     <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
                 </div>
-            </div> -->
+            </div>
             <!--Left-->
             <!-- ===================== -->
-          <!--   <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6">
                 <?php
                 foreach ($video_tng as $k => $v) :
                     if ($k == '0') :
-                    ?> -->
-               <!--          <div class="rny-vid-container">
+                        ?>
+                        <div class="rny-vid-container">
                             <iframe id="rny_vid_frame" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
                         </div>
-                <?php endif;
+                    <?php endif;
                 endforeach;
                 ?>
 
                 <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
                     <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_tngtv.png" alt="">
                 </div>
-            -->
-              <!--   <div class="rny-vid-list-container">
+                
+                <div class="rny-vid-list-container">
                     <div class="rny-vid-list">
                         <?php foreach ($video_tng as $k => $v) : ?>
                             <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame').src='<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=1&rel=0&showinfo=0&autohide=1'">
@@ -1030,15 +1030,15 @@
                             </div>
                         <?php endforeach; ?>
                     </div>
-                </div> -->
+                </div>
 
                 <!-- LEFT AND RIGHT ARROWS -->
-             <!--    <div class="rny-arrows">
+                <div class="rny-arrows">
                     <div class="rny-arrow-left"><i class="fa fa-chevron-left fa-lg"></i></div>
                     <div class="rny-arrow-right"><i class="fa fa-chevron-right fa-lg"></i></div>
                 </div>
 
-            </div> -->
+            </div>
             <!-- ===================== -->
             <!--Right-->
            <!--  <div class="col-12 col-md-12">

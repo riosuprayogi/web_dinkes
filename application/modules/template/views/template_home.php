@@ -157,8 +157,8 @@
     						</a>
     						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
     							<a class="dropdown-item" href="<?= base_url('daftar_informasi') ?>">Profil</a>
-    							<a class="dropdown-item" href="<?= base_url('dasar_hukum') ?>">Agenda Kegiatan</a>
-    							<a class="dropdown-item" href="<?= base_url('daftar_informasi') ?>">Dokumentasi dan Informasi Kegiatan</a>
+    							<!-- <a class="dropdown-item" href="<?= base_url('dasar_hukum') ?>">Agenda Kegiatan</a> -->
+    							<a class="dropdown-item" href="<?= base_url('dokumentasi_informasi') ?>">Dokumentasi dan Informasi Kegiatan</a>
     							<!-- <a class="dropdown-item" href="<?= base_url('daftar_informasi') ?>">RENJA</a> -->
 				          <!-- <a class="dropdown-item" href="#">Another action</a>
 				          <div class="dropdown-divider"></div>
@@ -178,6 +178,12 @@
 				          <div class="dropdown-divider"></div>
 				          <a class="dropdown-item" href="#">Something else here</a> -->
 				      </div>
+				  </li>
+				  <li class="nav-item">
+				  	<a class="nav-link js-scroll-trigger" href="<?= base_url('dasar_hukum') ?>">Diklat</a>
+				  </li>
+				  <li class="nav-item">
+				  	<a class="nav-link js-scroll-trigger" href="<?= base_url('dasar_hukum') ?>">RUP</a>
 				  </li>
 					<!-- <li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="<?= base_url('dasar_hukum') ?>">Agenda Kegiatan</a>
