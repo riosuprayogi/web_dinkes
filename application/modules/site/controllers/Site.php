@@ -191,7 +191,7 @@ public function detail($id)
 		JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
 		WHERE t_berita.id_berita = '$id' AND t_berita.status = 'show'")->result();
 
-	$data["detailBerita"] = $this->db->query("SELECT * FROM t_berita WHERE  status = 'show'")->result();
+	$data["detailBerita"] = $this->db->query("SELECT * FROM t_berita WHERE  status = 'show' AND id_berita='$id'")->result();
 // ============== akhir isi berita
 
 
@@ -221,7 +221,7 @@ public function detail($id)
 			                    // "id_kategori" => $row["id_kategori"],
 				"judul_berita" => $row["judul_berita"],
 				"isi_berita" => $row["isi_berita"],
-				"id_kategori"  =>  $row["id_kategori"],
+				// "id_kategori"  =>  $row["id_kategori"],
 			                    // "publish" => $row["publish"],
 				"tgl_jam" => $row["tgl_jam"],
 				"path_foto_artikel" => $result

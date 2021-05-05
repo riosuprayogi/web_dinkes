@@ -96,12 +96,12 @@
             // remoteFilter:false,
             // pagination:true,
             columns: [
-                [{
-                        title: 'INFORMASI',
-                        field: 'name',
-                        width: 400,
-                        styler: function(value, row, index) {
-                            if (value < 20) {
+            [{
+                title: 'INFORMASI',
+                field: 'name',
+                width: 400,
+                styler: function(value, row, index) {
+                    if (value < 20) {
                                 // return 'background-color:#ffee00;color:red;';
                                 return 'white-space:nowrap';
                                 // the function can return predefined css class and inline style
@@ -140,9 +140,9 @@
                         width: 150
                     },
                     // {field:'aksi',title:'AKSI',width:150,align:'center'}
-                ]
-            ]
-        }).treegrid('collapseAll');
+                    ]
+                    ]
+                }).treegrid('collapseAll');
         $('#tt').treegrid('enableFilter', [{
             field: 'file',
             showFilterBar: false,

@@ -528,46 +528,48 @@
                 <div class="col-md-4 col-sm-6    ">
                     <div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px;  padding: 10px; border-radius: 10px;">
                         <div class="" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: transparent; ">
-                            <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000">
+                            <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
+                                <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
 
-                               <?php if (count($f["path_foto_artikel"]) > 0) {
-                                foreach ($f["path_foto_artikel"] as $k) {
-                                  ?>
-                                  <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
-                                  <?php
-                              }
-                          } ?>
-                          <div class="card-body">
-                            <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
-                            <b><?= $f["judul_berita"] ?></b>
+                                   <?php if (count($f["path_foto_artikel"]) > 0) {
+                                    foreach ($f["path_foto_artikel"] as $k) {
+                                      ?>
+                                      <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
+                                      <?php
+                                  }
+                              } ?>
+                              <div class="card-body">
+                                <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
+                                <b><?= $f["judul_berita"] ?></b>
 
-                            <p><?= $string?>
-                            <span><br><br>
+                                <p><?= $string?>
+                                <span><br><br>
 
-                                <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a>
-                            </span>
-                        </p>
+                                    <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a>
+                                    <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
+                                </span>
+                            </p>
 
-                    </div>
+                        </div>
 
-                    <!-- <br> -->
-                </a>
+                        <!-- <br> -->
+                    </a>
+                </div>
+
+                <!-- <div class="card-content"> -->
+                    <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
+                    <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+                    <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
+                        <!-- <i style="background-color: blue" ></i> Lihat Video -->
+                    </a></center>
+                    <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+                    <!-- </div> -->
+
+                    <!-- </div> -->
+                </div>
             </div>
-
-            <!-- <div class="card-content"> -->
-                <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
-                <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-                <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
-                    <!-- <i style="background-color: blue" ></i> Lihat Video -->
-                </a></center>
-                <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-                <!-- </div> -->
-
-                <!-- </div> -->
-            </div>
-        </div>
-    <?php endforeach; ?>
-</div>
+        <?php endforeach; ?>
+    </div>
 </div>
 </div>
 </section>
