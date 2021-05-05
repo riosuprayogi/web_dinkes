@@ -54,127 +54,141 @@
 		<script type='text/javascript' src='<?php echo base_url(); ?>assets/tangerangkota/unitegallery/js/ug-carousel.js'></script>
 		<script type='text/javascript' src='<?php echo base_url(); ?>assets/tangerangkota/unitegallery/js/ug-api.js'></script>
         <script type='text/javascript' src='<?php echo base_url(); ?>assets/tangerangkota/js/fa.js'></script>
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/tangerangkota/theme/css/navbar.css" type="text/css"> -->
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/tangerangkota/theme/css/navbar.css" type="text/css"> -->
 
-	<link rel='stylesheet' href='<?php echo base_url(); ?>assets/tangerangkota/unitegallery/css/unite-gallery.css' type='text/css' />
+        <link rel='stylesheet' href='<?php echo base_url(); ?>assets/tangerangkota/unitegallery/css/unite-gallery.css' type='text/css' />
 
-	<script type='text/javascript' src='<?php echo base_url(); ?>assets/tangerangkota/unitegallery/themes/default/ug-theme-default.js'></script>
-	<link rel='stylesheet' href='<?php echo base_url(); ?>assets/tangerangkota/unitegallery/themes/default/ug-theme-default.css' type='text/css' />
+        <script type='text/javascript' src='<?php echo base_url(); ?>assets/tangerangkota/unitegallery/themes/default/ug-theme-default.js'></script>
+        <link rel='stylesheet' href='<?php echo base_url(); ?>assets/tangerangkota/unitegallery/themes/default/ug-theme-default.css' type='text/css' />
 
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/web/assets/jquery/jquery.min.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/js/owl.carousel.min.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/js/swiper.min.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/js/home.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/popper/popper.min.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/bootstrap/js/bootstrap.min.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/smoothscroll/smooth-scroll.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/dropdown/js/nav-dropdown.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/dropdown/js/navbar-dropdown.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/touchswipe/jquery.touch-swipe.min.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/tether/tether.min.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/vimeoplayer/jquery.mb.vimeo_player.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/parallax/jarallax.min.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/sociallikes/social-likes.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/ytplayer/jquery.mb.ytplayer.min.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/slidervideo/script.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/theme/js/script.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/theme/js/navbar.js"></script>
-
-
-	<!-- fullCalendar -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/') ?>/plugins/fullcalendar/main.min.css">
-	<link rel="stylesheet" href="<?php echo base_url('assets/') ?>/plugins/fullcalendar-interaction/main.min.css">
-	<link rel="stylesheet" href="<?php echo base_url('assets/') ?>/plugins/fullcalendar-daygrid/main.min.css">
-	<link rel="stylesheet" href="<?php echo base_url('assets/') ?>/plugins/fullcalendar-timegrid/main.min.css">
-	<link rel="stylesheet" href="<?php echo base_url('assets/') ?>/plugins/fullcalendar-bootstrap/main.min.css">
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/web/assets/jquery/jquery.min.js"></script>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/js/owl.carousel.min.js"></script>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/js/swiper.min.js"></script>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/js/home.js"></script>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/popper/popper.min.js"></script>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/bootstrap/js/bootstrap.min.js"></script>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/smoothscroll/smooth-scroll.js"></script>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/dropdown/js/nav-dropdown.js"></script>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/dropdown/js/navbar-dropdown.js"></script>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/touchswipe/jquery.touch-swipe.min.js"></script>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/tether/tether.min.js"></script>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/vimeoplayer/jquery.mb.vimeo_player.js"></script>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/parallax/jarallax.min.js"></script>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/sociallikes/social-likes.js"></script>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/ytplayer/jquery.mb.ytplayer.min.js"></script>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/slidervideo/script.js"></script>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/theme/js/script.js"></script>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/tangerangkota/theme/js/navbar.js"></script>
 
 
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<!-- DataTables -->
-	<script src="<?php echo base_url('assets/') ?>/plugins/datatables/jquery.dataTables.min.js"></script>
-	<script src="<?php echo base_url('assets/') ?>/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-	<script src="<?php echo base_url('assets/') ?>/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-	<script src="<?php echo base_url('assets/') ?>/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-
-	<!-- fullCalendar 2.2.5 -->
-	<script src="<?php echo base_url('assets/') ?>/plugins/moment/moment.min.js"></script>
-	<script src="<?php echo base_url('assets/') ?>/plugins/fullcalendar/main.min.js"></script>
-	<script src="<?php echo base_url('assets/') ?>/plugins/fullcalendar-daygrid/main.min.js"></script>
-	<script src="<?php echo base_url('assets/') ?>/plugins/fullcalendar-timegrid/main.min.js"></script>
-	<script src="<?php echo base_url('assets/') ?>/plugins/fullcalendar-interaction/main.min.js"></script>
-	<script src="<?php echo base_url('assets/') ?>/plugins/fullcalendar-bootstrap/main.min.js"></script>
-
-	<!-- https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css -->
-	<!-- <link src="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
-	<!-- SweetAlert2 -->
-	<script src="<?php echo base_url('assets/') ?>/plugins/sweetalert2/sweetalert2.min.js"></script>
-	<!-- jquery-validation -->
-	<script src="<?php echo base_url('assets/') ?>plugins/jquery-validation/jquery.validate.min.js"></script>
-	<link rel="stylesheet" href="<?php echo base_url('assets/') ?>/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-
-	<link rel="stylesheet" src="<?php echo base_url('assets/') ?>plugins/fontawesome-free/css/fontawesome.css">
-	<script src="<?php echo base_url('assets/') ?>plugins/jquery-validation/additional-methods.min.js"></script>
+        <!-- fullCalendar -->
+        <link rel="stylesheet" href="<?php echo base_url('assets/') ?>/plugins/fullcalendar/main.min.css">
+        <link rel="stylesheet" href="<?php echo base_url('assets/') ?>/plugins/fullcalendar-interaction/main.min.css">
+        <link rel="stylesheet" href="<?php echo base_url('assets/') ?>/plugins/fullcalendar-daygrid/main.min.css">
+        <link rel="stylesheet" href="<?php echo base_url('assets/') ?>/plugins/fullcalendar-timegrid/main.min.css">
+        <link rel="stylesheet" href="<?php echo base_url('assets/') ?>/plugins/fullcalendar-bootstrap/main.min.css">
 
 
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/popper/popper.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <!-- DataTables -->
+        <script src="<?php echo base_url('assets/') ?>/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="<?php echo base_url('assets/') ?>/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+        <script src="<?php echo base_url('assets/') ?>/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="<?php echo base_url('assets/') ?>/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+
+        <!-- fullCalendar 2.2.5 -->
+        <script src="<?php echo base_url('assets/') ?>/plugins/moment/moment.min.js"></script>
+        <script src="<?php echo base_url('assets/') ?>/plugins/fullcalendar/main.min.js"></script>
+        <script src="<?php echo base_url('assets/') ?>/plugins/fullcalendar-daygrid/main.min.js"></script>
+        <script src="<?php echo base_url('assets/') ?>/plugins/fullcalendar-timegrid/main.min.js"></script>
+        <script src="<?php echo base_url('assets/') ?>/plugins/fullcalendar-interaction/main.min.js"></script>
+        <script src="<?php echo base_url('assets/') ?>/plugins/fullcalendar-bootstrap/main.min.js"></script>
+
+        <!-- https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css -->
+        <!-- <link src="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+        <!-- SweetAlert2 -->
+        <script src="<?php echo base_url('assets/') ?>/plugins/sweetalert2/sweetalert2.min.js"></script>
+        <!-- jquery-validation -->
+        <script src="<?php echo base_url('assets/') ?>plugins/jquery-validation/jquery.validate.min.js"></script>
+        <link rel="stylesheet" href="<?php echo base_url('assets/') ?>/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+
+        <link rel="stylesheet" src="<?php echo base_url('assets/') ?>plugins/fontawesome-free/css/fontawesome.css">
+        <script src="<?php echo base_url('assets/') ?>plugins/jquery-validation/additional-methods.min.js"></script>
 
 
-
-
-</head>
-
-<body>
-	<style>
-		@media only screen and (max-width: 768px) {
-
-			/* For mobile phones: */
-			body {
-				margin-top: 30px !important;
-			}
-		}
-	</style>
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/popper/popper.min.js"></script>
 
 
 
-	<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="mainNav">
-		<div class="container-fluid">
-			<a class="navbar-brand js-scroll-trigger" href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/home2/images/Dinkes-Logo.png" alt=""></a>
-			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <i class="fas fa-bars"></i>
-			</button>
-			<div class="collapse navbar-collapse " id="navbarResponsive">
-				<ul class="navbar-nav text-uppercase ml-auto">
-					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="<?= base_url() ?>">Beranda</a>
-					</li>
-					<li class="nav-item dropdown">
-				        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				          INFORMASI
-				        </a>
-				        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				          <a class="dropdown-item" href="<?= base_url('permohonan/kuisioner') ?>">RKA</a>
-				           <a class="dropdown-item" href="<?= base_url('daftar_informasi') ?>">DPA</a>
-				           <a class="dropdown-item" href="<?= base_url('daftar_informasi') ?>">RENSTRA</a>
-				           <a class="dropdown-item" href="<?= base_url('daftar_informasi') ?>">RENJA</a>
+
+    </head>
+
+    <body>
+    	<style>
+    		@media only screen and (max-width: 768px) {
+
+    			/* For mobile phones: */
+    			body {
+    				margin-top: 30px !important;
+    			}
+    		}
+    	</style>
+
+
+
+    	<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="mainNav">
+    		<div class="container-fluid">
+    			<a class="navbar-brand js-scroll-trigger" href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/home2/images/Dinkes-Logo.png" alt=""></a>
+    			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <i class="fas fa-bars"></i>
+    			</button>
+    			<div class="collapse navbar-collapse " id="navbarResponsive">
+    				<ul class="navbar-nav text-uppercase ml-auto">
+    					<li class="nav-item">
+    						<a class="nav-link js-scroll-trigger" href="<?= base_url() ?>">Beranda</a>
+    					</li>
+
+    					<!-- <li class="nav-item">
+    						<a class="nav-link js-scroll-trigger" href="<?= base_url('profil_page') ?>">Profil</a>
+    					</li> -->
+    					<li class="nav-item dropdown">
+    						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    							PROFIL
+    						</a>
+    						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    							<a class="dropdown-item" href="<?= base_url('daftar_informasi') ?>">Profil</a>
+    							<a class="dropdown-item" href="<?= base_url('dasar_hukum') ?>">Agenda Kegiatan</a>
+    							<a class="dropdown-item" href="<?= base_url('daftar_informasi') ?>">Dokumentasi dan Informasi Kegiatan</a>
+    							<!-- <a class="dropdown-item" href="<?= base_url('daftar_informasi') ?>">RENJA</a> -->
 				          <!-- <a class="dropdown-item" href="#">Another action</a>
 				          <div class="dropdown-divider"></div>
 				          <a class="dropdown-item" href="#">Something else here</a> -->
-				        </div>
-      				</li>
-					
-					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="<?= base_url('profil_page') ?>">Profil</a>
-					</li>
-					<li class="nav-item">
+				      </div>
+				  </li>
+				  <li class="nav-item dropdown">
+				  	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  		INFORMASI PERENCANAAN
+				  	</a>
+				  	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				  		<a class="dropdown-item" href="<?= base_url('permohonan/kuisioner') ?>">RKA</a>
+				  		<a class="dropdown-item" href="<?= base_url('daftar_informasi') ?>">DPA</a>
+				  		<a class="dropdown-item" href="<?= base_url('daftar_informasi') ?>">RENSTRA</a>
+				  		<a class="dropdown-item" href="<?= base_url('daftar_informasi') ?>">RENJA</a>
+				          <!-- <a class="dropdown-item" href="#">Another action</a>
+				          <div class="dropdown-divider"></div>
+				          <a class="dropdown-item" href="#">Something else here</a> -->
+				      </div>
+				  </li>
+					<!-- <li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="<?= base_url('dasar_hukum') ?>">Agenda Kegiatan</a>
-					</li>
-					<li class="nav-item">
+					</li> -->
+					<!-- <li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="<?= base_url('layanan') ?>">Dokumentasi dan Informasi Kegiatan</a>
-					</li>
+					</li> -->
 
 					<!-- <li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="<?= base_url('data_dokumen') ?>">Data & Dokumen</a>
-				    </li> -->
+				</li> -->
 
 					<!-- <li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="<?= base_url('permohonan/kuisioner') ?>">RKA</a>
@@ -264,36 +278,36 @@
 							</a>
 						</div>
 					</div> -->
-					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/smoothscroll/smooth-scroll.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/dropdown/js/nav-dropdown.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/dropdown/js/navbar-dropdown.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/touchswipe/jquery.touch-swipe.min.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/tether/tether.min.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/vimeoplayer/jquery.mb.vimeo_player.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/parallax/jarallax.min.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/sociallikes/social-likes.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/ytplayer/jquery.mb.ytplayer.min.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/slidervideo/script.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/theme/js/script2.js"></script>
-	<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/theme/js/navbar.js"></script>
+	</div>
+</section>
+<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/smoothscroll/smooth-scroll.js"></script>
+<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/dropdown/js/nav-dropdown.js"></script>
+<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/dropdown/js/navbar-dropdown.js"></script>
+<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/touchswipe/jquery.touch-swipe.min.js"></script>
+<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/tether/tether.min.js"></script>
+<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/vimeoplayer/jquery.mb.vimeo_player.js"></script>
+<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/parallax/jarallax.min.js"></script>
+<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/sociallikes/social-likes.js"></script>
+<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/ytplayer/jquery.mb.ytplayer.min.js"></script>
+<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/slidervideo/script.js"></script>
+<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
+<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/theme/js/script2.js"></script>
+<script type='text/javascript' src="<?php echo base_url(); ?>assets/home2/theme/js/navbar.js"></script>
 
 
 
-	<script>
-		$(document).ready(function() {
-			$(window).scroll(function() {
-				if ($(this).scrollTop() > 50) {
-					$('#scroll').fadeIn();
-				} else {
-					$('#scroll').fadeOut();
-				}
-			});
+<script>
+	$(document).ready(function() {
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > 50) {
+				$('#scroll').fadeIn();
+			} else {
+				$('#scroll').fadeOut();
+			}
+		});
 			// scroll body to 0px on click
 			$('#scroll').click(function() {
 				$('body,html').animate({
