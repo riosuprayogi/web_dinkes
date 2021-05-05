@@ -15,10 +15,19 @@ class Site extends MX_Controller
 		$this->load->model('berita/Berita_model', 'berita', TRUE);
 	}
 
-
+	public function batas($string, $length)
+	{
+		if (strlen($string) <= ($length)) {
+			return $string;
+		} else {
+			$cetak = substr($string, 0, $length) . '...';
+			return $cetak;
+		}
+	}
 
 	public function index()
 	{
+
 		$this->load->helper('text');
 		// $this->load->library('curl');
 		// $useragent = 'Mozilla/5.0 (Windows NT 5.1; rv:31.0) Gecko/20100101 Firefox/31.0';
@@ -93,7 +102,7 @@ class Site extends MX_Controller
 						"id_berita" => $row["id_berita"],
 						// "kategori_artikel" => $row["kategori_artikel"],
 						"judul_berita" => $row["judul_berita"],
-						"isi_berita" => $row["isi_berita"],
+						"isi_berita" => $this->batas($row["isi_berita"], 50),
 						// "nama_admin"  =>  $row["nama_admin"],
 						// "publish" => $row["publish"],
 						"tgl_jam" => $row["tgl_jam"],
@@ -104,6 +113,7 @@ class Site extends MX_Controller
 			}
 
 			$data["berita3"] = $arrProfile;
+
 
 
 			// ================= berita
@@ -152,7 +162,10 @@ class Site extends MX_Controller
 
 			// var_dump($data7);
 			// die();
-
+			/*echo "<pre>";
+print_r($data);
+echo "<pre>";
+die();*/
 
 			// json_decode($)
 			// echo json_encode($data);
