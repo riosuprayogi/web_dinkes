@@ -465,32 +465,34 @@
         
         ?>
         <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
-                <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000">
+            <!-- <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;"> -->
 
-                   <?php if (count($f["path_foto_artikel"]) > 0) {
-                    foreach ($f["path_foto_artikel"] as $k) {
-                      ?>
-                      <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
-                      <?php
-                  }
-              } ?>
-              <div class="card-body">
-                <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
-                <b><?= $f["judul_berita"] ?></b>
+                <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: transparent; ">
+                    <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000">
 
-                <p><?= $string?>
-                <span><br><br>
+                       <?php if (count($f["path_foto_artikel"]) > 0) {
+                        foreach ($f["path_foto_artikel"] as $k) {
+                          ?>
+                          <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
+                          <?php
+                      }
+                  } ?>
+                  <div class="card-body">
+                    <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
+                    <b><?= $f["judul_berita"] ?></b>
 
-                    <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a>
-                </span>
-            </p>
+                    <p><?= $string?>
+                    <span><br><br>
 
-        </div>
+                        <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a>
+                    </span>
+                </p>
 
-        <!-- <br> -->
-    </a>
-</div>
+            </div>
+
+            <!-- <br> -->
+        </a>
+    </div>
 </div>
 <?php endforeach; ?>
 </div>
@@ -500,6 +502,77 @@
 
 
 <!-- ==============================Foto Galeri -->
+<section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right">
+
+
+
+
+<!-- <div class="container">
+    <div class="row">
+      <div class="">
+        <h2>Video Baznas</h2>
+      </div>
+    </div>
+</div> -->
+<div class="container">
+    <div class="">
+        <div class="title col-lg-12">
+            <div class="card-img">
+                <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_galeri.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
+            </div>
+        </div>
+        <div class="" data-flickity='{ "wrapAround": true }'>
+            <?php foreach ($berita3 as $f) : ?>
+                <div class="col-md-4 col-sm-6    ">
+                    <div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px;  padding: 10px; border-radius: 10px;">
+                        <div class="" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: transparent; ">
+                            <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000">
+
+                             <?php if (count($f["path_foto_artikel"]) > 0) {
+                                foreach ($f["path_foto_artikel"] as $k) {
+                                  ?>
+                                  <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
+                                  <?php
+                              }
+                          } ?>
+                          <div class="card-body">
+                            <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
+                            <b><?= $f["judul_berita"] ?></b>
+
+                            <p><?= $string?>
+                            <span><br><br>
+
+                                <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a>
+                            </span>
+                        </p>
+
+                    </div>
+
+                    <!-- <br> -->
+                </a>
+            </div>
+
+            <!-- <div class="card-content"> -->
+                <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
+                <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+                <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
+                    <!-- <i style="background-color: blue" ></i> Lihat Video -->
+                </a></center>
+                <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+                <!-- </div> -->
+
+                <!-- </div> -->
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
+</div>
+</div>
+</section>
+<!-- ==============================Foto Galeri -->
+
+
+
 <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right">
 
 
@@ -568,6 +641,7 @@
         </div>
     </section>
     <!-- ==============================Foto Galeri -->
+
 
 
 
