@@ -18,11 +18,11 @@
 			dataType: "JSON",
 			async: false,
 			success: function(data) {
-				$('#dd_kategori_berita').empty();
-				$('#dd_kategori_berita').append('<option value="">==== Pilih ====</option>');
-				for (var i = 0; i < data.kategori.length; i++) {
-					$('#dd_kategori_berita').append('<option value="' + data.kategori[i].id_kategori + '">' + data.kategori[i].nama_kategori + '</option>');
-				}
+				// $('#dd_kategori_berita').empty();
+				// $('#dd_kategori_berita').append('<option value="">==== Pilih ====</option>');
+				// for (var i = 0; i < data.kategori.length; i++) {
+				// 	$('#dd_kategori_berita').append('<option value="' + data.kategori[i].id_kategori + '">' + data.kategori[i].nama_kategori + '</option>');
+				// }
 
 				$('#files').on("click", ".hapus_data", function(e) {
 					e.preventDefault();
@@ -161,7 +161,7 @@
 						<tr>
 							<td onclick="add()" style="vertical-align:middle; text-align:center;cursor:pointer;"><b><i class="fas fa-plus"></i></b></td>
 							<td></td>
-							<td></td>
+							<!-- <td></td> -->
 							<td></td>
 							<td></td>
 							<td></td>
@@ -170,7 +170,7 @@
 						</tr>
 						<tr>
 							<th>No</th>
-							<th style="width:15%">Kategori Berita</th>
+							<!-- <th style="width:15%">Kategori Berita</th> -->
 							<th>Judul Berita</th>
 							<th>Isi Berita</th>
 							<th width="100px">Foto Berita</th>
@@ -187,7 +187,7 @@
 						foreach ($t_berita as $ia) : ?>
 							<tr>
 								<td><?= $i++ ?></td>
-								<td><?= $ia["nama_kategori"] ?></td>
+								<!-- <td><?= $ia["nama_kategori"] ?></td> -->
 								<td><?= substr($ia["judul_berita"], 0, 50); ?></td>
 								<td><?= substr($ia["isi_berita"], 0, 100); ?></td>
 								<td>
@@ -252,10 +252,10 @@
 								<div class="col-md-12">
 									<input type="hidden" value="" id="id" name="id">
 									<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<label for=""> Nama Kategori</label>
 										<select name="dd_kategori_berita" id="dd_kategori_berita" class="form-control" required></select>
-									</div>
+									</div> -->
 
 									<div class="form-group">
 										<label for=""> Judul Berita</label>
