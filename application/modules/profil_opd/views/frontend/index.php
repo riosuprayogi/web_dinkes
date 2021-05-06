@@ -37,7 +37,7 @@
 </div> -->
 
 <section>
-	<img class="img-responsive" src="<?= base_url('assets/media/image/gambar-pada-standing-banner-warna.jpg') ?>" alt="" style=" display: block;
+	<img class="img-responsive" src="<?= base_url('assets/media/image/1.png') ?>" alt="" style=" display: block;
 	width:100%;
 	height:100%;
 	object-fit: cover;">
@@ -113,8 +113,11 @@
 		<div class="">
 			<div class="title col-lg-12">
 				<div class="card-img">
+					<div class="card-img">
+						<img class="logo-video" src="<?= base_url('assets/media/image/struktur.png') ?>" alt="" style="  padding-bottom: 10px; width: 25%">
+					</div>
 					<!-- <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;"> -->
-					<h2><b>STRUKTUR</b></h2>
+					<!-- <h2><b>STRUKTUR</b></h2> -->
 				</div>
 			</div>
 			<div class="" data-flickity='{ "wrapAround": true }'>

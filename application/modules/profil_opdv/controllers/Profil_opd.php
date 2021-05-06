@@ -8,7 +8,7 @@ class Profil_opd extends MX_Controller {
 		$this->load->module('template');
 		$this->load->model('dasar_hukum/Dasar_hukum_model', 'main_model', TRUE);
 		$this->load->model('site/Site_model', 'site', TRUE);
-		// $this->load->model('profil_opd/Profil_opd_model', 'main_model2', TRUE);
+		$this->load->model('profil_opd/Profil_opd_model', 'main_model2', TRUE);
 		$this->load->helper('admin');
 		// $this->load->library('encrypt');
 		$this->load->library('session');

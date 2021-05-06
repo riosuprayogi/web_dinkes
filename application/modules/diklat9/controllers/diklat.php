@@ -1,14 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Profil_opd extends MX_Controller {
+class diklat extends MX_Controller {
 
 	public function __construct() {
 		parent::__construct();
 		$this->load->module('template');
 		$this->load->model('dasar_hukum/Dasar_hukum_model', 'main_model', TRUE);
 		$this->load->model('site/Site_model', 'site', TRUE);
-		// $this->load->model('profil_opd/Profil_opd_model', 'main_model2', TRUE);
 		$this->load->helper('admin');
 		// $this->load->library('encrypt');
 		$this->load->library('session');
@@ -17,22 +16,28 @@ class Profil_opd extends MX_Controller {
 		
 	}
 
+	public function batas($string, $length){
+		if(strlen($string)<=($length)){
+			return $string;
+		} else {
+			$cetak = substr($string,0,$length). '...';
+			return $cetak;
+		}
+	}
+
+
 
 	public function index()
-	{
-		// $data['struktur1'] = $this->main_model2->get_isi_struktur('struktur1');
-		// $data["struktur2"] = $this->db->query("SELECT * FROM m_profil WHERE option = 'struktur'")->result();
-		// var_dump($data3);
-		// die();
-		$data['hasil']=$this->db->query("SELECT * FROM m_profil WHERE option='gambaran_umum'")->result_array();
-		// var_dump($hasil);
-		// die();
-		$listProfiles = $this->db->query("SELECT m_profil.*
 
-			FROM m_profil
+	{
+		// ================= berita
+
+		$listProfiles = $this->db->query("SELECT t_berita.*
+
+			FROM t_berita 
 			    -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
 			    -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
-			    WHERE m_profil.option = 'struktur'");
+			    WHERE t_berita.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC LIMIT 4");
 			// var_dump($listProfiles);
 			            	// die();
 
@@ -40,27 +45,32 @@ class Profil_opd extends MX_Controller {
 		$arr = [];
 		foreach ($listProfiles->result_array() as $key => $row) {
 
-			$result = $this->db->query("SELECT * FROM m_profil WHERE option='struktur'")->result_array();
+			$result = $this->db->query("SELECT *, MIN(urutan)AS urutan FROM t_foto_berita WHERE id_berita=" . $row['id_berita'] . "")->result_array();
 			            	// var_dump($result);
 			            	// die();
 			if ($result) {
 
 				$arr = array(
-					// "id_berita" => $row["id_berita"],
-					// "id_kategori" => $row["id_kategori"],
-					// "judul_berita" => $row["judul_berita"],
-					// "isi_berita" => $this->batas($row["isi_berita"], 50),
+					"id_berita" => $row["id_berita"],
+					"id_kategori" => $row["id_kategori"],
+					"judul_berita" => $row["judul_berita"],
+					"isi_berita" => $this->batas($row["isi_berita"], 50),
 			                    // "nama_admin"  =>  $row["nama_admin"],
 			                    // "publish" => $row["publish"],
-					// "tgl_jam" => $row["tgl_jam"],
-					"isi" => $result
+					"tgl_jam" => $row["tgl_jam"],
+					"path_foto_artikel" => $result
 				);
 				array_push($arrProfile, $arr);
 			}
 		}
 
-		$data["struktur3"] = $arrProfile;
+		$data["berita3"] = $arrProfile;
+			// var_dump($datae);
+			// die();
+
+
+// ================= akhir berita
 		$data['alasan'] = $this->main_model->get_alasan();
-		$this->template->render_home('profil_opd/frontend/index', $data);
+		$this->template->render_home('diklat/frontend/index',$data);
 	}
 }

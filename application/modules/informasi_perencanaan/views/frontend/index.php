@@ -38,12 +38,11 @@
 
 
 <section>
-	<img class="img-responsive" src="<?= base_url('assets/media/image/gambar-pada-standing-banner-warna.jpg') ?>" alt="" style=" display: block;
+	<img class="img-responsive" src="<?= base_url('assets/media/image/perencanaan.png') ?>" alt="" style=" display: block;
 	width:100%;
 	height:100%;
 	object-fit: cover;">
 </section>
-
 <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620">
 	<div class="container">		
 		<div class="media-container-row ">
@@ -54,7 +53,9 @@
 						<div class="card">
 							<div class="card-horizontal">
 								<div class="img-square-wrapper">
-									<img class="icon" src="<?php echo base_url();?>assets/img/icon/icon-10.png" alt="Card image cap">
+									<!-- <img class="icon" src="<?php echo base_url();?>assets/img/icon/icon-10.png" alt="Card image cap"> -->
+									<img class="icon" src="<?= base_url('assets/media/image/rak.png') ?>" alt="Card image cap">
+
 								</div>
 								<div class="card-body">
 									<h4 class="card-title">Rencana Kerja Anggaran (RAK)</h4>
@@ -68,7 +69,8 @@
 						<div class="card">
 							<div class="card-horizontal">
 								<div class="img-square-wrapper">
-									<img class="icon" src="<?php echo base_url();?>assets/img/icon/icon-11.png" alt="Card image cap">
+									<!-- <img class="icon" src="<?php echo base_url();?>assets/img/icon/icon-11.png" alt="Card image cap"> -->
+									<img class="icon" src="<?= base_url('assets/media/image/renstra.png') ?>" alt="Card image cap">
 								</div>
 								<div class="card-body">
 									<h4 class="card-title">Rencana Strategis (RENSTRA)</h4>
@@ -86,7 +88,8 @@
 						<div class="card">
 							<div class="card-horizontal">
 								<div class="img-square-wrapper">
-									<img class="icon" src="<?php echo base_url();?>assets/img/icon/icon-12.png" alt="Card image cap">
+									<!-- <img class="icon" src="<?php echo base_url();?>assets/img/icon/icon-12.png" alt="Card image cap"> -->
+									<img class="icon" src="<?= base_url('assets/media/image/dpa.png') ?>" alt="Card image cap">
 								</div>
 								<div class="card-body">
 									<h4 class="card-title">Dokument Pelaksanaan Anggaran (DPA)</h4>
@@ -100,7 +103,8 @@
 						<div class="card">
 							<div class="card-horizontal">
 								<div class="img-square-wrapper">
-									<img class="icon" src="<?php echo base_url();?>assets/img/icon/icon-13.png" alt="Card image cap">
+									<!-- <img class="icon" src="<?php echo base_url();?>assets/img/icon/icon-13.png" alt="Card image cap"> -->
+									<img class="icon" src="<?= base_url('assets/media/image/renja.png') ?>" alt="Card image cap">
 								</div>
 								<div class="card-body">
 									<h4 class="card-title">Rencana Kerja (RENJA)</h4>
