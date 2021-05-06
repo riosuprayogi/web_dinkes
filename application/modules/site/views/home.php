@@ -11,7 +11,7 @@
 
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
 <script>   
- AOS.init(); 
+   AOS.init(); 
 </script>
 <style>
     .footer {
@@ -307,8 +307,8 @@
 
         /*.caption {
 				margin-top: 40px;
-               }*/
-               .vid-list-container {
+             }*/
+             .vid-list-container {
                 padding-bottom: 20px;
             }
 
@@ -428,7 +428,7 @@
 <!-- <section class="featured" style="background-color: white;" data-aos="fade-right">
     <div class="container mb-3 mt-4">
         <div class="row">
-           <div class="col-12 text-center"> -->
+         <div class="col-12 text-center"> -->
             <!-- <?php foreach ($berita3 as $ka) : ?> -->
             <!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
             <!-- <?php endforeach; ?> -->
@@ -531,7 +531,7 @@
                             <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
                                 <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
 
-                                   <?php if (count($f["path_foto_artikel"]) > 0) {
+                                 <?php if (count($f["path_foto_artikel"]) > 0) {
                                     foreach ($f["path_foto_artikel"] as $k) {
                                       ?>
                                       <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
@@ -990,7 +990,7 @@
 
 <!-- ==============================Video Slider -->
 
-<!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right"> -->
+<section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right">
 
 
 
@@ -1002,7 +1002,7 @@
       </div>
     </div>
 </div> -->
-<!-- <div class="container">
+<div class="container">
     <div class="">
         <div class="title col-lg-12">
             <div class="card-img">
@@ -1012,7 +1012,7 @@
         <div class="" data-flickity='{ "wrapAround": true }'>
             <?php foreach ($video_dinkes as $tv) : ?>
               <div class="col-md-8 col-sm-8    ">
-                <div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px; background-color: transparent; border-color: black;   padding: 10px;">
+                <div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px; background-color: transparent;    padding: 10px;">
                   <div class="" style="margin: 10px; overflow:hidden;">
                     <div class="card-image ">
                         <h3 style="text-transform: uppercase;">
@@ -1021,20 +1021,20 @@
                             </center>
                         </h3>
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe width="250" height="100" style="overflow-x: hidden; border-radius: 10px" src="<?= $tv->link_video ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="250" height="100" style="overflow-x: hidden; " src="<?= $tv->link_video ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
 
                     <div class="card-content">
-                        <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+                        <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p>
                         <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-                       <!--  <center>
+                        <center>
                             <a href="<?= $tv->link_video ?>" class="btn btn-success btn-sm mt-2" target="__blank">
                                 <i style="background-color: blue" ></i> Lihat Video
                             </a>
-                        </center> -->
+                        </center>
                         <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-                   <!--  </div>
+                    </div>
 
                 </div>
             </div>
@@ -1046,7 +1046,7 @@
 
 </div>
 </div>
-</section> -->
+</section>
 <!-- ======================== AKhir video -->
 
 
