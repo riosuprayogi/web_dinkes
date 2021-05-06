@@ -1051,30 +1051,29 @@
 </section>
 <!-- ======================== AKhir video -->
 
-<<<<<<< HEAD=======>>>>>>> adb7f4bcb8ba8e8972d3e4d91743f13354ae8b96
 
-    <!-- ==============================Video Slider -->
+<!-- ==============================Video Slider -->
 
-    <!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right" style="background-color: white"> -->
-    <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" data-aos="fade-right" style="background-color: white">
-
+<!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right" style="background-color: white"> -->
+<section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" data-aos="fade-right" style="background-color: white">
 
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card" style="background-color: transparent;">
-                        <div class="card-header bg-transparent">
-                            <h3 class="align-center">
-                                Media Sosial
-                            </h3>
-                        </div>
-                        <div class="card-body bg-transparent">
-                            <div class="row">
-                                <div class="col-md-4 align-center">
-                                    <!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" style="background-color: transparent;">
+                    <div class="card-header bg-transparent">
+                        <h3 class="align-center">
+                            Media Sosial
+                        </h3>
+                    </div>
+                    <div class="card-body bg-transparent">
+                        <div class="row">
+                            <div class="col-md-4 align-center">
+                                <!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
                                 <hr> -->
-                                    <!--   <h3>Kota Tangerang</h3>
+                                <!--   <h3>Kota Tangerang</h3>
                             <div class="row">
                                 <a class="align-center col-md-4" target="_blank" href="https://id-id.facebook.com/kotatng/">
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-07.png') ?>" alt="">
@@ -1086,24 +1085,24 @@
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt="">
                                 </a>
                             </div> -->
+                            </div>
+                            <div class="col-lg-4 align-center">
+                                <!-- <img class="medsos" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt=""> -->
+                                <!-- <hr> -->
+                                <h3>DINAS KESEHATAN</h3>
+                                <div class="row">
+                                    <a class="align-center col-md-6" target="_blank" href="https://www.youtube.com/channel/UCKGFxu_Sb2LFwMoi5h_zDow">
+                                        <img class="medsoss" src="<?= base_url('assets/img/sosmed-10.png') ?>" alt="">
+                                    </a>
+                                    <!-- <a class="align-center col-md-4" target="_blank" href="https://twitter.com/HumasTangerang"> -->
+                                    <!-- <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt=""> -->
+                                    <!-- </a> -->
+                                    <a class="align-center col-md-4" target="_blank" href="https://www.instagram.com/dinkes.kotatangerang/?hl=id">
+                                        <img class="medsoss" src="<?= base_url('assets/img/sosmed-08.png') ?>" alt="">
+                                    </a>
                                 </div>
-                                <div class="col-lg-4 align-center">
-                                    <!-- <img class="medsos" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt=""> -->
-                                    <!-- <hr> -->
-                                    <h3>DINAS KESEHATAN</h3>
-                                    <div class="row">
-                                        <a class="align-center col-md-6" target="_blank" href="https://www.youtube.com/channel/UCKGFxu_Sb2LFwMoi5h_zDow">
-                                            <img class="medsoss" src="<?= base_url('assets/img/sosmed-10.png') ?>" alt="">
-                                        </a>
-                                        <!-- <a class="align-center col-md-4" target="_blank" href="https://twitter.com/HumasTangerang"> -->
-                                        <!-- <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt=""> -->
-                                        <!-- </a> -->
-                                        <a class="align-center col-md-4" target="_blank" href="https://www.instagram.com/dinkes.kotatangerang/?hl=id">
-                                            <img class="medsoss" src="<?= base_url('assets/img/sosmed-08.png') ?>" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- <div class="col-md-4 align-center">
+                            </div>
+                            <!-- <div class="col-md-4 align-center">
                             <img class="medsos" src="<?= base_url('assets/img/logo kecil2-06.png') ?>" alt="">
                             <hr>
                             <h3>Tangerang TV</h3>
@@ -1113,23 +1112,23 @@
                                 </a>
                             </div>
                         </div> -->
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
 
-        <!-- <div class="container">
+    <!-- <div class="container">
     <div class="row">
       <div class="">
         <h2>Video Baznas</h2>
       </div>
     </div>
 </div> -->
-        <!-- <div class="container">
+    <!-- <div class="container">
     <div class="">
         <div class="title col-lg-12">
             <div class="card-img">
@@ -1154,14 +1153,14 @@
 
                     <div class="card-content">
                         <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-        <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-        <!--  <center>
+    <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+    <!--  <center>
                             <a href="<?= $tv->link_video ?>" class="btn btn-success btn-sm mt-2" target="__blank">
                                 <i style="background-color: blue" ></i> Lihat Video
                             </a>
                         </center> -->
-        <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-        <!--            </div>
+    <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+    <!--            </div>
 
                 </div>
             </div>
@@ -1173,29 +1172,29 @@
 
 </div>
 </div> -->
-    </section>
+</section>
 
-    <!-- ==============================Video Slider -->
+<!-- ==============================Video Slider -->
 
-    <section id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right">
+<section id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right">
 
 
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card" style="background-color: transparent;">
-                        <div class="card-header bg-transparent">
-                            <h3 class="align-center">
-                                Media Sosial
-                            </h3>
-                        </div>
-                        <div class="card-body bg-transparent">
-                            <div class="row">
-                                <div class="col-md-4 align-center">
-                                    <!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" style="background-color: transparent;">
+                    <div class="card-header bg-transparent">
+                        <h3 class="align-center">
+                            Media Sosial
+                        </h3>
+                    </div>
+                    <div class="card-body bg-transparent">
+                        <div class="row">
+                            <div class="col-md-4 align-center">
+                                <!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
                                 <hr> -->
-                                    <!--   <h3>Kota Tangerang</h3>
+                                <!--   <h3>Kota Tangerang</h3>
                             <div class="row">
                                 <a class="align-center col-md-4" target="_blank" href="https://id-id.facebook.com/kotatng/">
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-07.png') ?>" alt="">
@@ -1207,24 +1206,24 @@
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt="">
                                 </a>
                             </div> -->
+                            </div>
+                            <div class="col-lg-4 align-center">
+                                <!-- <img class="medsos" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt=""> -->
+                                <!-- <hr> -->
+                                <h3>DINAS KESEHATAN</h3>
+                                <div class="row">
+                                    <a class="align-center col-md-6" target="_blank" href="https://www.youtube.com/channel/UCKGFxu_Sb2LFwMoi5h_zDow">
+                                        <img class="medsoss" src="<?= base_url('assets/img/sosmed-10.png') ?>" alt="">
+                                    </a>
+                                    <!-- <a class="align-center col-md-4" target="_blank" href="https://twitter.com/HumasTangerang"> -->
+                                    <!-- <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt=""> -->
+                                    <!-- </a> -->
+                                    <a class="align-center col-md-4" target="_blank" href="https://www.instagram.com/dinkes.kotatangerang/?hl=id">
+                                        <img class="medsoss" src="<?= base_url('assets/img/sosmed-08.png') ?>" alt="">
+                                    </a>
                                 </div>
-                                <div class="col-lg-4 align-center">
-                                    <!-- <img class="medsos" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt=""> -->
-                                    <!-- <hr> -->
-                                    <h3>DINAS KESEHATAN</h3>
-                                    <div class="row">
-                                        <a class="align-center col-md-6" target="_blank" href="https://www.youtube.com/channel/UCKGFxu_Sb2LFwMoi5h_zDow">
-                                            <img class="medsoss" src="<?= base_url('assets/img/sosmed-10.png') ?>" alt="">
-                                        </a>
-                                        <!-- <a class="align-center col-md-4" target="_blank" href="https://twitter.com/HumasTangerang"> -->
-                                        <!-- <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt=""> -->
-                                        <!-- </a> -->
-                                        <a class="align-center col-md-4" target="_blank" href="https://www.instagram.com/dinkes.kotatangerang/?hl=id">
-                                            <img class="medsoss" src="<?= base_url('assets/img/sosmed-08.png') ?>" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- <div class="col-md-4 align-center">
+                            </div>
+                            <!-- <div class="col-md-4 align-center">
                             <img class="medsos" src="<?= base_url('assets/img/logo kecil2-06.png') ?>" alt="">
                             <hr>
                             <h3>Tangerang TV</h3>
@@ -1234,23 +1233,23 @@
                                 </a>
                             </div>
                         </div> -->
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
 
-        <!-- <div class="container">
+    <!-- <div class="container">
     <div class="row">
       <div class="">
         <h2>Video Baznas</h2>
       </div>
     </div>
 </div> -->
-        <!-- <div class="container">
+    <!-- <div class="container">
     <div class="">
         <div class="title col-lg-12">
             <div class="card-img">
@@ -1275,14 +1274,14 @@
 
                     <div class="card-content">
                         <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-        <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-        <!--  <center>
+    <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+    <!--  <center>
                             <a href="<?= $tv->link_video ?>" class="btn btn-success btn-sm mt-2" target="__blank">
                                 <i style="background-color: blue" ></i> Lihat Video
                             </a>
                         </center> -->
-        <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-        <!--            </div>
+    <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+    <!--            </div>
 
                 </div>
             </div>
@@ -1294,30 +1293,30 @@
 
 </div>
 </div> -->
-    </section>
+</section>
 
 
 
 
-    <!-- <section id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620">
+<!-- <section id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620">
     <div class="mbr-overlay" style="opacity: 0.50;background-color: rgba(239, 240, 240, 0.75);"></div>
 
     <div class="container">
         <div class="row"> -->
-    <!--Titles-->
-    <!-- <div class="title col-12">
+<!--Titles-->
+<!-- <div class="title col-12">
                 <div class="card-img">
                     <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
                 </div>
             </div> -->
-    <!--Left-->
-    <!-- ===================== -->
-    <!--   <div class="col-12 col-md-6">
+<!--Left-->
+<!-- ===================== -->
+<!--   <div class="col-12 col-md-6">
                 <?php
                 foreach ($video_tng as $k => $v) :
                     if ($k == '0') :
                 ?> -->
-    <!--          <div class="rny-vid-container">
+<!--          <div class="rny-vid-container">
                             <iframe id="rny_vid_frame" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
                         </div>
                 <?php endif;
@@ -1328,7 +1327,7 @@
                     <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_tngtv.png" alt="">
                 </div>
             -->
-    <!--   <div class="rny-vid-list-container">
+<!--   <div class="rny-vid-list-container">
                     <div class="rny-vid-list">
                         <?php foreach ($video_tng as $k => $v) : ?>
                             <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame').src='<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=1&rel=0&showinfo=0&autohide=1'">
@@ -1344,36 +1343,36 @@
                     </div>
                 </div> -->
 
-    <!-- LEFT AND RIGHT ARROWS -->
-    <!--    <div class="rny-arrows">
+<!-- LEFT AND RIGHT ARROWS -->
+<!--    <div class="rny-arrows">
                     <div class="rny-arrow-left"><i class="fa fa-chevron-left fa-lg"></i></div>
                     <div class="rny-arrow-right"><i class="fa fa-chevron-right fa-lg"></i></div>
                 </div>
 
             </div> -->
-    <!-- ===================== -->
-    <!--Right-->
-    <!--  <div class="col-12 col-md-12">
+<!-- ===================== -->
+<!--Right-->
+<!--  <div class="col-12 col-md-12">
                 <?php
                 foreach ($video_humas as $k => $v) :
                     if ($k == '0') :
                         // var_dump($video_humas);
                         // die();
                 ?> -->
-    <!--  <div class="rny-vid-container-humas"> -->
-    <!-- <p><?= $v["judul_berita"] ?></p> -->
-    <!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
-    <!-- <iframe id="rny_vid_frame-humas" src="https://www.youtube.com/embed/OZ2GIqfs0SY" frameborder="0" width="560" height="315"></iframe> -->
-    <!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>" frameborder="0" width="560" height="315"></iframe> -->
-    <!-- </div> -->
-    <!--   <?php endif;
+<!--  <div class="rny-vid-container-humas"> -->
+<!-- <p><?= $v["judul_berita"] ?></p> -->
+<!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
+<!-- <iframe id="rny_vid_frame-humas" src="https://www.youtube.com/embed/OZ2GIqfs0SY" frameborder="0" width="560" height="315"></iframe> -->
+<!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>" frameborder="0" width="560" height="315"></iframe> -->
+<!-- </div> -->
+<!--   <?php endif;
                 endforeach;
-            ?> -->
+        ?> -->
 
-    <!-- <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
+<!-- <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
                     <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_humas.png" alt="">
                 </div>  -->
-    <!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
+<!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
                     <img class="logo-liputan" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt="">
                 </div>
 
@@ -1393,8 +1392,8 @@
                     </div>
                 </div> -->
 
-    <!-- LEFT AND RIGHT ARROWS -->
-    <!-- <div class="rny-arrows">
+<!-- LEFT AND RIGHT ARROWS -->
+<!-- <div class="rny-arrows">
                     <div class="rny-arrow-left-humas"><i class="fa fa-chevron-left fa-lg"></i></div>
                     <div class="rny-arrow-right-humas"><i class="fa fa-chevron-right fa-lg"></i></div>
                 </div>
@@ -1404,7 +1403,7 @@
     </div>
 </section> -->
 
-    <!-- <section class="mbr-section contacts2 cid-info mbr-fullscreen" id="info">
+<!-- <section class="mbr-section contacts2 cid-info mbr-fullscreen" id="info">
     <div class="container">
         <div class="media-container-row align-center">
             <div class="card-img">
@@ -1436,7 +1435,7 @@
 </section> -->
 
 
-    <!-- <div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -1448,9 +1447,9 @@
                 <div class="card-body bg-transparent">
                     <div class="row">
                         <div class="col-md-4 align-center"> -->
-    <!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
+<!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
                                 <hr> -->
-    <!--   <h3>Kota Tangerang</h3>
+<!--   <h3>Kota Tangerang</h3>
                             <div class="row">
                                 <a class="align-center col-md-4" target="_blank" href="https://id-id.facebook.com/kotatng/">
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-07.png') ?>" alt="">
@@ -1462,24 +1461,24 @@
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt="">
                                 </a>
                             </div> -->
-    <!--  </div>
+<!--  </div>
                         <div class="col-lg-4 align-center"> -->
-    <!-- <img class="medsos" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt=""> -->
-    <!-- <hr> -->
-    <!--  <h3>DINAS KESEHATAN</h3>
+<!-- <img class="medsos" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt=""> -->
+<!-- <hr> -->
+<!--  <h3>DINAS KESEHATAN</h3>
                             <div class="row">
                                 <a class="align-center col-md-6" target="_blank" href="https://www.youtube.com/channel/UCKGFxu_Sb2LFwMoi5h_zDow">
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-10.png') ?>" alt="">
                                 </a> -->
-    <!-- <a class="align-center col-md-4" target="_blank" href="https://twitter.com/HumasTangerang"> -->
-    <!-- <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt=""> -->
-    <!-- </a> -->
-    <!--  <a class="align-center col-md-4" target="_blank" href="https://www.instagram.com/dinkes.kotatangerang/?hl=id">
+<!-- <a class="align-center col-md-4" target="_blank" href="https://twitter.com/HumasTangerang"> -->
+<!-- <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt=""> -->
+<!-- </a> -->
+<!--  <a class="align-center col-md-4" target="_blank" href="https://www.instagram.com/dinkes.kotatangerang/?hl=id">
                                         <img class="medsoss" src="<?= base_url('assets/img/sosmed-08.png') ?>" alt="">
                                     </a>
                                 </div>
                             </div> -->
-    <!-- <div class="col-md-4 align-center">
+<!-- <div class="col-md-4 align-center">
                             <img class="medsos" src="<?= base_url('assets/img/logo kecil2-06.png') ?>" alt="">
                             <hr>
                             <h3>Tangerang TV</h3>
@@ -1489,16 +1488,16 @@
                                 </a>
                             </div>
                         </div> -->
-    <!--  </div>
+<!--  </div>
                 </div>
             </div>
         </div>
     </div>
 </div> -->
-    <!-- <hr> -->
-    <section id="struktur" class="cid-struktur mbr-fullscreen" data-rv-view="1620">
-        <div class="container align-center">
-            <!-- <div class="media-container-row align-center">
+<!-- <hr> -->
+<section id="struktur" class="cid-struktur mbr-fullscreen" data-rv-view="1620">
+    <div class="container align-center">
+        <!-- <div class="media-container-row align-center">
 			<div class="row justify-content-md-center" style="padding-top:50px; padding-bottom: 50px;">
 				<h3 class="mbr-section-title mbr-bold mbr-fonts-style">
 					STRUKTUR ORGANISASI
@@ -1506,180 +1505,180 @@
 			</div>
 		</div> -->
 
-            <div class="media-container-row align-center">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <?php foreach ($profil_image as $row) { ?>
-                            <!-- <div class="col-lg-3 col-md-4 col-6">
+        <div class="media-container-row align-center">
+            <div class="card-wrapper">
+                <div class="card-img">
+                    <?php foreach ($profil_image as $row) { ?>
+                        <!-- <div class="col-lg-3 col-md-4 col-6">
 						<button type="button" onclick='del("<?= $row->isi ?>")' class="btn btn-danger btn-sm btn-block"><i class="fas fa-fw fa-trash"></i></button>
 						<a href="javascript:void(0)" onclick="magnify('<?= $row->isi ?>')" class="d-block mb-4 h-100">
 							<img class="img-fluid img-responsive img-thumbnail" src="<?php echo base_url('assets/media/image/') . $row->isi ?>" alt="">
 						</a>
 					</div> -->
-                            <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" media-simple="true" style="width: 100%;">
+                        <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" media-simple="true" style="width: 100%;">
 
-                        <?php } ?>
-                        <!-- <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/struktur_ppid.png" media-simple="true" style="width: 100%;"> -->
-                    </div>
+                    <?php } ?>
+                    <!-- <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/struktur_ppid.png" media-simple="true" style="width: 100%;"> -->
                 </div>
             </div>
-            <div class="media-container-row">
-                <div class="col-md-6">
-                    <!-- <?php foreach (@$kepwal as $row) { ?>
+        </div>
+        <div class="media-container-row">
+            <div class="col-md-6">
+                <!-- <?php foreach (@$kepwal as $row) { ?>
                 <a href="<?php echo base_url('assets/media/image/') . $row->isi ?>" class="text-dark">
                     <img style="width:20%; margin:auto;" src="https://img.icons8.com/fluent/48/000000/file.png" alt="">
                     <p><span>Keputusan Walikota Kota Tangerang</span><br><span>Tentang Struktur Organisasi, Uraian Tugas dan Fungsi</span></p>
                 </a>
                 <?php } ?> -->
-                </div>
-                <!--  <div class="col-md-6">
+            </div>
+            <!--  <div class="col-md-6">
                 <img src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" style="width:50%; margin:auto;" alt="" media-simple="true">
             </div> -->
-            </div>
         </div>
-    </section>
-    <hr>
-    <!-- <section id="visi-misi" class="cid-visi-misi mbr-fullscreen bg-white" data-rv-view="1620"> -->
-    <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="background-color: white">
-        <div class="container align-center">
-            <div class="media-container-row align-center">
-                <!-- <div class="row float-center justify-content-md-center" style="width:100%; margin:auto; padding-top:50px;padding-bottom: 50px;">
+    </div>
+</section>
+<hr>
+<!-- <section id="visi-misi" class="cid-visi-misi mbr-fullscreen bg-white" data-rv-view="1620"> -->
+<section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="background-color: white">
+    <div class="container align-center">
+        <div class="media-container-row align-center">
+            <!-- <div class="row float-center justify-content-md-center" style="width:100%; margin:auto; padding-top:50px;padding-bottom: 50px;">
 				<h2 class="mbr-section-title mbr-bold mbr-fonts-style">
 					<strong>Visi dan Misi PPID</strong>
                 </h2>
 			</div>
             <img class="float-right" src="<?php echo base_url(); ?>assets/img/banner/PPID LOGO.png" style="width:150px; position:absolute; right: 10px;top: 28px;" alt="" media-simple="true"> -->
-            </div>
-            <div class="media-container-row align-center">
-                <div class="row justify-content-md-center" style="text-align:justify; color: #000000;">
-                    <h4 class="mbr-section-title mbr-fonts-style">
-                        <?php foreach ($visi as $row) { ?>
-                            <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" media-simple="true" style="width: 100%;">
+        </div>
+        <div class="media-container-row align-center">
+            <div class="row justify-content-md-center" style="text-align:justify; color: #000000;">
+                <h4 class="mbr-section-title mbr-fonts-style">
+                    <?php foreach ($visi as $row) { ?>
+                        <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" media-simple="true" style="width: 100%;">
 
-                        <?php } ?>
-                        </p>
-                    </h4>
+                    <?php } ?>
+                    </p>
+                </h4>
+            </div>
+        </div>
+    </div>
+</section>
+<hr>
+<!-- <section id="maklumat" class="cid-struktur mbr-fullscreen" data-rv-view="1620"> -->
+<section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="">
+    <div class="container align-center">
+
+
+        <div class="media-container-row align-center">
+            <div class="card-wrapper">
+                <div class="card-img" media-simple="true" style="width: 100%;">
+                    <?php foreach ($maklumat as $row) { ?>
+                        <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" media-simple="true" style="width: 100%;">
+                    <?php } ?>
+                    <!-- <?= $maklumat['isi'] ?> -->
+                    <!-- <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/struktur_ppid.png" media-simple="true" style="width: 100%;"> -->
                 </div>
             </div>
         </div>
-    </section>
-    <hr>
-    <!-- <section id="maklumat" class="cid-struktur mbr-fullscreen" data-rv-view="1620"> -->
-    <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="">
-        <div class="container align-center">
+    </div>
+</section>
 
-
-            <div class="media-container-row align-center">
-                <div class="card-wrapper">
-                    <div class="card-img" media-simple="true" style="width: 100%;">
-                        <?php foreach ($maklumat as $row) { ?>
-                            <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" media-simple="true" style="width: 100%;">
-                        <?php } ?>
-                        <!-- <?= $maklumat['isi'] ?> -->
-                        <!-- <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/struktur_ppid.png" media-simple="true" style="width: 100%;"> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        $(document).ready(function() {
-            tables = $('#tables').DataTable({
-                paginationType: 'full_numbers',
-                processing: true,
-                serverSide: true,
-                filter: false,
-                autoWidth: false,
-                bLengthChange: false,
-                ajax: {
-                    url: '<?php echo site_url('daftar_pembantu/ajax_list') ?>',
-                    type: 'GET',
-                    header: {
-                        '<?= $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>', //replace by your name/value
-                    },
-                    data: function(data) {
-                        data.filter = {
-                            'username': '',
-                        };
-                    }
+<script>
+    $(document).ready(function() {
+        tables = $('#tables').DataTable({
+            paginationType: 'full_numbers',
+            processing: true,
+            serverSide: true,
+            filter: false,
+            autoWidth: false,
+            bLengthChange: false,
+            ajax: {
+                url: '<?php echo site_url('daftar_pembantu/ajax_list') ?>',
+                type: 'GET',
+                header: {
+                    '<?= $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>', //replace by your name/value
                 },
-                language: {
-                    sProcessing: '<img src="<?php echo base_url('assets/img/process.gif') ?>" width="20px"> Sedang memproses...',
-                    sLengthMenu: 'Tampilkan _MENU_ entri',
-                    sZeroRecords: 'Tidak ditemukan data yang sesuai',
-                    sInfo: 'Menampilkan _START_ sampai _END_ dari _TOTAL_ entri',
-                    sInfoEmpty: 'Menampilkan 0 sampai 0 dari 0 entri',
-                    sInfoFiltered: '(disaring dari _MAX_ entri keseluruhan)',
-                    sInfoPostFix: '',
-                    sSearch: 'Cari:',
-                    sUrl: '',
-                    oPaginate: {
-                        sFirst: '<<',
-                        sPrevious: '<',
-                        sNext: '>',
-                        sLast: '>>'
-                    }
+                data: function(data) {
+                    data.filter = {
+                        'username': '',
+                    };
+                }
+            },
+            language: {
+                sProcessing: '<img src="<?php echo base_url('assets/img/process.gif') ?>" width="20px"> Sedang memproses...',
+                sLengthMenu: 'Tampilkan _MENU_ entri',
+                sZeroRecords: 'Tidak ditemukan data yang sesuai',
+                sInfo: 'Menampilkan _START_ sampai _END_ dari _TOTAL_ entri',
+                sInfoEmpty: 'Menampilkan 0 sampai 0 dari 0 entri',
+                sInfoFiltered: '(disaring dari _MAX_ entri keseluruhan)',
+                sInfoPostFix: '',
+                sSearch: 'Cari:',
+                sUrl: '',
+                oPaginate: {
+                    sFirst: '<<',
+                    sPrevious: '<',
+                    sNext: '>',
+                    sLast: '>>'
+                }
+            },
+            order: [1, 'desc'],
+            columns: [{
+                    'data': 'no',
+                    'orderable': false
                 },
-                order: [1, 'desc'],
-                columns: [{
-                        'data': 'no',
-                        'orderable': false
-                    },
-                    {
-                        'data': 'id_daftar_pembantu',
-                        "visible": false
-                    },
-                    {
-                        'data': 'skpd'
-                    },
-                    {
-                        'data': 'kategori'
-                    },
-                    {
-                        'data': 'alamat'
-                    },
-                    {
-                        'data': 'no_tlp'
-                    },
-                    {
-                        'data': 'email'
-                    },
-                    {
-                        'data': 'website'
-                    },
-                ]
-            });
+                {
+                    'data': 'id_daftar_pembantu',
+                    "visible": false
+                },
+                {
+                    'data': 'skpd'
+                },
+                {
+                    'data': 'kategori'
+                },
+                {
+                    'data': 'alamat'
+                },
+                {
+                    'data': 'no_tlp'
+                },
+                {
+                    'data': 'email'
+                },
+                {
+                    'data': 'website'
+                },
+            ]
         });
+    });
 
-        function magnify(nama_foto = null, desk = null) {
-            $('#img_foto').empty();
-            if (nama_foto) {
-                // $('#img_foto').append('<img width="100%" src="https://testing.tangerangkota.go.id/angkutan/assets/foto_angkutan/'+nama_foto+'"/>');
-                $('#img_foto').attr('src', '<?php echo base_url('assets/media/image/') ?>' + nama_foto);
-                // $('#hapus_foto').click(function(){ myFunction(); });
-                // $('#hapus_foto').attr('onclick', "del_foto('"+nama_foto+"')");
-            }
-
-            // $('#desk').text(desk);
-            $('#modal_magnify').modal('show'); // show bootstrap modal when complete loaded
+    function magnify(nama_foto = null, desk = null) {
+        $('#img_foto').empty();
+        if (nama_foto) {
+            // $('#img_foto').append('<img width="100%" src="https://testing.tangerangkota.go.id/angkutan/assets/foto_angkutan/'+nama_foto+'"/>');
+            $('#img_foto').attr('src', '<?php echo base_url('assets/media/image/') ?>' + nama_foto);
+            // $('#hapus_foto').click(function(){ myFunction(); });
+            // $('#hapus_foto').attr('onclick', "del_foto('"+nama_foto+"')");
         }
-    </script>
-    <!-- <section id="icon" class="cid-icon" data-rv-view="1620"> -->
-    <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="background-color: white">
-        <div class="container align-center">
-            <div class="media-container-row">
-                <div class="col-lg-4 col-md-6 col-sm-12 p-5">
-                    <div class="card-wrapper">
-                        <a href="javascript:void(0)" data-toggle="modal" data-target="#exampleModal" class="text-reset">
-                            <div class="card-img">
-                                <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/daftar-ppid-min.png" media-simple="true">
-                                <p>Daftar PPID Pembantu</p>
-                            </div>
-                        </a>
-                    </div>
+
+        // $('#desk').text(desk);
+        $('#modal_magnify').modal('show'); // show bootstrap modal when complete loaded
+    }
+</script>
+<!-- <section id="icon" class="cid-icon" data-rv-view="1620"> -->
+<section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="background-color: white">
+    <div class="container align-center">
+        <div class="media-container-row">
+            <div class="col-lg-4 col-md-6 col-sm-12 p-5">
+                <div class="card-wrapper">
+                    <a href="javascript:void(0)" data-toggle="modal" data-target="#exampleModal" class="text-reset">
+                        <div class="card-img">
+                            <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/daftar-ppid-min.png" media-simple="true">
+                            <p>Daftar PPID Pembantu</p>
+                        </div>
+                    </a>
                 </div>
-                <!-- <div class="col-lg-4 col-md-12 col-sm-12 p-5">
+            </div>
+            <!-- <div class="col-lg-4 col-md-12 col-sm-12 p-5">
 					<a href="javascript:void(0)" data-toggle="modal" data-target="#strukturModal" class="text-reset">
                         <div class="card-wrapper">
                             <div class="card-img">
@@ -1689,176 +1688,176 @@
                         </div>
 					</a>
                 </div> -->
-                <div class="col-lg-4 col-md-6 col-sm-12 p-5">
-                    <a href="javascript:void(0)" data-toggle="modal" data-target="#perwalModal" class="text-reset">
-                        <div class="card-wrapper">
-                            <div class="card-img">
-                                <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/keputusan-min.png" media-simple="true">
-                                <p>Keputusan Walikota</p>
-                            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 p-5">
+                <a href="javascript:void(0)" data-toggle="modal" data-target="#perwalModal" class="text-reset">
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/keputusan-min.png" media-simple="true">
+                            <p>Keputusan Walikota</p>
                         </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620">
-        <div class="container align-center">
-
-            <div class="media-container-row align-center">
-                <div class="row justify-content-md-center" style="text-align:justify; color: #000000;">
-                    <h5 class="mbr-section-title mbr-fonts-style" style="padding-top: 50px;">
-                        <p style="text-align: center;">
-
-                            <strong>DINAS KESEHATAN KOTA TANGERANG</strong>
-                        </p>
-                        <p style="text-align: center; font-weight: normal;">
-                            <?= $kontak['alamat'] ?>
-                        </p>
-                        <p style="text-align: center; font-weight: normal;">
-                            Telp: <?= $kontak['no_tlp'] . ',' ?> Fax: <?= $kontak['no_fax'] ?>
-                        </p>
-                        <!-- <p style="text-align: center; font-weight: normal;">
-
-                    </p> -->
-                        <p style="text-align: center; font-weight: normal;">
-                            Website: dinkes.tangerangkota.go.id Email: <?= $kontak['email'];  ?>
-                        </p>
-                    </h5>
-                </div>
-            </div>
-            <div class="media-container-row align-center">
-                <div class="col-md-6">
-                    <a href="javascript:void(0)" data-toggle="modal" data-target="#exampleModal" class="text-reset">
-                        <img src="<?php echo base_url(); ?>assets/img/banner/Logo-Skpd.png" style="width:60%; margin:auto;" alt="" media-simple="true">
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <a target="_blank" href="<?= 'https://play.google.com/store/apps/details?id=id.go.tangerangkota.tangeranglive' ?>">
-                        <img src="<?php echo base_url(); ?>assets/img/banner/Logo-Laksa.png" style="width:60%; margin:auto;" alt="" media-simple="true">
-                    </a>
-                </div>
-            </div>
-            <div class="media-container-row align-center">
-                <a target="_blank" href="https://play.google.com/store/apps/details?id=id.go.tangerangkota.pusatinformasi">
-                    <img src="<?php echo base_url(); ?>assets/img/icon/PLAYSTORE-BUTTON.png" style="width:35%; margin:auto;" alt="" media-simple="true">
+                    </div>
                 </a>
             </div>
         </div>
-    </section>
+    </div>
+
+</section>
+
+<section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620">
+    <div class="container align-center">
+
+        <div class="media-container-row align-center">
+            <div class="row justify-content-md-center" style="text-align:justify; color: #000000;">
+                <h5 class="mbr-section-title mbr-fonts-style" style="padding-top: 50px;">
+                    <p style="text-align: center;">
+
+                        <strong>DINAS KESEHATAN KOTA TANGERANG</strong>
+                    </p>
+                    <p style="text-align: center; font-weight: normal;">
+                        <?= $kontak['alamat'] ?>
+                    </p>
+                    <p style="text-align: center; font-weight: normal;">
+                        Telp: <?= $kontak['no_tlp'] . ',' ?> Fax: <?= $kontak['no_fax'] ?>
+                    </p>
+                    <!-- <p style="text-align: center; font-weight: normal;">
+
+                    </p> -->
+                    <p style="text-align: center; font-weight: normal;">
+                        Website: dinkes.tangerangkota.go.id Email: <?= $kontak['email'];  ?>
+                    </p>
+                </h5>
+            </div>
+        </div>
+        <div class="media-container-row align-center">
+            <div class="col-md-6">
+                <a href="javascript:void(0)" data-toggle="modal" data-target="#exampleModal" class="text-reset">
+                    <img src="<?php echo base_url(); ?>assets/img/banner/Logo-Skpd.png" style="width:60%; margin:auto;" alt="" media-simple="true">
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a target="_blank" href="<?= 'https://play.google.com/store/apps/details?id=id.go.tangerangkota.tangeranglive' ?>">
+                    <img src="<?php echo base_url(); ?>assets/img/banner/Logo-Laksa.png" style="width:60%; margin:auto;" alt="" media-simple="true">
+                </a>
+            </div>
+        </div>
+        <div class="media-container-row align-center">
+            <a target="_blank" href="https://play.google.com/store/apps/details?id=id.go.tangerangkota.pusatinformasi">
+                <img src="<?php echo base_url(); ?>assets/img/icon/PLAYSTORE-BUTTON.png" style="width:35%; margin:auto;" alt="" media-simple="true">
+            </a>
+        </div>
+    </div>
+</section>
 
 
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog 	modal-xl" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Daftar PPID Pembantu</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog 	modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Daftar PPID Pembantu</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table id="tables" class="table table-striped table-sm table-bordered">
+                        <thead>
+                            <tr class="info">
+                                <th style="vertical-align: middle;" width="5%">
+                                    <center><b>No</b></center>
+                                </th>
+                                <th>id</th>
+                                <th style="vertical-align : middle !important;" width="24%">
+                                    <center><b>SKPD</b></center>
+                                </th>
+                                <th style="vertical-align : middle !important;" width="24%">
+                                    <center><b>Pembantu</b></center>
+                                </th>
+                                <th style="vertical-align : middle !important;" width="24%">
+                                    <center><b>Alamat</b></center>
+                                </th>
+                                <th style="vertical-align : middle !important;" width="24%">
+                                    <center><b>No Telepon</b></center>
+                                </th>
+                                <th style="vertical-align : middle !important;" width="24%">
+                                    <center><b>Email</b></center>
+                                </th>
+                                <th style="vertical-align : middle !important;" width="24%">
+                                    <center><b>Website</b></center>
+                                </th>
+
+                            </tr>
+                        </thead>
+                    </table>
                 </div>
-                <div class="modal-body">
-                    <div class="table-responsive">
-                        <table id="tables" class="table table-striped table-sm table-bordered">
-                            <thead>
-                                <tr class="info">
-                                    <th style="vertical-align: middle;" width="5%">
-                                        <center><b>No</b></center>
-                                    </th>
-                                    <th>id</th>
-                                    <th style="vertical-align : middle !important;" width="24%">
-                                        <center><b>SKPD</b></center>
-                                    </th>
-                                    <th style="vertical-align : middle !important;" width="24%">
-                                        <center><b>Pembantu</b></center>
-                                    </th>
-                                    <th style="vertical-align : middle !important;" width="24%">
-                                        <center><b>Alamat</b></center>
-                                    </th>
-                                    <th style="vertical-align : middle !important;" width="24%">
-                                        <center><b>No Telepon</b></center>
-                                    </th>
-                                    <th style="vertical-align : middle !important;" width="24%">
-                                        <center><b>Email</b></center>
-                                    </th>
-                                    <th style="vertical-align : middle !important;" width="24%">
-                                        <center><b>Website</b></center>
-                                    </th>
 
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Tutup</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Tutup</button>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="modal fade" id="strukturModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog 	modal-lg" role="document">
-            <div class="modal-content" style="overflow:auto;">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Struktur</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <?php foreach ($struktur as $row) { ?>
-                                <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" class="img-fluid" style="width: 100%;">
-                            <?php } ?>
-                        </div>
+<div class="modal fade" id="strukturModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog 	modal-lg" role="document">
+        <div class="modal-content" style="overflow:auto;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Struktur</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php foreach ($struktur as $row) { ?>
+                            <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" class="img-fluid" style="width: 100%;">
+                        <?php } ?>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Tutup</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Tutup</button>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="modal fade" id="perwalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog 	modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Keperwal</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <?php foreach (@$kepwal as $row) { ?>
-                                <iframe style="height:450px; width:100%; overflow:x-hidden;" src="<?php echo base_url('assets/media/image/') . $row->isi ?>" frameborder="0"></iframe>
-                            <?php } ?>
-                        </div>
+<div class="modal fade" id="perwalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog 	modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Keperwal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php foreach (@$kepwal as $row) { ?>
+                            <iframe style="height:450px; width:100%; overflow:x-hidden;" src="<?php echo base_url('assets/media/image/') . $row->isi ?>" frameborder="0"></iframe>
+                        <?php } ?>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Tutup</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Tutup</button>
             </div>
         </div>
     </div>
+</div>
 
 
 
 
-    <script>
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: true,
-            items: 2,
-        });
-    </script>
+<script>
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        items: 2,
+    });
+</script>

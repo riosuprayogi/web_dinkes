@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Banner_model extends CI_Model
+class Diklat_model extends CI_Model
 {
 
 	public function __construct()
@@ -17,6 +17,20 @@ class Banner_model extends CI_Model
 	public function get_data($table)
 	{
 		return $this->db->get($table);
+	}
+
+	public function get_isi_berita()
+	{
+		$this->db->select('t_berita.*, t_foto_berita.*');
+		$this->db->from('t_berita');
+		$this->db->join('t_foto_berita', 't_foto_berita.id_berita = t_berita.id_berita');
+
+		$this->db->where('status', 'show');
+		// $query = $this->db->get()->result();
+		$query = $this->db->get();
+		// var_dump($query);
+		// die();
+		return $query->row_array();
 	}
 
 
@@ -42,8 +56,6 @@ class Banner_model extends CI_Model
 		return $query->result();
 	}
 
-
-
 	public function get_cara()
 	{
 		$this->db->select('*');
@@ -67,25 +79,33 @@ class Banner_model extends CI_Model
 		return $this->db->insert_id();
 	}
 
-	public function update_banner($where, $data)
+	public function update_diklat($where, $data)
 	{
 		// $this->db->set('uby', $this->session->id_user);
 		// $this->db->set('udd', date('Y-m-d H:i:s'));
-		$this->db->update('t_banner', $data, $where);
+		$this->db->update('t_diklat', $data, $where);
 		return $this->db->affected_rows();
 	}
 
 	public function insert_foto($data)
 	{
-		$this->db->insert('t_detail_banner', $data);
+		$this->db->insert('t_foto_diklat', $data);
 		return $this->db->insert_id();
 	}
 
-	public function insert_banner($data)
+	public function insert_diklat($data)
 	{
 		$this->db->set('tgl_jam', date('Y-m-d H:i:s'));
-		$this->db->insert('t_banner', $data);
+		$this->db->insert('t_diklat', $data);
 		return $this->db->insert_id();
+	}
+
+	public function update_kategori($where, $data)
+	{
+		// $this->db->set('uby', $this->session->id_user);
+		// $this->db->set('udd', date('Y-m-d H:i:s'));
+		$this->db->update('t_kategori', $data, $where);
+		return $this->db->affected_rows();
 	}
 
 	private function _get_query($filter = array())
@@ -125,9 +145,9 @@ class Banner_model extends CI_Model
 
 	public function get_by_id($id)
 	{
-		$this->db->select('t_banner.*');
-		$this->db->from('t_banner');
-		$this->db->where('id_banner', $id);
+		$this->db->select('t_berita.*');
+		$this->db->from('t_berita');
+		$this->db->where('id_berita', $id);
 		$query = $this->db->get();
 		return $query->row();
 	}

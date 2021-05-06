@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Banner_model extends CI_Model
+class Foto_model extends CI_Model
 {
 
 	public function __construct()
@@ -42,7 +42,7 @@ class Banner_model extends CI_Model
 		return $query->result();
 	}
 
-
+	
 
 	public function get_cara()
 	{
@@ -67,24 +67,24 @@ class Banner_model extends CI_Model
 		return $this->db->insert_id();
 	}
 
-	public function update_banner($where, $data)
+	public function update_album($where, $data)
 	{
 		// $this->db->set('uby', $this->session->id_user);
 		// $this->db->set('udd', date('Y-m-d H:i:s'));
-		$this->db->update('t_banner', $data, $where);
+		$this->db->update('t_foto_galery', $data, $where);
 		return $this->db->affected_rows();
 	}
 
 	public function insert_foto($data)
 	{
-		$this->db->insert('t_detail_banner', $data);
+		$this->db->insert('t_detail_foto_galery', $data);
 		return $this->db->insert_id();
 	}
 
-	public function insert_banner($data)
+	public function insert_album($data)
 	{
 		$this->db->set('tgl_jam', date('Y-m-d H:i:s'));
-		$this->db->insert('t_banner', $data);
+		$this->db->insert('t_foto_galery', $data);
 		return $this->db->insert_id();
 	}
 
@@ -125,9 +125,9 @@ class Banner_model extends CI_Model
 
 	public function get_by_id($id)
 	{
-		$this->db->select('t_banner.*');
-		$this->db->from('t_banner');
-		$this->db->where('id_banner', $id);
+		$this->db->select('t_berita.*');
+		$this->db->from('t_berita');
+		$this->db->where('id_berita', $id);
 		$query = $this->db->get();
 		return $query->row();
 	}

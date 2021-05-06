@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Edit Banner</h1>
+                <h1 class="m-0 text-dark">Edit Album</h1>
             </div>
 
         </div>
@@ -18,18 +18,18 @@
 
                 <div class="card-body">
 
-                    <?php foreach ($t_banner as $a) : ?>
-                        <form action="<?php echo base_url() . 'banner/updateDataAksi' ?>" method="post" enctype="multipart/form-data" id="updateAlbum">
+                    <?php foreach ($t_foto_galery as $a) : ?>
+                        <form action="<?php echo base_url() . 'foto/updateDataAksi' ?>" method="post" enctype="multipart/form-data" id="updateAlbum">
                             <?= $this->session->flashdata('pesan') ?>
                             <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
-                            <input type="hidden" class="form-control" id="id_banner" name="id_banner" value="<?= $a->id_banner ?>">
+                            <input type="hidden" class="form-control" id="id_galery" name="id_galery" value="<?= $a->id_galery ?>">
 
                             <div class=" form-group row">
-                                <label for="nama_banner" class="col-sm-2 col-form-label">Nama Banner </label>
+                                <label for="nama_album" class="col-sm-2 col-form-label">Nama Album </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="nama_banner" name="nama_banner" value="<?= $a->nama_banner, set_value('nama_banner') ?>" autocomplete="off">
+                                    <input type="text" class="form-control" id="nama_album" name="nama_album" value="<?= $a->nama_album, set_value('nama_album') ?>" autocomplete="off">
                                     <small class="text-danger pl-0" style="display:none" id="requiredJudulArtikel"> The judul artikel is required </small>
-                                    <?= form_error('nama_banner', '<small class="text-danger pl-0">', '</small>'); ?>
+                                    <?= form_error('nama_album', '<small class="text-danger pl-0">', '</small>'); ?>
                                 </div>
                             </div>
 

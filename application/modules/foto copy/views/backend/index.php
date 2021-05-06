@@ -13,7 +13,7 @@
 
 		//Ajax Load data from ajax
 		$.ajax({
-			url: "<?php echo site_url('banner/ajax_add/') ?>",
+			url: "<?php echo site_url('foto/ajax_add/') ?>",
 			type: "GET",
 			dataType: "JSON",
 			async: false,
@@ -40,7 +40,7 @@
 		$('#btnSave').attr('disabled', true); //set button disable
 		var url;
 
-		url = "<?php echo site_url('banner/ajax_insert') ?>";
+		url = "<?php echo site_url('foto/ajax_insert') ?>";
 		Swal.fire({
 			title: 'Apa Anda Yakin?',
 			text: "Apa Anda Yakin Menyimpan Data?",
@@ -132,12 +132,12 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1 class="m-0 text-dark">Manajemen Banner</h1>
+				<h1 class="m-0 text-dark">Manajemen Foto</h1>
 			</div>
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="http://localhost/web_dinkes/" "="">Home</a></li>
-              <li class=" breadcrumb-item active">Banner</li>
+              <li class=" breadcrumb-item active">Foto</li>
 				</ol>
 			</div>
 		</div>
@@ -163,8 +163,8 @@
 						</tr>
 						<tr style="text-align:center">
 							<th>No</th>
-							<th style="width:40%">Nama Banner</th>
-							<th style="width:20%">Foto Banner</th>
+							<th style="width:40%">Nama Album</th>
+							<th style="width:20%">Foto</th>
 							<th style="width:7%">Status</th>
 							<th style="width:15%">Tanggal/Jam</th>
 							<th style="width:7%">Aksi</th>
@@ -175,18 +175,18 @@
 						<!-- dataTable ga bisa pake tr disini -->
 
 						<?php $i = 1;
-						foreach ($t_banner as $ia) : ?>
+						foreach ($t_foto_galery as $ia) : ?>
 							<tr>
 								<td><?= $i++ ?></td>
-								<td><?= substr($ia["nama_banner"], 0, 50); ?></td>
+								<td><?= substr($ia["nama_album"], 0, 50); ?></td>
 								<td>
-									<?php if ($ia["t_detail_banner"] != NULL) {
-										if (count($ia["t_detail_banner"]) > 0) {
-											foreach ($ia["t_detail_banner"] as $f) {
+									<?php if ($ia["t_detail_foto_galery"] != NULL) {
+										if (count($ia["t_detail_foto_galery"]) > 0) {
+											foreach ($ia["t_detail_foto_galery"] as $f) {
 									?>
 												<div style="padding:2px; border:1px solid #eee; margin:2px 2px">
-													<a target="blank" href="<?= base_url('assets/backend/img/img_banner/' . $f["path_foto_banner"]) ?>">
-														<img src="<?= base_url('assets/backend/img/img_banner/' . $f["path_foto_banner"]) ?>" width="100%">
+													<a target="blank" href="<?= base_url('assets/backend/img/img_galery/' . $f["path_detail_foto"]) ?>">
+														<img src="<?= base_url('assets/backend/img/img_galery/' . $f["path_detail_foto"]) ?>" alt="<?= $f["ket_foto"]; ?>" width="100%">
 													</a>
 												</div>
 										<?php
@@ -209,9 +209,9 @@
 											<i class="fas fa-cogs"></i>
 										</button>
 										<div class="dropdown-menu">
-											<a class="dropdown-item" href="<?= base_url(); ?>banner/edit/<?= $ia["id_banner"] ?>" onclick="return confirm('Apakah anda yakin akan mengubah?');"><i class="fas fa-edit"></i> Ubah</a>
+											<a class="dropdown-item" href="<?= base_url(); ?>foto/edit/<?= $ia["id_galery"] ?>" onclick="return confirm('Apakah anda yakin akan mengubah?');"><i class="fas fa-edit"></i> Ubah</a>
 
-											<a class="dropdown-item" href="<?= base_url(); ?>banner/ajax_delete/<?= $ia["id_banner"] ?>" onclick="return confirm('Apakah anda yakin akan menghapus?');"><i class="fas fa-trash"></i> Hapus</a>
+											<a class="dropdown-item" href="<?= base_url(); ?>foto/ajax_delete/<?= $ia["id_galery"] ?>" onclick="return confirm('Apakah anda yakin akan menghapus?');"><i class="fas fa-trash"></i> Hapus</a>
 										</div>
 									</center>
 								</td>
@@ -243,12 +243,12 @@
 									<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
 
 									<div class="form-group">
-										<label for=""> Nama Banner</label>
-										<input type="text" name="nama_banner" class="form-control" placeholder="Masukkan Nama Banner" required>
+										<label for=""> Nama Album</label>
+										<input type="text" name="nama_album" class="form-control" placeholder="Masukkan Nama Album" required>
 									</div>
 
 									<div class="form-group row image_field">
-										<label for="path_foto_banner" class="col-sm-2 col-form-label">Foto</label>
+										<label for="path_detail_foto" class="col-sm-2 col-form-label">Foto</label>
 										<div class="col-sm-10">
 											<div class="row">
 												<div class="col-sm-4">
@@ -258,8 +258,8 @@
 													<div class="input-group">
 														<div class="custom-file">
 															<input type="text" class="form-control" id="image-label1" readonly required>
-															<input type="file" class="custom-file-input upload_custom" id="customFileUpload1" data-count_image="1" name="path_foto_banner[]" style="display: none;">
-															<?= form_error('path_foto_banner', '<small class="text-danger pl-0">', '</small>'); ?>
+															<input type="file" class="custom-file-input upload_custom" id="customFileUpload1" data-count_image="1" name="path_detail_foto[]" style="display: none;">
+															<?= form_error('path_detail_foto', '<small class="text-danger pl-0">', '</small>'); ?>
 														</div>
 														<div class="input-group-append">
 															<button class="btn btn-primary" onclick="open_file(1)" data-count_image="1" type="button">Pilih Gambar</button>
@@ -279,10 +279,10 @@
 										<!-- <div class="col-sm-4">
 											<input type="text" class="form-control" id="ket_foto" name="ket_foto[]" value="" autocomplete="off">
 										</div> -->
-										<!-- <div class="form-group">
+										<div class="form-group">
 											<label for=""> Keterangan Foto</label>
 											<input type="text" id="ket_foto" name="ket_foto[]" class="form-control" value="" placeholder="Masukkan Keterangan">
-										</div> -->
+										</div>
 										<!--
 										<button type="button" style="margin-left: auto;" class="btn btn-primary ml-4 addService">Tambah Foto</button>
 										<div class="col-sm-1 text-right">
@@ -292,10 +292,10 @@
 
 									<div id="imageMulti"></div>
 
-									<!-- <div class="card-footer">
-										<button type="submit" class="btn btn-info">Sign in</button>
+									<div class="card-footer">
+										<!-- <button type="submit" class="btn btn-info">Sign in</button> -->
 										<button type="button" class="btn btn-primary float-right addService">Tambah Foto</button>
-									</div> -->
+									</div>
 
 									<div class="form-group">
 										<label for=""> Status</label>
@@ -363,7 +363,7 @@
 			var html = `
 
 						<div class="form-group row image_field">
-										<label for="path_foto_banner" class="col-sm-2 col-form-label"></label>
+										<label for="path_detail_foto" class="col-sm-2 col-form-label"></label>
 										<div class="col-sm-10">
 											<div class="row">
 												<div class="col-sm-4">
@@ -374,8 +374,8 @@
 													<div class="input-group">
 														<div class="custom-file">
 														<input type="text" class="form-control" id="image-label` + countimagefield + `" readonly>
-                                                        <input type="file" class="custom-file-input upload_custom" id="customFileUpload` + countimagefield + `" data-count_image="` + countimagefield + `" name="path_foto_banner[]" style="display: none;">
-														<?= form_error('path_foto_banner', '<small class="text-danger pl-0">', '</small>'); ?>
+                                                        <input type="file" class="custom-file-input upload_custom" id="customFileUpload` + countimagefield + `" data-count_image="` + countimagefield + `" name="path_detail_foto[]" style="display: none;">
+														<?= form_error('path_detail_foto', '<small class="text-danger pl-0">', '</small>'); ?>
 														</div>
 														<div class="input-group-append">
 														<button class="btn btn-primary" data-count_image="` + countimagefield + `"  onclick="open_file(` + countimagefield + `)" type="button">Pilih Gambar</button>
