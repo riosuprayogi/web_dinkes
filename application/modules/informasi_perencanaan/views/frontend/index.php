@@ -38,7 +38,7 @@
 
 
 <section>
-	<img class="img-responsive" src="<?= base_url('assets/media/image/perencanaan.png') ?>" alt="" style=" display: block;
+	<img class="img-responsive" src="<?= base_url('assets/media/image/gambar-pada-standing-banner-warna.jpg') ?>" alt="" style=" display: block;
 	width:100%;
 	height:100%;
 	object-fit: cover;">

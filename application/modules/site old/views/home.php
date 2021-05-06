@@ -991,6 +991,138 @@
 
 <!-- ==============================Video Slider -->
 
+<<<<<<< HEAD
+<section id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right">
+
+
+
+
+    <!-- <div class="container">
+    <div class="row">
+      <div class="">
+        <h2>Video Baznas</h2>
+      </div>
+    </div>
+</div> -->
+    <div class="container">
+        <div class="">
+            <div class="title col-lg-12">
+                <div class="card-img">
+                    <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
+                </div>
+            </div>
+            <div class="" data-flickity='{ "wrapAround": true }'>
+                <?php foreach ($video_dinkes as $tv) : ?>
+                    <div class="col-md-8 col-sm-8    ">
+                        <div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px; background-color: transparent;    padding: 10px;">
+                            <div class="" style="margin: 10px; overflow:hidden;">
+                                <div class="card-image ">
+                                    <h3 style="text-transform: uppercase;">
+                                        <center>
+                                            <b><?= $tv->nama_video ?></b>
+                                        </center>
+                                    </h3>
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe width="250" height="100" style="overflow-x: hidden; " src="<?= $tv->link_video ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+
+                                <div class="card-content">
+                                    <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p>
+                                    <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+                                    <center>
+                                        <a href="<?= $tv->link_video ?>" class="btn btn-success btn-sm mt-2" target="__blank">
+                                            <i style="background-color: blue"></i> Lihat Video
+                                        </a>
+                                    </center>
+                                    <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+</section>
+<!-- ======================== AKhir video -->
+
+
+<!-- ==============================Video Slider -->
+
+<!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right" style="background-color: white"> -->
+<section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" data-aos="fade-right" style="background-color: white">
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" style="background-color: transparent;">
+                    <div class="card-header bg-transparent">
+                        <h3 class="align-center">
+                            Media Sosial
+                        </h3>
+                    </div>
+                    <div class="card-body bg-transparent">
+                        <div class="row">
+                            <div class="col-md-4 align-center">
+                                <!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
+                                <hr> -->
+                                <!--   <h3>Kota Tangerang</h3>
+                            <div class="row">
+                                <a class="align-center col-md-4" target="_blank" href="https://id-id.facebook.com/kotatng/">
+                                    <img class="medsoss" src="<?= base_url('assets/img/sosmed-07.png') ?>" alt="">
+                                </a>
+                                <a class="align-center col-md-4" target="_blank" href="https://www.instagram.com/tangerangkota/?hl=id">
+                                    <img class="medsoss" src="<?= base_url('assets/img/sosmed-08.png') ?>" alt="">
+                                </a>
+                                <a class="align-center col-md-4" target="_blank" href="https://twitter.com/Kota_Tangerang">
+                                    <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt="">
+                                </a>
+                            </div> -->
+                            </div>
+                            <div class="col-lg-4 align-center">
+                                <!-- <img class="medsos" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt=""> -->
+                                <!-- <hr> -->
+                                <h3>DINAS KESEHATAN</h3>
+                                <div class="row">
+                                    <a class="align-center col-md-6" target="_blank" href="https://www.youtube.com/channel/UCKGFxu_Sb2LFwMoi5h_zDow">
+                                        <img class="medsoss" src="<?= base_url('assets/img/sosmed-10.png') ?>" alt="">
+                                    </a>
+                                    <!-- <a class="align-center col-md-4" target="_blank" href="https://twitter.com/HumasTangerang"> -->
+                                    <!-- <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt=""> -->
+                                    <!-- </a> -->
+                                    <a class="align-center col-md-4" target="_blank" href="https://www.instagram.com/dinkes.kotatangerang/?hl=id">
+                                        <img class="medsoss" src="<?= base_url('assets/img/sosmed-08.png') ?>" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-4 align-center">
+                            <img class="medsos" src="<?= base_url('assets/img/logo kecil2-06.png') ?>" alt="">
+                            <hr>
+                            <h3>Tangerang TV</h3>
+                            <div class="row">
+                                <a class="align-center col-md-12" target="_blank" href="https://www.youtube.com/channel/UCJLaDC3R7kVrAV3zBIP53zQ">
+                                    <img class="medsoss" src="<?= base_url('assets/img/sosmed-10.png') ?>" alt="">
+                                </a>
+                            </div>
+                        </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <div class="container">
+=======
 <!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right"> -->
     <section  id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="" data-aos="fade-right">
 
@@ -998,13 +1130,18 @@
 
 
   <!-- <div class="container">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
     <div class="row">
       <div class="">
         <h2>Video Baznas</h2>
       </div>
     </div>
 </div> -->
+<<<<<<< HEAD
+    <!-- <div class="container">
+=======
 <div class="container">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
     <div class="">
         <div class="title col-lg-12">
             <div class="card-img">
@@ -1028,6 +1165,17 @@
                     </div>
 
                     <div class="card-content">
+<<<<<<< HEAD
+                        <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+    <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+    <!--  <center>
+                            <a href="<?= $tv->link_video ?>" class="btn btn-success btn-sm mt-2" target="__blank">
+                                <i style="background-color: blue" ></i> Lihat Video
+                            </a>
+                        </center> -->
+    <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+    <!--            </div>
+=======
                         <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p>
                         <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
                         <center>
@@ -1037,6 +1185,7 @@
                         </center>
                         <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
                     </div>
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
 
                 </div>
             </div>
@@ -1047,6 +1196,32 @@
 </div>
 
 </div>
+<<<<<<< HEAD
+</div> -->
+</section>
+
+<!-- ==============================Video Slider -->
+
+<section id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right">
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" style="background-color: transparent;">
+                    <div class="card-header bg-transparent">
+                        <h3 class="align-center">
+                            Media Sosial
+                        </h3>
+                    </div>
+                    <div class="card-body bg-transparent">
+                        <div class="row">
+                            <div class="col-md-4 align-center">
+                                <!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
+                                <hr> -->
+                                <!--   <h3>Kota Tangerang</h3>
+=======
 </div>
 </section>
 <!-- ======================== AKhir video -->
@@ -1075,6 +1250,7 @@
                             <!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
                                 <hr> -->
                           <!--   <h3>Kota Tangerang</h3>
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                             <div class="row">
                                 <a class="align-center col-md-4" target="_blank" href="https://id-id.facebook.com/kotatng/">
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-07.png') ?>" alt="">
@@ -1086,6 +1262,18 @@
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt="">
                                 </a>
                             </div> -->
+<<<<<<< HEAD
+                            </div>
+                            <div class="col-lg-4 align-center">
+                                <!-- <img class="medsos" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt=""> -->
+                                <!-- <hr> -->
+                                <h3>DINAS KESEHATAN</h3>
+                                <div class="row">
+                                    <a class="align-center col-md-6" target="_blank" href="https://www.youtube.com/channel/UCKGFxu_Sb2LFwMoi5h_zDow">
+                                        <img class="medsoss" src="<?= base_url('assets/img/sosmed-10.png') ?>" alt="">
+                                    </a>
+                                    <!-- <a class="align-center col-md-4" target="_blank" href="https://twitter.com/HumasTangerang"> -->
+=======
                         </div>
                         <div class="col-lg-4 align-center">
                             <!-- <img class="medsos" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt=""> -->
@@ -1096,6 +1284,7 @@
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-10.png') ?>" alt="">
                                 </a>
                                 <!-- <a class="align-center col-md-4" target="_blank" href="https://twitter.com/HumasTangerang"> -->
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                                     <!-- <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt=""> -->
                                     <!-- </a> -->
                                     <a class="align-center col-md-4" target="_blank" href="https://www.instagram.com/dinkes.kotatangerang/?hl=id">
@@ -1103,7 +1292,11 @@
                                     </a>
                                 </div>
                             </div>
+<<<<<<< HEAD
+                            <!-- <div class="col-md-4 align-center">
+=======
                         <!-- <div class="col-md-4 align-center">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                             <img class="medsos" src="<?= base_url('assets/img/logo kecil2-06.png') ?>" alt="">
                             <hr>
                             <h3>Tangerang TV</h3>
@@ -1113,23 +1306,38 @@
                                 </a>
                             </div>
                         </div> -->
+<<<<<<< HEAD
+                        </div>
+=======
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                     </div>
                 </div>
             </div>
         </div>
     </div>
+<<<<<<< HEAD
+
+
+
+    <!-- <div class="container">
+=======
 </div>
 
 
 
   <!-- <div class="container">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
     <div class="row">
       <div class="">
         <h2>Video Baznas</h2>
       </div>
     </div>
 </div> -->
+<<<<<<< HEAD
+    <!-- <div class="container">
+=======
 <!-- <div class="container">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
     <div class="">
         <div class="title col-lg-12">
             <div class="card-img">
@@ -1154,14 +1362,24 @@
 
                     <div class="card-content">
                         <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+<<<<<<< HEAD
+    <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+    <!--  <center>
+=======
                         <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
                        <!--  <center>
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                             <a href="<?= $tv->link_video ?>" class="btn btn-success btn-sm mt-2" target="__blank">
                                 <i style="background-color: blue" ></i> Lihat Video
                             </a>
                         </center> -->
+<<<<<<< HEAD
+    <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+    <!--            </div>
+=======
                         <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
          <!--            </div>
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
 
                 </div>
             </div>
@@ -1183,12 +1401,27 @@
 
     <div class="container">
         <div class="row"> -->
+<<<<<<< HEAD
+<!--Titles-->
+<!-- <div class="title col-12">
+=======
             <!--Titles-->
             <!-- <div class="title col-12">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                 <div class="card-img">
                     <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
                 </div>
             </div> -->
+<<<<<<< HEAD
+<!--Left-->
+<!-- ===================== -->
+<!--   <div class="col-12 col-md-6">
+                <?php
+                foreach ($video_tng as $k => $v) :
+                    if ($k == '0') :
+                ?> -->
+<!--          <div class="rny-vid-container">
+=======
             <!--Left-->
             <!-- ===================== -->
           <!--   <div class="col-12 col-md-6">
@@ -1197,6 +1430,7 @@
                     if ($k == '0') :
                     ?> -->
                <!--          <div class="rny-vid-container">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                             <iframe id="rny_vid_frame" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
                         </div>
                 <?php endif;
@@ -1207,7 +1441,11 @@
                     <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_tngtv.png" alt="">
                 </div>
             -->
+<<<<<<< HEAD
+<!--   <div class="rny-vid-list-container">
+=======
               <!--   <div class="rny-vid-list-container">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                     <div class="rny-vid-list">
                         <?php foreach ($video_tng as $k => $v) : ?>
                             <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame').src='<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=1&rel=0&showinfo=0&autohide=1'">
@@ -1223,21 +1461,49 @@
                     </div>
                 </div> -->
 
+<<<<<<< HEAD
+<!-- LEFT AND RIGHT ARROWS -->
+<!--    <div class="rny-arrows">
+=======
                 <!-- LEFT AND RIGHT ARROWS -->
              <!--    <div class="rny-arrows">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                     <div class="rny-arrow-left"><i class="fa fa-chevron-left fa-lg"></i></div>
                     <div class="rny-arrow-right"><i class="fa fa-chevron-right fa-lg"></i></div>
                 </div>
 
             </div> -->
+<<<<<<< HEAD
+<!-- ===================== -->
+<!--Right-->
+<!--  <div class="col-12 col-md-12">
+=======
             <!-- ===================== -->
             <!--Right-->
            <!--  <div class="col-12 col-md-12">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                 <?php
                 foreach ($video_humas as $k => $v) :
                     if ($k == '0') :
                         // var_dump($video_humas);
                         // die();
+<<<<<<< HEAD
+                ?> -->
+<!--  <div class="rny-vid-container-humas"> -->
+<!-- <p><?= $v["judul_berita"] ?></p> -->
+<!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
+<!-- <iframe id="rny_vid_frame-humas" src="https://www.youtube.com/embed/OZ2GIqfs0SY" frameborder="0" width="560" height="315"></iframe> -->
+<!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>" frameborder="0" width="560" height="315"></iframe> -->
+<!-- </div> -->
+<!--   <?php endif;
+                endforeach;
+        ?> -->
+
+<!-- <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
+                    <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_humas.png" alt="">
+                </div>  -->
+<!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
+=======
                     ?> -->
                     <!--  <div class="rny-vid-container-humas"> -->
                         <!-- <p><?= $v["judul_berita"] ?></p> -->
@@ -1253,6 +1519,7 @@
                     <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_humas.png" alt="">
                 </div>  -->
                <!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                     <img class="logo-liputan" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt="">
                 </div>
 
@@ -1272,8 +1539,13 @@
                     </div>
                 </div> -->
 
+<<<<<<< HEAD
+<!-- LEFT AND RIGHT ARROWS -->
+<!-- <div class="rny-arrows">
+=======
                 <!-- LEFT AND RIGHT ARROWS -->
                 <!-- <div class="rny-arrows">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                     <div class="rny-arrow-left-humas"><i class="fa fa-chevron-left fa-lg"></i></div>
                     <div class="rny-arrow-right-humas"><i class="fa fa-chevron-right fa-lg"></i></div>
                 </div>
@@ -1327,9 +1599,15 @@
                 <div class="card-body bg-transparent">
                     <div class="row">
                         <div class="col-md-4 align-center"> -->
+<<<<<<< HEAD
+<!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
+                                <hr> -->
+<!--   <h3>Kota Tangerang</h3>
+=======
                             <!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
                                 <hr> -->
                           <!--   <h3>Kota Tangerang</h3>
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                             <div class="row">
                                 <a class="align-center col-md-4" target="_blank" href="https://id-id.facebook.com/kotatng/">
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-07.png') ?>" alt="">
@@ -1341,24 +1619,43 @@
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt="">
                                 </a>
                             </div> -->
+<<<<<<< HEAD
+<!--  </div>
+                        <div class="col-lg-4 align-center"> -->
+<!-- <img class="medsos" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt=""> -->
+<!-- <hr> -->
+<!--  <h3>DINAS KESEHATAN</h3>
+=======
                        <!--  </div>
                         <div class="col-lg-4 align-center"> -->
                             <!-- <img class="medsos" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt=""> -->
                             <!-- <hr> -->
                            <!--  <h3>DINAS KESEHATAN</h3>
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                             <div class="row">
                                 <a class="align-center col-md-6" target="_blank" href="https://www.youtube.com/channel/UCKGFxu_Sb2LFwMoi5h_zDow">
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-10.png') ?>" alt="">
                                 </a> -->
+<<<<<<< HEAD
+<!-- <a class="align-center col-md-4" target="_blank" href="https://twitter.com/HumasTangerang"> -->
+<!-- <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt=""> -->
+<!-- </a> -->
+<!--  <a class="align-center col-md-4" target="_blank" href="https://www.instagram.com/dinkes.kotatangerang/?hl=id">
+=======
                                 <!-- <a class="align-center col-md-4" target="_blank" href="https://twitter.com/HumasTangerang"> -->
                                     <!-- <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt=""> -->
                                     <!-- </a> -->
                                    <!--  <a class="align-center col-md-4" target="_blank" href="https://www.instagram.com/dinkes.kotatangerang/?hl=id">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                                         <img class="medsoss" src="<?= base_url('assets/img/sosmed-08.png') ?>" alt="">
                                     </a>
                                 </div>
                             </div> -->
+<<<<<<< HEAD
+<!-- <div class="col-md-4 align-center">
+=======
                         <!-- <div class="col-md-4 align-center">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                             <img class="medsos" src="<?= base_url('assets/img/logo kecil2-06.png') ?>" alt="">
                             <hr>
                             <h3>Tangerang TV</h3>
@@ -1368,16 +1665,25 @@
                                 </a>
                             </div>
                         </div> -->
+<<<<<<< HEAD
+<!--  </div>
+=======
                    <!--  </div>
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                 </div>
             </div>
         </div>
     </div>
 </div> -->
 <!-- <hr> -->
+<<<<<<< HEAD
+<section id="struktur" class="cid-struktur mbr-fullscreen" data-rv-view="1620">
+    <div class="container align-center">
+=======
 <!-- <section id="struktur" class="cid-struktur mbr-fullscreen" data-rv-view="1620"> -->
     <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="">
         <div class="container align-center">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
         <!-- <div class="media-container-row align-center">
 			<div class="row justify-content-md-center" style="padding-top:50px; padding-bottom: 50px;">
 				<h3 class="mbr-section-title mbr-bold mbr-fonts-style">
@@ -1396,6 +1702,17 @@
 							<img class="img-fluid img-responsive img-thumbnail" src="<?php echo base_url('assets/media/image/') . $row->isi ?>" alt="">
 						</a>
 					</div> -->
+<<<<<<< HEAD
+                        <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" media-simple="true" style="width: 100%;">
+
+                    <?php } ?>
+                    <!-- <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/struktur_ppid.png" media-simple="true" style="width: 100%;"> -->
+                </div>
+            </div>
+        </div>
+        <div class="media-container-row">
+            <div class="col-md-6">
+=======
                     <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" media-simple="true" style="width: 100%;">
 
                 <?php } ?>
@@ -1405,6 +1722,7 @@
     </div>
     <div class="media-container-row">
         <div class="col-md-6">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                 <!-- <?php foreach (@$kepwal as $row) { ?>
                 <a href="<?php echo base_url('assets/media/image/') . $row->isi ?>" class="text-dark">
                     <img style="width:20%; margin:auto;" src="https://img.icons8.com/fluent/48/000000/file.png" alt="">
@@ -1412,7 +1730,11 @@
                 </a>
                 <?php } ?> -->
             </div>
+<<<<<<< HEAD
+            <!--  <div class="col-md-6">
+=======
            <!--  <div class="col-md-6">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                 <img src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" style="width:50%; margin:auto;" alt="" media-simple="true">
             </div> -->
         </div>
@@ -1420,7 +1742,11 @@
 </section>
 <hr>
 <!-- <section id="visi-misi" class="cid-visi-misi mbr-fullscreen bg-white" data-rv-view="1620"> -->
+<<<<<<< HEAD
+<section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="background-color: white">
+=======
    <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="background-color: white">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
     <div class="container align-center">
         <div class="media-container-row align-center">
             <!-- <div class="row float-center justify-content-md-center" style="width:100%; margin:auto; padding-top:50px;padding-bottom: 50px;">
@@ -1429,6 +1755,25 @@
                 </h2>
 			</div>
             <img class="float-right" src="<?php echo base_url(); ?>assets/img/banner/PPID LOGO.png" style="width:150px; position:absolute; right: 10px;top: 28px;" alt="" media-simple="true"> -->
+<<<<<<< HEAD
+        </div>
+        <div class="media-container-row align-center">
+            <div class="row justify-content-md-center" style="text-align:justify; color: #000000;">
+                <h4 class="mbr-section-title mbr-fonts-style">
+                    <?php foreach ($visi as $row) { ?>
+                        <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" media-simple="true" style="width: 100%;">
+
+                    <?php } ?>
+                    </p>
+                </h4>
+            </div>
+        </div>
+    </div>
+</section>
+<hr>
+<!-- <section id="maklumat" class="cid-struktur mbr-fullscreen" data-rv-view="1620"> -->
+<section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="">
+=======
         </div>
         <div class="media-container-row align-center">
             <div class="row justify-content-md-center" style="text-align:justify; color: #000000;">
@@ -1446,6 +1791,7 @@
 <hr>
 <!-- <section id="maklumat" class="cid-struktur mbr-fullscreen" data-rv-view="1620"> -->
  <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="">
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
     <div class="container align-center">
 
 
@@ -1477,6 +1823,59 @@
                 type: 'GET',
                 header: {
                     '<?= $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>', //replace by your name/value
+<<<<<<< HEAD
+                },
+                data: function(data) {
+                    data.filter = {
+                        'username': '',
+                    };
+                }
+            },
+            language: {
+                sProcessing: '<img src="<?php echo base_url('assets/img/process.gif') ?>" width="20px"> Sedang memproses...',
+                sLengthMenu: 'Tampilkan _MENU_ entri',
+                sZeroRecords: 'Tidak ditemukan data yang sesuai',
+                sInfo: 'Menampilkan _START_ sampai _END_ dari _TOTAL_ entri',
+                sInfoEmpty: 'Menampilkan 0 sampai 0 dari 0 entri',
+                sInfoFiltered: '(disaring dari _MAX_ entri keseluruhan)',
+                sInfoPostFix: '',
+                sSearch: 'Cari:',
+                sUrl: '',
+                oPaginate: {
+                    sFirst: '<<',
+                    sPrevious: '<',
+                    sNext: '>',
+                    sLast: '>>'
+                }
+            },
+            order: [1, 'desc'],
+            columns: [{
+                    'data': 'no',
+                    'orderable': false
+                },
+                {
+                    'data': 'id_daftar_pembantu',
+                    "visible": false
+                },
+                {
+                    'data': 'skpd'
+                },
+                {
+                    'data': 'kategori'
+                },
+                {
+                    'data': 'alamat'
+                },
+                {
+                    'data': 'no_tlp'
+                },
+                {
+                    'data': 'email'
+                },
+                {
+                    'data': 'website'
+                },
+=======
                 },
                 data: function(data) {
                     data.filter = {
@@ -1528,6 +1927,7 @@
             {
                 'data': 'website'
             },
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
             ]
         });
     });
@@ -1546,6 +1946,21 @@
     }
 </script>
 <!-- <section id="icon" class="cid-icon" data-rv-view="1620"> -->
+<<<<<<< HEAD
+<section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="background-color: white">
+    <div class="container align-center">
+        <div class="media-container-row">
+            <div class="col-lg-4 col-md-6 col-sm-12 p-5">
+                <div class="card-wrapper">
+                    <a href="javascript:void(0)" data-toggle="modal" data-target="#exampleModal" class="text-reset">
+                        <div class="card-img">
+                            <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/daftar-ppid-min.png" media-simple="true">
+                            <p>Daftar PPID Pembantu</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+=======
     <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="background-color: white">
         <div class="container align-center">
             <div class="media-container-row">
@@ -1559,6 +1974,7 @@
                         </a>
                     </div>
                 </div>
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
             <!-- <div class="col-lg-4 col-md-12 col-sm-12 p-5">
 					<a href="javascript:void(0)" data-toggle="modal" data-target="#strukturModal" class="text-reset">
                         <div class="card-wrapper">
@@ -1569,29 +1985,39 @@
                         </div>
 					</a>
                 </div> -->
-                <div class="col-lg-4 col-md-6 col-sm-12 p-5">
-                    <a href="javascript:void(0)" data-toggle="modal" data-target="#perwalModal" class="text-reset">
-                        <div class="card-wrapper">
-                            <div class="card-img">
-                                <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/keputusan-min.png" media-simple="true">
-                                <p>Keputusan Walikota</p>
-                            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 p-5">
+                <a href="javascript:void(0)" data-toggle="modal" data-target="#perwalModal" class="text-reset">
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/keputusan-min.png" media-simple="true">
+                            <p>Keputusan Walikota</p>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
         </div>
+    </div>
 
-    </section>
+</section>
 
-    <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620">
-        <div class="container align-center">
+<section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620">
+    <div class="container align-center">
 
-            <div class="media-container-row align-center">
-                <div class="row justify-content-md-center" style="text-align:justify; color: #000000;">
-                    <h5 class="mbr-section-title mbr-fonts-style" style="padding-top: 50px;">
-                        <p style="text-align: center;">
+        <div class="media-container-row align-center">
+            <div class="row justify-content-md-center" style="text-align:justify; color: #000000;">
+                <h5 class="mbr-section-title mbr-fonts-style" style="padding-top: 50px;">
+                    <p style="text-align: center;">
 
+<<<<<<< HEAD
+                        <strong>DINAS KESEHATAN KOTA TANGERANG</strong>
+                    </p>
+                    <p style="text-align: center; font-weight: normal;">
+                        <?= $kontak['alamat'] ?>
+                    </p>
+                    <p style="text-align: center; font-weight: normal;">
+                        Telp: <?= $kontak['no_tlp'] . ',' ?> Fax: <?= $kontak['no_fax'] ?>
+                    </p>
+=======
                             <strong>DINAS KESEHATAN KOTA TANGERANG</strong>
                         </p>
                         <p style="text-align: center; font-weight: normal;">
@@ -1600,6 +2026,7 @@
                         <p style="text-align: center; font-weight: normal;">
                             Telp: <?= $kontak['no_tlp'] . ',' ?> Fax: <?= $kontak['no_fax'] ?>
                         </p>
+>>>>>>> 9ef53cca6a54bd36d586c8182601f4cb69b3d778
                     <!-- <p style="text-align: center; font-weight: normal;">
 
                     </p> -->
