@@ -20,12 +20,13 @@ class Profil_opd extends MX_Controller {
 
 	public function index()
 	{
-		$data['struktur1'] = $this->main_model2->get_isi_struktur('struktur1');
+		// $data['struktur1'] = $this->main_model2->get_isi_struktur('struktur1');
 		// $data["struktur2"] = $this->db->query("SELECT * FROM m_profil WHERE option = 'struktur'")->result();
 		// var_dump($data3);
 		// die();
-
-
+		$data['hasil']=$this->db->query("SELECT * FROM m_profil WHERE option='gambaran_umum'")->result_array();
+		// var_dump($hasil);
+		// die();
 		$listProfiles = $this->db->query("SELECT m_profil.*
 
 			FROM m_profil
