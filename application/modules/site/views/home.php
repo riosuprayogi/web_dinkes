@@ -11,7 +11,7 @@
 
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
 <script>   
-   AOS.init(); 
+ AOS.init(); 
 </script>
 <style>
     .footer {
@@ -307,8 +307,8 @@
 
         /*.caption {
 				margin-top: 40px;
-             }*/
-             .vid-list-container {
+               }*/
+               .vid-list-container {
                 padding-bottom: 20px;
             }
 
@@ -428,7 +428,7 @@
 <!-- <section class="featured" style="background-color: white;" data-aos="fade-right">
     <div class="container mb-3 mt-4">
         <div class="row">
-         <div class="col-12 text-center"> -->
+           <div class="col-12 text-center"> -->
             <!-- <?php foreach ($berita3 as $ka) : ?> -->
             <!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
             <!-- <?php endforeach; ?> -->
@@ -504,7 +504,8 @@
 
 
 <!-- ==============================Berita Slider -->
-<section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right" style="background-color: white">
+<!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right" style="background-color: white"> -->
+    <section  id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620"  data-aos="fade-right" style="background-color: white">
 
 
 
@@ -531,7 +532,7 @@
                             <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
                                 <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
 
-                                 <?php if (count($f["path_foto_artikel"]) > 0) {
+                                   <?php if (count($f["path_foto_artikel"]) > 0) {
                                     foreach ($f["path_foto_artikel"] as $k) {
                                       ?>
                                       <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
@@ -990,7 +991,8 @@
 
 <!-- ==============================Video Slider -->
 
-<section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right">
+<!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right"> -->
+    <section  id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="" data-aos="fade-right">
 
 
 
@@ -1053,22 +1055,23 @@
 
 <!-- ==============================Video Slider -->
 
-<section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right">
+<!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right" style="background-color: white"> -->
+    <section   id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" data-aos="fade-right" style="background-color: white">
 
 
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card" style="background-color: transparent;">
-                    <div class="card-header bg-transparent">
-                        <h3 class="align-center">
-                            Media Sosial
-                        </h3>
-                    </div>
-                    <div class="card-body bg-transparent">
-                        <div class="row">
-                            <div class="col-md-4 align-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card" style="background-color: transparent;">
+                        <div class="card-header bg-transparent">
+                            <h3 class="align-center">
+                                Media Sosial
+                            </h3>
+                        </div>
+                        <div class="card-body bg-transparent">
+                            <div class="row">
+                                <div class="col-md-4 align-center">
                             <!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
                                 <hr> -->
                           <!--   <h3>Kota Tangerang</h3>
@@ -1372,8 +1375,9 @@
     </div>
 </div> -->
 <!-- <hr> -->
-<section id="struktur" class="cid-struktur mbr-fullscreen" data-rv-view="1620">
-    <div class="container align-center">
+<!-- <section id="struktur" class="cid-struktur mbr-fullscreen" data-rv-view="1620"> -->
+    <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="">
+        <div class="container align-center">
         <!-- <div class="media-container-row align-center">
 			<div class="row justify-content-md-center" style="padding-top:50px; padding-bottom: 50px;">
 				<h3 class="mbr-section-title mbr-bold mbr-fonts-style">
@@ -1415,7 +1419,8 @@
     </div>
 </section>
 <hr>
-<section id="visi-misi" class="cid-visi-misi mbr-fullscreen bg-white" data-rv-view="1620">
+<!-- <section id="visi-misi" class="cid-visi-misi mbr-fullscreen bg-white" data-rv-view="1620"> -->
+   <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="background-color: white">
     <div class="container align-center">
         <div class="media-container-row align-center">
             <!-- <div class="row float-center justify-content-md-center" style="width:100%; margin:auto; padding-top:50px;padding-bottom: 50px;">
@@ -1439,7 +1444,8 @@
 </div>
 </section>
 <hr>
-<section id="maklumat" class="cid-struktur mbr-fullscreen" data-rv-view="1620">
+<!-- <section id="maklumat" class="cid-struktur mbr-fullscreen" data-rv-view="1620"> -->
+ <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="">
     <div class="container align-center">
 
 
@@ -1539,19 +1545,20 @@
         $('#modal_magnify').modal('show'); // show bootstrap modal when complete loaded
     }
 </script>
-<section id="icon" class="cid-icon" data-rv-view="1620">
-    <div class="container align-center">
-        <div class="media-container-row">
-            <div class="col-lg-4 col-md-6 col-sm-12 p-5">
-                <div class="card-wrapper">
-                    <a href="javascript:void(0)" data-toggle="modal" data-target="#exampleModal" class="text-reset">
-                        <div class="card-img">
-                            <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/daftar-ppid-min.png" media-simple="true">
-                            <p>Daftar PPID Pembantu</p>
-                        </div>
-                    </a>
+<!-- <section id="icon" class="cid-icon" data-rv-view="1620"> -->
+    <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="background-color: white">
+        <div class="container align-center">
+            <div class="media-container-row">
+                <div class="col-lg-4 col-md-6 col-sm-12 p-5">
+                    <div class="card-wrapper">
+                        <a href="javascript:void(0)" data-toggle="modal" data-target="#exampleModal" class="text-reset">
+                            <div class="card-img">
+                                <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/daftar-ppid-min.png" media-simple="true">
+                                <p>Daftar PPID Pembantu</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
             <!-- <div class="col-lg-4 col-md-12 col-sm-12 p-5">
 					<a href="javascript:void(0)" data-toggle="modal" data-target="#strukturModal" class="text-reset">
                         <div class="card-wrapper">
