@@ -61,6 +61,33 @@
 	object-fit: cover;">
 </section>
 
+
+<section>
+	<div style="background-image: url('<?= base_url('assets/img/banner/5.png') ?>') ; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+		<section class= "cid-ppid" id="ppid" data-rv-view="1620" style="padding-top: 90px !important; background: rgba(207, 207, 207, 0.33);">
+			<div class="container-fluid ">
+				<div class="media-container-row ">
+					<div class="col-12 col-md-12">
+						<div class="media-container-row">
+							
+							<div class="mbr-figure rounded" style="padding:5px; background: rgba(255, 255, 255, 0.92); width: 40%;">
+								<div class="mbr-figure " style="height:100%; opacity:1.0;">
+									<img src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" style="width:50%; margin:auto;" alt="" media-simple="true">
+									<center>  <p style="text-align: center; ">asdasdad
+										<!-- <?php echo $profil['isi']; ?> -->
+										<!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
+									</p></center>
+								</div>
+
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
 <!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right" style="background-color: white">
 	<div class="container">
 		<div class="">
@@ -189,7 +216,8 @@
 				<div class="title col-lg-12">
 					<div class="card-img">
 						<!-- <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;"> -->
-						<h2><b>STRUKTUR</b></h2>
+						<!-- <h2><b>STRUKTUR</b></h2> -->
+						<img class="" src="<?php echo base_url('assets/media/image/struktur.png') ?>" media-simple="true" style="width: 20%;"><hr>
 					</div>
 				</div>
 				<div class="" data-flickity='{ "wrapAround": true }'>
