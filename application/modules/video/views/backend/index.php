@@ -434,12 +434,12 @@
 							<td></td>
 							<td></td>
 						</tr>
-						<tr>
+						<tr style="text-align:center">
 							<th>No</th>
-							<th style="width:15%">Judul Video</th>
-							<th width="100px">Video Url</th>
-							<th>Status</th>
-							<th>Tanggal/Jam</th>
+							<th style="width:40%">Judul Video</th>
+							<th style="width:40%">Video Url</th>
+							<th style="width:7%">Status</th>
+							<th style="width:15%">Tanggal/Jam</th>
 							<th style="width:7%">Aksi</th>
 							<!-- dataTable ga bisa pake colspan atau rowspan -->
 						</tr>
@@ -453,8 +453,11 @@
 							<tr>
 								<td><?= $i; ?></td>
 								<td><?= $v->nama_video ?></td>
-								<td><iframe width="280" height="180" src="<?= $linkyutube; ?>">
-									</iframe></td>
+								<td>
+									<center><iframe width="280" height="180" src="<?= $linkyutube; ?>">
+										</iframe>
+									</center>
+								</td>
 								<td><?= $v->status ?></td>
 								<td><?= $v->tgl_jam ?></td>
 								<td>

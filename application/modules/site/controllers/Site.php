@@ -183,7 +183,7 @@ $this->template->render_home('site/home',$data);
 }
 
 
-public function detail($id, $id2)
+public function detail($id)
 {
     	// ============== isi berita
 	$data['foto'] = $this->db->query("SELECT t_berita.*, t_foto_berita.*
@@ -191,7 +191,7 @@ public function detail($id, $id2)
 		JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
 		WHERE t_berita.id_berita = '$id' AND t_berita.status = 'show'")->result();
 
-	$data["detailBerita"] = $this->db->query("SELECT * FROM t_berita WHERE  status = 'show'")->result();
+	$data["detailBerita"] = $this->db->query("SELECT * FROM t_berita WHERE  status = 'show' AND id_berita='$id'")->result();
 // ============== akhir isi berita
 
 
@@ -201,7 +201,9 @@ public function detail($id, $id2)
 		FROM t_berita 
 			                                        -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
 			                                        -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
-			                                        WHERE t_berita.status = 'show' AND trash='0' AND id_kategori = $id2   ORDER BY tgl_jam DESC LIMIT 4");
+			                                        WHERE t_berita.status = 'show' AND trash='0'    ORDER BY tgl_jam DESC LIMIT 4");
+
+
 			// var_dump($listProfiles2);
 			            	// die();
 
@@ -219,7 +221,7 @@ public function detail($id, $id2)
 			                    // "id_kategori" => $row["id_kategori"],
 				"judul_berita" => $row["judul_berita"],
 				"isi_berita" => $row["isi_berita"],
-				"id_kategori"  =>  $row["id_kategori"],
+				// "id_kategori"  =>  $row["id_kategori"],
 			                    // "publish" => $row["publish"],
 				"tgl_jam" => $row["tgl_jam"],
 				"path_foto_artikel" => $result

@@ -94,7 +94,7 @@ class Berita extends MX_Controller
 	public function ajax_insert()
 	{
 		$data = array(
-			'id_kategori' => $this->input->post('dd_kategori_berita', TRUE),
+			// 'id_kategori' => $this->input->post('dd_kategori_berita', TRUE),
 			'judul_berita' => $this->input->post('judul_berita', TRUE),
 			'isi_berita' => $this->input->post('isi_berita'),
 			'status' => $this->input->post('status', TRUE),
@@ -252,14 +252,14 @@ class Berita extends MX_Controller
 		} else {
 
 			$id             = $this->input->post('id_berita');
-			$id_kategori = $this->input->post('id_kategori');
+			// $id_kategori = $this->input->post('id_kategori');
 			$judul_berita  = $this->input->post('judul_berita');
 			$isi_berita    = $this->input->post('isi_berita');
 			$status        = $this->input->post('status');
 			$id_admin        = $this->input->post('id_admin');
 
 			$data = array(
-				'id_kategori'    => $id_kategori,
+				// 'id_kategori'    => $id_kategori,
 				'judul_berita'     => $judul_berita,
 				'isi_berita'       => $isi_berita,
 				'status'           => $status,

@@ -54,64 +54,64 @@ class Dokumentasi_informasi extends MX_Controller {
 		// $videos =  @$hasil['video'];
 		
 
-		if ($this->session->id_user == "") {
+		// if ($this->session->id_user == "") {
 			// $this->logout();
 			// $this->template->render_home('home/index');
-			$data['title'] = 'PPID Kota Tangerang';
-			$data['profil'] = $this->main_model->get_isi('intro');
-			$data['profil_image'] = $this->main_model->get_isi_file('profil');
-			$data['struktur'] = $this->main_model->get_isi_struktur('struktur');
-			$data['visi'] = $this->main_model->get_isi_file('visi');
-			$data['kepwal'] = $this->main_model->get_isi_file('kepwal');
-			$data['maklumat'] = $this->main_model->get_isi_file('maklumat');
-			$data['kontak'] =$this->main_model->get_kontak();
-			$data['image'] = $this->main_model->get_banner();
+		$data['title'] = 'PPID Kota Tangerang';
+		$data['profil'] = $this->main_model->get_isi('intro');
+		$data['profil_image'] = $this->main_model->get_isi_file('profil');
+		$data['struktur'] = $this->main_model->get_isi_struktur('struktur');
+		$data['visi'] = $this->main_model->get_isi_file('visi');
+		$data['kepwal'] = $this->main_model->get_isi_file('kepwal');
+		$data['maklumat'] = $this->main_model->get_isi_file('maklumat');
+		$data['kontak'] =$this->main_model->get_kontak();
+		$data['image'] = $this->main_model->get_banner();
 			// $data['latest_news'] = $result;
-			$data['siaran'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_siaran/');
+		$data['siaran'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_siaran/');
 			// $data['banner'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_banner/');
-			
+		
 			// $data['banner'] = $this->site->get_curl('https://tangerangkota.go.id/banner/api-banner/');
 			// $data['berita2'] = $this->berita->get_isi_berita();
-			$data['berita'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_berita/');
-			
-			$data['video_tng'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_tng/');
-			$data['video_humas'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_humas/');
+		$data['berita'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_berita/');
+		
+		$data['video_tng'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_tng/');
+		$data['video_humas'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_humas/');
 
 // ================= berita
 
-			$listProfiles = $this->db->query("SELECT t_berita.*
+		$listProfiles = $this->db->query("SELECT t_berita.*
 
-				FROM t_berita 
+			FROM t_berita 
 			    -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
 			    -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
 			    WHERE t_berita.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC LIMIT 4");
 			// var_dump($listProfiles);
 			            	// die();
 
-			$arrProfile = [];
-			$arr = [];
-			foreach ($listProfiles->result_array() as $key => $row) {
+		$arrProfile = [];
+		$arr = [];
+		foreach ($listProfiles->result_array() as $key => $row) {
 
-				$result = $this->db->query("SELECT *, MIN(urutan)AS urutan FROM t_foto_berita WHERE id_berita=" . $row['id_berita'] . "")->result_array();
+			$result = $this->db->query("SELECT *, MIN(urutan)AS urutan FROM t_foto_berita WHERE id_berita=" . $row['id_berita'] . "")->result_array();
 			            	// var_dump($result);
 			            	// die();
-				if ($result) {
+			if ($result) {
 
-					$arr = array(
-						"id_berita" => $row["id_berita"],
-						"id_kategori" => $row["id_kategori"],
-						"judul_berita" => $row["judul_berita"],
-						"isi_berita" => $this->batas($row["isi_berita"], 50),
+				$arr = array(
+					"id_berita" => $row["id_berita"],
+					"id_kategori" => $row["id_kategori"],
+					"judul_berita" => $row["judul_berita"],
+					"isi_berita" => $this->batas($row["isi_berita"], 50),
 			                    // "nama_admin"  =>  $row["nama_admin"],
 			                    // "publish" => $row["publish"],
-						"tgl_jam" => $row["tgl_jam"],
-						"path_foto_artikel" => $result
-					);
-					array_push($arrProfile, $arr);
-				}
+					"tgl_jam" => $row["tgl_jam"],
+					"path_foto_artikel" => $result
+				);
+				array_push($arrProfile, $arr);
 			}
+		}
 
-			$data["berita3"] = $arrProfile;
+		$data["berita3"] = $arrProfile;
 			// var_dump($datae);
 			// die();
 
@@ -120,39 +120,39 @@ class Dokumentasi_informasi extends MX_Controller {
 
 // ================= Galeri
 
-			$listProfiles = $this->db->query("SELECT t_foto_galery.*, t_detail_foto_galery.*
+		$listProfiles = $this->db->query("SELECT t_foto_galery.*, t_detail_foto_galery.*
 
-				FROM t_foto_galery 
-				JOIN t_detail_foto_galery ON t_foto_galery.id_galery = t_detail_foto_galery.id_foto_galery
+			FROM t_foto_galery 
+			JOIN t_detail_foto_galery ON t_foto_galery.id_galery = t_detail_foto_galery.id_foto_galery
 			                                        -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
 			                                        WHERE t_foto_galery.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC LIMIT 4");
 			// var_dump($listProfiles);
 			            	// die();
 
-			$arrProfile = [];
-			$arr = [];
-			foreach ($listProfiles->result_array() as $key => $row) {
+		$arrProfile = [];
+		$arr = [];
+		foreach ($listProfiles->result_array() as $key => $row) {
 
-				$result = $this->db->query("SELECT *, MIN(urutan)AS urutan FROM t_detail_foto_galery WHERE id_foto_galery=" . $row['id_foto_galery'] . "")->result_array();
+			$result = $this->db->query("SELECT *, MIN(urutan)AS urutan FROM t_detail_foto_galery WHERE id_foto_galery=" . $row['id_foto_galery'] . "")->result_array();
 			            	// var_dump($result);
 			            	// die();
-				if ($result) {
+			if ($result) {
 
-					$arr = array(
-						"id_foto_galery" => $row["id_foto_galery"],
+				$arr = array(
+					"id_foto_galery" => $row["id_foto_galery"],
 			                    // "kategori_artikel" => $row["kategori_artikel"],
-						"nama_album" => $row["nama_album"],
+					"nama_album" => $row["nama_album"],
 			                    // "isi_berita" => $row["isi_berita"],
 			                    // "nama_admin"  =>  $row["nama_admin"],
 			                    // "publish" => $row["publish"],
-						"tgl_jam" => $row["tgl_jam"],
-						"path_detail_foto" => $result
-					);
-					array_push($arrProfile, $arr);
-				}
+					"tgl_jam" => $row["tgl_jam"],
+					"path_detail_foto" => $result
+				);
+				array_push($arrProfile, $arr);
 			}
+		}
 
-			$data["galeri3"] = $arrProfile;
+		$data["galeri3"] = $arrProfile;
 			// var_dump($dataa);
 			// die();
 
@@ -161,7 +161,7 @@ class Dokumentasi_informasi extends MX_Controller {
 
  // $data7["videoBerita"] = $this->db->query("SELECT * FROM t_video WHERE id_video = '18' AND status = 'show' ")->result();
    // Query Untuk Video;
-			$data["video_dinkes"] = $this->db->query("SELECT * FROM t_video WHERE status = 'show' AND trash='0' ORDER BY tgl_jam DESC LIMIT 4")->result();
+		$data["video_dinkes"] = $this->db->query("SELECT * FROM t_video WHERE status = 'show' AND trash='0' ORDER BY tgl_jam DESC LIMIT 4")->result();
 
 // var_dump($data7);
 // die();
@@ -176,10 +176,10 @@ die();*/
 
 $this->template->render_home('Dokumentasi_informasi/home',$data);
 
-} else {
+// } else {
 
-	$this->template->render('site/index');
-}
+	// $this->template->render('site/index');
+// }
 }
 
 

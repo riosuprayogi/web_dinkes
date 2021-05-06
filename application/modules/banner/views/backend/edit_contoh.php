@@ -18,13 +18,13 @@
 
                 <div class="card-body">
 
-                    <?php foreach ($t_berita as $a) : ?>
-                        <form action="<?php echo base_url() . 'berita/updateDataAksi' ?>" method="post" enctype="multipart/form-data" id="updateBerita">
+                    <?php foreach ($t_foto_galery as $a) : ?>
+                        <form action="<?php echo base_url() . 'foto/updateDataAksi' ?>" method="post" enctype="multipart/form-data" id="updateFoto">
                             <?= $this->session->flashdata('pesan') ?>
                             <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
-                            <div class="form-group row">
+                            <!-- <div class="form-group row">
                                 <input type="hidden" class="form-control" id="id_berita" name="id_berita" value="<?= $a->id_berita ?>">
-                                <!-- <label for="id_kategori" class="col-sm-2 col-form-label">Kategori </label>
+                                <label for="id_kategori" class="col-sm-2 col-form-label">Kategori </label>
                                 <div class="col-sm-10">
                                     <select name="id_kategori" id="id_kategori" class="form-control">
                                         <option value="">--Pilih--</option>
@@ -36,14 +36,14 @@
                                         <?php endforeach; ?>
                                     </select>
                                     <?= form_error('id_kategori', '<small class="text-danger pl-0">', '</small>'); ?>
-                                </div> -->
-                            </div>
+                                </div>
+                            </div> -->
                             <div class=" form-group row">
-                                <label for="judul_berita" class="col-sm-2 col-form-label">Judul Berita </label>
+                                <label for="nama_album" class="col-sm-2 col-form-label">Nama Album </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="judul_berita" name="judul_berita" value="<?= $a->judul_berita, set_value('judul_berita') ?>" autocomplete="off">
-                                    <small class="text-danger pl-0" style="display:none" id="requiredJudulBerita"> The judul artikel is required </small>
-                                    <?= form_error('judul_berita', '<small class="text-danger pl-0">', '</small>'); ?>
+                                    <input type="text" class="form-control" id="nama_album" name="nama_album" value="<?= $a->nama_album, set_value('nama_album') ?>" autocomplete="off">
+                                    <small class="text-danger pl-0" style="display:none" id="requiredJudulArtikel"> The judul artikel is required </small>
+                                    <?= form_error('nama_album', '<small class="text-danger pl-0">', '</small>'); ?>
                                 </div>
                             </div>
 
@@ -80,10 +80,10 @@
                             </div> -->
 
                             <!-- <div class="form-group row" id="imageMultiEdit">
-                                <label for="path_foto_artikel" class="col-sm-2 col-form-label">Photo </label>
+                                <label for="path_detail_foto" class="col-sm-2 col-form-label">Photo </label>
                                 <div class="col-sm-3">
                                     <div class="custome-file">
-                                        <input type="file" class="form-control" id="path_foto_artikel" name="path_foto_artikel[]" accept="image/*">
+                                        <input type="file" class="form-control" id="path_detail_foto" name="path_detail_foto[]" accept="image/*">
                                         <span style="color: red; font-size:12px;">* format photo (jpg,jpeg,png) ukuran file max 2 Mb</span><br>
                                         <span style="color: red; font-size:12px;">* jika multiupload/update, urutan tidak boleh sama dengan urutan photo lain.</span>
                                     </div>
@@ -100,55 +100,62 @@
                             </div>
                             <div id="imageMultiEdit"></div> -->
 
-
                             <div class="form-group row image_field">
-                                <label for="path_detail_foto" class="col-sm-2 col-form-label">Foto</label>
+                                <label for="path_detail_foto" class="col-sm-2 col-form-label">Photo</label>
                                 <div class="col-sm-10">
                                     <div class="row">
                                         <div class="col-sm-4">
-                                            <img src="<?= base_url('assets/backend/img/img_berita/noimage.png') ?>" class="img-thumbnail" id="imgPreview1" style="height: 400px; height: 350px;" />
+                                            <img src="<?= base_url('assets/backend/img/img_galery/noimage.png') ?>" class="img-thumbnail" id="imgPreview1" style="height: 400px; height: 350px;" />
                                         </div>
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="custom-file">
+                                        <div class="col-sm-6">
+                                            <div class="custom-file">
+                                                <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="image-label1" readonly required>
-                                                    <input type="file" class="custom-file-input upload_custom" id="customFileUpload1" data-count_image="1" name="path_foto_artikel[]" style="display: none;">
+                                                    <input type="file" class="custom-file-input upload_custom" id="customFileUpload1" data-count_image="1" name="path_detail_foto[]" style="display: none;">
                                                     <?= form_error('path_detail_foto', '<small class="text-danger pl-0">', '</small>'); ?>
+                                                    <span style="font-style: italic; color:red;">*) Format photo (jpg,jpeg,png) ukuran file max 2 Mb.</span><br>
+                                                    <span style="font-style: italic; color:red;">*) Tidak di sarankan upload (pdf,xls,doc,txt).</span>
                                                 </div>
-                                                <div class="input-group-append">
+                                                <div class="col-sm-3 mt-3">
                                                     <button class="btn btn-primary" onclick="open_file(1)" data-count_image="1" type="button">Pilih Gambar</button>
                                                 </div>
                                             </div>
-                                            <span style="font-style: italic; color:red;">*) Format photo (jpg,jpeg,png) ukuran file max 2 Mb.</span><br>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div id="imageMultiEdit"></div>
-                            <div class="form-group row image_field">
-                                <label for="path_foto_artikel" class="col-sm-2 col-form-label"></label>
-                                <div class="col-sm-10">
-                                    <!-- <div class="form-group row mt-3"> -->
-                                    <!-- <label for="urutan" class="col-sm-1 col-form-label">Urutan</label>
+                                    <!-- <div class="form-group row mt-3">
+                                        <label for="urutan" class="col-sm-1 col-form-label">Urutan</label>
                                         <div class="col-sm-2">
                                             <input type="text" class="form-control" id="urutan" name="urutan[]" value="" autocomplete="off">
-                                        </div> -->
-                                    <!-- <label for="ket_foto" class="col-sm-1 col-form-label">Ket. Foto</label>
-                                        <div class="col-sm-4">
-                                            <input type="text" class="form-control" id="ket_foto" name="ket_foto[]" value="" autocomplete="off">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for=""> Keterangan Foto</label>
+                                            <input type="text" id="ket_foto" name="ket_foto[]" class="form-control" value="" placeholder="Masukkan Keterangan" required>
                                         </div>
                                         <div class="col-sm-1 text-right">
                                             <button type="button" class="btn btn-primary ml-4 addServiceEdit">Tambah</button>
                                         </div>
                                     </div> -->
-                                    <div class="card-footer">
-                                        <!-- <button type="submit" class="btn btn-info">Sign in</button> -->
-                                        <button type="button" class="btn btn-primary float-right addServiceEdit">Tambah Foto</button>
-                                    </div>
                                 </div>
                             </div>
-
+                            <div class="col-md-12">
+                                <!-- <label for="urutan" class="col-sm-1 col-form-label">Urutan</label>
+												<div class="col-sm-2">
+													<input type="text" class="form-control" id="urutan" name="urutan[]" value="" autocomplete="off">
+												</div> -->
+                                <!-- <label for="ket_foto" class="col-sm-1 col-form-label">Ket. Image</label> -->
+                                <!-- <div class="col-sm-4">
+											<input type="text" class="form-control" id="ket_foto" name="ket_foto[]" value="" autocomplete="off">
+										</div> -->
+                                <div class="form-group">
+                                    <label for=""> Keterangan Foto</label>
+                                    <input type="text" id="ket_foto" name="ket_foto[]" class="form-control" value="" placeholder="Masukkan Keterangan">
+                                </div>
+                                <button type="button" style="margin-left: auto;" class="btn btn-primary ml-4 addServiceEdit">Tambah</button>
+                                <div class="col-sm-1 text-right">
+                                </div>
+                                <hr>
+                            </div>
+                            <div id="imageMultiEdit"></div>
 
                             <div class="form-group row">
                                 <div class="col-sm offset-sm-2">
@@ -156,26 +163,26 @@
                                         <table class="table table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <!-- <th scope="col" style="width: 3%;">Urutan</th> -->
-                                                    <th scope="col" style="width: 3%;">Image Profil</th>
-                                                    <!-- <th scope="col">Ket. Image</th> -->
+                                                    <th scope="col" style="width: 3%;">Urutan</th>
+                                                    <th scope="col" style="width: 300px;">Image Profil</th>
+                                                    <th scope="col">Keterangan Foto</th>
                                                     <th scope="col" style="width: 3%;">Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
 
-                                                if (count($t_foto_berita) > 0) {
-                                                    foreach ($t_foto_berita as $k) {
+                                                if (count($t_detail_foto_galery) > 0) {
+                                                    foreach ($t_detail_foto_galery as $k) {
                                                 ?>
                                                         <tr>
-                                                            <input type="hidden" class="form-control" name="id_detail_path_foto_artikel_update[]" value="<?= $k["id_foto_berita"]; ?>">
-                                                            <!-- <td><?= $k["urutan"] ?></td> -->
+                                                            <input type="hidden" class="form-control" name="id_detail_path_detail_foto_update[]" value="<?= $k["id"]; ?>">
+                                                            <td><?= $k["urutan"] ?></td>
                                                             <td>
-                                                                <?php if ($k["path_foto_artikel"] != NULL) {
+                                                                <?php if ($k["path_detail_foto"] != NULL) {
                                                                 ?>
-                                                                    <a target="blank" href="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>">
-                                                                        <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>" alt="<?= $k["ket_foto"]; ?>" width="100%">
+                                                                    <a target="blank" href="<?= base_url('assets/backend/img/img_galery/' . $k["path_detail_foto"]) ?>">
+                                                                        <img src="<?= base_url('assets/backend/img/img_galery/' . $k["path_detail_foto"]) ?>" alt="<?= $k["ket_foto"]; ?>" width="100%">
                                                                     </a>
                                                                 <?php
                                                                 } else { ?>
@@ -185,9 +192,9 @@
                                                                 <?php } ?>
                                                             </td>
                                                             <!-- <td></?= $k["ket_foto"] ?></td> -->
-                                                            <!-- <td><input type="text" class="form-control" name="ket_foto_update[]" value="<?= $k["ket_foto"]; ?>"></td> -->
+                                                            <td><input type="text" class="form-control" name="ket_foto_update[]" value="<?= $k["ket_foto"]; ?>"></td>
                                                             <td>
-                                                                <a class="btn btn-danger deleteImage" href="javascript:void(0)" data-id_foto_berita="<?= $k["id_foto_berita"]; ?>" onclick="return confirm('Apakah Anda yakin akan menghapus photo ini ?');"><i class="fas fa-trash-alt bg-danger" data-toggle="tooltip" title="Delete"></i></a>
+                                                                <a class="btn btn-danger deleteImage" href="javascript:void(0)" data-id="<?= $k["id"]; ?>" onclick="return confirm('Apakah Anda yakin akan menghapus photo ini ?');"><i class="fas fa-trash-alt bg-danger" data-toggle="tooltip" title="Delete"></i></a>
                                                             </td>
                                                         </tr>
                                                 <?php }
@@ -199,17 +206,10 @@
                             </div>
 
 
-                            <div class="form-group row">
-                                <label for="isi_berita" class="col-sm-2 col-form-label">Isi Berita </label>
-                                <div class="col-sm-10">
-                                    <textarea name="isi_berita" id="isi_berita"><?= $a->isi_berita, set_value('isi_berita') ?></textarea>
-                                    <small class="text-danger pl-0" style="display:none" id="requiredIsiArtikel"> The isi artikel is required </small>
-                                    <?= form_error('isi_berita', '<small class="text-danger pl-0">', '</small>'); ?>
-                                </div>
-                            </div>
+
                             <hr>
                             <button type="update" class="btn btn-primary ml-3">Ubah</button>
-                            <a href="<?= base_url(); ?>berita" class="btn btn-primary ml-3">Kembali</a>
+                            <a href="<?= base_url(); ?>foto" class="btn btn-primary ml-3">Kembali</a>
                         </form>
                     <?php endforeach; ?>
 
@@ -223,45 +223,43 @@
     CKEDITOR.replace('isi_berita');
 </script>
 <script>
-    $('#updateBerita').on('submit', function() {
-        if ($('#judul_berita').val() == "") {
-            $("#requiredJudulBerita").show();
+    $('#updateArtikel').on('submit', function() {
+        if ($('#nama_album').val() == "") {
+            $("#requiredJudulArtikel").show();
             return false;
         }
         if ($('#isi_berita').val() == "") {
-            $("#requiredIsiBerita").show();
+            $("#requiredIsiArtikel").show();
             return false;
         }
     });
 
-    $('#judul_berita').on('input', function(e) {
-        if ($('#judul_berita').val() == "") {
-            $("#requiredJudulBerita").show();
+    $('#nama_album').on('input', function(e) {
+        if ($('#nama_album').val() == "") {
+            $("#requiredJudulArtikel").show();
         } else {
-            $("#requiredJudulBerita").hide();
+            $("#requiredJudulArtikel").hide();
         }
     });
 
     $('#isi_berita').on('input', function(e) {
         if ($('#isi_berita').val() == "") {
-            $("#requiredIsiBerita").show();
+            $("#requiredIsiArtikel").show();
         } else {
-            $("#requiredIsiBerita").hide();
+            $("#requiredIsiArtikel").hide();
         }
     });
 </script>
-
-
 <script>
     // $(document).on('click', '.addServiceEdit', function() {
     //     console.log($(this).parent())
     //     var wrapper = $('#imageMultiEdit');
     //     var html = `
     //         <div class="form-group row" id="imageMultiEdit">
-    //             <label for="path_foto_artikel" class="col-sm-2 col-form-label"></label>
+    //             <label for="path_detail_foto" class="col-sm-2 col-form-label"></label>
     //             <div class="col-sm-3">
     //                 <div class="custome-file">
-    //                     <input type="file" class="form-control" id="path_foto_artikel" name="path_foto_artikel[]" accept="image/*">
+    //                     <input type="file" class="form-control" id="path_detail_foto" name="path_detail_foto[]" accept="image/*">
     //                     <span style="color: red; font-size:12px;">* format photo (jpg,jpeg,png) ukuran file max 2 Mb</span><br>
     //                     <span style="color: red; font-size:12px;">* jika multiupload/update, urutan tidak boleh sama dengan urutan photo lain.</span>
     //                 </div>
@@ -316,31 +314,47 @@
             console.log("jumlah image =" + countimagefield);
             var wrapper = $('#imageMultiEdit');
             var html = `
-
-            <div class="form-group row image_field">
-										<label for="path_detail_foto" class="col-sm-2 col-form-label"></label>
-										<div class="col-sm-10">
-											<div class="row">
-												<div class="col-sm-4">
-												<img src="<?= base_url('assets/backend/img/img_berita/noimage.png') ?>" class="img-thumbnail" id="imgPreview` + countimagefield + `" style="height: 250px; height: 300px;" />
-												</div>
-												<div class="form-group">
-													<!-- <label for="exampleInputFile">File input</label> -->
-													<div class="input-group">
-														<div class="custom-file">
-														<input type="text" class="form-control" id="image-label` + countimagefield + `" readonly required>
-                                                <input type="file" class="custom-file-input upload_custom" id="customFileUpload` + countimagefield + `" data-count_image="` + countimagefield + `" name="path_foto_artikel[]" style="display: none;">
-														<?= form_error('path_detail_foto', '<small class="text-danger pl-0">', '</small>'); ?>
-														</div>
-														<div class="input-group-append">
-														<button class="btn btn-primary" data-count_image="` + countimagefield + `"  onclick="open_file(` + countimagefield + `)" type="button">Pilih Gambar</button>
-														</div>
-													</div>
-													<span style="font-style: italic; color:red;">*) Format photo (jpg,jpeg,png) ukuran file max 2 Mb.</span><br>
-												</div>
-											</div>
-										</div>
-									</div>
+        <div class="form-group row image_field">
+                            <label for="path_detail_foto" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <div class="row">
+                                <div class="col-sm-4">
+                                        <img src="<?= base_url('assets/backend/img/img_berita/noimage.png') ?>" class="img-thumbnail" id="imgPreview` + countimagefield + `" style="height: 250px; height: 300px;" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="custom-file">
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="image-label` + countimagefield + `" readonly required>
+                                                <input type="file" class="custom-file-input upload_custom" id="customFileUpload` + countimagefield + `" data-count_image="` + countimagefield + `" name="path_detail_foto[]" style="display: none;">
+                                                <span style="font-style: italic; color:red;">*) Format photo (jpg,jpeg,png) ukuran file max 2 Mb.</span><br>
+                                                <span style="font-style: italic; color:red;">*) Tidak di sarankan upload (pdf,xls,doc,txt).</span>
+                                            </div>
+                                            <div class="col-sm-3 mt-3">
+                                                <button class="btn btn-primary" data-count_image="` + countimagefield + `"  onclick="open_file(` + countimagefield + `)" type="button">Pilih Gambar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                                <!-- <label for="urutan" class="col-sm-1 col-form-label">Urutan</label>
+												<div class="col-sm-2">
+													<input type="text" class="form-control" id="urutan" name="urutan[]" value="" autocomplete="off">
+												</div> -->
+                                <!-- <label for="ket_foto" class="col-sm-1 col-form-label">Ket. Image</label> -->
+                                <!-- <div class="col-sm-4">
+											<input type="text" class="form-control" id="ket_foto" name="ket_foto[]" value="" autocomplete="off">
+										</div> -->
+                                <div class="form-group">
+                                    <label for=""> Keterangan Foto</label>
+                                    <input type="text" id="ket_foto" name="ket_foto[]" class="form-control" value="" placeholder="Masukkan Keterangan">
+                                </div>
+                                <button type="button" style="margin-left: auto;" class="btn btn-primary ml-4 addServiceEdit">Tambah</button>
+                                <div class="col-sm-1 text-right">
+                                </div>
+                                <hr>
+                            </div>
 `;
             $(wrapper).append(html);
         });
