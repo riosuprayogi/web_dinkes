@@ -193,7 +193,7 @@ class Banner extends MX_Controller
 	public function ajax_edit($id)
 	{
 		$data = $this->main_model->get_by_id($id);
-
+		$data->kategori = $this->main_model->get_kategori();
 		$this->template->ajax($data);
 	}
 
@@ -202,28 +202,28 @@ class Banner extends MX_Controller
 		$data = array(
 			'trash' => '1',
 		);
-		$this->main_model->update_banner(array('id_banner' => $id), $data);
+		$this->main_model->update_album(array('id_galery' => $id), $data);
 		$this->template->ajax(array('status' => true));
-		redirect("banner");
+		redirect("foto");
 	}
 
 
 
 	public function edit($id)
 	{
-		$where = array('id_banner' => $id);
+		$where = array('id_galery' => $id);
 
-		$data["t_banner"] = $this->db->query("SELECT * FROM t_banner WHERE id_banner = '$id'")->result();
+		$data["t_foto_galery"] = $this->db->query("SELECT * FROM t_foto_galery WHERE id_galery = '$id'")->result();
 
-		// $data['t_kategori'] = $this->db->query("SELECT * FROM t_kategori WHERE trash='0'")->result(); // join buat ambil data di combobox
+		$data['t_kategori'] = $this->db->query("SELECT * FROM t_kategori WHERE trash='0'")->result(); // join buat ambil data di combobox
 
-		$data['t_detail_banner'] = $this->db->query("SELECT * FROM t_detail_banner WHERE id_banner = '$id'")->result_array();
+		$data['t_detail_banner'] = $this->db->query("SELECT * FROM t_detail_banner WHERE id_foto_galery = '$id' ORDER BY urutan ASC")->result_array();
 
 
 		if (@$this->session->has_access[0]->nama_app != "Admin") {
-			$this->template->render_home('banner/frontend/index');
+			$this->template->render_home('foto/frontend/index');
 		} else {
-			$this->template->render('banner/backend/edit', $data);
+			$this->template->render('foto/backend/edit', $data);
 		}
 	}
 
@@ -233,7 +233,7 @@ class Banner extends MX_Controller
 		$this->form_validation->set_rules('nama_album', 'nama album', 'required');
 
 		$this->form_validation->set_rules('status', 'status', 'required');
-		// $this->form_validation->set_rules('path_foto_banner', '', 'callback_file_check');   
+		// $this->form_validation->set_rules('path_detail_foto', '', 'callback_file_check');   
 		// $this->form_validation->set_rules('id_admin', 'nama admin', 'required');
 	}
 
@@ -248,64 +248,64 @@ class Banner extends MX_Controller
 		if ($this->form_validation->run() == FALSE) {
 			$this->edit($id = null);
 		} else {
-			$id             = $this->input->post('id_banner');
-			$nama_banner  = $this->input->post('nama_banner');
+			$id             = $this->input->post('id_galery');
+			$nama_album  = $this->input->post('nama_album');
 			$status        = $this->input->post('status');
 			$id_admin       = $this->input->post('id_admin');
 
 			$data = array(
-				'nama_banner'     => $nama_banner,
+				'nama_album'     => $nama_album,
 				'status'           => $status,
 				'id_admin'          => $id_admin,
 				'tgl_jam'           => $dateTime
 			);
 
 			$where = array(
-				'id_banner' => $id
+				'id_galery' => $id
 			);
 
-			$this->main_model->update_data('t_banner', $data, $where);
+			$this->main_model->update_data('t_foto_galery', $data, $where);
 
 			// looping untuk update keterangan image
-			for ($i = 0; $i < count($this->input->post('id_detail_path_foto_banner_update')); $i++) {
+			for ($i = 0; $i < count($this->input->post('id_detail_path_detail_foto_update')); $i++) {
 
-				$id_detail_path_foto_banner_update  = $this->input->post('id_detail_path_foto_banner_update')[$i];
+				$id_detail_path_detail_foto_update  = $this->input->post('id_detail_path_detail_foto_update')[$i];
 				$ket_foto_update        = $this->input->post('ket_foto_update')[$i];
 
 				$data = array(
 					'ket_foto'     => $ket_foto_update
 				);
 				$where = array(
-					'id_detail_foto' => $id_detail_path_foto_banner_update
+					'id_detail_foto' => $id_detail_path_detail_foto_update
 				);
-				$this->main_model->update_data('t_detail_foto_galery', $data, $where);
+				$this->main_model->update_data('t_detail_banner', $data, $where);
 			}
 
 			$file = $_FILES;
-			if (!empty($file['path_foto_banner']['name'][0])) {
+			if (!empty($file['path_detail_foto']['name'][0])) {
 
-				// $count = count($_FILES['path_foto_banner']['name']);
+				// $count = count($_FILES['path_detail_foto']['name']);
 
 				// $config['upload_path']      = './assets/backend/img/img_berita';
 				// $config['allowed_types']    = 'jpg|png|jpeg|gif';
 				// $config['max_size']         = '5120';
 				// $config['encrypt_name']     = 'TRUE';
-				// $config['file_name']        = $_FILES['path_foto_banner']['name'][$i];
+				// $config['file_name']        = $_FILES['path_detail_foto']['name'][$i];
 
-				$count = count($_FILES['path_foto_banner']['name']);
+				$count = count($_FILES['path_detail_foto']['name']);
 				$tempArr = [];
 
 				for ($i = 0; $i < $count; $i++) {
 
-					if ($_FILES['path_foto_banner']['name'][$i]) {
+					if ($_FILES['path_detail_foto']['name'][$i]) {
 
 						for ($i = 0; $i < $count; $i++) {
-							$_FILES['upload_File']['name'] = $_FILES['path_foto_banner']['name'][$i];
-							$_FILES['upload_File']['name'] = $_FILES['path_foto_banner']['name'][$i];
-							$_FILES['upload_File']['type'] = $_FILES['path_foto_banner']['type'][$i];
-							$_FILES['upload_File']['tmp_name'] = $_FILES['path_foto_banner']['tmp_name'][$i];
-							$_FILES['upload_File']['error'] = $_FILES['path_foto_banner']['error'][$i];
-							$_FILES['upload_File']['size'] = $_FILES['path_foto_banner']['size'][$i];
+							$_FILES['upload_File']['name'] = $_FILES['path_detail_foto']['name'][$i];
+							$_FILES['upload_File']['name'] = $_FILES['path_detail_foto']['name'][$i];
+							$_FILES['upload_File']['type'] = $_FILES['path_detail_foto']['type'][$i];
+							$_FILES['upload_File']['tmp_name'] = $_FILES['path_detail_foto']['tmp_name'][$i];
+							$_FILES['upload_File']['error'] = $_FILES['path_detail_foto']['error'][$i];
+							$_FILES['upload_File']['size'] = $_FILES['path_detail_foto']['size'][$i];
 							$uploadPath = './assets/backend/img/img_galery/';
 							$config['upload_path'] = $uploadPath;
 							$config['file_name']  = md5(date("YmdHms") . '_' . rand(100, 999));
@@ -318,7 +318,7 @@ class Banner extends MX_Controller
 								$foto = $fileData['file_name'];
 								$data2 = array(
 									'id_foto_galery' => $id,
-									'path_foto_banner' => $foto,
+									'path_detail_foto' => $foto,
 									'ket_foto'          => $ket_foto
 								);
 								$this->main_model->insert_foto($data2);
@@ -394,16 +394,16 @@ class Banner extends MX_Controller
 			$this->main_model->update_data('t_berita', $data, $where);
 
 			// looping untuk update keterangan image
-			for ($i = 0; $i < count($this->input->post('id_detail_path_foto_banner_update')); $i++) {
+			for ($i = 0; $i < count($this->input->post('id_detail_path_detail_foto_update')); $i++) {
 
-				$id_detail_path_foto_banner_update  = $this->input->post('id_detail_path_foto_banner_update')[$i];
+				$id_detail_path_detail_foto_update  = $this->input->post('id_detail_path_detail_foto_update')[$i];
 				$ket_foto_update        = $this->input->post('ket_foto_update')[$i];
 
 				$data = array(
 					'ket_foto'     => $ket_foto_update
 				);
 				$where = array(
-					'id_foto_artikel' => $id_detail_path_foto_banner_update
+					'id_foto_artikel' => $id_detail_path_detail_foto_update
 				);
 				$this->main_model->update_data('t_foto_berita', $data, $where);
 			}
@@ -413,31 +413,31 @@ class Banner extends MX_Controller
 
 
 
-			if (!empty($file['path_foto_banner']['name'][0])) {
+			if (!empty($file['path_detail_foto']['name'][0])) {
 
-				$count = count($_FILES['path_foto_banner']['name']);
+				$count = count($_FILES['path_detail_foto']['name']);
 
 				$config['upload_path']      = './assets/backend/img/img_berita';
 				$config['allowed_types']    = 'jpg|png|jpeg|gif';
 				$config['max_size']         = '2048';
 				$config['encrypt_name']     = 'TRUE';
-				// $config['file_name']        = $_FILES['path_foto_banner']['name'][$i];
+				// $config['file_name']        = $_FILES['path_detail_foto']['name'][$i];
 
 				for ($i = 0; $i < $count; $i++) {
 
-					if ($_FILES['path_foto_banner']['name'][$i]) {
+					if ($_FILES['path_detail_foto']['name'][$i]) {
 
-						$_FILES['file']['name']     = $_FILES['path_foto_banner']['name'][$i];
-						$_FILES['file']['type']     = $_FILES['path_foto_banner']['type'][$i];
-						$_FILES['file']['tmp_name'] = $_FILES['path_foto_banner']['tmp_name'][$i];
-						$_FILES['file']['error']    = $_FILES['path_foto_banner']['error'][$i];
-						$_FILES['file']['size']     = $_FILES['path_foto_banner']['size'][$i];
+						$_FILES['file']['name']     = $_FILES['path_detail_foto']['name'][$i];
+						$_FILES['file']['type']     = $_FILES['path_detail_foto']['type'][$i];
+						$_FILES['file']['tmp_name'] = $_FILES['path_detail_foto']['tmp_name'][$i];
+						$_FILES['file']['error']    = $_FILES['path_detail_foto']['error'][$i];
+						$_FILES['file']['size']     = $_FILES['path_detail_foto']['size'][$i];
 
 						// $config['upload_path']      = './assets/backend/img/img_artikel';
 						// $config['allowed_types']    = 'jpg|png|jpeg|gif';
 						// $config['encrypt_name']     = 'TRUE';
 						// $config['max_size']         = '2048';
-						// $config['file_name']        = $_FILES['path_foto_banner']['name'][$i];
+						// $config['file_name']        = $_FILES['path_detail_foto']['name'][$i];
 
 						$this->load->library('upload', $config);
 						if (!$this->upload->do_upload('file')) {
@@ -452,7 +452,7 @@ class Banner extends MX_Controller
 							);
 							return $this->edit($id);
 						} else {
-							//         $path_foto_banner = $this->upload->data('file_name');
+							//         $path_detail_foto = $this->upload->data('file_name');
 							//     }
 							// }
 							// $id         = $this->input->post('id_artikel');
@@ -460,13 +460,13 @@ class Banner extends MX_Controller
 							// $ket_foto   = $this->input->post('ket_foto')[$i];
 
 							$uploadData = $this->upload->data();
-							$path_foto_banner = $uploadData['file_name'];
+							$path_detail_foto = $uploadData['file_name'];
 							$ket_foto  = $this->input->post('ket_foto')[$i];
 							$urutan     = $this->input->post('urutan')[$i];
 
 							$data = array(
 								'id_berita'        => $id,
-								'path_foto_banner' => $path_foto_banner,
+								'path_detail_foto' => $path_detail_foto,
 								'urutan'            => $urutan,
 								'ket_foto'          => $ket_foto
 							);
@@ -506,7 +506,7 @@ class Banner extends MX_Controller
 	public function deleteImageAjax($id)
 	{
 		$where = array('id_detail_foto' => $id);
-		$this->main_model->deleteData($where, 't_detail_foto_galery');
+		$this->main_model->deleteData($where, 't_detail_banner');
 
 		json_encode(array('status' => 200));
 	}

@@ -504,12 +504,12 @@
 									<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
 									<div class="form-group">
 										<label for=""> Judul Video</label>
-										<input type="text" name="nama_video" class="form-control" placeholder="Masukkan Kategori" required>
+										<input type="text" name="nama_video" class="form-control" placeholder="Masukkan Judul Video" required>
 									</div>
 
 									<div class="form-group">
 										<label for=""> Link Video</label>
-										<input type="text" name="link_video" class="form-control" placeholder="Masukkan Kategori" required>
+										<input type="text" name="link_video" class="form-control" placeholder="Masukkan Link / URl Video" required>
 									</div>
 
 									<div class="form-group">

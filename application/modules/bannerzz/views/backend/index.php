@@ -13,16 +13,11 @@
 
 		//Ajax Load data from ajax
 		$.ajax({
-			url: "<?php echo site_url('berita/ajax_add/') ?>",
+			url: "<?php echo site_url('banner/ajax_add/') ?>",
 			type: "GET",
 			dataType: "JSON",
 			async: false,
 			success: function(data) {
-				// $('#dd_kategori_berita').empty();
-				// $('#dd_kategori_berita').append('<option value="">==== Pilih ====</option>');
-				// for (var i = 0; i < data.kategori.length; i++) {
-				// 	$('#dd_kategori_berita').append('<option value="' + data.kategori[i].id_kategori + '">' + data.kategori[i].nama_kategori + '</option>');
-				// }
 
 				$('#files').on("click", ".hapus_data", function(e) {
 					e.preventDefault();
@@ -45,7 +40,7 @@
 		$('#btnSave').attr('disabled', true); //set button disable
 		var url;
 
-		url = "<?php echo site_url('diklat/ajax_insert') ?>";
+		url = "<?php echo site_url('banner/ajax_insert') ?>";
 		Swal.fire({
 			title: 'Apa Anda Yakin?',
 			text: "Apa Anda Yakin Menyimpan Data?",
@@ -137,12 +132,12 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1 class="m-0 text-dark">Manajemen Diklat</h1>
+				<h1 class="m-0 text-dark">Manajemen Banner</h1>
 			</div>
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="http://localhost/web_dinkes/" "="">Home</a></li>
-              <li class=" breadcrumb-item active">Diklat</li>
+              <li class=" breadcrumb-item active">Banner</li>
 				</ol>
 			</div>
 		</div>
@@ -161,21 +156,17 @@
 						<tr>
 							<td onclick="add()" style="vertical-align:middle; text-align:center;cursor:pointer;"><b><i class="fas fa-plus"></i></b></td>
 							<td></td>
-							<!-- <td></td> -->
-							<td></td>
 							<td></td>
 							<td></td>
 							<td></td>
 							<td></td>
 						</tr>
-						<tr>
+						<tr style="text-align:center">
 							<th>No</th>
-							<!-- <th style="width:15%">Kategori Berita</th> -->
-							<th>Judul Diklat</th>
-							<th>Isi Berita Diklat</th>
-							<th width="100px">Foto Diklat</th>
-							<th>Status</th>
-							<th>Tanggal/Jam</th>
+							<th style="width:40%">Nama Banner</th>
+							<th style="width:20%">Foto Banner</th>
+							<th style="width:7%">Status</th>
+							<th style="width:15%">Tanggal/Jam</th>
 							<th style="width:7%">Aksi</th>
 							<!-- dataTable ga bisa pake colspan atau rowspan -->
 						</tr>
@@ -184,20 +175,18 @@
 						<!-- dataTable ga bisa pake tr disini -->
 
 						<?php $i = 1;
-						foreach ($t_diklat as $ia) : ?>
+						foreach ($t_banner as $ia) : ?>
 							<tr>
 								<td><?= $i++ ?></td>
-								<!-- <td><?= $ia["nama_kategori"] ?></td> -->
-								<td><?= substr($ia["nama_diklat"], 0, 50); ?></td>
-								<td><?= substr($ia["isi_diklat"], 0, 100); ?></td>
+								<td><?= substr($ia["nama_banner"], 0, 50); ?></td>
 								<td>
-									<?php if ($ia["t_foto_diklat"] != NULL) {
-										if (count($ia["t_foto_diklat"]) > 0) {
-											foreach ($ia["t_foto_diklat"] as $f) {
+									<?php if ($ia["t_detail_banner"] != NULL) {
+										if (count($ia["t_detail_banner"]) > 0) {
+											foreach ($ia["t_detail_banner"] as $f) {
 									?>
 												<div style="padding:2px; border:1px solid #eee; margin:2px 2px">
-													<a target="blank" href="<?= base_url('assets/backend/img/img_diklat/' . $f["path_foto_diklat"]) ?>">
-														<img src="<?= base_url('assets/backend/img/img_diklat/' . $f["path_foto_diklat"]) ?>" alt="<?= $f["ket_foto"]; ?>" width="100%">
+													<a target="blank" href="<?= base_url('assets/backend/img/img_banner/' . $f["path_foto_banner"]) ?>">
+														<img src="<?= base_url('assets/backend/img/img_banner/' . $f["path_foto_banner"]) ?>" width="100%">
 													</a>
 												</div>
 										<?php
@@ -220,9 +209,9 @@
 											<i class="fas fa-cogs"></i>
 										</button>
 										<div class="dropdown-menu">
-											<a class="dropdown-item" href="<?= base_url(); ?>diklat/edit/<?= $ia["id_diklat"] ?>" onclick="return confirm('Apakah anda yakin akan mengedit nya?');"><i class="fas fa-edit"></i> Ubah</a>
+											<a class="dropdown-item" href="<?= base_url(); ?>banner/edit/<?= $ia["id_banner"] ?>" onclick="return confirm('Apakah anda yakin akan mengubah?');"><i class="fas fa-edit"></i> Ubah</a>
 
-											<a class="dropdown-item" href="<?= base_url(); ?>diklat/ajax_delete/<?= $ia["id_diklat"] ?>" onclick="return confirm('Apakah anda yakin akan menghapus nya?');"><i class="fas fa-trash"></i> Hapus</a>
+											<a class="dropdown-item" href="<?= base_url(); ?>banner/ajax_delete/<?= $ia["id_banner"] ?>" onclick="return confirm('Apakah anda yakin akan menghapus?');"><i class="fas fa-trash"></i> Hapus</a>
 										</div>
 									</center>
 								</td>
@@ -252,43 +241,25 @@
 								<div class="col-md-12">
 									<input type="hidden" value="" id="id" name="id">
 									<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
-									<!-- <div class="form-group">
-										<label for=""> Nama Kategori</label>
-										<select name="dd_kategori_berita" id="dd_kategori_berita" class="form-control" required></select>
-									</div> -->
 
 									<div class="form-group">
-										<label for=""> Nama Diklat</label>
-										<input type="text" name="nama_diklat" class="form-control" placeholder="Masukkan Nama Diklat" required>
+										<label for=""> Nama Banner</label>
+										<input type="text" name="nama_banner" class="form-control" placeholder="Masukkan Nama Banner" required>
 									</div>
 
-
-									<!-- <div class="form-group">
-										<label for="exampleInputFile">File input</label>
-										<div class="input-group">
-											<div class="custom-file">
-												<input type="file" class="custom-file-input" id="exampleInputFile">
-												<label class="custom-file-label" for="exampleInputFile">Choose file</label>
-											</div>
-											<div class="input-group-append">
-												<span class="input-group-text">Upload</span>
-											</div>
-										</div>
-									</div> -->
-
 									<div class="form-group row image_field">
-										<label for="path_foto_diklat" class="col-sm-2 col-form-label">Foto Diklat</label>
+										<label for="path_foto_banner" class="col-sm-2 col-form-label">Foto</label>
 										<div class="col-sm-10">
 											<div class="row">
 												<div class="col-sm-4">
-													<img src="<?= base_url('assets/backend/img/img_berita/noimage.png') ?>" class="img-thumbnail" id="imgPreview1" style="height: 400px; height: 350px;" />
+													<img src="<?= base_url('assets/backend/img/img_galery/noimage.png') ?>" class="img-thumbnail" id="imgPreview1" style="height: 400px; height: 350px;" />
 												</div>
 												<div class="form-group">
 													<div class="input-group">
 														<div class="custom-file">
 															<input type="text" class="form-control" id="image-label1" readonly required>
-															<input type="file" class="custom-file-input upload_custom" id="customFileUpload1" data-count_image="1" name="path_foto_diklat[]" style="display: none;">
-															<?= form_error('path_foto_diklat', '<small class="text-danger pl-0">', '</small>'); ?>
+															<input type="file" class="custom-file-input upload_custom" id="customFileUpload1" data-count_image="1" name="path_foto_banner[]" style="display: none;">
+															<?= form_error('path_foto_banner', '<small class="text-danger pl-0">', '</small>'); ?>
 														</div>
 														<div class="input-group-append">
 															<button class="btn btn-primary" onclick="open_file(1)" data-count_image="1" type="button">Pilih Gambar</button>
@@ -299,60 +270,32 @@
 											</div>
 										</div>
 									</div>
-
-									<!-- <div class="form-group row image_field">
-										<label for="path_foto_diklat" class="col-sm-2 col-form-label">Foto Berita</label>
-										<div class="col-sm-10">
-											<div class="row">
-												<div class="col-sm-4">
-													<img src="<?= base_url('assets/backend/img/img_berita/noimage.png') ?>" class="img-thumbnail" id="imgPreview1" style="height: 400px; height: 350px;" />
-												</div>
-												<div class="col-sm-6">
-													<div class="custom-file">
-														<div class="col-sm-8">
-															<input type="text" class="form-control" id="image-label1" readonly required>
-															<input type="file" class="custom-file-input upload_custom" id="customFileUpload1" data-count_image="1" name="path_foto_diklat[]" style="display: none;">
-															<?= form_error('path_foto_diklat', '<small class="text-danger pl-0">', '</small>'); ?>
-															<span style="font-style: italic; color:red;">*) Format photo (jpg,jpeg,png) ukuran file max 2 Mb.</span><br>
-
-														</div>
-														<div class="col-sm-3 mt-3">
-															<button class="btn btn-primary" onclick="open_file(1)" data-count_image="1" type="button">Pilih Gambar</button>
-														</div>
-
-													</div>
-												</div>
-											</div>
-
-										</div>
-									</div> -->
-
-									<div id="imageMulti"></div>
-									<div class="form-group row mt-3">
+									<div class="col-md-12">
 										<!-- <label for="urutan" class="col-sm-1 col-form-label">Urutan</label>
 												<div class="col-sm-2">
 													<input type="text" class="form-control" id="urutan" name="urutan[]" value="" autocomplete="off">
-												</div>
-												<label for="ket_foto" class="col-sm-1 col-form-label">Ket. Image</label>
-												<div class="col-sm-4">
-													<input type="text" class="form-control" id="ket_foto" name="ket_foto[]" value="" autocomplete="off">
 												</div> -->
-										<!-- <div class="col-sm-5 text-right">
-											<button type="button" class="btn btn-primary ml-3 addService">Tambah Foto</button>
+										<!-- <label for="ket_foto" class="col-sm-1 col-form-label">Ket. Image</label> -->
+										<!-- <div class="col-sm-4">
+											<input type="text" class="form-control" id="ket_foto" name="ket_foto[]" value="" autocomplete="off">
 										</div> -->
+										<!-- <div class="form-group">
+											<label for=""> Keterangan Foto</label>
+											<input type="text" id="ket_foto" name="ket_foto[]" class="form-control" value="" placeholder="Masukkan Keterangan">
+										</div> -->
+										<!--
+										<button type="button" style="margin-left: auto;" class="btn btn-primary ml-4 addService">Tambah Foto</button>
+										<div class="col-sm-1 text-right">
+										</div>
+										<hr> -->
 									</div>
-									<div class="card-footer">
-										<!-- <button type="submit" class="btn btn-info">Sign in</button> -->
+
+									<div id="imageMulti"></div>
+
+									<!-- <div class="card-footer">
+										<button type="submit" class="btn btn-info">Sign in</button>
 										<button type="button" class="btn btn-primary float-right addService">Tambah Foto</button>
-									</div>
-
-
-									<hr>
-
-									<div class="form-group">
-										<label for=""> Isi Berita Diklat</label>
-										<textarea required="required" data-msg="Please write something :)" name="isi_diklat" id="isi_diklat" class="summernote"></textarea>
-									</div>
+									</div> -->
 
 									<div class="form-group">
 										<label for=""> Status</label>
@@ -419,20 +362,20 @@
 			var wrapper = $('#imageMulti');
 			var html = `
 
-			<div class="form-group row image_field">
-										<label for="path_foto_diklat" class="col-sm-2 col-form-label"></label>
+						<div class="form-group row image_field">
+										<label for="path_foto_banner" class="col-sm-2 col-form-label"></label>
 										<div class="col-sm-10">
 											<div class="row">
 												<div class="col-sm-4">
-												<img src="<?= base_url('assets/backend/img/img_berita/noimage.png') ?>" class="img-thumbnail" id="imgPreview` + countimagefield + `" style="height: 400px; height: 350px;" />
+												<img src="<?= base_url('assets/backend/img/img_galery/noimage.png') ?>" class="img-thumbnail" id="imgPreview` + countimagefield + `" style="height: 400px; height: 350px;" />
 												</div>
 												<div class="form-group">
 													<!-- <label for="exampleInputFile">File input</label> -->
 													<div class="input-group">
 														<div class="custom-file">
 														<input type="text" class="form-control" id="image-label` + countimagefield + `" readonly>
-                                                		<input type="file" class="custom-file-input upload_custom" id="customFileUpload` + countimagefield + `" data-count_image="` + countimagefield + `" name="path_foto_diklat[]" style="display: none;">
-														<?= form_error('path_foto_diklat', '<small class="text-danger pl-0">', '</small>'); ?>
+                                                        <input type="file" class="custom-file-input upload_custom" id="customFileUpload` + countimagefield + `" data-count_image="` + countimagefield + `" name="path_foto_banner[]" style="display: none;">
+														<?= form_error('path_foto_banner', '<small class="text-danger pl-0">', '</small>'); ?>
 														</div>
 														<div class="input-group-append">
 														<button class="btn btn-primary" data-count_image="` + countimagefield + `"  onclick="open_file(` + countimagefield + `)" type="button">Pilih Gambar</button>
@@ -442,6 +385,21 @@
 												</div>
 											</div>
 										</div>
+									</div>
+						<div class="col-md-12">
+										<!-- <label for="urutan" class="col-sm-1 col-form-label">Urutan</label>
+												<div class="col-sm-2">
+													<input type="text" class="form-control" id="urutan" name="urutan[]" value="" autocomplete="off">
+												</div> -->
+										<!-- <label for="ket_foto" class="col-sm-1 col-form-label">Ket. Image</label> -->
+										<!-- <div class="col-sm-4">
+											<input type="text" class="form-control" id="ket_foto" name="ket_foto[]" value="" autocomplete="off">
+										</div> -->
+										<div class="form-group">
+											<label for=""> Keterangan Foto</label>
+											<input type="text" id="ket_foto" name="ket_foto[]" class="form-control" value="" placeholder="Masukkan Keterangan">
+										</div>
+									
 									</div>
 `;
 			$(wrapper).append(html);
