@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Site_model extends CI_Model {
+class Dokumentasi_info_model extends CI_Model {
 	public function __construct() {
 		parent::__construct();
 	}
@@ -65,7 +65,7 @@ class Site_model extends CI_Model {
 			u.id_skpd,
 			s.kode as kode_skpd,
 			s.nama_lengkap as skpd
-		');
+			');
 		$this->db->from('m_user u');
 		$this->db->join('m_skpd s', 's.id_skpd = u.id_skpd', 'LEFT');
 		$this->db->where('u.id_user', $id);
@@ -204,48 +204,48 @@ class Site_model extends CI_Model {
 		}else{
 			return false;
 		}
-    }
+	}
 
     public function send_email($recipient = '', $subject = '', $message_data = '') {//
-		if (empty($recipient) || empty($subject) || empty($message_data))
-			return FALSE;
-		$smtp_user = 'ppid@tangerangkota.go.id';
-        $smtp_pass = 'Ppid2020!@#';
+    	if (empty($recipient) || empty($subject) || empty($message_data))
+    		return FALSE;
+    	$smtp_user = 'ppid@tangerangkota.go.id';
+    	$smtp_pass = 'Ppid2020!@#';
 
-        $config = [
-            'charset'      => 'utf-8',
-            'protocol'     => 'ssmtp',
-            'smtp_host'    => 'ssl://mail.tangerangkota.go.id',
-            'smtp_user'    => $smtp_user,
-            'smtp_pass'    => $smtp_pass,
-            'smtp_timeout' => '30',
-            'smtp_port'    => 465,
-            'starttls'     => true,
-            'newline'      => "\r\n",
-        ];
+    	$config = [
+    		'charset'      => 'utf-8',
+    		'protocol'     => 'ssmtp',
+    		'smtp_host'    => 'ssl://mail.tangerangkota.go.id',
+    		'smtp_user'    => $smtp_user,
+    		'smtp_pass'    => $smtp_pass,
+    		'smtp_timeout' => '30',
+    		'smtp_port'    => 465,
+    		'starttls'     => true,
+    		'newline'      => "\r\n",
+    	];
 
-        $this->load->library('email', $config);
+    	$this->load->library('email', $config);
 
         // Set to, from, message, etc.
-        $this->email->from($smtp_user, 'Tangerang Kota');
-        $this->email->to($recipient);
-        $this->email->subject('Self Assessment CoViD19');
-        $message = $this->load->view('template/email_confirm', $message_data, TRUE);
-		$this->email->message($message);
-        $this->email->set_mailtype('html');
+    	$this->email->from($smtp_user, 'Tangerang Kota');
+    	$this->email->to($recipient);
+    	$this->email->subject('Self Assessment CoViD19');
+    	$message = $this->load->view('template/email_confirm', $message_data, TRUE);
+    	$this->email->message($message);
+    	$this->email->set_mailtype('html');
 
-		return $this->email->send();
-	}
+    	return $this->email->send();
+    }
 
-	public function get_curl($url){
-		$this->load->library('curl');
-		$useragent = 'Mozilla/5.0 (Windows NT 5.1; rv:31.0) Gecko/20100101 Firefox/31.0';
-		$json_url = $url;
-		$ch = curl_init( $json_url );
-		curl_setopt($ch, CURLOPT_USERAGENT, $useragent );
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		$hasil = json_decode(curl_exec($ch),true);
-		return  @$hasil['data'];
+    public function get_curl($url){
+    	$this->load->library('curl');
+    	$useragent = 'Mozilla/5.0 (Windows NT 5.1; rv:31.0) Gecko/20100101 Firefox/31.0';
+    	$json_url = $url;
+    	$ch = curl_init( $json_url );
+    	curl_setopt($ch, CURLOPT_USERAGENT, $useragent );
+    	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    	$hasil = json_decode(curl_exec($ch),true);
+    	return  @$hasil['data'];
 
-	}
+    }
 }

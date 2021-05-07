@@ -176,8 +176,8 @@
     }
 
     .cid-icon-formulir {
-        padding-top: 6rem !important;
-        padding-bottom: 6rem !important;
+        padding-top: 1rem !important;
+        padding-bottom: 2rem !important;
         background-color: #eeeeef;
     }
 
@@ -387,34 +387,84 @@
         }
     </style> -->
     <!-- <section class="py-5"></section> -->
-    <div style="background-image: url('<?= base_url('assets/img/banner/5.png') ?>') ; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
-        <section class= "cid-ppid" id="ppid" data-rv-view="1620" style="padding-top: 90px !important; background: rgba(207, 207, 207, 0.33);">
-            <div class="container-fluid ">
-                <div class="media-container-row ">
-                    <div class="col-12 col-md-12">
-                        <div class="media-container-row">
-                            <div class="mbr-figure" style="width: 30%;">
-                                <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/walikota.png" alt="" media-simple="true">
-                            </div>
-                            <div class="mbr-figure rounded" style="padding:5px; background: rgba(255, 255, 255, 0.92); width: 40%;">
-                                <div class="mbr-figure " style="height:100%; opacity:1.0;">
-                                    <img src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" style="width:50%; margin:auto;" alt="" media-simple="true">
-                                    <center>  <p style="text-align: center; ">
-                                        <?php echo $profil['isi']; ?>
-                                        <!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
-                                    </p></center>
-                                </div>
 
+
+
+
+
+<!-- <div class="container">
+    <div class="row">
+      <div class="">
+        <h2>Video Baznas</h2>
+      </div>
+    </div>
+</div> -->
+<div class="">
+    <div class="">
+
+     <!--  <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay":1500 }'> -->
+        <div class="carousel" data-flickity='{ "wrapAround": true, "pageDots": false}'>
+            <?php foreach ($slidebanner as $f) : ?>
+                <div class="col-12 col-sm-12">
+
+
+                    <a href="#" style=" ">
+                        <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
+
+                            <?php if (count($f["image"]) > 0) {
+                                foreach ($f["image"] as $k) {
+                                  ?>
+                                  <img style="z-index:1; margin-top: 30px " src="<?= base_url('assets/backend/img/img_berita/' . $k["image"]) ?>"  width="100%" height="400px">
+                                  <?php
+                              }
+                          } ?>
+
+
+                      </a>
+
+
+
+                  </div>
+              <?php endforeach; ?>
+          </div>
+      </div>
+  </div>
+
+  <!-- ==============================Akhir Berita Slider -->
+
+
+
+
+
+
+  <div style="background-image: url('<?= base_url('assets/img/banner/5.png') ?>') ; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <section class= "cid-ppid" id="ppid" data-rv-view="1620" style="padding-top: 90px !important; background: rgba(207, 207, 207, 0.33);">
+        <div class="container-fluid ">
+            <div class="media-container-row ">
+                <div class="col-12 col-md-12">
+                    <div class="media-container-row">
+                        <div class="mbr-figure" style="width: 30%;">
+                            <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/walikota.png" alt="" media-simple="true">
+                        </div>
+                        <div class="mbr-figure rounded" style="padding:5px; background: rgba(255, 255, 255, 0.92); width: 40%;">
+                            <div class="mbr-figure " style="height:100%; opacity:1.0;">
+                                <img src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" style="width:50%; margin:auto;" alt="" media-simple="true">
+                                <center>  <p style="text-align: center; ">
+                                    <?php echo $profil['isi']; ?>
+                                    <!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
+                                </p></center>
                             </div>
-                            <div class="mbr-figure" style="width: 30%;">
-                                <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/wakil.png" alt="" media-simple="true">
-                            </div>
+
+                        </div>
+                        <div class="mbr-figure" style="width: 30%;">
+                            <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/wakil.png" alt="" media-simple="true">
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+</div>
 <!-- <div class="wrapper">
   <div class="zoom-effect">
     <div class="kotak">
@@ -505,7 +555,7 @@
 
 <!-- ==============================Berita Slider -->
 <!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right" style="background-color: white"> -->
-    <section  id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620"  data-aos="fade-right" style="background-color: white">
+    <section  id="icon-formulir" class="cid-icon-formulir"  data-rv-view="1620"  data-aos="fade-right" style="background-color: white; height: 100%">
 
 
 
@@ -521,13 +571,13 @@
     <div class="">
         <div class="title col-lg-12">
             <div class="card-img">
-                <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
+                <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-top: -10px">
             </div>
         </div>
         <div class="" data-flickity='{ "wrapAround": true }'>
             <?php foreach ($berita3 as $f) : ?>
-                <div class="col-md-4 col-sm-6    ">
-                    <div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px;  padding: 10px; border-radius: 10px;">
+                <div class="col-md-4 col-sm-4    ">
+                    <div class="" style=" overflow: hidden; margin-bottom: 50px;  padding: 10px; border-radius: 10px;">
                         <div class="" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: transparent; ">
                             <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
                                 <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
@@ -1376,8 +1426,8 @@
 </div> -->
 <!-- <hr> -->
 <!-- <section id="struktur" class="cid-struktur mbr-fullscreen" data-rv-view="1620"> -->
-    <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="">
-        <div class="container align-center">
+    <!-- <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style=""> -->
+        <!-- <div class="container align-center"> -->
         <!-- <div class="media-container-row align-center">
 			<div class="row justify-content-md-center" style="padding-top:50px; padding-bottom: 50px;">
 				<h3 class="mbr-section-title mbr-bold mbr-fonts-style">
@@ -1386,50 +1436,50 @@
 			</div>
 		</div> -->
 
-        <div class="media-container-row align-center">
+     <!--    <div class="media-container-row align-center">
             <div class="card-wrapper">
                 <div class="card-img">
-                    <?php foreach ($profil_image as $row) { ?>
+                    <?php foreach ($profil_image as $row) { ?> -->
                         <!-- <div class="col-lg-3 col-md-4 col-6">
 						<button type="button" onclick='del("<?= $row->isi ?>")' class="btn btn-danger btn-sm btn-block"><i class="fas fa-fw fa-trash"></i></button>
 						<a href="javascript:void(0)" onclick="magnify('<?= $row->isi ?>')" class="d-block mb-4 h-100">
 							<img class="img-fluid img-responsive img-thumbnail" src="<?php echo base_url('assets/media/image/') . $row->isi ?>" alt="">
 						</a>
 					</div> -->
-                    <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" media-simple="true" style="width: 100%;">
+                   <!--  <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" media-simple="true" style="width: 100%;">
 
-                <?php } ?>
-                <!-- <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/struktur_ppid.png" media-simple="true" style="width: 100%;"> -->
-            </div>
+                    <?php } ?> -->
+                    <!-- <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/struktur_ppid.png" media-simple="true" style="width: 100%;"> -->
+           <!--  </div>
         </div>
     </div>
     <div class="media-container-row">
-        <div class="col-md-6">
+        <div class="col-md-6"> -->
                 <!-- <?php foreach (@$kepwal as $row) { ?>
                 <a href="<?php echo base_url('assets/media/image/') . $row->isi ?>" class="text-dark">
                     <img style="width:20%; margin:auto;" src="https://img.icons8.com/fluent/48/000000/file.png" alt="">
                     <p><span>Keputusan Walikota Kota Tangerang</span><br><span>Tentang Struktur Organisasi, Uraian Tugas dan Fungsi</span></p>
                 </a>
                 <?php } ?> -->
-            </div>
+                <!-- </div> -->
            <!--  <div class="col-md-6">
                 <img src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" style="width:50%; margin:auto;" alt="" media-simple="true">
             </div> -->
-        </div>
+       <!--  </div>
     </div>
-</section>
+</section> -->
 <hr>
 <!-- <section id="visi-misi" class="cid-visi-misi mbr-fullscreen bg-white" data-rv-view="1620"> -->
-   <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="background-color: white">
+ <!-- <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="background-color: white">
     <div class="container align-center">
-        <div class="media-container-row align-center">
+        <div class="media-container-row align-center"> -->
             <!-- <div class="row float-center justify-content-md-center" style="width:100%; margin:auto; padding-top:50px;padding-bottom: 50px;">
 				<h2 class="mbr-section-title mbr-bold mbr-fonts-style">
 					<strong>Visi dan Misi PPID</strong>
                 </h2>
 			</div>
             <img class="float-right" src="<?php echo base_url(); ?>assets/img/banner/PPID LOGO.png" style="width:150px; position:absolute; right: 10px;top: 28px;" alt="" media-simple="true"> -->
-        </div>
+        <!-- </div>
         <div class="media-container-row align-center">
             <div class="row justify-content-md-center" style="text-align:justify; color: #000000;">
                 <h4 class="mbr-section-title mbr-fonts-style">
@@ -1442,10 +1492,10 @@
         </div>
     </div>
 </div>
-</section>
+</section> -->
 <hr>
 <!-- <section id="maklumat" class="cid-struktur mbr-fullscreen" data-rv-view="1620"> -->
- <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="">
+   <!-- <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="">
     <div class="container align-center">
 
 
@@ -1454,14 +1504,14 @@
                 <div class="card-img" media-simple="true" style="width: 100%;">
                     <?php foreach ($maklumat as $row) { ?>
                         <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" media-simple="true" style="width: 100%;">
-                    <?php } ?>
-                    <!-- <?= $maklumat['isi'] ?> -->
-                    <!-- <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/struktur_ppid.png" media-simple="true" style="width: 100%;"> -->
-                </div>
+                        <?php } ?> -->
+                        <!-- <?= $maklumat['isi'] ?> -->
+                        <!-- <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/struktur_ppid.png" media-simple="true" style="width: 100%;"> -->
+             <!--    </div>
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <script>
     $(document).ready(function() {
@@ -1546,7 +1596,7 @@
     }
 </script>
 <!-- <section id="icon" class="cid-icon" data-rv-view="1620"> -->
-    <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="background-color: white">
+  <!--   <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="background-color: white">
         <div class="container align-center">
             <div class="media-container-row">
                 <div class="col-lg-4 col-md-6 col-sm-12 p-5">
@@ -1558,7 +1608,7 @@
                             </div>
                         </a>
                     </div>
-                </div>
+                </div> -->
             <!-- <div class="col-lg-4 col-md-12 col-sm-12 p-5">
 					<a href="javascript:void(0)" data-toggle="modal" data-target="#strukturModal" class="text-reset">
                         <div class="card-wrapper">
@@ -1569,7 +1619,7 @@
                         </div>
 					</a>
                 </div> -->
-                <div class="col-lg-4 col-md-6 col-sm-12 p-5">
+               <!--  <div class="col-lg-4 col-md-6 col-sm-12 p-5">
                     <a href="javascript:void(0)" data-toggle="modal" data-target="#perwalModal" class="text-reset">
                         <div class="card-wrapper">
                             <div class="card-img">
@@ -1582,7 +1632,7 @@
             </div>
         </div>
 
-    </section>
+    </section> -->
 
     <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620">
         <div class="container align-center">

@@ -186,7 +186,7 @@
 				  	<a class="nav-link js-scroll-trigger" href="<?= base_url('diklat') ?>">Diklat</a>
 				  </li>
 				  <li class="nav-item">
-				  	<a class="nav-link js-scroll-trigger" href="<?= base_url('dasar_hukum') ?>">RUP</a>
+				  	<a class="nav-link js-scroll-trigger" href="<?= base_url('rup') ?>">RUP</a>
 				  </li>
 					<!-- <li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="<?= base_url('dasar_hukum') ?>">Agenda Kegiatan</a>

@@ -58,7 +58,7 @@
 
 								</div>
 								<div class="card-body">
-									<h4 class="card-title">Rencana Kerja Anggaran (RAK)</h4>
+									<h4 class="card-title">Rencana Kerja Anggaran (RKA)</h4>
 								</div>
 							</div>
 						</div>

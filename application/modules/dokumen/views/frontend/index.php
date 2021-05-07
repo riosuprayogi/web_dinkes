@@ -183,7 +183,7 @@
             <div class="card rounded-lg">
                 <div class="card-header text-white bg-info pt-3">
                     <h3>
-                        DOKUMEN INFORMASI
+                        DOKUMEN INFORMASIas
                     </h3>
                 </div>
                 <div class="card-body bg-white border-info rounded-2">

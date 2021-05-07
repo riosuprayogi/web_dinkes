@@ -76,7 +76,9 @@ class Site extends MX_Controller {
 			
 			$data['video_tng'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_tng/');
 			$data['video_humas'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_humas/');
-
+			// $data['slidebanner']=$this->db->query("SELECT * FROM c_banner")->result_array();
+			// var_dump($data3);
+			// die();
 // ================= berita
 
 			$listProfiles = $this->db->query("SELECT t_berita.*
@@ -112,6 +114,40 @@ class Site extends MX_Controller {
 			}
 
 			$data["berita3"] = $arrProfile;
+			// var_dump($datae);
+			// die();
+
+
+// ================= akhir berita
+
+// ================= Slider banner
+
+			$listProfiles = $this->db->query("SELECT *	FROM c_banner ");
+			    // -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
+			    // -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
+			    // WHERE t_berita.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC LIMIT 4
+			// var_dump($listProfiles);
+			            	// die();
+
+			$arrProfile = [];
+			$arr = [];
+			foreach ($listProfiles->result_array() as $key => $row) {
+
+				$result = $this->db->query("SELECT * FROM c_banner")->result_array();
+			            	// var_dump($result);
+			            	// die();
+				if ($result) {
+
+					$arr = array(
+						"id_banner" => $row["id_banner"],
+						// "image" => $row["image"],
+						"image" => $result
+					);
+					array_push($arrProfile, $arr);
+				}
+			}
+
+			$data["slidebanner"] = $arrProfile;
 			// var_dump($datae);
 			// die();
 

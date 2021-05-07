@@ -14,12 +14,14 @@ class Profil_opd extends MX_Controller {
 		$this->load->library('session');
 		$this->load->library('cart');
 		$this->load->library('curl');
+		$this->load->model('profil_opd/Profil_opd_model', 'main_model2', TRUE);
 		
 	}
 
 
 	public function index()
 	{
+		$data['profil2'] = $this->main_model2->get_isi('gambaran_umum');
 		// $data['struktur1'] = $this->main_model2->get_isi_struktur('struktur1');
 		// $data["struktur2"] = $this->db->query("SELECT * FROM m_profil WHERE option = 'struktur'")->result();
 		// var_dump($data3);

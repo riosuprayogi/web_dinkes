@@ -31,12 +31,12 @@
             </div>
         </div>    
     </section> -->
-    <img class="img-responsive" src="<?= base_url('assets/media/image/3-diklat.png') ?>" alt="" style=" display: block;
+    <img class="img-responsive" src="<?= base_url('assets/media/image/4-rup.png') ?>" alt="" style=" display: block;
     width:100%;
     height:100%;
     object-fit: cover;">
     <script>
-
+        
         $(document).ready(function() {
             table = $('#table').DataTable({
               paginationType:'full_numbers',
