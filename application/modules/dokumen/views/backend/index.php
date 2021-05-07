@@ -1102,12 +1102,12 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1 class="m-0 text-dark">Manajemen Informasi Rencana</h1>
+				<h1 class="m-0 text-dark">Manajemen Informasi Perencanaan</h1>
 			</div>
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="<?php echo base_url(); ?>"">Home</a></li>
-              <li class=" breadcrumb-item active">Informasi Rencana</li>
+              <li class=" breadcrumb-item active">Informasi Perencanaan</li>
 				</ol>
 			</div>
 		</div>
@@ -1210,7 +1210,7 @@
 									</div>
 									<div class="form-link form-group">
 										<label for=""> Link</label>
-										<input name="link" id="link" class="form-control" link></input>
+										<input name="link" type="url" id="link" class="form-control" link></input>
 									</div>
 									<!-- adun close -->
 								</div>

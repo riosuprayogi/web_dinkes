@@ -1,9 +1,8 @@
 <script>
-  
-  $(document).ready(function () {
+  $(document).ready(function() {
 
     $.validator.setDefaults({
-      submitHandler: function () {
+      submitHandler: function() {
         save();
       }
     });
@@ -38,14 +37,14 @@
 
       },
       errorElement: 'span',
-      errorPlacement: function (error, element) {
+      errorPlacement: function(error, element) {
         error.addClass('invalid-feedback');
         element.closest('.form-group').append(error);
       },
-      highlight: function (element, errorClass, validClass) {
+      highlight: function(element, errorClass, validClass) {
         $(element).addClass('is-invalid');
       },
-      unhighlight: function (element, errorClass, validClass) {
+      unhighlight: function(element, errorClass, validClass) {
         $(element).removeClass('is-invalid');
       }
     });
@@ -69,7 +68,7 @@
         $('#btnSave').attr('disabled', true); //set button disable
         var url;
 
-        url = "<?php echo site_url('profil/ajax_insert_kontak')?>";
+        url = "<?php echo site_url('profil/ajax_insert_kontak') ?>";
 
         // ajax adding data to database
         $.ajax({
@@ -78,7 +77,7 @@
           data: $('#form1').serialize(),
           dataType: "JSON",
           //async: false,
-          success: function (data) {
+          success: function(data) {
 
 
             if (data.status) {
@@ -104,7 +103,7 @@
 
 
           },
-          error: function (jqXHR, textStatus, errorThrown) {
+          error: function(jqXHR, textStatus, errorThrown) {
             alert('Error adding / update data');
             $('#btnSave').text('Simpan'); //change button text
             $('#btnSave').attr('disabled', false); //set button enable
@@ -118,51 +117,51 @@
   }
 </script>
 <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Manajemen Kontak PPID</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?php echo base_url();?>"">Home</a></li>
-              <li class="breadcrumb-item active">Kontak PPID</li>
-            </ol>
-          </div>
-        </div>
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">Manajemen Kontak Dinkes</h1>
+      </div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>"">Home</a></li>
+              <li class=" breadcrumb-item active">Kontak</li>
+        </ol>
       </div>
     </div>
+  </div>
+</div>
 <section class="content">
-	<div class="card">
-		<form role="form" id="form1">
+  <div class="card">
+    <form role="form" id="form1">
       <div class="card-body ">
-          <input type="text" name="id" value="<?php echo $id_kontak;?>" class="d-none" id="id" placeholder="Nama Pengembang">
-          <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+        <input type="text" name="id" value="<?php echo $id_kontak; ?>" class="d-none" id="id" placeholder="Nama Pengembang">
+        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
 
-          <div class="form-group">
-            <label for="alamat">Alamat</label>
-            <input type="text" name="alamat" value="<?php echo $alamat;?>" class="form-control" id="alamat" placeholder="Alamat">
-          </div>
-          <div class="form-group">
-            <label for="no_tlp">No Telepon</label>
-            <input type="text" name="no_tlp" value="<?php echo $no_tlp;?>" class="form-control" id="no_tlp" placeholder="No Telepon">
-          </div>
+        <div class="form-group">
+          <label for="alamat">Alamat</label>
+          <input type="text" name="alamat" value="<?php echo $alamat; ?>" class="form-control" id="alamat" placeholder="Alamat">
+        </div>
+        <div class="form-group">
+          <label for="no_tlp">No Telepon</label>
+          <input type="text" name="no_tlp" value="<?php echo $no_tlp; ?>" class="form-control" id="no_tlp" placeholder="No Telepon">
+        </div>
 
-          <div class="form-group">
-            <label for="no_fax">No Fax</label>
-            <input type="text" name="no_fax" value="<?php echo $no_fax;?>" class="form-control" id="no_fax" placeholder="No Fax">
-          </div>
-          <div class="form-group">
-            <label for="no_fax">Email</label>
-            <input type="text" name="email" value="<?php echo $email;?>" class="form-control" id="email" placeholder="Email">
-          </div>
-          
+        <div class="form-group">
+          <label for="no_fax">No Fax</label>
+          <input type="text" name="no_fax" value="<?php echo $no_fax; ?>" class="form-control" id="no_fax" placeholder="No Fax">
+        </div>
+        <div class="form-group">
+          <label for="no_fax">Email</label>
+          <input type="text" name="email" value="<?php echo $email; ?>" class="form-control" id="email" placeholder="Email">
+        </div>
+
         <!-- /.card-body -->
       </div>
       <div class="card-footer">
         <button type="submit" id="btnSave" class="btn btn-primary">Simpan</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+        <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button> -->
       </div>
     </form>
-	</div>
+  </div>
 </section>

@@ -195,7 +195,7 @@
 			</div>
 			<div class="card-footer">
 				<button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Simpan</button>
-				<button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+				<!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button> -->
 			</div>
 		</form>
 	</div>
