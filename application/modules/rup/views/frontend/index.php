@@ -208,7 +208,7 @@ columns: [
 </style>
 <script>
     $(document).ready(function() {
-        var id = <?= '10' ?>;
+        var id = <?= '17' ?>;
         $('#tt').treegrid({
             url: '<?php echo base_url('dokumen/ajax_trees?key=') ?>' + id,
 
@@ -223,6 +223,7 @@ columns: [
                 title: 'INFORMASI',
                 field: 'name',
                 width: 400,
+                align: 'center',
                 styler: function(value, row, index) {
                     if (value < 20) {
                                 // return 'background-color:#ffee00;color:red;';

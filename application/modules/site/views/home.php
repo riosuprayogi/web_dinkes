@@ -11,7 +11,7 @@
 
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
 <script>   
-   AOS.init(); 
+ AOS.init(); 
 </script>
 <style>
     .footer {
@@ -307,8 +307,8 @@
 
         /*.caption {
 				margin-top: 40px;
-             }*/
-             .vid-list-container {
+               }*/
+               .vid-list-container {
                 padding-bottom: 20px;
             }
 
@@ -434,7 +434,7 @@
                                     foreach ($f["path_foto_banner"] as $k) {
                                       ?>
 
-                                      <img style="z-index:1; margin-top: 80px; position: relative; background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="400px">
+                                      <img style="z-index:1; margin-top: 80px; position: relative; background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="600px">
                                       <?php
                                   }
                               } ?>
@@ -499,7 +499,7 @@
 <!-- <section class="featured" style="background-color: white;" data-aos="fade-right">
     <div class="container mb-3 mt-4">
         <div class="row">
-         <div class="col-12 text-center"> -->
+           <div class="col-12 text-center"> -->
             <!-- <?php foreach ($berita3 as $ka) : ?> -->
             <!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
             <!-- <?php endforeach; ?> -->
@@ -603,7 +603,7 @@
                             <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
                                 <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
 
-                                 <?php if (count($f["path_foto_artikel"]) > 0) {
+                                   <?php if (count($f["path_foto_artikel"]) > 0) {
                                     foreach ($f["path_foto_artikel"] as $k) {
                                       ?>
                                       <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
