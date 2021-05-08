@@ -22,60 +22,11 @@ class Diklat extends MX_Controller
 		$this->load->library('cart');
 		$this->load->library('curl');
 	}
-	public function batas($string, $length){
-		if(strlen($string)<=($length)){
-			return $string;
-		} else {
-			$cetak = substr($string,0,$length). '...';
-			return $cetak;
-		}
-	}
+
 
 	public function index()
 	{
 		$data['title'] = "Input Artikel";
-
-
-		// ================= berita
-
-		$listProfiles = $this->db->query("SELECT t_berita.*
-
-			FROM t_berita 
-			    -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
-			    -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
-			    WHERE t_berita.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC LIMIT 4");
-			// var_dump($listProfiles);
-			            	// die();
-
-		$arrProfile = [];
-		$arr = [];
-		foreach ($listProfiles->result_array() as $key => $row) {
-
-			$result = $this->db->query("SELECT *, MIN(urutan)AS urutan FROM t_foto_berita WHERE id_berita=" . $row['id_berita'] . "")->result_array();
-			            	// var_dump($result);
-			            	// die();
-			if ($result) {
-
-				$arr = array(
-					"id_berita" => $row["id_berita"],
-					"id_kategori" => $row["id_kategori"],
-					"judul_berita" => $row["judul_berita"],
-					"isi_berita" => $this->batas($row["isi_berita"], 50),
-			                    // "nama_admin"  =>  $row["nama_admin"],
-			                    // "publish" => $row["publish"],
-					"tgl_jam" => $row["tgl_jam"],
-					"path_foto_artikel" => $result
-				);
-				array_push($arrProfile, $arr);
-			}
-		}
-
-		$data["diklat3"] = $arrProfile;
-			// var_dump($datae);
-			// die();
-
-
-// ================= akhir berita
 
 		// $listProfiles = $this->db->query("SELECT web_artikel.*, web_kategori_artikel.*, web_admin.nama_admin
 		//                                 FROM web_artikel
@@ -83,14 +34,14 @@ class Diklat extends MX_Controller
 		//                                 JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
 		//                                 ORDER BY tgl_jam DESC");
 		$listProfiles = $this->db->query("SELECT t_diklat.*
-			FROM t_diklat
-			WHERE t_diklat.trash='0' AND t_diklat.status='show' 
-			ORDER BY t_diklat.tgl_jam DESC
-			");
+                                        FROM t_diklat
+										WHERE t_diklat.trash='0' 
+										ORDER BY t_diklat.tgl_jam DESC
+                                        ");
 		$arrProfile = [];
 		$arr = [];
 		foreach ($listProfiles->result_array() as $key => $row) {
-			$result = $this->db->query("SELECT *, MIN(urutan)AS urutan FROM t_foto_diklat WHERE id_diklat=" . $row['id_diklat'] . "")->result_array();
+			$result = $this->db->query("SELECT * FROM t_foto_diklat WHERE id_diklat=" . $row['id_diklat'] . "")->result_array();
 
 			if ($result) {
 				$arr = array(
@@ -102,7 +53,7 @@ class Diklat extends MX_Controller
 					"status"           => $row["status"],
 					"tgl_jam"           => $row["tgl_jam"],
 					// "path_foto_diklat" => $result
-					"path_foto_diklat" => $result
+					"t_foto_diklat" => $result
 				);
 				array_push($arrProfile, $arr);
 			}
@@ -114,7 +65,7 @@ class Diklat extends MX_Controller
 		// die();
 		// $data['alasan'] = $this->main_model->get_alasan();
 		if (@$this->session->has_access[0]->nama_app != "Admin") {
-			$this->template->render_home('diklat/frontend/index', $data);
+			$this->template->render_home('diklat/frontend/index');
 		} else {
 			$this->template->render('diklat/backend/index', $data);
 		}
@@ -221,16 +172,16 @@ class Diklat extends MX_Controller
 			$row->no = $number++;
 			$row->foto = base_url($row["photo"]);
 			$row->aksi = '
-			<center>
-			<button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
-			<i class="fas fa-cogs"></i>
-			</button>
-			<div class="dropdown-menu">
-			<a class="dropdown-item" href="javascript:void(0)" onclick="edit('  . $row->id_diklat . ')"><i class="fas fa-edit"></i> Edit</a>
-			<a class="dropdown-item" href="javascript:void(0)" onclick="del(' . $row->id_diklat . ')"><i class="fas fa-trash"></i> Hapus</a>
-			</div>
-			</center>
-			';
+					<center>
+					<button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+							<i class="fas fa-cogs"></i>
+						</button>
+						<div class="dropdown-menu">
+						<a class="dropdown-item" href="javascript:void(0)" onclick="edit('  . $row->id_diklat . ')"><i class="fas fa-edit"></i> Edit</a>
+						<a class="dropdown-item" href="javascript:void(0)" onclick="del(' . $row->id_diklat . ')"><i class="fas fa-trash"></i> Hapus</a>
+						</div>
+					</center>
+				';
 			$data[] = $row;
 		}
 
@@ -368,11 +319,11 @@ class Diklat extends MX_Controller
 							$this->session->set_flashdata(
 								'pesan',
 								'<div class="alert alert-danger alert-dismissible fade show" role="alert">
-								<strong>Maaf :(!</strong> Uploawdawdawdad gagal, format photo (jpg,jpeg,png) ukuran file max 2 Mb.
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-								</button>
-								</div>'
+                                    <strong>Maaf :(!</strong> Uploawdawdawdad gagal, format photo (jpg,jpeg,png) ukuran file max 2 Mb.
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>'
 							);
 							return $this->edit($id);
 						} else {
@@ -417,11 +368,11 @@ class Diklat extends MX_Controller
 			$this->session->set_flashdata(
 				'pesan',
 				'<div class="alert alert-success alert-dismissible fade show" role="alert">
-				<strong>Selamatt!</strong> Anda Berhasil Mengupdate Data baru.
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-				</button>
-				</div>'
+                            <strong>Selamatt!</strong> Anda Berhasil Mengupdate Data baru.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>'
 			);
 			redirect('berita');
 		}
@@ -542,11 +493,11 @@ class Diklat extends MX_Controller
 			$this->session->set_flashdata(
 				'pesan',
 				'<div class="alert alert-success alert-dismissible fade show" role="alert">
-				<strong>Selamatt!</strong> Anda Berhasil Mengupdate Data baru.
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-				</button>
-				</div>'
+                            <strong>Selamatt!</strong> Anda Berhasil Mengupdate Data baru.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>'
 			);
 			redirect('diklat');
 		}
@@ -632,11 +583,11 @@ class Diklat extends MX_Controller
 							$this->session->set_flashdata(
 								'pesan',
 								'<div class="alert alert-danger alert-dismissible fade show" role="alert">
-								<strong>Maaf :(!</strong> Upload gagal, format photo (jpg,jpeg,png) ukuran file max 5 Mb.
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-								</button>
-								</div>'
+                                    <strong>Maaf :(!</strong> Upload gagal, format photo (jpg,jpeg,png) ukuran file max 5 Mb.
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>'
 							);
 							return $this->edit($id);
 						} else {
@@ -681,11 +632,11 @@ class Diklat extends MX_Controller
 			$this->session->set_flashdata(
 				'pesan',
 				'<div class="alert alert-success alert-dismissible fade show" role="alert">
-				<strong>Selamatt!</strong> Anda Berhasil Mengupdate Data baru.
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-				</button>
-				</div>'
+                            <strong>Selamatt!</strong> Anda Berhasil Mengupdate Data baru.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>'
 			);
 			redirect('berita');
 		}

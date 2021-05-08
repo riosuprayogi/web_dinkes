@@ -205,9 +205,10 @@
 	$(function() {
 		// Summernote
 		$('.textarea').summernote({
-			placeholder: 'Profil PPID',
+			placeholder: 'Profil',
 			tabsize: 2,
 			height: 600,
+
 			callbacks: {
 				onImageUpload: function(image) {
 					uploadImage(image[0]);
@@ -217,6 +218,8 @@
 				}
 			}
 		});
+
+
 
 		function uploadImage(image) {
 			var data = new FormData();
