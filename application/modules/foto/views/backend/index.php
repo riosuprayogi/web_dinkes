@@ -155,11 +155,7 @@
 					<thead>
 						<tr>
 							<td onclick="add()" style="vertical-align:middle; text-align:center;cursor:pointer;"><b><i class="fas fa-plus"></i></b></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td colspan="5"></td>
 						</tr>
 						<tr style="text-align:center">
 							<th>No</th>
