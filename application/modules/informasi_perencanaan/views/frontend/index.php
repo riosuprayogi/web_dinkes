@@ -49,7 +49,7 @@
 
 			<div class="row align-left">
 				<div class="col-md-6">
-					<a class="text-dark js-scroll-trigger" href="#dokumen" onclick="link_dokumen(99)">
+					<a class="text-dark js-scroll-trigger" href="#dokumen" onclick="link_dokumen(13)">
 						<div class="card">
 							<div class="card-horizontal">
 								<div class="img-square-wrapper">
@@ -65,7 +65,7 @@
 					</a>
 				</div>
 				<div class="col-md-6">
-					<a class="text-dark js-scroll-trigger" href="#dokumen" onclick="link_dokumen(9)">
+					<a class="text-dark js-scroll-trigger" href="#dokumen" onclick="link_dokumen(15)">
 						<div class="card">
 							<div class="card-horizontal">
 								<div class="img-square-wrapper">
@@ -84,7 +84,7 @@
 		<div class="media-container-row ">
 			<div class="row align-left">
 				<div class="col-md-6 ">
-					<a class="text-dark js-scroll-trigger" href="#dokumen" onclick="link_dokumen(6)">
+					<a class="text-dark js-scroll-trigger" href="#dokumen" onclick="link_dokumen(14)">
 						<div class="card">
 							<div class="card-horizontal">
 								<div class="img-square-wrapper">
@@ -99,7 +99,7 @@
 					</a>	
 				</div>
 				<div class="col-md-6 ">
-					<a class="text-dark js-scroll-trigger" href="#dokumen" onclick="link_dokumen(10)">
+					<a class="text-dark js-scroll-trigger" href="#dokumen" onclick="link_dokumen(16)">
 						<div class="card">
 							<div class="card-horizontal">
 								<div class="img-square-wrapper">

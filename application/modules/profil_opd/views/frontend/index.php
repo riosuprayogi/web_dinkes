@@ -51,14 +51,14 @@
 			<section class= "" id="" data-rv-view="1620" style="padding-top: 20px !important; padding-bottom: 10px !important; background: rgba(207, 207, 207, 0.33);">
 				<div class="container-fluid ">
 					<div class="media-container-row ">
-						<div class="col-12 col-md-12">
+						<div class="col-12 col-md-8">
 							<div class="media-container-row">
 						<!-- <div class="mbr-figure" style="width: 30%;">
 							<img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/walikota.png" alt="" media-simple="true">
 						</div> -->
-						<div class="mbr-figure rounded" style=" background: transparent; width: 40%; ">
+						<div class="mbr-figure rounded" style=" background: transparent; ">
 							<div class="mbr-figure " style="height:100%; opacity:1.0;">
-								<img src="<?= base_url('assets/media/image/gambaranumum.png') ?>" style="width:30%; margin:auto;padding-bottom: 5px" alt="" media-simple="true">
+								<center> <img style="width: 160px" src="<?= base_url('assets/media/image/gambaranumum.png') ?>" style="width:30%; margin:auto;padding-bottom: 5px" alt="" media-simple="true"></center>
 								<center>  <p style="text-align: center; ">
 									<?php echo $profil2['isi']; ?>
 									<!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
@@ -87,14 +87,15 @@
 			<section class= "" id="" data-rv-view="1620" style="padding-top: 20px !important; padding-bottom: 10px !important; background: rgba(207, 207, 207, 0.33);">
 				<div class="container-fluid ">
 					<div class="media-container-row ">
-						<div class="col-12 col-md-12">
+						<div class="col-12 col-md-8">
 							<div class="media-container-row">
 						<!-- <div class="mbr-figure" style="width: 30%;">
 							<img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/walikota.png" alt="" media-simple="true">
 						</div> -->
-						<div class="mbr-figure rounded" style=" background: transparent; width: 40%; ">
+						<div class="mbr-figure rounded" style=" background: transparent;  ">
 							<div class="mbr-figure " style="height:100%; opacity:1.0;">
-								<img src="<?= base_url('assets/media/image/gambaranumum.png') ?>" style="width:30%; margin:auto;padding-bottom: 5px" alt="" media-simple="true">
+								<center> <img style="width: 140px" src="<?= base_url('assets/media/image/ruanglingkup.png') ?>" style="width:30%; margin:auto;padding-bottom: 5px" alt="" media-simple="true">
+								</center>
 								<center>  <p style="text-align: center; ">
 									<?php echo $profil2['isi']; ?>
 									<!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
@@ -247,7 +248,7 @@
 				<div class="title col-lg-12">
 					<div class="card-img">
 						<div class="card-img">
-							<img class="logo-video" src="<?= base_url('assets/media/image/struktur.png') ?>" alt="" style="  padding-bottom: 10px; width: 25%">
+							<img class="logo-video" src="<?= base_url('assets/media/image/struktur.png') ?>" alt="" style="  padding-bottom: 10px; width: 20%">
 							<hr>
 						</div>
 						<!-- <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;"> -->
@@ -256,14 +257,14 @@
 				</div>
 				<div class="" data-flickity='{ "wrapAround": true }'>
 
-					<div class="col-md-12 col-sm-6    ">
-						<div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px;  padding: 10px; border-radius: 10px;">
+					<div class="col-md-12 col-sm-12    ">
+						<div class="carousel-cell" style=" ">
 
 							<!-- <img src="<?php echo base_url('assets/media/image/3c9ebd92d3002b6a09d5b05a0a378bbc.png') ?>" media-simple="true" style="width: 100%;"> -->
 
 							<?php foreach ($struktur3 as $f) : ?>
-								<div class="col-md-12 col-sm-4    ">
-									<div class="carousel-cell" style=" overflow: hidden;   padding: 10px; border-radius: 10px;">
+								<div class="col-md-12 col-sm-12    ">
+									<div class="carousel-cell" style="">
 										<!-- <div class="" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: transparent; "> -->
 											<!-- <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000"> -->
 												<!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
@@ -271,7 +272,7 @@
 													<?php if (count($f["isi"]) > 0) {
 														foreach ($f["isi"] as $k) {
 															?>
-															<img src="<?= base_url('assets/media/image/' . $k["isi"]) ?>"  width="100%" height="100%">
+															<img style="width:100% " src="<?= base_url('assets/media/image/' . $k["isi"]) ?>"   height="100%">
 															<?php
 														}
 													} ?>

@@ -183,12 +183,12 @@
             <div class="card rounded-lg">
                 <div class="card-header text-white bg-info pt-3">
                     <h3>
-                        DOKUMEN INFORMASIas
+                        INFORMASI PERENCANAAN
                     </h3>
                 </div>
                 <div class="card-body bg-white border-info rounded-2">
-                    <a class="btn btn-primary" onclick="collapseAll()">Tutup Semua </a>
-                    <a class="btn btn-info" onclick="expandAll()">Buka Semua</a>
+                    <!-- <a class="btn btn-primary" onclick="collapseAll()">Tutup Semua </a> -->
+                    <!-- <a class="btn btn-info" onclick="expandAll()">Buka Semua</a> -->
                     <table id="tt" class="table" style="width:100%;height:400px"></table>
                     <!-- <table title="Products" class="easyui-treegrid" style="width:700px;height:300px"
                             url="<?php echo base_url('dokumen/ajax_trees?key=') . $key ?>"

@@ -11,7 +11,7 @@
 
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
 <script>   
-   AOS.init(); 
+ AOS.init(); 
 </script>
 <style>
     .footer {
@@ -421,7 +421,7 @@
                     ?>
 
                     <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
-                        <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_tngtv.png" alt="">
+                        <!-- <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_tngtv.png" alt=""> -->
                     </div>
 
                     <div class="rny-vid-list-container">

@@ -11,7 +11,7 @@
 
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
 <script>   
- AOS.init(); 
+   AOS.init(); 
 </script>
 <style>
     .footer {
@@ -307,8 +307,8 @@
 
         /*.caption {
 				margin-top: 40px;
-               }*/
-               .vid-list-container {
+             }*/
+             .vid-list-container {
                 padding-bottom: 20px;
             }
 
@@ -387,8 +387,27 @@
         }
     </style> -->
     <!-- <section class="py-5"></section> -->
-
-
+   <!--  <link  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="hhttps://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> -->
+   <!--  <script >
+     $('.slider-for').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      asNavFor: '.slider-nav'
+  });
+     $('.slider-nav').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      asNavFor: '.slider-for',
+      dots: false,
+      centerMode: true,
+      focusOnSelect: true
+  });
+</script> -->
 
 
 
@@ -402,42 +421,43 @@
 <div class="">
     <div class="">
 
-     <!--  <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay":1500 }'> -->
-        <div class="carousel" data-flickity='{ "wrapAround": true, "pageDots": false}'>
-            <?php foreach ($slidebanner as $f) : ?>
-                <div class="col-12 col-sm-12">
+        <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay":2500, "pageDots": false, "pauseAutoPlayOnHover": false }'>
+            <!-- <div class="carousel" data-flickity='{ "wrapAround": true, "pageDots": false}'> -->
+                <?php foreach ($sliderbanner as $f) : ?>
+                    <div class="col-md-12 col-sm-12">
 
 
-                    <a href="#" style=" ">
-                        <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
+                        <a href="#" style=" ">
+                            <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
 
-                            <?php if (count($f["image"]) > 0) {
-                                foreach ($f["image"] as $k) {
-                                  ?>
-                                  <img style="z-index:1; margin-top: 30px " src="<?= base_url('assets/backend/img/img_berita/' . $k["image"]) ?>"  width="100%" height="400px">
-                                  <?php
-                              }
-                          } ?>
+                                <?php if (count($f["path_foto_banner"]) > 0) {
+                                    foreach ($f["path_foto_banner"] as $k) {
+                                      ?>
 
-
-                      </a>
+                                      <img style="z-index:1; margin-top: 80px; position: relative; background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="400px">
+                                      <?php
+                                  }
+                              } ?>
 
 
+                          </a>
 
-                  </div>
-              <?php endforeach; ?>
+
+
+                      </div>
+                  <?php endforeach; ?>
+              </div>
           </div>
       </div>
-  </div>
 
-  <!-- ==============================Akhir Berita Slider -->
-
+      <!-- ==============================Akhir Berita Slider -->
 
 
 
 
 
-  <div style="background-image: url('<?= base_url('assets/img/banner/5.png') ?>') ; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+
+  <!-- <div style="background-image: url('<?= base_url('assets/img/banner/5.png') ?>') ; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
     <section class= "cid-ppid" id="ppid" data-rv-view="1620" style="padding-top: 90px !important; background: rgba(207, 207, 207, 0.33);">
         <div class="container-fluid ">
             <div class="media-container-row ">
@@ -450,9 +470,9 @@
                             <div class="mbr-figure " style="height:100%; opacity:1.0;">
                                 <img src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" style="width:50%; margin:auto;" alt="" media-simple="true">
                                 <center>  <p style="text-align: center; ">
-                                    <?php echo $profil['isi']; ?>
+                                    <?php echo $profil['isi']; ?> -->
                                     <!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
-                                </p></center>
+                            <!--     </p></center>
                             </div>
 
                         </div>
@@ -464,7 +484,8 @@
             </div>
         </div>
     </section>
-</div>
+</div> -->
+
 <!-- <div class="wrapper">
   <div class="zoom-effect">
     <div class="kotak">
@@ -478,7 +499,7 @@
 <!-- <section class="featured" style="background-color: white;" data-aos="fade-right">
     <div class="container mb-3 mt-4">
         <div class="row">
-           <div class="col-12 text-center"> -->
+         <div class="col-12 text-center"> -->
             <!-- <?php foreach ($berita3 as $ka) : ?> -->
             <!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
             <!-- <?php endforeach; ?> -->
@@ -574,7 +595,7 @@
                 <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-top: -10px">
             </div>
         </div>
-        <div class="" data-flickity='{ "wrapAround": true }'>
+        <div class="" data-flickity='{ "wrapAround": true, "autoPlay":1500, "pageDots": false }'>
             <?php foreach ($berita3 as $f) : ?>
                 <div class="col-md-4 col-sm-4    ">
                     <div class="" style=" overflow: hidden; margin-bottom: 50px;  padding: 10px; border-radius: 10px;">
@@ -582,7 +603,7 @@
                             <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
                                 <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
 
-                                   <?php if (count($f["path_foto_artikel"]) > 0) {
+                                 <?php if (count($f["path_foto_artikel"]) > 0) {
                                     foreach ($f["path_foto_artikel"] as $k) {
                                       ?>
                                       <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
@@ -1061,17 +1082,17 @@
                 <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
             </div>
         </div>
-        <div class="" data-flickity='{ "wrapAround": true }'>
+        <div class="" data-flickity='{ "wrapAround": true,  "autoPlay":1500, "pageDots": false }'>
             <?php foreach ($video_dinkes as $tv) : ?>
               <div class="col-md-8 col-sm-8    ">
                 <div class="carousel-cell" style=" overflow: hidden; margin-bottom: 50px; background-color: transparent;    padding: 10px;">
                   <div class="" style="margin: 10px; overflow:hidden;">
                     <div class="card-image ">
-                        <h3 style="text-transform: uppercase;">
+                        <h6 style="text-transform: uppercase;">
                             <center>
                                 <b><?= $tv->nama_video ?></b>
                             </center>
-                        </h3>
+                        </h6>
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe width="250" height="100" style="overflow-x: hidden; " src="<?= $tv->link_video ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>

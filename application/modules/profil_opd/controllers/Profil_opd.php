@@ -34,7 +34,7 @@ class Profil_opd extends MX_Controller {
 			FROM m_profil
 			    -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
 			    -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
-			    WHERE m_profil.option = 'struktur'");
+			    WHERE m_profil.option = 'struk_organisasi'");
 			// var_dump($listProfiles);
 			            	// die();
 
@@ -42,7 +42,7 @@ class Profil_opd extends MX_Controller {
 		$arr = [];
 		foreach ($listProfiles->result_array() as $key => $row) {
 
-			$result = $this->db->query("SELECT * FROM m_profil WHERE option='struktur'")->result_array();
+			$result = $this->db->query("SELECT * FROM m_profil WHERE option='struk_organisasi'")->result_array();
 			            	// var_dump($result);
 			            	// die();
 			if ($result) {
