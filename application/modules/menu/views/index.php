@@ -196,13 +196,22 @@
         });
     }
 </script>
-<section class="content-header">
-    <h1>Manajemen Menu</h1>
-    <ol class="breadcrumb">
-        <li><a href="<?php echo base_url(); ?>"><i class="fa fa-home"></i> Home</a></li>
-        <li class="active">Menu</li>
-    </ol>
-</section>
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Manajemen Menu</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>"">Home</a></li>
+              <li class=" breadcrumb-item active">Menu</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
 <section class="content">
     <div class="card">
         <div class="card-body">
