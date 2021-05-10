@@ -72,13 +72,41 @@ class Diklat extends MX_Controller
 
 		$data["t_diklat"] = $arrProfile;
 
+		$listProfiles = $this->db->query("SELECT t_diklat.*
+		FROM t_diklat
+		WHERE t_diklat.trash='0' 
+		ORDER BY t_diklat.tgl_jam DESC
+		");
+		$arrProfile = [];
+		$arr = [];
+		foreach ($listProfiles->result_array() as $key => $row) {
+			$result = $this->db->query("SELECT *FROM t_foto_diklat WHERE id_diklat=" . $row['id_diklat'] . "")->result_array();
+
+			if ($result) {
+				$arr = array(
+					"id_diklat"        => $row["id_diklat"],
+					// "id_kategori"    => $row["id_kategori"],
+					"nama_diklat"  => $row["nama_diklat"],
+					// "nama_diklat"     => $row["nama_diklat"],
+					"isi_diklat"       => $row["isi_diklat"],
+					"status"           => $row["status"],
+					"tgl_jam"           => $row["tgl_jam"],
+					// "path_foto_diklat" => $result
+					"path_foto_diklat" => $result
+				);
+				array_push($arrProfile, $arr);
+			}
+		}
+
+		$data2["t_diklat2"] = $arrProfile;
+
 		// var_dump($data2);
 		// die();
 		// $data['alasan'] = $this->main_model->get_alasan();
 		if (@$this->session->has_access[0]->nama_app != "Admin") {
 			$this->template->render_home('diklat/frontend/index', $data);
 		} else {
-			$this->template->render('diklat/backend/index', $data);
+			$this->template->render('diklat/backend/index', $data2);
 		}
 	}
 

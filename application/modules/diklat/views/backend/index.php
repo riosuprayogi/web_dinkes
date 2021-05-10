@@ -184,7 +184,7 @@
 						<!-- dataTable ga bisa pake tr disini -->
 
 						<?php $i = 1;
-						foreach ($t_diklat as $ia) : ?>
+						foreach ($t_diklat2 as $ia) : ?>
 							<tr>
 								<td><?= $i++ ?></td>
 								<!-- <td><?= $ia["nama_kategori"] ?></td> -->
