@@ -64,7 +64,7 @@ class Diklat extends MX_Controller
 					"status"           => $row["status"],
 					"tgl_jam"           => $row["tgl_jam"],
 					// "path_foto_diklat" => $result
-					"path_foto_diklat" => $result
+					"t_foto_diklat" => $result
 				);
 				array_push($arrProfile, $arr);
 			}
