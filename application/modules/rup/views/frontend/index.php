@@ -46,33 +46,33 @@
               autoWidth: false,
               bLengthChange: false,
               ajax: {
-                 url: '<?php echo site_url('dasar_hukum/ajax_list')?>',
-                 type: 'GET',
-                 header: {
+               url: '<?php echo site_url('dasar_hukum/ajax_list')?>',
+               type: 'GET',
+               header: {
             '<?= $this->security->get_csrf_token_name();?>': '<?php echo $this->security->get_csrf_hash(); ?>', //replace by your name/value
         },
         data: function (data) {
             data.filter = {
-               'username':'',
-           };
-       }
-   },
-   language: {
-     sProcessing: '<img src="<?php echo base_url('assets/img/process.gif')?>" width="20px"> Sedang memproses...',
-     sLengthMenu: 'Tampilkan _MENU_ entri',
-     sZeroRecords: 'Tidak ditemukan data yang sesuai',
-     sInfo: 'Menampilkan _START_ sampai _END_ dari _TOTAL_ entri',
-     sInfoEmpty: 'Menampilkan 0 sampai 0 dari 0 entri',
-     sInfoFiltered: '(disaring dari _MAX_ entri keseluruhan)',
-     sInfoPostFix: '',
-     sSearch: 'Cari:',
-     sUrl: '',
-     oPaginate: {
-        sFirst: '<<',
-        sPrevious: '<',
-        sNext: '>',
-        sLast: '>>'
-    }
+             'username':'',
+         };
+     }
+ },
+ language: {
+   sProcessing: '<img src="<?php echo base_url('assets/img/process.gif')?>" width="20px"> Sedang memproses...',
+   sLengthMenu: 'Tampilkan _MENU_ entri',
+   sZeroRecords: 'Tidak ditemukan data yang sesuai',
+   sInfo: 'Menampilkan _START_ sampai _END_ dari _TOTAL_ entri',
+   sInfoEmpty: 'Menampilkan 0 sampai 0 dari 0 entri',
+   sInfoFiltered: '(disaring dari _MAX_ entri keseluruhan)',
+   sInfoPostFix: '',
+   sSearch: 'Cari:',
+   sUrl: '',
+   oPaginate: {
+    sFirst: '<<',
+    sPrevious: '<',
+    sNext: '>',
+    sLast: '>>'
+}
 },
 order: [1, 'desc'],
 columns: [
@@ -208,7 +208,7 @@ columns: [
 </style>
 <script>
     $(document).ready(function() {
-        var id = <?= '17' ?>;
+        var id = <?= '10' ?>;
         $('#tt').treegrid({
             url: '<?php echo base_url('dokumen/ajax_trees?key=') ?>' + id,
 
