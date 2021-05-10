@@ -73,9 +73,96 @@ class Dokumentasi_informasi extends MX_Controller {
 			// $data['banner'] = $this->site->get_curl('https://tangerangkota.go.id/banner/api-banner/');
 			// $data['berita2'] = $this->berita->get_isi_berita();
 		$data['berita'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_berita/');
-		
-		$data['video_tng'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_tng/');
+		$data["video_dinkes"] = $this->db->query("SELECT * FROM t_video WHERE status = 'show' AND trash='0' ")->result();
+		// $data2['video_tng'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_tng/');
+		// echo json_encode($data2);
+		// die();
 		$data['video_humas'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_humas/');
+		// var_dump($data5);
+		// die();
+// ================= Slider banner
+
+		$listProfiles = $this->db->query("SELECT t_banner.*
+
+			FROM t_banner 
+			    -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
+			    -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
+			    WHERE t_banner.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC LIMIT 4");
+			// var_dump($listProfiles);
+			            	// die();
+
+		$arrProfile = [];
+		$arr = [];
+		foreach ($listProfiles->result_array() as $key => $row) {
+
+			$result = $this->db->query("SELECT * FROM t_detail_banner WHERE id_banner=" . $row['id_banner'] . "")->result_array();
+			            	// var_dump($result);
+			            	// die();
+			if ($result) {
+
+				$arr = array(
+					"id_banner" => $row["id_banner"],
+						// "id_kategori" => $row["id_kategori"],
+						// "judul_berita" => $row["judul_berita"],
+						// "isi_berita" => $this->batas($row["isi_berita"], 50),
+			                    // "nama_admin"  =>  $row["nama_admin"],
+			                    // "publish" => $row["publish"],
+					"tgl_jam" => $row["tgl_jam"],
+					"path_foto_banner" => $result
+				);
+				array_push($arrProfile, $arr);
+			}
+		}
+
+		$data["sliderbanner"] = $arrProfile;
+			// var_dump($datae);
+			// die();
+
+
+
+// ================= akhir slider banner
+
+
+
+
+		$listProfiles = $this->db->query("SELECT t_berita.*
+
+			FROM t_berita 
+			    -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
+			    -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
+			    WHERE t_berita.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC LIMIT 4");
+			// var_dump($listProfiles);
+			            	// die();
+
+		$arrProfile = [];
+		$arr = [];
+		foreach ($listProfiles->result_array() as $key => $row) {
+
+			$result = $this->db->query("SELECT *, MIN(urutan)AS urutan FROM t_foto_berita WHERE id_berita=" . $row['id_berita'] . "")->result_array();
+			            	// var_dump($result);
+			            	// die();
+			if ($result) {
+
+				$arr = array(
+					"id_berita" => $row["id_berita"],
+					"id_kategori" => $row["id_kategori"],
+					"judul_berita" => $row["judul_berita"],
+					"isi_berita" => $this->batas($row["isi_berita"], 50),
+			                    // "nama_admin"  =>  $row["nama_admin"],
+			                    // "publish" => $row["publish"],
+					"tgl_jam" => $row["tgl_jam"],
+					"path_foto_artikel" => $result
+				);
+				array_push($arrProfile, $arr);
+			}
+		}
+
+		$data["berita3"] = $arrProfile;
+			// var_dump($datae);
+			// die();
+
+
+
 
 // ================= berita
 
@@ -161,7 +248,7 @@ class Dokumentasi_informasi extends MX_Controller {
 
  // $data7["videoBerita"] = $this->db->query("SELECT * FROM t_video WHERE id_video = '18' AND status = 'show' ")->result();
    // Query Untuk Video;
-		$data["video_dinkes"] = $this->db->query("SELECT * FROM t_video WHERE status = 'show' AND trash='0' ORDER BY tgl_jam DESC LIMIT 4")->result();
+		// $data["video_dinkes"] = $this->db->query("SELECT * FROM t_video WHERE status = 'show' AND trash='0' ORDER BY tgl_jam DESC LIMIT 4")->result();
 
 // var_dump($data7);
 // die();

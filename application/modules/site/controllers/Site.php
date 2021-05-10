@@ -19,7 +19,7 @@ class Site extends MX_Controller {
 		if(strlen($string)<=($length)){
 			return $string;
 		} else {
-			$cetak = substr($string,0,$length). '...';
+			$cetak = substr($string,0,$length). '...  ';
 			return $cetak;
 		}
 	}
@@ -104,7 +104,7 @@ class Site extends MX_Controller {
 						"id_berita" => $row["id_berita"],
 						"id_kategori" => $row["id_kategori"],
 						"judul_berita" => $row["judul_berita"],
-						"isi_berita" => $this->batas($row["isi_berita"], 50),
+						"isi_berita" => $this->batas($row["isi_berita"], 100),
 			                    // "nama_admin"  =>  $row["nama_admin"],
 			                    // "publish" => $row["publish"],
 						"tgl_jam" => $row["tgl_jam"],

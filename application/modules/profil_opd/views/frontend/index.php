@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo base_url();?>assets/home2/mobirise/css/mbr-additional_ppid.css" type="text/css">
+<!-- <link rel="stylesheet" href="<?php echo base_url();?>assets/home2/mobirise/css/mbr-additional_ppid.css" type="text/css"> -->
 
 <style>
 	.icon{
@@ -60,10 +60,10 @@
 							<div class="mbr-figure " style="height:100%; opacity:1.0;">
 								<center> <img style="width: 300px" src="<?= base_url('assets/media/image/gambaranumum.png') ?>" style="width:30%; margin:auto; padding-bottom: 5px;" alt="" media-simple="true"></center>
 								<center>
-									
+									<!-- <?php echo $profil2['isi']; ?>  -->
 									<p style="text-align: center; margin-top: 75px; font-size: 25px">
-										<!-- <?php echo $profil2['isi']; ?> -->
-										Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia. 
+										<?php echo $gambaranumum['isi']; ?> 
+										<!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
 									</p></center>
 								</div>
 
@@ -101,7 +101,7 @@
 								<center>
 									<br>
 									<p style="text-align: center; margin-top: 75px; font-size: 25px">
-										<?php echo $profil2['isi']; ?>
+										<?php echo $ruanglingkup['isi']; ?>
 										<!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
 									</p></center>
 								</div>
@@ -252,7 +252,7 @@
 				<div class="title col-lg-12">
 					<div class="card-img">
 						<div class="card-img">
-							<img class="logo-video" src="<?= base_url('assets/media/image/struktur.png') ?>" alt="" style="  padding-bottom: 10px; width: 20%">
+							<img class="logo-video" src="<?= base_url('assets/media/image/struktur.png') ?>" alt="" style="  padding-bottom: 10px; width: 20%; margin-top: 50px">
 							<hr>
 						</div>
 						<!-- <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;"> -->
@@ -439,42 +439,42 @@
 <!-- jQuery -->
 <script src="<?php echo base_url('assets/') ?>plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
-<script src="<?php echo base_url('assets/') ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="<?php echo base_url('assets/') ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 <!-- overlayScrollbars -->
-<script src="<?php echo base_url('assets/') ?>plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- <script src="<?php echo base_url('assets/') ?>plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> -->
 <!-- DataTables -->
-<script src="<?php echo base_url('assets/') ?>/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url('assets/') ?>/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="<?php echo base_url('assets/') ?>/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="<?php echo base_url('assets/') ?>/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<!-- <script src="<?php echo base_url('assets/') ?>/plugins/datatables/jquery.dataTables.min.js"></script> -->
+<!-- <script src="<?php echo base_url('assets/') ?>/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script> -->
+<!-- <script src="<?php echo base_url('assets/') ?>/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script> -->
+<!-- <script src="<?php echo base_url('assets/') ?>/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script> -->
 <!-- SweetAlert2 -->
-<script src="<?php echo base_url('assets/') ?>/plugins/sweetalert2/sweetalert2.min.js"></script>
-<script src="<?php echo base_url('assets/') ?>/plugins/moment/moment.min.js"></script>
+<!-- <script src="<?php echo base_url('assets/') ?>/plugins/sweetalert2/sweetalert2.min.js"></script> -->
+<!-- <script src="<?php echo base_url('assets/') ?>/plugins/moment/moment.min.js"></script> -->
 <!-- date-range-picker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script> -->
 <!-- Toastr -->
-<script src="<?php echo base_url('assets/') ?>/plugins/toastr/toastr.min.js"></script>
+<!-- <script src="<?php echo base_url('assets/') ?>/plugins/toastr/toastr.min.js"></script> -->
 <!-- AdminLTE App -->
-<script src="<?php echo base_url('assets/') ?>dist/js/adminlte.js"></script>
+<!-- <script src="<?php echo base_url('assets/') ?>dist/js/adminlte.js"></script> -->
 
 <!-- OPTIONAL SCRIPTS -->
-<script src="<?php echo base_url('assets/') ?>dist/js/demo.js"></script>
+<!-- <script src="<?php echo base_url('assets/') ?>dist/js/demo.js"></script> -->
 
 <!-- jQuery Mapael -->
-<script src="<?php echo base_url('assets/') ?>plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-<script src="<?php echo base_url('assets/') ?>plugins/raphael/raphael.min.js"></script>
-<script src="<?php echo base_url('assets/') ?>plugins/jquery-mapael/jquery.mapael.min.js"></script>
-<script src="<?php echo base_url('assets/') ?>plugins/jquery-mapael/maps/usa_states.min.js"></script>
+<!-- <script src="<?php echo base_url('assets/') ?>plugins/jquery-mousewheel/jquery.mousewheel.js"></script> -->
+<!-- <script src="<?php echo base_url('assets/') ?>plugins/raphael/raphael.min.js"></script> -->
+<!-- <script src="<?php echo base_url('assets/') ?>plugins/jquery-mapael/jquery.mapael.min.js"></script> -->
+<!-- <script src="<?php echo base_url('assets/') ?>plugins/jquery-mapael/maps/usa_states.min.js"></script> -->
 <!-- ChartJS -->
-<script src="<?php echo base_url('assets/') ?>plugins/chart.js/Chart.min.js"></script>
+<!-- <script src="<?php echo base_url('assets/') ?>plugins/chart.js/Chart.min.js"></script> -->
 <!-- jquery-validation -->
-<script src="<?php echo base_url('assets/') ?>plugins/jquery-validation/jquery.validate.min.js"></script>
-<script src="<?php echo base_url('assets/') ?>plugins/jquery-validation/additional-methods.min.js"></script>
+<!-- <script src="<?php echo base_url('assets/') ?>plugins/jquery-validation/jquery.validate.min.js"></script> -->
+<!-- <script src="<?php echo base_url('assets/') ?>plugins/jquery-validation/additional-methods.min.js"></script> -->
 <!-- PAGE SCRIPTS -->
-<script src="<?php echo base_url('assets/') ?>dist/js/pages/dashboard2.js"></script>
+<!-- <script src="<?php echo base_url('assets/') ?>dist/js/pages/dashboard2.js"></script> -->
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/') ?>default/easyui.css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/') ?>icon.css">
+<!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/') ?>icon.css"> -->
 <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.easyui.min.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/js/datagrid-filter.js') ?>"></script>
 <style>
@@ -591,19 +591,22 @@
         }
     }
 </style> -->
-<div class="container align-center " style="padding-top:50px; padding-bottom:100px;">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="card rounded-lg">
-				<div class="card-header text-white bg-info pt-3">
-					<h3>
-						PELAYANAN LANGSUNG
-					</h3>
-				</div>
-				<div class="card-body bg-white border-info rounded-2">
-					<!-- <a class="btn btn-primary" onclick="collapseAll()">Tutup Semua </a> -->
-					<!-- <a class="btn btn-info" onclick="expandAll()">Buka Semua</a> -->
-					<table id="tt" class="table" style="width:100%;height:400px"></table>
+</div>
+</div>
+<SECTION style="padding-top:50px; padding-bottom:100px;background-color: rgb(238, 238, 239);">
+	<div class="container align-center " style="padding-top:50px; padding-bottom:100px;">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card rounded-lg">
+					<div class="card-header text-white bg-info pt-3">
+						<h3>
+							PELAYANAN LANGSUNG
+						</h3>
+					</div>
+					<div class="card-body bg-white border-info rounded-2">
+						<!-- <a class="btn btn-primary" onclick="collapseAll()">Tutup Semua </a> -->
+						<!-- <a class="btn btn-info" onclick="expandAll()">Buka Semua</a> -->
+						<table id="tt" class="table" style="width:100%;height:400px"></table>
                     <!-- <table title="Products" class="easyui-treegrid" style="width:700px;height:300px"
                             url="<?php echo base_url('dokumen/ajax_trees?key=') . $key ?>"
                             rownumbers="true"
@@ -622,7 +625,7 @@
         </div>
     </div>
 </div>
-
+</SECTION>
 
 
 

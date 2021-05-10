@@ -1,13 +1,19 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <!-- <link href="<?php echo base_url('assets/home/css/hover.css')?>" rel="stylesheet"> -->
 <link href="<?php echo base_url('assets/home/css/hover2.css')?>" rel="stylesheet">
+<link href="<?php echo base_url('assets/home/css/hover3.css')?>" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/custom.js')?>"></script>
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
 
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
 <script>   
@@ -418,39 +424,88 @@
       </div>
     </div>
 </div> -->
-<div class="">
-    <div class="">
+<section>
 
-        <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay":2500, "pageDots": false, "pauseAutoPlayOnHover": false }'>
-            <!-- <div class="carousel" data-flickity='{ "wrapAround": true, "pageDots": false}'> -->
-                <?php foreach ($sliderbanner as $f) : ?>
-                    <div class="col-md-12 col-sm-12">
+    <div class="tes slider_wrap">
+        <div class="banner_slider">
+                    <!-- <img src="<?php echo base_url(); ?>assets/img/banner/1.png">
+                    <img src="<?php echo base_url(); ?>assets/img/banner/2.png">
+                    <img src="<?php echo base_url(); ?>assets/img/banner/3.png"> -->
 
+                    <?php foreach ($sliderbanner as $f) : ?>
+                        <div  style="">
+                            <?php if (count($f["path_foto_banner"]) > 0) {
+                                foreach ($f["path_foto_banner"] as $k) {
+                                  ?>
 
-                        <a href="#" style=" ">
-                            <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
-
-                                <?php if (count($f["path_foto_banner"]) > 0) {
-                                    foreach ($f["path_foto_banner"] as $k) {
-                                      ?>
-
-                                      <img style="z-index:1; margin-top: 80px; position: relative; background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="600px">
-                                      <?php
-                                  }
-                              } ?>
-
-
-                          </a>
-
-
+                                  <img class="tes2" style="margin-top: 50px;" src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>" >
+                                  <?php
+                              }
+                          } ?>
 
                       </div>
                   <?php endforeach; ?>
               </div>
-          </div>
-      </div>
+              <div class="thumbnail_slider_area">
+                <div class="container">
+                    <div class="row thumbnail_slider autoplay center">
+                      <?php foreach ($sliderbanner as $f) : ?>
+                        <?php if (count($f["path_foto_banner"]) > 0) {
+                            foreach ($f["path_foto_banner"] as $k) {
+                              ?>
+                              <div class="col">
+                                  <!-- <img style="z-index:1; margin-top: 72px; position: relative; background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="600px"> </div> -->
+                                  <img class="tes3" src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" > </div>
+                                  <?php
+                              }
+                          } ?>
+                      <?php endforeach; ?>
 
-      <!-- ==============================Akhir Berita Slider -->
+                      <!-- <img src="<?php echo base_url(); ?>assets/img/banner/1.png"> -->
+
+                     <!--  <div class="col">
+                        <img src="<?php echo base_url(); ?>assets/img/banner/2.png">
+                    </div>
+                    <div class="col">
+                        <img src="<?php echo base_url(); ?>assets/img/banner/3.png">
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- <div class="">
+    <div class="">
+
+        <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay":2500, "pageDots": false, "pauseAutoPlayOnHover": false }'>
+
+            <?php foreach ($sliderbanner as $f) : ?>
+                <div class="col-md-12 col-sm-12">
+
+
+
+                    <?php if (count($f["path_foto_banner"]) > 0) {
+                        foreach ($f["path_foto_banner"] as $k) {
+                          ?>
+
+                          <img style="z-index:1; margin-top: 72px; position: relative; background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="600px">
+                          <?php
+                      }
+                  } ?>
+
+
+
+              </div>
+          <?php endforeach; ?>
+      </div>
+  </div>
+</div> -->
+
+<!-- ==============================Akhir Berita Slider -->
 
 
 
@@ -522,10 +577,10 @@
       foreach ($berita3 as $f) : 
                   // strip tags to avoid breaking any html
         $string = strip_tags($f["isi_berita"]);
-        if (strlen($string) > 500) {
+        if (strlen($string) > 1000) {
 
                 // truncate string
-            $stringCut = substr($string, 0, 500);
+            $stringCut = substr($string, 0, 1000);
             $endPoint = strrpos($stringCut, ' ');
 
                 //if the string doesn't contain any space then it will cut without word basis.
@@ -596,52 +651,65 @@
             </div>
         </div>
         <div class="" data-flickity='{ "wrapAround": true, "autoPlay":1500, "pageDots": false }'>
-            <?php foreach ($berita3 as $f) : ?>
-                <div class="col-md-4 col-sm-4    ">
-                    <div class="" style=" overflow: hidden; margin-bottom: 50px;  padding: 10px; border-radius: 10px;">
-                        <div class="" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: transparent; ">
-                            <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
-                                <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
+            <?php foreach ($berita3 as $f) :
+              $string = strip_tags($f["isi_berita"]);
+              if (strlen($string) > 1000) {
 
-                                   <?php if (count($f["path_foto_artikel"]) > 0) {
-                                    foreach ($f["path_foto_artikel"] as $k) {
-                                      ?>
-                                      <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
-                                      <?php
-                                  }
-                              } ?>
-                              <div class="card-body">
-                                <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
-                                <b><?= $f["judul_berita"] ?></b>
+                // truncate string
+                $stringCut = substr($string, 0, 1000);
+                $endPoint = strrpos($stringCut, ' ');
 
-                                <p><?= $string?>
-                                <span><br><br>
+                //if the string doesn't contain any space then it will cut without word basis.
+                $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+                // $string .= '... <a href="/this/story">Read More</a>';
+            }
+            ?>
+            <div class="col-md-4 col-sm-4">
+                <div class="" style=" overflow: hidden; margin-bottom: 10px;  padding-right: 10px; ">
+                    <div class="" style="width: 24rem; height: 500px; overflow: hidden; background-color: transparent;">
+                        <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000; height: 30%">
+                            <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
 
-                                    <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a>
-                                    <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
-                                </span>
+                               <?php if (count($f["path_foto_artikel"]) > 0) {
+                                foreach ($f["path_foto_artikel"] as $k) {
+                                  ?>
+                                  <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
+                                  <?php
+                              }
+                          } ?>
+                          <div class="card-body">
+                            <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
+                            <b><?= $f["judul_berita"] ?></b>
+
+                            <p style="margin-top: 10px"><?= $string?><a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a>
+
                             </p>
 
                         </div>
 
                         <!-- <br> -->
                     </a>
-                </div>
+                    <span><br><br>
 
-                <!-- <div class="card-content"> -->
-                    <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
-                    <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-                    <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
-                        <!-- <i style="background-color: blue" ></i> Lihat Video -->
-                    </a></center>
-                    <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-                    <!-- </div> -->
+                     <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
+                     <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
+                 </span>
+             </div>
 
-                    <!-- </div> -->
-                </div>
+             <!-- <div class="card-content"> -->
+                <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
+                <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+                <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
+                    <!-- <i style="background-color: blue" ></i> Lihat Video -->
+                </a></center>
+                <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+                <!-- </div> -->
+
+                <!-- </div> -->
             </div>
-        <?php endforeach; ?>
-    </div>
+        </div>
+    <?php endforeach; ?>
+</div>
 </div>
 </div>
 </section>

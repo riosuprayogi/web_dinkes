@@ -18,7 +18,7 @@ function info_user() {
             }
         }
     }
-	return json_encode($belum_ada);
+    return json_encode($belum_ada);
 }
 
 function createColumnsArray($end_column, $first_letters = '') {
@@ -56,7 +56,7 @@ function createColumnsArray($end_column, $first_letters = '') {
 function coun_vaksin_catatan($field,$bulan) {
     $CI = get_instance();
     $sql = "SELECT COUNT(".$field.") AS jmlData
-                                FROM t_vaksin_catatan WHERE ";
+    FROM t_vaksin_catatan WHERE ";
     
     $sql .= "MONTH(create_date) = '".$bulan."' AND YEAR(tanggal)  = '".date("Y")."'";
     
@@ -68,9 +68,9 @@ function coun_vaksin_catatan($field,$bulan) {
 function coun_vaksin_catatan_laki_laki($field,$bulan) {
     $CI = get_instance();
     $sql = "SELECT COUNT(".$field.") AS jmlData
-                                FROM t_vaksin_catatan a
-                                JOIN m_warga b ON a.id_warga=b.id_warga
-                                WHERE b.jenis_kelamin='L' AND ";
+    FROM t_vaksin_catatan a
+    JOIN m_warga b ON a.id_warga=b.id_warga
+    WHERE b.jenis_kelamin='L' AND ";
     
     $sql .= "MONTH(create_date) = '".$bulan."' AND YEAR(tanggal)  = '".date("Y")."'";
     
@@ -82,9 +82,9 @@ function coun_vaksin_catatan_laki_laki($field,$bulan) {
 function coun_vaksin_catatan_perempuan($field,$bulan) {
     $CI = get_instance();
     $sql = "SELECT COUNT(".$field.") AS jmlData
-                                FROM t_vaksin_catatan a
-                                JOIN m_warga b ON a.id_warga=b.id_warga
-                                WHERE b.jenis_kelamin='P' AND ";
+    FROM t_vaksin_catatan a
+    JOIN m_warga b ON a.id_warga=b.id_warga
+    WHERE b.jenis_kelamin='P' AND ";
     
     $sql .= "MONTH(create_date) = '".$bulan."' AND YEAR(tanggal)  = '".date("Y")."'";
     
@@ -96,9 +96,9 @@ function coun_vaksin_catatan_perempuan($field,$bulan) {
 function coun_vaksin_catatan_laki_laki_tanggal($field,$bulan) {
     $CI = get_instance();
     $sql = "SELECT COUNT(".$field.") AS jmlData
-                                FROM t_vaksin_catatan a
-                                JOIN m_warga b ON a.id_warga=b.id_warga
-                                WHERE b.jenis_kelamin='L' AND ";
+    FROM t_vaksin_catatan a
+    JOIN m_warga b ON a.id_warga=b.id_warga
+    WHERE b.jenis_kelamin='L' AND ";
     
     $sql .= "MONTH(tanggal) = '".$bulan."' AND YEAR(tanggal)  = '".date("Y")."'";
     
@@ -110,9 +110,9 @@ function coun_vaksin_catatan_laki_laki_tanggal($field,$bulan) {
 function coun_vaksin_catatan_perempuan_tanggal($field,$bulan) {
     $CI = get_instance();
     $sql = "SELECT COUNT(".$field.") AS jmlData
-                                FROM t_vaksin_catatan a
-                                JOIN m_warga b ON a.id_warga=b.id_warga
-                                WHERE b.jenis_kelamin='P' AND ";
+    FROM t_vaksin_catatan a
+    JOIN m_warga b ON a.id_warga=b.id_warga
+    WHERE b.jenis_kelamin='P' AND ";
     
     $sql .= "MONTH(tanggal) = '".$bulan."' AND YEAR(tanggal)  = '".date("Y")."'";
     
@@ -124,7 +124,7 @@ function coun_vaksin_catatan_perempuan_tanggal($field,$bulan) {
 function coun_puskesmas_catatan($field,$nakes) {
     $CI = get_instance();
     $sql = "SELECT COUNT(".$field.") AS jmlData
-                                FROM t_vaksin_catatan WHERE ";
+    FROM t_vaksin_catatan WHERE ";
     
     $sql .= "id_nakes = '".$nakes."' AND YEAR(tanggal)  = '".date("Y")."'";
     // var_dump($sql);die();
@@ -136,8 +136,8 @@ function coun_puskesmas_catatan($field,$nakes) {
 function coun_puskesmas_catatan_laki_laki($field,$nakes) {
     $CI = get_instance();
     $sql = "SELECT COUNT(".$field.") AS jmlData
-                                FROM t_vaksin_catatan a JOIN m_warga b ON a.id_warga=b.id_warga
-                                WHERE b.jenis_kelamin='L' AND ";
+    FROM t_vaksin_catatan a JOIN m_warga b ON a.id_warga=b.id_warga
+    WHERE b.jenis_kelamin='L' AND ";
     
     $sql .= "id_nakes = '".$nakes."' AND YEAR(tanggal)  = '".date("Y")."'";
     // var_dump($sql);die();
@@ -149,8 +149,8 @@ function coun_puskesmas_catatan_laki_laki($field,$nakes) {
 function coun_puskesmas_catatan_perempuan($field,$nakes) {
     $CI = get_instance();
     $sql = "SELECT COUNT(".$field.") AS jmlData
-                                FROM t_vaksin_catatan a JOIN m_warga b ON a.id_warga=b.id_warga
-                                WHERE b.jenis_kelamin='P' AND ";
+    FROM t_vaksin_catatan a JOIN m_warga b ON a.id_warga=b.id_warga
+    WHERE b.jenis_kelamin='P' AND ";
     
     $sql .= "id_nakes = '".$nakes."' AND YEAR(tanggal)  = '".date("Y")."'";
     // var_dump($sql);die();
@@ -162,8 +162,8 @@ function coun_puskesmas_catatan_perempuan($field,$nakes) {
 function coun_puskesmas_catatan_laki_laki_tanggal($field,$nakes) {
     $CI = get_instance();
     $sql = "SELECT COUNT(".$field.") AS jmlData
-                                FROM t_vaksin_catatan a JOIN m_warga b ON a.id_warga=b.id_warga
-                                WHERE b.jenis_kelamin='L' AND ";
+    FROM t_vaksin_catatan a JOIN m_warga b ON a.id_warga=b.id_warga
+    WHERE b.jenis_kelamin='L' AND ";
     
     $sql .= "id_nakes = '".$nakes."' AND YEAR(tanggal)  = '".date("Y")."'";
     // var_dump($sql);die();
@@ -175,8 +175,8 @@ function coun_puskesmas_catatan_laki_laki_tanggal($field,$nakes) {
 function coun_puskesmas_catatan_perempuan_tanggal($field,$nakes) {
     $CI = get_instance();
     $sql = "SELECT COUNT(".$field.") AS jmlData
-                                FROM t_vaksin_catatan a JOIN m_warga b ON a.id_warga=b.id_warga
-                                WHERE b.jenis_kelamin='P' AND ";
+    FROM t_vaksin_catatan a JOIN m_warga b ON a.id_warga=b.id_warga
+    WHERE b.jenis_kelamin='P' AND ";
     
     $sql .= "id_nakes = '".$nakes."' AND YEAR(tanggal)  = '".date("Y")."'";
     // var_dump($sql);die();
@@ -278,7 +278,7 @@ function coun_catatan_nakes_filter($field,$sasaran,$nakes,$kelurahan,$tahun) {
         $result = 0;
     }
 
-   return $result;
+    return $result;
 }
 
 function coun_vaksin_nakes($field,$vaksin,$nakes) {
@@ -428,7 +428,7 @@ function time_since($original){
         $print = date("M jS", $original);
         if ($since > 31536000)
         {
-        $print .= ", " . date("Y", $original);
+            $print .= ", " . date("Y", $original);
         }
         return $print;
     }
@@ -436,9 +436,9 @@ function time_since($original){
     {
         $seconds = $chunks[$i][0];
         $name = $chunks[$i][1];
-    
+
         if (($count = floor($since / $seconds)) != 0)
-        break;
+            break;
     }
     $print = ($count == 1) ? '1 ' . $name : "$count {$name}";
     return $print . ' yang lalu';
@@ -447,66 +447,66 @@ function time_since($original){
 
 function short($in, $to_num = false, $pad_up = false, $pass_key = '')
 {
-     $out   =   '';
-     $index = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-     $base  = strlen($index);
+   $out   =   '';
+   $index = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+   $base  = strlen($index);
 
-     if ($pass_key !== null) {
-          for ($n = 0; $n < strlen($index); $n++) {
-               $i[] = substr($index, $n, 1);
-          }
-
-          $pass_hash = hash('sha256',$pass_key);
-          $pass_hash = (strlen($pass_hash) < strlen($index) ? hash('sha512', $pass_key) : $pass_hash);
-
-          for ($n = 0; $n < strlen($index); $n++) {
-               $p[] =  substr($pass_hash, $n, 1);
-          }
-
-          array_multisort($p, SORT_DESC, $i);
-          $index = implode($i);
+   if ($pass_key !== null) {
+      for ($n = 0; $n < strlen($index); $n++) {
+         $i[] = substr($index, $n, 1);
      }
 
-     if ($to_num) {
+     $pass_hash = hash('sha256',$pass_key);
+     $pass_hash = (strlen($pass_hash) < strlen($index) ? hash('sha512', $pass_key) : $pass_hash);
 
-          $len = strlen($in) - 1;
-
-          for ($t = $len; $t >= 0; $t--) {
-               $bcp = pow($base, $len - $t);
-               $out = floatval($out) + floatval(strpos($index, substr($in, $t, 1))) * floatval($bcp);
-          }
-
-          if (is_numeric($pad_up)) {
-               $pad_up--;
-
-               if ($pad_up > 0) {
-                    $out -= pow($base, $pad_up);
-               }
-          }
-     } else {
-          if (is_numeric($pad_up)) {
-               $pad_up--;
-
-               if ($pad_up > 0) {
-                    $in += pow($base, $pad_up);
-               }
-          }
-
-          for ($t = ($in != 0 ? floor(log($in, $base)) : 0); $t >= 0; $t--) {
-               $bcp = pow($base, $t);
-               $a   = floor($in / $bcp) % $base;
-               $out = $out . substr($index, $a, 1);
-               $in  = $in - ($a * $bcp);
-          }
+     for ($n = 0; $n < strlen($index); $n++) {
+         $p[] =  substr($pass_hash, $n, 1);
      }
 
-     return $out;
+     array_multisort($p, SORT_DESC, $i);
+     $index = implode($i);
+ }
+
+ if ($to_num) {
+
+  $len = strlen($in) - 1;
+
+  for ($t = $len; $t >= 0; $t--) {
+     $bcp = pow($base, $len - $t);
+     $out = floatval($out) + floatval(strpos($index, substr($in, $t, 1))) * floatval($bcp);
+ }
+
+ if (is_numeric($pad_up)) {
+     $pad_up--;
+
+     if ($pad_up > 0) {
+        $out -= pow($base, $pad_up);
+    }
+}
+} else {
+  if (is_numeric($pad_up)) {
+     $pad_up--;
+
+     if ($pad_up > 0) {
+        $in += pow($base, $pad_up);
+    }
+}
+
+for ($t = ($in != 0 ? floor(log($in, $base)) : 0); $t >= 0; $t--) {
+ $bcp = pow($base, $t);
+ $a   = floor($in / $bcp) % $base;
+ $out = $out . substr($index, $a, 1);
+ $in  = $in - ($a * $bcp);
+}
+}
+
+return $out;
 }
 
 function indonesian_date ($timestamp = '', $date_format = 'l, j F Y | H:i', $suffix = 'WIB') {
     if (trim ($timestamp) == '')
     {
-            $timestamp = time ();
+        $timestamp = time ();
     }
     elseif (!ctype_digit ($timestamp))
     {
@@ -538,160 +538,166 @@ function indonesian_date ($timestamp = '', $date_format = 'l, j F Y | H:i', $suf
 
 function readMore($text, $length, $mode = 2)
 {
-     $text = strip_tags($text);
-     $jumlah_kata = strlen($text);
-     if($jumlah_kata <= $length)
-     {
-         return $text.' ...';;
-     }
-     else{
-          if ($mode != 1)
-          {
-               $char = $text{$length - 1};
-               switch($mode)
-               {
-                    case 2: 
-                    while($char != ' ') {
-                         $char = $text{--$length};
-                    }
-                    case 3:
-                    while($char != ' ') {
-                         $char = $text{++$num_char};
-                    }
-               }
-          }
-          return substr($text, 0, $length).' ...';
-     }
+   $text = strip_tags($text);
+   $jumlah_kata = strlen($text);
+   if($jumlah_kata <= $length)
+   {
+       return $text.' ...';;
+   }
+   else{
+      if ($mode != 1)
+      {
+         $char = $text{$length - 1};
+         switch($mode)
+         {
+            case 2: 
+            while($char != ' ') {
+               $char = $text{--$length};
+           }
+           case 3:
+           while($char != ' ') {
+               $char = $text{++$num_char};
+           }
+       }
+   }
+   return substr($text, 0, $length).' ...';
+}
 
 }
 
 function text($data)
 {
-     return xss(ucwords(strtolower($data)));
+   return xss(ucwords(strtolower($data)));
 }
 
 function xss($var)
 {
-     return htmlentities($var, ENT_QUOTES, 'UTF-8');
+   return htmlentities($var, ENT_QUOTES, 'UTF-8');
 }
 
 
 function getidyoutube($url)
+{
+    $hasil = explode('/', $url);
+    // $data = explode('&', $hasil[1]);
+    $id_youtube = $hasil[4];
+    return $id_youtube;
+}
+function getidyoutube2($url)
 {
     $hasil = explode('=', $url);
     $data = explode('&', $hasil[1]);
     $id_youtube = $data[0];
     return $id_youtube;
 }
-
 function indonesian_date_2($tanggal) {
     if($tanggal)
     {
-         $hari = array ( 1 =>    'Senin',
-              'Selasa',
-              'Rabu',
-              'Kamis',
-              'Jumat',
-              'Sabtu',
-              'Minggu'
-         );
+       $hari = array ( 1 =>    'Senin',
+          'Selasa',
+          'Rabu',
+          'Kamis',
+          'Jumat',
+          'Sabtu',
+          'Minggu'
+      );
 
-         $bulan = array (1 =>   'Januari',
-              'Februari',
-              'Maret',
-              'April',
-              'Mei',
-              'Juni',
-              'Juli',
-              'Agustus',
-              'September',
-              'Oktober',
-              'November',
-              'Desember'
-         );
-         $split      = explode('-', $tanggal);
-         $tgl_indo = $split[2] . ' ' . $bulan[ (int)$split[1] ] . ' ' . $split[0];
-         $num = date('N', strtotime($tanggal));
-         return $hari[$num] . ', ' . $tgl_indo;
-    }else{
-         return null;
-    }
+       $bulan = array (1 =>   'Januari',
+          'Februari',
+          'Maret',
+          'April',
+          'Mei',
+          'Juni',
+          'Juli',
+          'Agustus',
+          'September',
+          'Oktober',
+          'November',
+          'Desember'
+      );
+       $split      = explode('-', $tanggal);
+       $tgl_indo = $split[2] . ' ' . $bulan[ (int)$split[1] ] . ' ' . $split[0];
+       $num = date('N', strtotime($tanggal));
+       return $hari[$num] . ', ' . $tgl_indo;
+   }else{
+       return null;
+   }
 }
 
 function indonesian_date_3($tanggal) {
     if($tanggal)
     {
-         $hari = array ( 1 =>    'Senin',
-              'Selasa',
-              'Rabu',
-              'Kamis',
-              'Jumat',
-              'Sabtu',
-              'Minggu'
-         );
+       $hari = array ( 1 =>    'Senin',
+          'Selasa',
+          'Rabu',
+          'Kamis',
+          'Jumat',
+          'Sabtu',
+          'Minggu'
+      );
 
-         $bulan = array (1 =>   'Januari',
-              'Februari',
-              'Maret',
-              'April',
-              'Mei',
-              'Juni',
-              'Juli',
-              'Agustus',
-              'September',
-              'Oktober',
-              'November',
-              'Desember'
-         );
-         $split      = explode('-', $tanggal);
-         $tgl_indo = $split[2] . ' ' . $bulan[ (int)$split[1] ] . ' ' . $split[0];
-         $num = date('N', strtotime($tanggal));
-         return  $tgl_indo;
-    }else{
-         return null;
-    }
+       $bulan = array (1 =>   'Januari',
+          'Februari',
+          'Maret',
+          'April',
+          'Mei',
+          'Juni',
+          'Juli',
+          'Agustus',
+          'September',
+          'Oktober',
+          'November',
+          'Desember'
+      );
+       $split      = explode('-', $tanggal);
+       $tgl_indo = $split[2] . ' ' . $bulan[ (int)$split[1] ] . ' ' . $split[0];
+       $num = date('N', strtotime($tanggal));
+       return  $tgl_indo;
+   }else{
+       return null;
+   }
 }
 
 function cek_status($id)
 {
-     $CI                 = get_instance();
-     $cek['select']      = 'a.id';
-     $cek['table']       = 'm_kategori a';
-     $cek['where']       = 'a.parent_id = '.$id;
-     $data               = $CI->m_query->getData($cek);
-     if($data)
+   $CI                 = get_instance();
+   $cek['select']      = 'a.id';
+   $cek['table']       = 'm_kategori a';
+   $cek['where']       = 'a.parent_id = '.$id;
+   $data               = $CI->m_query->getData($cek);
+   if($data)
+   {
+      $query['select']    = 'count(id_materi) as jumlah';
+      $query['table']     = 'm_materi';
+      $query['where']     = 'id_kategori = '.$id;
+      $jumlah             = $CI->m_query->getRow($query);
+
+      if($data AND $jumlah->jumlah)
+      {
+         $status = 'C';
+     }
+     else if($jumlah->jumlah)
      {
-          $query['select']    = 'count(id_materi) as jumlah';
-          $query['table']     = 'm_materi';
-          $query['where']     = 'id_kategori = '.$id;
-          $jumlah             = $CI->m_query->getRow($query);
-
-          if($data AND $jumlah->jumlah)
-          {
-               $status = 'C';
-          }
-          else if($jumlah->jumlah)
-          {
-               $status = 'D';
-          }else{
-               $status = 'M';
-          }
-
-     }else {
-          $query['select']    = 'count(id_materi) as jumlah';
-          $query['table']     = 'm_materi';
-          $query['where']     = 'id_kategori = '.$id;
-          $jumlah             = $CI->m_query->getRow($query);
-
-          if($jumlah->jumlah)
-          {
-               $status = 'D';
-          }else{
-               $status = 'S';
-          }
+         $status = 'D';
+     }else{
+         $status = 'M';
      }
 
-     return $status;
+ }else {
+  $query['select']    = 'count(id_materi) as jumlah';
+  $query['table']     = 'm_materi';
+  $query['where']     = 'id_kategori = '.$id;
+  $jumlah             = $CI->m_query->getRow($query);
+
+  if($jumlah->jumlah)
+  {
+     $status = 'D';
+ }else{
+     $status = 'S';
+ }
+}
+
+return $status;
 
      // S -> gk punya materi dan sub
      // M -> punya sub

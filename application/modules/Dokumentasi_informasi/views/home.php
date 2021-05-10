@@ -1,17 +1,24 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <!-- <link href="<?php echo base_url('assets/home/css/hover.css')?>" rel="stylesheet"> -->
 <link href="<?php echo base_url('assets/home/css/hover2.css')?>" rel="stylesheet">
+<link href="<?php echo base_url('assets/home/css/hover3.css')?>" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/custom.js')?>"></script>
 
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
 <script>   
- AOS.init(); 
+   AOS.init(); 
 </script>
 <style>
     .footer {
@@ -394,6 +401,9 @@
         object-fit: cover;">
     </section>
 
+
+
+
     <!-- ==============================Berita Slider -->
     <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right" style="background-color: white">
         <div class="mbr-overlay" style="opacity: 0.50;background-color: rgba(239, 240, 240, 0.75);"></div>
@@ -410,11 +420,11 @@
                 <!-- ===================== -->
                 <div class="col-12 col-md-12">
                     <?php
-                    foreach ($video_tng as $k => $v) :
+                    foreach ($video_dinkes as $k => $v) :
                         if ($k == '0') :
                             ?>
                             <div class="rny-vid-container">
-                                <iframe id="rny_vid_frame" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
+                                <iframe id="rny_vid_frame" src="<?= $v->link_video?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
                             </div>
                         <?php endif;
                     endforeach;
@@ -426,13 +436,13 @@
 
                     <div class="rny-vid-list-container">
                         <div class="rny-vid-list">
-                            <?php foreach ($video_tng as $k => $v) : ?>
-                                <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame').src='<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=1&rel=0&showinfo=0&autohide=1'">
-                                    <div class="rny-thumb" style="background: url('https://i.ytimg.com/vi/<?php echo getidyoutube($v['video_url']); ?>/hqdefault.jpg');height: 100px;background-size: cover;">
+                            <?php foreach ($video_dinkes as $k => $v) : ?>
+                                <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame').src='<?= $v->link_video?>?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                                    <div class="rny-thumb" style="background: url('https://i.ytimg.com/vi/<?php echo getidyoutube($v->link_video); ?>/hqdefault.jpg');height: 100px;background-size: cover;">
                                     </div>
                                     <div class="desc" style="text-align: center;">
-                                        <a href="javascript:void" title="<?php echo text($v['caption']); ?>" style="font-weight: 700;font-size:14px;color: #000">
-                                            <?php echo text(readMore($v['caption'], 35)); ?>
+                                        <a href="javascript:void" title="<?php echo text($v->nama_video); ?>" style="font-weight: 700;font-size:14px;color: #000">
+                                            <!-- <?php echo text(readMore($v->nama_video, 35)); ?> -->
                                         </a>
                                     </div>
                                 </div>
@@ -464,18 +474,29 @@
                 <div class="container">
                     <div class="row">
                         <!--Titles-->
-                        <!--Right-->
-                        <div class="col-12 col-md-12">
-                            <?php
-                            foreach ($video_humas as $k => $v) :
-                                if ($k == '0') :
-                                    ?>
-                                    <div class="rny-vid-container-humas">
-                                        <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
-                                    </div>
-                                <?php endif;
-                            endforeach;
-                            ?>
+                        <div class="title col-12">
+                            <div class="card-img">
+                                <!-- <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;"> -->
+                                <!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;"> -->
+                                    <!-- <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_galeri.png" alt=""> -->
+                                    <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_galeri.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
+                                    <!-- </div> -->
+                                </div>
+                            </div>
+                            <!--Right-->
+                            <div class="col-12 col-md-12">
+                                <?php
+                                foreach ($galeri3 as $k => $v) :
+                                    if ($k == '0') :
+                                        ?>
+                                        <div class="rny-vid-container-humas">
+                                            <!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
+                                            <!-- <img   src="<?= base_url('assets/backend/img/img_galery/' . $k["path_detail_foto"]) ?>" >12a065cc7f036251dad165ea9f353394 -->
+                                            <img   src="<?= base_url('assets/backend/img/img_galery/12a065cc7f036251dad165ea9f353394.jpeg') ?>" >
+                                        </div>
+                                    <?php endif;
+                                endforeach;
+                                ?>
 
                        <!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
                             <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_humas.png" alt="">
@@ -485,7 +506,7 @@
                             <div class="rny-vid-list-humas">
                                 <?php foreach ($video_humas as $k => $v) : ?>
                                     <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame-humas').src='<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=1&rel=0&showinfo=0&autohide=1'">
-                                        <div class="rny-thumb" style="background: url('https://i.ytimg.com/vi/<?php echo getidyoutube($v['video_url']); ?>/hqdefault.jpg');height: 100px;background-size: cover;">
+                                        <div class="rny-thumb" style="background: url('https://i.ytimg.com/vi/<?php echo getidyoutube2($v['video_url']); ?>/hqdefault.jpg');height: 100px;background-size: cover;">
                                         </div>
                                         <div class="desc" style="text-align: center;">
                                             <a href="javascript:void" title="<?php echo text($v['caption']); ?>" style="font-weight: 700;font-size:14px;color: #000">
