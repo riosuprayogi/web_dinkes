@@ -57,33 +57,33 @@
               autoWidth: false,
               bLengthChange: false,
               ajax: {
-               url: '<?php echo site_url('dasar_hukum/ajax_list')?>',
-               type: 'GET',
-               header: {
+                 url: '<?php echo site_url('dasar_hukum/ajax_list')?>',
+                 type: 'GET',
+                 header: {
             '<?= $this->security->get_csrf_token_name();?>': '<?php echo $this->security->get_csrf_hash(); ?>', //replace by your name/value
         },
         data: function (data) {
             data.filter = {
-             'username':'',
-         };
-     }
- },
- language: {
-   sProcessing: '<img src="<?php echo base_url('assets/img/process.gif')?>" width="20px"> Sedang memproses...',
-   sLengthMenu: 'Tampilkan _MENU_ entri',
-   sZeroRecords: 'Tidak ditemukan data yang sesuai',
-   sInfo: 'Menampilkan _START_ sampai _END_ dari _TOTAL_ entri',
-   sInfoEmpty: 'Menampilkan 0 sampai 0 dari 0 entri',
-   sInfoFiltered: '(disaring dari _MAX_ entri keseluruhan)',
-   sInfoPostFix: '',
-   sSearch: 'Cari:',
-   sUrl: '',
-   oPaginate: {
-    sFirst: '<<',
-    sPrevious: '<',
-    sNext: '>',
-    sLast: '>>'
-}
+               'username':'',
+           };
+       }
+   },
+   language: {
+     sProcessing: '<img src="<?php echo base_url('assets/img/process.gif')?>" width="20px"> Sedang memproses...',
+     sLengthMenu: 'Tampilkan _MENU_ entri',
+     sZeroRecords: 'Tidak ditemukan data yang sesuai',
+     sInfo: 'Menampilkan _START_ sampai _END_ dari _TOTAL_ entri',
+     sInfoEmpty: 'Menampilkan 0 sampai 0 dari 0 entri',
+     sInfoFiltered: '(disaring dari _MAX_ entri keseluruhan)',
+     sInfoPostFix: '',
+     sSearch: 'Cari:',
+     sUrl: '',
+     oPaginate: {
+        sFirst: '<<',
+        sPrevious: '<',
+        sNext: '>',
+        sLast: '>>'
+    }
 },
 order: [1, 'desc'],
 columns: [
@@ -141,7 +141,7 @@ columns: [
 <div class="container">
     <div class="">
         <div class="title col-lg-12">
-           <div class="card-img">
+         <div class="card-img">
             <img class="logo-video" src="<?= base_url('assets/media/image/diklat.png') ?>" alt="" style="padding-top: 30px; margin-bottom:30px ; width: 200px">
         </div>
     </div>
@@ -165,10 +165,10 @@ columns: [
                         <a href="<?= base_url('diklat/detail/' . $f["id_diklat"]) ?>" style="text-decoration: none; color: #000000; height: 30%">
                             <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
 
-                                <?php if (count($f["t_foto_diklat"]) > 0) {
-                                    foreach ($f["t_foto_diklat"] as $k) {
+                                <?php if (count($f["path_foto_diklat"]) > 0) {
+                                    foreach ($f["path_foto_diklat"] as $k) {
                                       ?>
-                                      <img src="<?= base_url('assets/backend/img/img_diklat/' . $k["t_foto_diklat"]) ?>"  width="100%" height="300px">
+                                      <img src="<?= base_url('assets/backend/img/img_diklat/' . $k["path_foto_diklat"]) ?>"  width="100%" height="300px">
                                       <?php
                                   }
                               } ?>
@@ -186,12 +186,12 @@ columns: [
                         </a>
                         <span><br><br>
 
-                           <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
-                           <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
-                       </span>
-                   </div>
+                         <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
+                         <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
+                     </span>
+                 </div>
 
-                   <!-- <div class="card-content"> -->
+                 <!-- <div class="card-content"> -->
                     <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
                     <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
                     <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
