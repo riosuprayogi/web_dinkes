@@ -40,7 +40,7 @@ class Diklat extends MX_Controller
 
 		// $listProfiles = $this->db->query("SELECT web_artikel.*, web_kategori_artikel.*, web_admin.nama_admin
 		//                                 FROM web_artikel
-		//                                 JOIN web_kategori_artikel ON web_artikel.id_kat_artikel = web_kategori_artikel.id_kat_artikel
+		//                                 JOIN web_kategori_artikel ON web_artikel.id_kat_artikel = aweb_kategori_artikel.id_kat_artikel
 		//                                 JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
 		//                                 ORDER BY tgl_jam DESC");
 		$listProfiles = $this->db->query("SELECT t_diklat.*
