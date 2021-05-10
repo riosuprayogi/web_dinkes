@@ -51,7 +51,7 @@ class Diklat extends MX_Controller
 		$arrProfile = [];
 		$arr = [];
 		foreach ($listProfiles->result_array() as $key => $row) {
-			$result = $this->db->query("SELECT * FROM t_foto_diklat WHERE id_diklat=" . $row['id_diklat'] . "")->result_array();
+			$result = $this->db->query("SELECT *,  MIN(urutan)AS urutan FROM t_foto_diklat WHERE id_diklat=" . $row['id_diklat'] . "")->result_array();
 
 			if ($result) {
 				$arr = array(
