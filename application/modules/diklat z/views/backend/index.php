@@ -191,9 +191,9 @@
 								<td><?= substr($ia["nama_diklat"], 0, 50); ?></td>
 								<td><?= substr($ia["isi_diklat"], 0, 100); ?></td>
 								<td>
-									<?php if ($ia["t_foto_diklat"] != NULL) {
-										if (count($ia["t_foto_diklat"]) > 0) {
-											foreach ($ia["t_foto_diklat"] as $f) {
+									<?php if ($ia["path_foto_diklat"] != NULL) {
+										if (count($ia["path_foto_diklat"]) > 0) {
+											foreach ($ia["path_foto_diklat"] as $f) {
 									?>
 												<div style="padding:2px; border:1px solid #eee; margin:2px 2px">
 													<a target="blank" href="<?= base_url('assets/backend/img/img_diklat/' . $f["path_foto_diklat"]) ?>">

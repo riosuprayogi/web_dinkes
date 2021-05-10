@@ -24,6 +24,16 @@ class Diklat extends MX_Controller
 	}
 
 
+	public function batas($string, $length)
+	{
+		if (strlen($string) <= ($length)) {
+			return $string;
+		} else {
+			$cetak = substr($string, 0, $length) . '';
+			return $cetak;
+		}
+	}
+
 	public function index()
 	{
 		$data['title'] = "Input Artikel";
@@ -34,14 +44,14 @@ class Diklat extends MX_Controller
 		//                                 JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
 		//                                 ORDER BY tgl_jam DESC");
 		$listProfiles = $this->db->query("SELECT t_diklat.*
-                                        FROM t_diklat
-										WHERE t_diklat.trash='0' 
-										ORDER BY t_diklat.tgl_jam DESC
-                                        ");
+			FROM t_diklat
+			WHERE t_diklat.trash='0' 
+			ORDER BY t_diklat.tgl_jam DESC
+			");
 		$arrProfile = [];
 		$arr = [];
 		foreach ($listProfiles->result_array() as $key => $row) {
-			$result = $this->db->query("SELECT * FROM t_foto_diklat WHERE id_diklat=" . $row['id_diklat'] . "")->result_array();
+			$result = $this->db->query("SELECT *,  MIN(urutan)AS urutan FROM t_foto_diklat WHERE id_diklat=" . $row['id_diklat'] . "")->result_array();
 
 			if ($result) {
 				$arr = array(
@@ -49,11 +59,12 @@ class Diklat extends MX_Controller
 					// "id_kategori"    => $row["id_kategori"],
 					"nama_diklat"  => $row["nama_diklat"],
 					// "nama_diklat"     => $row["nama_diklat"],
-					"isi_diklat"       => $row["isi_diklat"],
+					"isi_diklat" => $this->batas($row["isi_diklat"], 50),
+					// "isi_diklat"       => $row["isi_diklat"],
 					"status"           => $row["status"],
 					"tgl_jam"           => $row["tgl_jam"],
 					// "path_foto_diklat" => $result
-					"t_foto_diklat" => $result
+					"path_foto_diklat" => $result
 				);
 				array_push($arrProfile, $arr);
 			}
@@ -70,6 +81,118 @@ class Diklat extends MX_Controller
 			$this->template->render('diklat/backend/index', $data);
 		}
 	}
+
+
+
+
+	public function detail($id)
+	{
+		// ================= berita
+
+		$listProfiles = $this->db->query("SELECT t_diklat.*
+
+			FROM t_diklat 
+			    -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
+			    -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
+			    WHERE t_diklat.status = 'show' AND trash='0' AND t_diklat.id_diklat=$id ORDER BY tgl_jam DESC LIMIT 4");
+		// var_dump($listProfiles);
+		// die();
+
+		$arrProfile = [];
+		$arr = [];
+		foreach ($listProfiles->result_array() as $key => $row) {
+
+			$result = $this->db->query("SELECT *, MIN(urutan)AS urutan FROM t_foto_diklat WHERE id_diklat=" . $row['id_diklat'] . "")->result_array();
+			// var_dump($result);
+			// die();
+			if ($result) {
+
+				$arr = array(
+					"id_diklat" => $row["id_diklat"],
+					// "id_kategori" => $row["id_kategori"],
+					"nama_diklat" => $row["nama_diklat"],
+					"isi_diklat" => $this->batas($row["isi_diklat"], 50),
+					// "nama_admin"  =>  $row["nama_admin"],
+					// "publish" => $row["publish"],
+					"tgl_jam" => $row["tgl_jam"],
+					"path_foto_diklat" => $result
+				);
+				array_push($arrProfile, $arr);
+			}
+		}
+
+		$data["berita3"] = $arrProfile;
+		// var_dump($datae);
+		// die();
+
+
+
+
+
+		// ============== isi berita
+		$data['foto'] = $this->db->query("SELECT t_diklat.*, t_foto_diklat.*
+			FROM t_diklat
+			JOIN t_foto_diklat ON t_diklat.id_diklat = t_foto_diklat.id_diklat
+			WHERE t_diklat.id_diklat = '$id' AND t_diklat.status = 'show'")->result();
+
+		$data["detailBerita"] = $this->db->query("SELECT * FROM t_diklat WHERE  status = 'show' AND id_diklat='$id'")->result();
+		// ============== akhir isi berita
+
+
+
+		$listProfiles2 = $this->db->query("SELECT t_diklat.* 
+
+			FROM t_diklat 
+			                                        -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
+			                                        -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
+			                                        WHERE t_diklat.status = 'show' AND trash='0'    ORDER BY tgl_jam DESC LIMIT 4");
+
+
+		// var_dump($listProfiles2);
+		// die();
+
+		$arrProfile2 = [];
+		$arr2 = [];
+		foreach ($listProfiles2->result_array() as $key => $row) {
+
+			$result = $this->db->query("SELECT *, MIN(urutan)AS urutan FROM t_foto_diklat WHERE id_diklat=" . $row['id_diklat'] . "")->result_array();
+			// var_dump($result);
+			// die();
+			if ($result) {
+
+				$arr2 = array(
+					"id_diklat" => $row["id_diklat"],
+					// "id_kategori" => $row["id_kategori"],
+					"nama_diklat" => $row["nama_diklat"],
+					"isi_diklat" => $row["isi_diklat"],
+					// "id_kategori"  =>  $row["id_kategori"],
+					// "publish" => $row["publish"],
+					"tgl_jam" => $row["tgl_jam"],
+					"path_foto_diklat" => $result
+				);
+				array_push($arrProfile2, $arr2);
+			}
+		}
+
+		$data["berita4"] = $arrProfile2;
+		// var_dump($data4);
+		// die();
+		// var_dump($data);
+		// die();
+		$data['title'] = "Detail Artikel";
+		$this->template->render_home('diklat/frontend/detail', $data);
+		// $data ['detailFeatured'] = $this->crudBaznas->getById($id);
+		// $data ['image'] = $this->crudBaznas->imgById($id);
+		// $this->load->view('templates_users/header', $data);
+		// $this->load->view('templates_users/navbar');
+		// $this->load->view('users/detailBerita', $data);
+		// $this->load->view('templates_users/footer');
+	}
+
+
+
+
+
 
 	public function tambah()
 	{
@@ -172,16 +295,16 @@ class Diklat extends MX_Controller
 			$row->no = $number++;
 			$row->foto = base_url($row["photo"]);
 			$row->aksi = '
-					<center>
-					<button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
-							<i class="fas fa-cogs"></i>
-						</button>
-						<div class="dropdown-menu">
-						<a class="dropdown-item" href="javascript:void(0)" onclick="edit('  . $row->id_diklat . ')"><i class="fas fa-edit"></i> Edit</a>
-						<a class="dropdown-item" href="javascript:void(0)" onclick="del(' . $row->id_diklat . ')"><i class="fas fa-trash"></i> Hapus</a>
-						</div>
-					</center>
-				';
+			<center>
+			<button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fas fa-cogs"></i>
+			</button>
+			<div class="dropdown-menu">
+			<a class="dropdown-item" href="javascript:void(0)" onclick="edit('  . $row->id_diklat . ')"><i class="fas fa-edit"></i> Edit</a>
+			<a class="dropdown-item" href="javascript:void(0)" onclick="del(' . $row->id_diklat . ')"><i class="fas fa-trash"></i> Hapus</a>
+			</div>
+			</center>
+			';
 			$data[] = $row;
 		}
 
@@ -319,11 +442,11 @@ class Diklat extends MX_Controller
 							$this->session->set_flashdata(
 								'pesan',
 								'<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    <strong>Maaf :(!</strong> Uploawdawdawdad gagal, format photo (jpg,jpeg,png) ukuran file max 2 Mb.
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>'
+								<strong>Maaf :(!</strong> Uploawdawdawdad gagal, format photo (jpg,jpeg,png) ukuran file max 2 Mb.
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+								</button>
+								</div>'
 							);
 							return $this->edit($id);
 						} else {
@@ -368,11 +491,11 @@ class Diklat extends MX_Controller
 			$this->session->set_flashdata(
 				'pesan',
 				'<div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong>Selamatt!</strong> Anda Berhasil Mengupdate Data baru.
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>'
+				<strong>Selamatt!</strong> Anda Berhasil Mengupdate Data baru.
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+				</div>'
 			);
 			redirect('berita');
 		}
@@ -493,11 +616,11 @@ class Diklat extends MX_Controller
 			$this->session->set_flashdata(
 				'pesan',
 				'<div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong>Selamatt!</strong> Anda Berhasil Mengupdate Data baru.
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>'
+				<strong>Selamatt!</strong> Anda Berhasil Mengupdate Data baru.
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+				</div>'
 			);
 			redirect('diklat');
 		}
@@ -583,11 +706,11 @@ class Diklat extends MX_Controller
 							$this->session->set_flashdata(
 								'pesan',
 								'<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    <strong>Maaf :(!</strong> Upload gagal, format photo (jpg,jpeg,png) ukuran file max 5 Mb.
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>'
+								<strong>Maaf :(!</strong> Upload gagal, format photo (jpg,jpeg,png) ukuran file max 5 Mb.
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+								</button>
+								</div>'
 							);
 							return $this->edit($id);
 						} else {
@@ -632,11 +755,11 @@ class Diklat extends MX_Controller
 			$this->session->set_flashdata(
 				'pesan',
 				'<div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong>Selamatt!</strong> Anda Berhasil Mengupdate Data baru.
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>'
+				<strong>Selamatt!</strong> Anda Berhasil Mengupdate Data baru.
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+				</div>'
 			);
 			redirect('berita');
 		}
