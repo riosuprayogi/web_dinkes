@@ -74,7 +74,7 @@ class Dokumentasi_informasi extends MX_Controller {
 			// $data['berita2'] = $this->berita->get_isi_berita();
 		$data['berita'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_berita/');
 		$data["video_dinkes"] = $this->db->query("SELECT * FROM t_video WHERE status = 'show' AND trash='0' ")->result();
-		// $data2['video_tng'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_tng/');
+		// $data2['video_tnga'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_tng/');
 		// echo json_encode($data2);
 		// die();
 		$data['video_humas'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_humas/');
