@@ -294,8 +294,8 @@
 
         /*.caption {
 				margin-top: 40px;
-               }*/
-               .vid-list-container {
+             }*/
+             .vid-list-container {
                 padding-bottom: 20px;
             }
 
@@ -382,7 +382,7 @@
 
                 <div class="col-md-12" >
                     <div class="card-img" style="padding-left: 50px">
-                        <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-bottom: 10px;">
+                        <img class="logo-video" src="<?php echo base_url(); ?>assets/media/image/diklat.png" alt="" style="padding-bottom: 10px;width: 20%; margin-bottom: 40px; margin-top: 50px">
 
                     </div>
 
@@ -390,9 +390,9 @@
 
                     <div class="row">
                         <div class="container">
-                         <div class="" style="padding-top: -100px"><center>
+                           <div class="" style="padding-top: -100px"><center>
                             <div style="width: 450px; padding-left: 10px">
-                             <!-- <div class="col-md-6 offset-lg-2 col-sm-12"> -->
+                               <!-- <div class="col-md-6 offset-lg-2 col-sm-12"> -->
 
                                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" >
                                     <ol class="carousel-indicators">
@@ -408,11 +408,11 @@
                                             <?php foreach ($foto as $b => $value) : ?>
                                                 <?php if ($b == 0) : ?>
                                                     <div class="carousel-item active">
-                                                        <img src="<?= base_url('assets/backend/img/img_berita/' . $value->path_foto_artikel) ?>" class="d-block w-100" alt="Banner">
+                                                        <img src="<?= base_url('assets/backend/img/img_diklat/' . $value->path_foto_diklat) ?>" class="d-block w-100" alt="Banner">
                                                     </div>
                                                     <?php else : ?>
                                                         <div class="carousel-item">
-                                                            <img src="<?= base_url('assets/backend/img/img_berita/' . $value->path_foto_artikel) ?>" class="d-block w-100" alt="Banner">
+                                                            <img src="<?= base_url('assets/backend/img/img_diklat/' . $value->path_foto_diklat) ?>" class="d-block w-100" alt="Banner">
                                                         </div>
                                                     <?php endif; ?>
                                                 <?php endforeach; ?>
@@ -434,9 +434,9 @@
                                 <br>
                                 <?php foreach ($detailBerita as $detail) : ?>
                                     <span data-aos="fade-up">Publish <?= date('d M Y H:i:s', strtotime($detail->tgl_jam)) ?></span><br>
-                                    <h3 class="mt-3"><?= $detail->judul_berita; ?></h3>
+                                    <h3 class="mt-3"><?= $detail->nama_diklat; ?></h3>
                                     <p style="text-align: justify-all;">
-                                        <?= $detail->isi_berita ?>
+                                        <?= $detail->isi_diklat ?>
                                     </p>
                                 <?php endforeach; ?>
                             </div>
@@ -586,7 +586,7 @@
     <section class="featured"  data-aos="fade-right">
         <div class="container mb-3 mt-4">
             <div class="row">
-             <div class="col-12 text-center">
+               <div class="col-12 text-center">
                 <?php foreach ($berita4 as $ka) : ?>
                     <!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
                 <?php endforeach; ?>
@@ -604,7 +604,7 @@
 
               foreach ($berita4 as $f) : 
                   // strip tags to avoid breaking any html
-                $string = strip_tags($f["isi_berita"]);
+                $string = strip_tags($f["isi_diklat"]);
                 if (strlen($string) > 100) {
 
                 // truncate string
@@ -621,38 +621,38 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <!-- <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;"> -->
 
-                        <div class="card berita" style="width: 16.5rem; height: 350px; overflow: hidden; margin-bottom: 50px; background-color: white; ">
+                        <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: white; ">
                             <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
-                             <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
+                                <a href="<?= base_url('diklat/detail/' . $f["id_diklat"]) ?>" style="text-decoration: none; color: #000000">
 
-                               <?php if (count($f["path_foto_artikel"]) > 0) {
-                                foreach ($f["path_foto_artikel"] as $k) {
-                                  ?>
-                                  <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
-                                  <?php
-                              }
-                          } ?>
-                          <div class="card-body">
-                            <!-- <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p> -->
-                            <b><center> <?= $f["judul_berita"] ?></center></b>
+                                 <?php if (count($f["path_foto_diklat"]) > 0) {
+                                    foreach ($f["path_foto_diklat"] as $k) {
+                                      ?>
+                                      <img src="<?= base_url('assets/backend/img/img_diklat/' . $k["path_foto_diklat"]) ?>"  width="100%" height="250px">
+                                      <?php
+                                  }
+                              } ?>
+                              <div class="card-body">
+                                <!-- <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p> -->
+                                <b><center> <?= $f["nama_diklat"] ?></center></b>
 
-                            <!-- <p><?= $string?> -->
-                                <span><br><br>
+                                <p><?= $string?>...<a href="<?= base_url('diklat/detail/' . $f["id_diklat"]) ?>"> Baca Selanjutnya</a>
+                                    <span><br><br>
 
-                                    <!-- <a style="margin-top: 0px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
-                                    <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
-                                </span>
-                            </p>
+                                        <!-- <a style="margin-top: 0px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
+                                        <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
+                                    </span>
+                                </p>
 
-                        </div>
+                            </div>
 
-                        <!-- <br> -->
-                    </a>
+                            <!-- <br> -->
+                        </a>
+                    </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
     </div>
-</div>
 </section>
 
 
