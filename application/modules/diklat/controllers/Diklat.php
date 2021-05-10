@@ -53,7 +53,7 @@ class Diklat extends MX_Controller
 					"status"           => $row["status"],
 					"tgl_jam"           => $row["tgl_jam"],
 					// "path_foto_diklat" => $result
-					"t_foto_diklat" => $result
+					"path_foto_diklat" => $result
 				);
 				array_push($arrProfile, $arr);
 			}
@@ -61,7 +61,7 @@ class Diklat extends MX_Controller
 
 		$data["t_diklat"] = $arrProfile;
 
-		// var_dump($data);
+		// var_dump($data2);
 		// die();
 		// $data['alasan'] = $this->main_model->get_alasan();
 		if (@$this->session->has_access[0]->nama_app != "Admin") {
