@@ -1327,8 +1327,8 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
         <!-- ==============================Video Slider -->
 
         <!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right"> -->
-            <section  id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="" data-aos="fade-right">
-
+            <!-- <section  id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="" data-aos="fade-right">
+            -->
 
 
 
@@ -1339,7 +1339,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
       </div>
     </div>
 </div> -->
-<div class="container">
+<!-- <div class="container">
     <div class="">
         <div class="title col-lg-12">
             <div class="card-img">
@@ -1363,15 +1363,15 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                     </div>
 
                     <div class="card-content">
-                        <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p>
+                        <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
                         <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-                        <center>
+                    <!--     <center>
                             <a href="<?= $tv->link_video ?>" class="btn btn-success btn-sm mt-2" target="__blank">
                                 <i style="background-color: blue" ></i> Lihat Video
                             </a>
-                        </center>
+                        </center> -->
                         <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-                    </div>
+     <!--                </div>
 
                 </div>
             </div>
@@ -1383,7 +1383,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 
 </div>
 </div>
-</section>
+</section> -->
 <!-- ======================== AKhir video -->
 
 
