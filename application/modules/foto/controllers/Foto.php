@@ -228,6 +228,24 @@ class Foto extends MX_Controller
 		}
 	}
 
+	public function detail_($id)
+	{
+		$where = array('id_galery' => $id);
+
+		$data["t_foto_galery"] = $this->db->query("SELECT * FROM t_foto_galery WHERE id_galery = '$id'")->result();
+
+		$data['t_kategori'] = $this->db->query("SELECT * FROM t_kategori WHERE trash='0'")->result(); // join buat ambil data di combobox
+
+		$data['t_detail_foto_galery'] = $this->db->query("SELECT * FROM t_detail_foto_galery WHERE id_foto_galery = '$id' ORDER BY urutan ASC")->result_array();
+
+
+		if (@$this->session->has_access[0]->nama_app != "Admin") {
+			$this->template->render_home('foto/frontend/index');
+		} else {
+			$this->template->render('foto/backend/detail', $data);
+		}
+	}
+
 	public function _rules()
 	{
 		// $this->form_validation->set_rules('id_kat_artikel', 'kategori artikel', 'required');

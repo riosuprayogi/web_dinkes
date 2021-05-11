@@ -155,14 +155,14 @@
 					<thead>
 						<tr>
 							<td onclick="add()" style="vertical-align:middle; text-align:center;cursor:pointer;"><b><i class="fas fa-plus"></i></b></td>
-							<td colspan="5"></td>
+							<td colspan="4"></td>
 						</tr>
 						<tr style="text-align:center">
 							<th>No</th>
-							<th style="width:40%">Nama Album</th>
-							<th style="width:20%">Foto</th>
-							<th style="width:7%">Status</th>
-							<th style="width:15%">Tanggal/Jam</th>
+							<th>Nama Album</th>
+							<!-- <th style="width:20%">Foto</th> -->
+							<th>Status</th>
+							<th>Tanggal/Jam</th>
 							<th style="width:7%">Aksi</th>
 							<!-- dataTable ga bisa pake colspan atau rowspan -->
 						</tr>
@@ -175,27 +175,7 @@
 							<tr>
 								<td><?= $i++ ?></td>
 								<td><?= substr($ia["nama_album"], 0, 50); ?></td>
-								<td>
-									<?php if ($ia["t_detail_foto_galery"] != NULL) {
-										if (count($ia["t_detail_foto_galery"]) > 0) {
-											foreach ($ia["t_detail_foto_galery"] as $f) {
-									?>
-												<div style="padding:2px; border:1px solid #eee; margin:2px 2px">
-													<a target="blank" href="<?= base_url('assets/backend/img/img_galery/' . $f["path_detail_foto"]) ?>">
-														<img src="<?= base_url('assets/backend/img/img_galery/' . $f["path_detail_foto"]) ?>" alt="<?= $f["ket_foto"]; ?>" width="100%">
-													</a>
-												</div>
-										<?php
-											}
-										}
-									} else { ?>
-										<div style="padding:2px; border:1px solid #eee; margin:2px 2px">
-											<a href="javascript:void(0)">
-												<img src="<?= base_url('assets/backend/img/not-found.jpg'); ?>" alt="" width="100%">
-											</a>
-										</div>
-									<?php } ?>
-								</td>
+								<!--  -->
 								<!-- <td><?= $ia["nama_admin"] ?></td> -->
 								<td><?= $ia["status"] ?></td>
 								<td><?= date('d-M-Y H:i:s', strtotime($ia["tgl_jam"])); ?></td>
@@ -205,6 +185,8 @@
 											<i class="fas fa-cogs"></i>
 										</button>
 										<div class="dropdown-menu">
+											<a class="dropdown-item" href="<?= base_url(); ?>foto/detail_/<?= $ia["id_galery"] ?>"><i class="fas fa-eye"></i> Lihat</a>
+
 											<a class="dropdown-item" href="<?= base_url(); ?>foto/edit/<?= $ia["id_galery"] ?>" onclick="return confirm('Apakah anda yakin akan mengubah?');"><i class="fas fa-edit"></i> Ubah</a>
 
 											<a class="dropdown-item" href="<?= base_url(); ?>foto/ajax_delete/<?= $ia["id_galery"] ?>" onclick="return confirm('Apakah anda yakin akan menghapus?');"><i class="fas fa-trash"></i> Hapus</a>

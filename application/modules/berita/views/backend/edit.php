@@ -112,7 +112,7 @@
                                             <div class="input-group">
                                                 <div class="custom-file">
                                                     <input type="text" class="form-control" id="image-label1" readonly required>
-                                                    <input type="file" class="custom-file-input upload_custom" id="customFileUpload1" data-count_image="1" name="path_foto_artikel[]" style="display: none;">
+                                                    <input type="file" class="custom-file-input upload_custom" id="customFileUpload1" data-count_image="1" name="path_foto_artikel[]" style="display: none;" accept="image/png, image/jpeg, image/jpg">
                                                     <?= form_error('path_detail_foto', '<small class="text-danger pl-0">', '</small>'); ?>
                                                 </div>
                                                 <div class="input-group-append">
@@ -126,6 +126,9 @@
                             </div>
 
                             <div id="imageMultiEdit"></div>
+
+
+
                             <div class="form-group row image_field">
                                 <label for="path_foto_artikel" class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">

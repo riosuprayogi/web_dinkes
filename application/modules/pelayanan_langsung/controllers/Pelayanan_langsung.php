@@ -8,7 +8,7 @@ class Pelayanan_langsung extends MX_Controller
 	{
 		parent::__construct();
 		$this->load->module('template');
-		$this->load->model('pelayanan_langsung/Pelayanan_langsung_model', 'main_model', TRUE);
+		$this->load->model('pelayanan_langsung/pelayanan_langsung_model', 'main_model', TRUE);
 		$this->load->model('skpd/Skpd_model', 'skpd', TRUE);
 		$this->load->model('site/Site_model', 'site', TRUE);
 		$this->load->helper('admin');
@@ -41,7 +41,7 @@ class Pelayanan_langsung extends MX_Controller
 		} else {
 			if ($id) {
 				$data['key'] = htmlentities($id);
-				// $this->load->view('dokumen/frontend/index', $data);
+				// $this->load->view('pelayanan_langsung/frontend/index', $data);
 				$this->template->render('pelayanan_langsung/backend/index');
 			}
 		}
@@ -353,10 +353,12 @@ class Pelayanan_langsung extends MX_Controller
 	}
 
 
+
+
 	function has_child($id)
 	{
 		// $rs = mysql_query("select count(*) from products where parentId=$id");
-		$rs = $this->db->query('select count(*) from c_dokumen_informasi where parent_id=' . $id . '')->result_array();
+		$rs = $this->db->query('select count(*) from c_pelayanan_langsung_informasi where parent_id=' . $id . '')->result_array();
 		$row = $rs;
 		return $row[0] > 0 ? true : false;
 	}
@@ -420,7 +422,7 @@ class Pelayanan_langsung extends MX_Controller
 
 	public function ajax_insert_parent()
 	{
-		$uploadPath = './assets/dokumen/upload/' . date("Y/m/d") . '/';
+		$uploadPath = './assets/pelayanan_langsung/upload/' . date("Y/m/d") . '/';
 		if (is_dir($uploadPath) === false) {
 			mkdir($uploadPath, 0777, true);
 		}
@@ -469,7 +471,7 @@ class Pelayanan_langsung extends MX_Controller
 	public function ajax_inserts()
 	{
 		$descount = count($_FILES['file']['name']);
-		$uploadPath = './assets/dokumen/upload/' . date("Y/m/d") . '/';
+		$uploadPath = './assets/pelayanan_langsung/upload/' . date("Y/m/d") . '/';
 		if (is_dir($uploadPath) === false) {
 			mkdir($uploadPath, 0777, true);
 		}

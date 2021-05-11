@@ -76,10 +76,10 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 
-	// 'hostname' => '172.16.10.57',
-	// 'username' => 'userdb_devtesting',
-	// 'password' => 's3ngg0lbac0k###',
-	// 'database' => 'db_web_dinkes',
+	'hostname' => '172.16.10.57',
+	'username' => 'userdb_devtesting',
+	'password' => 's3ngg0lbac0k###',
+	'database' => 'db_web_dinkes',
 
 	// 'hostname' => 'db-node-21.tangerangkota.go.id',
 	// 'hostname' => '172.16.9.170',
@@ -88,10 +88,10 @@ $db['default'] = array(
 	// 'password' => 'd@/G)BVnK,qj/:F3BTczy>=+',
 	// 'database' => 'db_web_ppid',
 
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'db_web_dinkes',
+	// 'hostname' => 'localhost',
+	// 'username' => 'root',
+	// 'password' => '',
+	// 'database' => 'db_web_dinkes',
 
 	'port' 	   => '3306',
 	'dbdriver' => 'mysqli',

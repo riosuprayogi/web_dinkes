@@ -160,14 +160,14 @@
 					<thead>
 						<tr>
 							<td onclick="add()" style="vertical-align:middle; text-align:center;cursor:pointer;"><b><i class="fas fa-plus"></i></b></td>
-							<td colspan="6"></td>
+							<td colspan="5"></td>
 						</tr>
 						<tr>
 							<th>No</th>
 							<!-- <th style="width:15%">Kategori Berita</th> -->
 							<th>Judul Berita</th>
 							<th>Isi Berita</th>
-							<th width="100px">Foto Berita</th>
+							<!-- <th width="100px">Foto Berita</th> -->
 							<th>Status</th>
 							<th>Tanggal/Jam</th>
 							<th style="width:7%">Aksi</th>
@@ -184,7 +184,7 @@
 								<!-- <td><?= $ia["nama_kategori"] ?></td> -->
 								<td><?= substr($ia["judul_berita"], 0, 50); ?></td>
 								<td><?= substr($ia["isi_berita"], 0, 100); ?></td>
-								<td>
+								<!-- <td>
 									<?php if ($ia["t_foto_berita"] != NULL) {
 										if (count($ia["t_foto_berita"]) > 0) {
 											foreach ($ia["t_foto_berita"] as $f) {
@@ -204,7 +204,7 @@
 											</a>
 										</div>
 									<?php } ?>
-								</td>
+								</td> -->
 								<!-- <td><?= $ia["nama_admin"] ?></td> -->
 								<td><?= $ia["status"] ?></td>
 								<td><?= date('d-M-Y H:i:s', strtotime($ia["tgl_jam"])); ?></td>
@@ -214,8 +214,8 @@
 											<i class="fas fa-cogs"></i>
 										</button>
 										<div class="dropdown-menu">
+											<a class="dropdown-item" href="<?= base_url(); ?>berita/detail/<?= $ia["id_berita"] ?>"><i class="fas fa-eye"></i> Lihat</a>
 											<a class="dropdown-item" href="<?= base_url(); ?>berita/edit/<?= $ia["id_berita"] ?>" onclick="return confirm('Apakah anda yakin akan mengedit nya?');"><i class="fas fa-edit"></i> Ubah</a>
-
 											<a class="dropdown-item" href="<?= base_url(); ?>berita/ajax_delete/<?= $ia["id_berita"] ?>" onclick="return confirm('Apakah anda yakin akan menghapus nya?');"><i class="fas fa-trash"></i> Hapus</a>
 										</div>
 									</center>
@@ -269,6 +269,18 @@
 											</div>
 										</div>
 									</div> -->
+
+
+									<div class="form-group">
+										<label for="foto_hotel">Foto Hotel</label>
+										<input type="file" class="form-control" placeholder="" name="foto_hotel[]" multiple="" accept="image/png, image/jpeg, image/gif">
+										<div class="pt-3 row">
+											<div class="col-12" id="foto_hotel_thumbnail">
+												<div id="foto_hotel_thumbnail_update" class="d-inline" data-update="no"></div>
+											</div>
+										</div>
+										<small class="block text-danger"></small>
+									</div>
 
 									<div class="form-group row image_field">
 										<label for="path_detail_foto" class="col-sm-2 col-form-label">Foto</label>

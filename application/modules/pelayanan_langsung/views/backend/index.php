@@ -164,18 +164,7 @@
 							}
 						}
 					},
-					{
-						field: 'tahun',
-						title: 'TAHUN',
-						styler: function(value, row, index) {
-							if (value < 20) {
-								// return 'background-color:#ffee00;color:red;';
-								return 'min-width:100px';
-								// the function can return predefined css class and inline style
-								// return {class:'c1',style:'color:red'}
-							}
-						}
-					},
+
 					{
 						field: 'urutan',
 						title: 'Urutan',
@@ -1216,7 +1205,7 @@
 									</div>
 									<div class="form-link form-group">
 										<label for=""> Link</label>
-										<input name="link" id="link" class="form-control" link></input>
+										<input name="link" type="url" id="link" class="form-control" link></input>
 									</div>
 									<!-- adun close -->
 								</div>

@@ -160,20 +160,17 @@
 					<thead>
 						<tr>
 							<td onclick="add()" style="vertical-align:middle; text-align:center;cursor:pointer;"><b><i class="fas fa-plus"></i></b></td>
-							<td></td>
+							<td colspan="5"></td>
 							<!-- <td></td> -->
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+
+
 						</tr>
 						<tr>
 							<th>No</th>
 							<!-- <th style="width:15%">Kategori Berita</th> -->
 							<th>Judul Diklat</th>
 							<th>Isi Berita Diklat</th>
-							<th width="100px">Foto Diklat</th>
+							<!-- <th width="100px">Foto Diklat</th> -->
 							<th>Status</th>
 							<th>Tanggal/Jam</th>
 							<th style="width:7%">Aksi</th>
@@ -190,7 +187,7 @@
 								<!-- <td><?= $ia["nama_kategori"] ?></td> -->
 								<td><?= substr($ia["nama_diklat"], 0, 50); ?></td>
 								<td><?= substr($ia["isi_diklat"], 0, 100); ?></td>
-								<td>
+								<!-- <td>
 									<?php if ($ia["path_foto_diklat"] != NULL) {
 										if (count($ia["path_foto_diklat"]) > 0) {
 											foreach ($ia["path_foto_diklat"] as $f) {
@@ -210,7 +207,7 @@
 											</a>
 										</div>
 									<?php } ?>
-								</td>
+								</td> -->
 								<!-- <td><?= $ia["nama_admin"] ?></td> -->
 								<td><?= $ia["status"] ?></td>
 								<td><?= date('d-M-Y H:i:s', strtotime($ia["tgl_jam"])); ?></td>
@@ -220,6 +217,8 @@
 											<i class="fas fa-cogs"></i>
 										</button>
 										<div class="dropdown-menu">
+											<a class="dropdown-item" href="<?= base_url(); ?>diklat/detail_/<?= $ia["id_diklat"] ?>"><i class="fas fa-eye"></i> Lihat</a>
+
 											<a class="dropdown-item" href="<?= base_url(); ?>diklat/edit/<?= $ia["id_diklat"] ?>" onclick="return confirm('Apakah anda yakin akan mengedit nya?');"><i class="fas fa-edit"></i> Ubah</a>
 
 											<a class="dropdown-item" href="<?= base_url(); ?>diklat/ajax_delete/<?= $ia["id_diklat"] ?>" onclick="return confirm('Apakah anda yakin akan menghapus nya?');"><i class="fas fa-trash"></i> Hapus</a>

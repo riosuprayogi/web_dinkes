@@ -410,7 +410,7 @@
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="http://localhost/web_dinkes/" "="">Home</a></li>
-              <li class=" breadcrumb-item active">Url Video</li>
+              <li class=" breadcrumb-item active">Video</li>
 				</ol>
 			</div>
 		</div>

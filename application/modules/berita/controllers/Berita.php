@@ -231,6 +231,24 @@ class Berita extends MX_Controller
 		}
 	}
 
+	public function detail($id)
+	{
+		$where = array('id_berita' => $id);
+
+		$data["t_berita"] = $this->db->query("SELECT * FROM t_berita WHERE id_berita = '$id'")->result();
+
+		$data['t_kategori'] = $this->db->query("SELECT * FROM t_kategori WHERE trash='0'")->result(); // join buat ambil data di combobox
+
+		$data['t_foto_berita'] = $this->db->query("SELECT * FROM t_foto_berita WHERE id_berita = '$id' ORDER BY urutan ASC")->result_array();
+
+
+		if (@$this->session->has_access[0]->nama_app != "Admin") {
+			$this->template->render_home('berita/frontend/index');
+		} else {
+			$this->template->render('berita/backend/detail', $data);
+		}
+	}
+
 	public function _rules()
 	{
 		// $this->form_validation->set_rules('id_kat_artikel', 'kategori artikel', 'required');
@@ -502,6 +520,15 @@ class Berita extends MX_Controller
 			);
 			redirect('berita');
 		}
+	}
+
+	public function create_edit($id = null) // ini satu form untuk create dan edit
+	{
+		$data['id'] = $id;
+
+		$this->template->title('Form Data Perusahaan');
+		$this->template->set_partial('footer', 'admin/perusahaan_admin/_script/maps');
+		$this->template->build('backend/create', $data);
 	}
 
 

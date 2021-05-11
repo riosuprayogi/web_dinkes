@@ -24,11 +24,12 @@ class Diklat extends MX_Controller
 	}
 
 
-	public function batas($string, $length){
-		if(strlen($string)<=($length)){
+	public function batas($string, $length)
+	{
+		if (strlen($string) <= ($length)) {
 			return $string;
 		} else {
-			$cetak = substr($string,0,$length). '';
+			$cetak = substr($string, 0, $length) . '';
 			return $cetak;
 		}
 	}
@@ -113,7 +114,7 @@ class Diklat extends MX_Controller
 
 	public function detail($id)
 	{
-	// ================= berita
+		// ================= berita
 
 		$listProfiles = $this->db->query("SELECT t_diklat.*
 
@@ -121,16 +122,16 @@ class Diklat extends MX_Controller
 			    -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
 			    -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
 			    WHERE t_diklat.status = 'show' AND trash='0' AND t_diklat.id_diklat=$id ORDER BY tgl_jam DESC LIMIT 4");
-			// var_dump($listProfiles);
-			            	// die();
+		// var_dump($listProfiles);
+		// die();
 
 		$arrProfile = [];
 		$arr = [];
 		foreach ($listProfiles->result_array() as $key => $row) {
 
 			$result = $this->db->query("SELECT *, MIN(urutan)AS urutan FROM t_foto_diklat WHERE id_diklat=" . $row['id_diklat'] . "")->result_array();
-			            	// var_dump($result);
-			            	// die();
+			// var_dump($result);
+			// die();
 			if ($result) {
 
 				$arr = array(
@@ -138,8 +139,8 @@ class Diklat extends MX_Controller
 					// "id_kategori" => $row["id_kategori"],
 					"nama_diklat" => $row["nama_diklat"],
 					"isi_diklat" => $this->batas($row["isi_diklat"], 50),
-			                    // "nama_admin"  =>  $row["nama_admin"],
-			                    // "publish" => $row["publish"],
+					// "nama_admin"  =>  $row["nama_admin"],
+					// "publish" => $row["publish"],
 					"tgl_jam" => $row["tgl_jam"],
 					"path_foto_diklat" => $result
 				);
@@ -148,21 +149,21 @@ class Diklat extends MX_Controller
 		}
 
 		$data["berita3"] = $arrProfile;
-			// var_dump($datae);
-			// die();
+		// var_dump($datae);
+		// die();
 
 
 
 
 
-    	// ============== isi berita
+		// ============== isi berita
 		$data['foto'] = $this->db->query("SELECT t_diklat.*, t_foto_diklat.*
 			FROM t_diklat
 			JOIN t_foto_diklat ON t_diklat.id_diklat = t_foto_diklat.id_diklat
 			WHERE t_diklat.id_diklat = '$id' AND t_diklat.status = 'show'")->result();
 
 		$data["detailBerita"] = $this->db->query("SELECT * FROM t_diklat WHERE  status = 'show' AND id_diklat='$id'")->result();
-// ============== akhir isi berita
+		// ============== akhir isi berita
 
 
 
@@ -174,46 +175,45 @@ class Diklat extends MX_Controller
 			                                        WHERE t_diklat.status = 'show' AND trash='0'    ORDER BY tgl_jam DESC LIMIT 4");
 
 
-			// var_dump($listProfiles2);
-			            	// die();
+		// var_dump($listProfiles2);
+		// die();
 
 		$arrProfile2 = [];
 		$arr2 = [];
 		foreach ($listProfiles2->result_array() as $key => $row) {
 
 			$result = $this->db->query("SELECT *, MIN(urutan)AS urutan FROM t_foto_diklat WHERE id_diklat=" . $row['id_diklat'] . "")->result_array();
-			            	// var_dump($result);
-			            	// die();
+			// var_dump($result);
+			// die();
 			if ($result) {
 
 				$arr2 = array(
 					"id_diklat" => $row["id_diklat"],
-			                    // "id_kategori" => $row["id_kategori"],
+					// "id_kategori" => $row["id_kategori"],
 					"nama_diklat" => $row["nama_diklat"],
 					"isi_diklat" => $row["isi_diklat"],
-				// "id_kategori"  =>  $row["id_kategori"],
-			                    // "publish" => $row["publish"],
+					// "id_kategori"  =>  $row["id_kategori"],
+					// "publish" => $row["publish"],
 					"tgl_jam" => $row["tgl_jam"],
 					"path_foto_diklat" => $result
 				);
 				array_push($arrProfile2, $arr2);
-
 			}
 		}
 
 		$data["berita4"] = $arrProfile2;
-	// var_dump($data4);
-	// die();
-        // var_dump($data);
-        // die();
+		// var_dump($data4);
+		// die();
+		// var_dump($data);
+		// die();
 		$data['title'] = "Detail Artikel";
-		$this->template->render_home('diklat/frontend/detail',$data);
-        // $data ['detailFeatured'] = $this->crudBaznas->getById($id);
-        // $data ['image'] = $this->crudBaznas->imgById($id);
-        // $this->load->view('templates_users/header', $data);
-        // $this->load->view('templates_users/navbar');
-        // $this->load->view('users/detailBerita', $data);
-        // $this->load->view('templates_users/footer');
+		$this->template->render_home('diklat/frontend/detail', $data);
+		// $data ['detailFeatured'] = $this->crudBaznas->getById($id);
+		// $data ['image'] = $this->crudBaznas->imgById($id);
+		// $this->load->view('templates_users/header', $data);
+		// $this->load->view('templates_users/navbar');
+		// $this->load->view('users/detailBerita', $data);
+		// $this->load->view('templates_users/footer');
 	}
 
 
@@ -375,6 +375,24 @@ class Diklat extends MX_Controller
 			$this->template->render_home('diklat/frontend/index');
 		} else {
 			$this->template->render('diklat/backend/edit', $data);
+		}
+	}
+
+	public function detail_($id)
+	{
+		$where = array('id_diklat' => $id);
+
+		$data["t_diklat"] = $this->db->query("SELECT * FROM t_diklat WHERE id_diklat = '$id'")->result();
+
+		// $data['t_kategori'] = $this->db->query("SELECT * FROM t_kategori WHERE trash='0'")->result(); // join buat ambil data di combobox
+
+		$data['t_foto_diklat'] = $this->db->query("SELECT * FROM t_foto_diklat WHERE id_diklat = '$id' ORDER BY urutan ASC")->result_array();
+
+
+		if (@$this->session->has_access[0]->nama_app != "Admin") {
+			$this->template->render_home('diklat/frontend/index');
+		} else {
+			$this->template->render('diklat/backend/detail', $data);
 		}
 	}
 
