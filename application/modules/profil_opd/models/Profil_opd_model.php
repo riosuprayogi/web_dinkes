@@ -24,7 +24,33 @@ class Profil_opd_model extends CI_Model {
       return $query->row_array();
   }
 
-  
+  public function get_tree_byid($id){
+    $this->db->select('*');
+    $this->db->from('c_dokumen_informasi');
+    if($id == '99'){
+        $this->db->where('id_jenis_informasi','5');
+        $this->db->where('hapus','0');
+        $this->db->or_where('id_jenis_informasi','13');
+        $this->db->where('hapus','0');
+    }else if($id == '100'){
+        $this->db->where('id_jenis_informasi','1');
+        $this->db->where('hapus','0');
+        $this->db->or_where('id_jenis_informasi','2');
+        $this->db->where('hapus','0');  
+        $this->db->or_where('id_jenis_informasi','3');
+        $this->db->where('hapus','0');  
+        $this->db->or_where('id_jenis_informasi','4');
+        $this->db->where('hapus','0');  
+    }else{
+        $this->db->where('id_jenis_informasi',$id);
+        $this->db->where('hapus','0');
+    }
+    $this->db->order_by('urutan', 'ASC');
+    $result = $this->db->get()->result();
+    return $result;
+}
+
+
 
 
 

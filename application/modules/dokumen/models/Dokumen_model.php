@@ -9,7 +9,7 @@ class Dokumen_model extends CI_Model {
 
 
 	public function insert($data){
-        $this->db->set('cby', $this->session->id_user);
+		$this->db->set('cby', $this->session->id_user);
 		$this->db->set('cdd', date('Y-m-d H:i:s'));
 		$this->db->insert('t_daftar_pembantu',$data);
 		return $this->db->insert_id();
@@ -23,7 +23,7 @@ class Dokumen_model extends CI_Model {
 	}
 
 	public function insert_jenis($data){
-        $this->db->set('cby', $this->session->id_user);
+		$this->db->set('cby', $this->session->id_user);
 		$this->db->set('cdd', date('Y-m-d H:i:s'));
 		$this->db->insert('m_jenis_informasi',$data);
 		return $this->db->insert_id();
@@ -37,14 +37,14 @@ class Dokumen_model extends CI_Model {
 	}
 
 	public function insert_file($data){
-        $this->db->set('cby', $this->session->id_user);
+		$this->db->set('cby', $this->session->id_user);
 		$this->db->set('cdd', date('Y-m-d H:i:s'));
 		$this->db->insert('t_file_informasi',$data);
 		return $this->db->insert_id();
 	}
 
 	public function insert_informasi($data){
-        $this->db->set('cby', $this->session->id_user);
+		$this->db->set('cby', $this->session->id_user);
 		$this->db->set('cdd', date('Y-m-d H:i:s'));
 		$this->db->insert('c_dokumen_informasi',$data);
 		return $this->db->insert_id();
@@ -117,7 +117,7 @@ class Dokumen_model extends CI_Model {
 
 	public function get_by_id($id){
 		$this->db->select('*');
-        $this->db->from('m_jenis_informasi');
+		$this->db->from('m_jenis_informasi');
 		$this->db->where('id_jenis_informasi', $id);
 		$query = $this->db->get();
 		return $query->row();
@@ -127,7 +127,7 @@ class Dokumen_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('m_kategori_pembantu');
 		$query = $this->db->get();
-        return $query->result();
+		return $query->result();
 	}
 
 	public function get_tree(){
@@ -142,10 +142,10 @@ class Dokumen_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('c_dokumen_informasi');
 		if($id == '99'){
-		$this->db->where('id_jenis_informasi','5');
-		$this->db->where('hapus','0');
-		$this->db->or_where('id_jenis_informasi','13');
-		$this->db->where('hapus','0');
+			$this->db->where('id_jenis_informasi','5');
+			$this->db->where('hapus','0');
+			$this->db->or_where('id_jenis_informasi','13');
+			$this->db->where('hapus','0');
 		}else if($id == '100'){
 			$this->db->where('id_jenis_informasi','1');
 			$this->db->where('hapus','0');
@@ -158,7 +158,7 @@ class Dokumen_model extends CI_Model {
 		}else{
 			$this->db->where('id_jenis_informasi',$id);
 			$this->db->where('hapus','0');
-			}
+		}
 		$this->db->order_by('urutan', 'ASC');
 		$result = $this->db->get()->result();
 		return $result;
@@ -168,7 +168,7 @@ class Dokumen_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('m_jenis_informasi');
 		$query = $this->db->get();
-        return $query->result();
+		return $query->result();
 	}
 
 	public function get_data_jenis($id){

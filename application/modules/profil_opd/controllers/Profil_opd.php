@@ -18,7 +18,6 @@ class Profil_opd extends MX_Controller {
 		
 	}
 
-
 	public function index()
 	{
 		$data['gambaranumum'] = $this->main_model2->get_isi('gambaran_umum');
@@ -66,4 +65,61 @@ class Profil_opd extends MX_Controller {
 		$data['alasan'] = $this->main_model->get_alasan();
 		$this->template->render_home('profil_opd/frontend/index', $data);
 	}
+
+
+	public function ajax_tree2(){
+		$id = $this->input->get('key');
+
+		$hasil = $this->main_model2->get_tree_byid(htmlentities($id));
+		// echo $this->db->last_query();die;
+		if (!IS_AJAX) {
+			$this->load->view('site/404');
+		} else {
+            // $this->load->view($content, $data);
+
+			$no=1;
+			// echo json_encode($hasil);die;
+			foreach ($hasil as $key => $value)
+			{
+				$aksi1 = '
+				<button class="btn btn-sm btn-primary" onclick="add_parent('.$value->id_informasi.')"> 
+				<i class="fas fa-fw fa-plus-square">  </i>
+				</button>
+				<button class="btn btn-sm btn-info" onclick="edit_parent('.$value->id_informasi.')"> 
+				<i class="fas fa-fw fa-pen-square">  </i>
+				</button>
+				<button class="btn btn-sm btn-danger" onclick="hapus_daftar('.$value->id_informasi.')"> 
+				<i class="fas fa-fw fa-trash">  </i>
+				</button>
+				';
+				$sub_data["aksi"] = $aksi1;
+				
+
+				
+				if($value->option == 'file'){
+					$value->file = '<center><a href="'.base_url().$value->file.'" target="_blank" class="btn btn-sm btn-success" > <img style="width:20px;" src="https://img.icons8.com/fluent/48/000000/file.png"/> Unduh </a></center>';
+				}else if($value->option == 'link'){
+					$value->file = '<center><a href="'.$value->link.'" target="_blank" class="btn btn-sm btn-success" > <img style="width:20px;" src="https://img.icons8.com/fluent/48/000000/file.png"/> Lihat </a></center>';
+				}else{
+					$value->file = '';
+				}
+
+				$sub_data["id"] = $value->id_informasi;
+				$sub_data["number"] = $no;
+				// $sub_data['state'] = $this->has_child($value->id_informasi) ? 'closed' : 'open';
+				$sub_data["name"] = $value->nama;
+				$sub_data["parent_id"] = $value->parent_id;
+				$sub_data["deskripsi"] = $value->deskripsi;
+				$sub_data["urutan"] = $value->urutan;
+				$sub_data["tahun"] = $value->tahun;
+				$sub_data["file"] = $value->file;
+				$data[] = $sub_data;
+				$no++;
+			}
+
+
+			echo json_encode(array_values($data));
+		}
+	}
+
 }

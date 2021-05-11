@@ -471,25 +471,27 @@ $config['csrf_cookie_name'] = 'csrf_cookie_name';
 $config['csrf_expire'] = 7200;
 $config['csrf_regenerate'] = TRUE;
 // $config['csrf_exclude_uris'] = array();
-$config['csrf_exclude_uris'] = array('flayer/ajax_insert',
-'user/ajax_list','user/ajax_delete','uploadandroid/hapus_foto','customer/uploadandroid/upload','uploadandroid/upload/ktp','api/upload/upload_ktp',
-'uploadandroid/upload/surat_kuasa',
-'uploadandroid/upload/pemberi_ktp_kuasa',
-'uploadandroid/upload/surat_keterangan',
-'uploadandroid/upload/akta_notaris',
-'uploadandroid/upload/pengesahan_notaris',
-'dokumen/ajax_tree',
-'dokumen/ajax_trees',
-'dokumen/ajax_tree_dynamic',
-'dokumen/ajax_delete',
-'profil/ajax_delete_foto',
-'user/ajax_insert',
-'profil/delete_image_summernote',
-'profil/upload_image_summernote',
-'profil/ajax_insert',
-'permohonanapi/uploadfile',
-'permohonanapi/add',
-'permohonanapi/update'
+$config['csrf_exclude_uris'] = array(
+    'flayer/ajax_insert',
+    'user/ajax_list','user/ajax_delete','uploadandroid/hapus_foto','customer/uploadandroid/upload','uploadandroid/upload/ktp','api/upload/upload_ktp',
+    'uploadandroid/upload/surat_kuasa',
+    'uploadandroid/upload/pemberi_ktp_kuasa',
+    'uploadandroid/upload/surat_keterangan',
+    'uploadandroid/upload/akta_notaris',
+    'uploadandroid/upload/pengesahan_notaris',
+    'dokumen/ajax_tree',
+    'dokumen/ajax_trees',
+    'profil_opd/ajax_tree2',
+    'dokumen/ajax_tree_dynamic',
+    'dokumen/ajax_delete',
+    'profil/ajax_delete_foto',
+    'user/ajax_insert',
+    'profil/delete_image_summernote',
+    'profil/upload_image_summernote',
+    'profil/ajax_insert',
+    'permohonanapi/uploadfile',
+    'permohonanapi/add',
+    'permohonanapi/update'
 
 );
 // $config['csrf_exclude_uris'] = array('user/ajax_list','uploadandroid/hapus_foto','customer/uploadandroid/upload','uploadandroid/email');

@@ -442,61 +442,61 @@
                                     </div>
                                     <div class="desc" style="text-align: center;">
                                         <a href="javascript:void" title="<?php echo text($v->nama_video); ?>" style="font-weight: 700;font-size:14px;color: #000">
-                                            <!-- <?php echo text(readMore($v->nama_video, 35)); ?> -->
-                                        </a>
-                                    </div>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
+                                           <?php echo text(readMore($v->nama_video, 35)); ?> 
+                                       </a>
+                                   </div>
+                               </div>
+                           <?php endforeach; ?>
+                       </div>
+                   </div>
 
-                    <!-- LEFT AND RIGHT ARROWS -->
-                    <div class="rny-arrows">
-                        <div class="rny-arrow-left"><i class="fa fa-chevron-left fa-lg"></i></div>
-                        <div class="rny-arrow-right"><i class="fa fa-chevron-right fa-lg"></i></div>
-                    </div>
-
+                   <!-- LEFT AND RIGHT ARROWS -->
+                   <div class="rny-arrows">
+                    <div class="rny-arrow-left"><i class="fa fa-chevron-left fa-lg"></i></div>
+                    <div class="rny-arrow-right"><i class="fa fa-chevron-right fa-lg"></i></div>
                 </div>
 
-            </section>
-            <!-- ==============================Akhir Berita Slider -->
+            </div>
+
+        </section>
+        <!-- ==============================Akhir Berita Slider -->
 
 
 
 
 
 
-            <section id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620">
-                <div class="mbr-overlay" style="opacity: 0.50;background-color: rgba(239, 240, 240, 0.75);"></div>
+        <section id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620">
+            <div class="mbr-overlay" style="opacity: 0.50;background-color: rgba(239, 240, 240, 0.75);"></div>
 
 
 
-                <div class="container">
-                    <div class="row">
-                        <!--Titles-->
-                        <div class="title col-12">
-                            <div class="card-img">
-                                <!-- <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;"> -->
-                                <!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;"> -->
-                                    <!-- <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_galeri.png" alt=""> -->
-                                    <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_galeri.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
-                                    <!-- </div> -->
-                                </div>
+            <div class="container">
+                <div class="row">
+                    <!--Titles-->
+                    <div class="title col-12">
+                        <div class="card-img">
+                            <!-- <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;"> -->
+                            <!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;"> -->
+                                <!-- <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_galeri.png" alt=""> -->
+                                <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_galeri.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
+                                <!-- </div> -->
                             </div>
-                            <!--Right-->
-                            <div class="col-12 col-md-12">
-                                <?php
-                                foreach ($galeri3 as $k => $v) :
-                                    if ($k == '0') :
-                                        ?>
-                                        <div class="rny-vid-container-humas">
-                                            <!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
-                                            <!-- <img   src="<?= base_url('assets/backend/img/img_galery/' . $k["path_detail_foto"]) ?>" >12a065cc7f036251dad165ea9f353394 -->
-                                            <img   src="<?= base_url('assets/backend/img/img_galery/12a065cc7f036251dad165ea9f353394.jpeg') ?>" >
-                                        </div>
-                                    <?php endif;
-                                endforeach;
-                                ?>
+                        </div>
+                        <!--Right-->
+                        <div class="col-12 col-md-12">
+                            <?php
+                            foreach ($galeri4 as $k => $v) :
+                                if ($k == '0') :
+                                    ?>
+                                    <div class="rny-vid-container-humas">
+                                        <!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
+                                        <img  id="rny_vid_frame-humas"  src="<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>" height="550 ">
+                                        <!-- <img   src="<?= base_url('assets/backend/img/img_galery/12a065cc7f036251dad165ea9f353394.jpeg') ?>" > -->
+                                    </div>
+                                <?php endif;
+                            endforeach;
+                            ?>
 
                        <!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
                             <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_humas.png" alt="">
@@ -504,13 +504,14 @@
 
                         <div class="rny-vid-list-container-humas">
                             <div class="rny-vid-list-humas">
-                                <?php foreach ($video_humas as $k => $v) : ?>
-                                    <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame-humas').src='<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=1&rel=0&showinfo=0&autohide=1'">
-                                        <div class="rny-thumb" style="background: url('https://i.ytimg.com/vi/<?php echo getidyoutube2($v['video_url']); ?>/hqdefault.jpg');height: 100px;background-size: cover;">
+                                <?php foreach ($galeri4 as $k => $v) : ?>
+                                    <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame-humas').src='<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>'">
+                                        <div class="rny-thumb" style="height: 100px;background-size: cover;">
+                                            <img   src="<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>" >
                                         </div>
                                         <div class="desc" style="text-align: center;">
-                                            <a href="javascript:void" title="<?php echo text($v['caption']); ?>" style="font-weight: 700;font-size:14px;color: #000">
-                                                <?php echo text(readMore($v['caption'], 35)); ?>
+                                            <a href="javascript:void"  style="font-weight: 700;font-size:14px;color: #000">
+                                                <?php echo text(readMore($v['ket_foto'], 35)); ?>
                                             </a>
                                         </div>
                                     </div>

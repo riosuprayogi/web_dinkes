@@ -393,8 +393,9 @@
                            <div class="" style="padding-top: -100px"><center>
                             <div style="width: 450px; padding-left: 10px">
                                <!-- <div class="col-md-6 offset-lg-2 col-sm-12"> -->
+                                
 
-                                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" >
+                                  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" >
                                     <ol class="carousel-indicators">
                                         <?php foreach ($foto as $b => $value) : ?>
                                             <?php if ($b == 0) : ?>

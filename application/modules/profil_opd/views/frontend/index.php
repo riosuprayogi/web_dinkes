@@ -58,7 +58,7 @@
 						</div> -->
 						<div class="mbr-figure rounded" style=" background: transparent; ">
 							<div class="mbr-figure " style="height:100%; opacity:1.0;">
-								<center> <img style="width: 300px" src="<?= base_url('assets/media/image/gambaranumum.png') ?>" style="width:30%; margin:auto; padding-bottom: 5px;" alt="" media-simple="true"></center>
+								<center> <img style="width: 200px" src="<?= base_url('assets/media/image/gambaranumum.png') ?>" style="width:30%; margin:auto; padding-bottom: 5px;" alt="" media-simple="true"></center>
 								<center>
 									<!-- <?php echo $profil2['isi']; ?>  -->
 									<p style="text-align: center; margin-top: 75px; font-size: 25px">
@@ -96,7 +96,7 @@
 						</div> -->
 						<div class="mbr-figure rounded" style=" background: transparent;  ">
 							<div class="mbr-figure " style="height:100%; opacity:1.0;">
-								<center> <img style="width: 300px" src="<?= base_url('assets/media/image/ruanglingkup.png') ?>" style="width:30%; margin:auto;padding-bottom: 5px" alt="" media-simple="true">
+								<center> <img style="width: 150px" src="<?= base_url('assets/media/image/ruanglingkup.png') ?>" style="width:30%; margin:auto;padding-bottom: 5px" alt="" media-simple="true">
 								</center>
 								<center>
 									<br>
@@ -276,7 +276,9 @@
 													<?php if (count($f["isi"]) > 0) {
 														foreach ($f["isi"] as $k) {
 															?>
-															<img style="width:100% " src="<?= base_url('assets/media/image/' . $k["isi"]) ?>"   height="100%">
+															<a href="<?= base_url('assets/media/image/' . $k["isi"]) ?>" target="__blank">
+																<img style="width:100% " src="<?= base_url('assets/media/image/' . $k["isi"]) ?>"   height="100%">
+															</a>
 															<?php
 														}
 													} ?>
@@ -497,21 +499,18 @@
 </style>
 <script>
 	$(document).ready(function() {
-		var id = <?= '18' ?>;
+		var id = <?= '17' ?>;
 		$('#tt').treegrid({
-			url: '<?php echo base_url('dokumen/ajax_trees?key=') ?>' + id,
+			url: '<?php echo base_url('profil_opd/ajax_tree2?key=') ?>' + id,
 
 			idField: 'id',
 			treeField: 'name',
-            // collapsible: true,
-            // rownumbers: true,
-            // remoteFilter:false,
-            // pagination:true,
-            columns: [
-            [{
-            	title: 'NO',
-            	field: 'name',
-            	width: 40,
+			columns: [
+			[{
+				title: 'NO',
+				field: 'number',
+				width: 40,
+            	// rownumbers = true,
             	align: 'center',
             	styler: function(value, row, index) {
             		if (value < 20) {
@@ -526,7 +525,7 @@
                     	field: 'deskripsi',
                     	title: 'NAMA PELAYANAN',
                     	width: 900,
-                    	align: 'center',
+                    	align: 'left',
                     	styler: function(value, row, index) {
                     		if (value < 20) {
                                 // return 'background-color:#ffee00;color:red;';
@@ -536,24 +535,13 @@
                             }
                         }
                     },
-                    // {
-                    // 	field: 'tahun',
-                    // 	title: 'TAHUN',
-                    // 	styler: function(value, row, index) {
-                    // 		if (value < 20) {
-                    //             // return 'background-color:#ffee00;color:red;';
-                    //             return 'min-width:100px';
-                    //             // the function can return predefined css class and inline style
-                    //             // return {class:'c1',style:'color:red'}
-                    //         }
-                    //     }
-                    // },
+
                     {
                     	field: 'file',
                     	title: 'FILE',
                     	width: 150
                     },
-                    // {field:'aksi',title:'AKSI',width:150,align:'center'}
+
                     ]
                     ]
                 }).treegrid('collapseAll');

@@ -6,18 +6,24 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
 <script type="text/javascript" src="<?php echo base_url('assets/js/custom.js')?>"></script>
 
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-
-
+<!-- <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"> -->
+<!-- https://npmcdn.com/flickity@2/dist/flickity.pkgd.js -->
 
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<!-- flickity -->
+<!-- <link href="<?php echo base_url('assets/home/css/styleslider.css')?>" rel="stylesheet"> -->
 
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.css">
+<!-- <script type="text/javascript" src="<?php echo base_url('assets/js/script.js')?>"></script> -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
+<!-- <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
 <script>   
- AOS.init(); 
+   AOS.init(); 
 </script>
 <style>
     .footer {
@@ -387,6 +393,73 @@
         }
     </style>
 
+
+
+
+
+    <!-- Flickity HTML init -->
+    <!-- Flickity HTML init -->
+   <!--  <div class="carousel carousel-main" data-flickity style="margin-top: 200px">
+     <?php foreach ($sliderbanner as $f) : ?>
+
+
+        <?php if (count($f["path_foto_banner"]) > 0) {
+            foreach ($f["path_foto_banner"] as $k) {
+              ?>
+              <div class="carousel-cell">
+                <img style=" background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="600px">
+            </div>
+            <?php
+        }
+    } ?>
+
+
+
+    <?php endforeach; ?> -->
+ <!--  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div> -->
+<!-- </div>
+
+<div class="carousel carousel-nav"
+data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
+<?php foreach ($sliderbanner as $f) : ?>
+
+
+    <?php if (count($f["path_foto_banner"]) > 0) {
+        foreach ($f["path_foto_banner"] as $k) {
+          ?>
+          <div class="carousel-cell">
+            <img style=" background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="600px">
+        </div>
+        <?php
+    }
+} ?>
+
+
+
+<?php endforeach; ?> -->
+<!-- <div class="carousel-cell"></div>
+<div class="carousel-cell"></div>
+<div class="carousel-cell"></div>
+<div class="carousel-cell"></div>
+<div class="carousel-cell"></div>
+<div class="carousel-cell"></div>
+<div class="carousel-cell"></div>
+<div class="carousel-cell"></div>
+<div class="carousel-cell"></div>
+<div class="carousel-cell"></div> -->
+<!-- </div> -->
+
+
+
 <!-- <style>
     #ppid::after {
         background: rgba(255, 255, 255, 0.92);
@@ -424,15 +497,15 @@
       </div>
     </div>
 </div> -->
-<section>
+<!-- <section>
 
     <div class="tes slider_wrap">
-        <div class="banner_slider">
+        <div class="banner_slider"> -->
                     <!-- <img src="<?php echo base_url(); ?>assets/img/banner/1.png">
                     <img src="<?php echo base_url(); ?>assets/img/banner/2.png">
                     <img src="<?php echo base_url(); ?>assets/img/banner/3.png"> -->
 
-                    <?php foreach ($sliderbanner as $f) : ?>
+           <!--          <?php foreach ($sliderbanner as $f) : ?>
                         <div  style="">
                             <?php if (count($f["path_foto_banner"]) > 0) {
                                 foreach ($f["path_foto_banner"] as $k) {
@@ -454,14 +527,14 @@
                             foreach ($f["path_foto_banner"] as $k) {
                               ?>
                               <div class="col">
-                                  <!-- <img style="z-index:1; margin-top: 72px; position: relative; background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="600px"> </div> -->
-                                  <img class="tes3" src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" > </div>
-                                  <?php
+                                 <img style="z-index:1; margin-top: 72px; position: relative; background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="600px"> </div> -->
+                                 <!-- <img class="tes3" src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" > </div> -->
+                                 <!--  <?php
                               }
                           } ?>
-                      <?php endforeach; ?>
+                          <?php endforeach; ?> -->
 
-                      <!-- <img src="<?php echo base_url(); ?>assets/img/banner/1.png"> -->
+                          <!-- <img src="<?php echo base_url(); ?>assets/img/banner/1.png"> -->
 
                      <!--  <div class="col">
                         <img src="<?php echo base_url(); ?>assets/img/banner/2.png">
@@ -469,22 +542,23 @@
                     <div class="col">
                         <img src="<?php echo base_url(); ?>assets/img/banner/3.png">
                     </div> -->
-                </div>
+           <!--      </div>
             </div>
         </div>
     </div>
 </section>
+-->
+
+<section data-aos="fade-right">
 
 
-
-
-<!-- <div class="">
     <div class="">
+        <div class="">
 
-        <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay":2500, "pageDots": false, "pauseAutoPlayOnHover": false }'>
+            <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay":2500,  "pageDots": false, "pauseAutoPlayOnHover": false }'>
 
-            <?php foreach ($sliderbanner as $f) : ?>
-                <div class="col-md-12 col-sm-12">
+                <?php foreach ($sliderbanner as $f) : ?>
+
 
 
 
@@ -492,18 +566,19 @@
                         foreach ($f["path_foto_banner"] as $k) {
                           ?>
 
-                          <img style="z-index:1; margin-top: 72px; position: relative; background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="600px">
+                          <img style=" margin-top: 70px; background-size: cover; background-position: center; width: 100% " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"   height="600px">
                           <?php
                       }
                   } ?>
 
 
 
-              </div>
-          <?php endforeach; ?>
+
+              <?php endforeach; ?>
+          </div>
       </div>
   </div>
-</div> -->
+</section>
 
 <!-- ==============================Akhir Berita Slider -->
 
@@ -627,6 +702,9 @@
 </div>
 </section> -->
 <!-- ======================== akhir Berita -->
+
+
+
 
 
 <!-- ==============================Berita Slider -->
@@ -1125,13 +1203,131 @@
 </div>
 </section> -->
 
-
-
-
 <!-- ==============================Video Slider -->
 
 <!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right"> -->
     <section  id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="" data-aos="fade-right">
+
+
+
+
+  <!-- <div class="container">
+    <div class="row">
+      <div class="">
+        <h2>Video Baznas</h2>
+      </div>
+    </div>
+</div> -->
+<div class="container">
+    <div class="row">
+        <div class="title col-lg-6">
+            <div class="card-img">
+                <div class="card-img">
+                    <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
+                </div>
+            </div>
+        </div>
+        <div class="title col-6">
+            <div class="card-img">
+                <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_galeri.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
+            </div>
+        </div>
+    </div>
+
+    <!--Left-->
+    <!-- ===================== -->
+    <div class="row">
+        <div class="col-6 col-md-6">
+            <?php
+            foreach ($video_dinkes as $k => $v) :
+                if ($k == '0') :
+                    ?>
+                    <div class="rny-vid-container">
+                        <iframe id="rny_vid_frame" src="<?= $v->link_video?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
+                    </div>
+                <?php endif;
+            endforeach;
+            ?>
+
+            <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
+                <!-- <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_tngtv.png" alt=""> -->
+            </div>
+
+            <div class="rny-vid-list-container">
+                <div class="rny-vid-list">
+                    <?php foreach ($video_dinkes as $k => $v) : ?>
+                        <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame').src='<?= $v->link_video?>?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                            <div class="rny-thumb" style="background: url('https://i.ytimg.com/vi/<?php echo getidyoutube($v->link_video); ?>/hqdefault.jpg');height: 100px;background-size: cover;">
+                            </div>
+                            <div class="desc" style="text-align: center;">
+                                <a href="javascript:void" title="<?php echo text($v->nama_video); ?>" style="font-weight: 700;font-size:14px;color: #000">
+                                    <?php echo text(readMore($v->nama_video, 35)); ?>
+                                </a>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
+            <!-- LEFT AND RIGHT ARROWS -->
+            <div class="rny-arrows">
+                <div class="rny-arrow-left"><i class="fa fa-chevron-left fa-lg"></i></div>
+                <div class="rny-arrow-right"><i class="fa fa-chevron-right fa-lg"></i></div>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-6">
+            <?php
+            foreach ($galeri4 as $k => $v) :
+                if ($k == '0') :
+                    ?>
+                    <div class="rny-vid-container-humas">
+                        <!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
+                        <img style="margin-top: -30px"  id="rny_vid_frame-humas"  src="<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>" height="300 ">
+                        <!-- <img   src="<?= base_url('assets/backend/img/img_galery/12a065cc7f036251dad165ea9f353394.jpeg') ?>" > -->
+                    </div>
+                <?php endif;
+            endforeach;
+            ?>
+
+                       <!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
+                            <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_humas.png" alt="">
+                        </div> -->
+
+                        <div class="rny-vid-list-container-humas">
+                            <div class="rny-vid-list-humas">
+                                <?php foreach ($galeri4 as $k => $v) : ?>
+                                    <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame-humas').src='<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>'">
+                                        <div class="rny-thumb" style="height: 100px;background-size: cover; margin-top: 20px">
+                                            <img  style="height: 150px" src="<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>"  >
+                                        </div>
+                                        <div class="desc" style="text-align: center;">
+                                            <a href="javascript:void"  style="font-weight: 700;font-size:14px;color: #000">
+                                                <?php echo text(readMore($v['ket_foto'], 35)); ?>
+                                            </a>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+
+                        <!-- LEFT AND RIGHT ARROWS -->
+                        <div class="rny-arrows">
+                            <div class="rny-arrow-left-humas"><i class="fa fa-chevron-left fa-lg"></i></div>
+                            <div class="rny-arrow-right-humas"><i class="fa fa-chevron-right fa-lg"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======================== AKhir video -->
+
+
+
+        <!-- ==============================Video Slider -->
+
+        <!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right"> -->
+            <section  id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="" data-aos="fade-right">
 
 
 

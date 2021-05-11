@@ -27,7 +27,7 @@ class Site extends MX_Controller {
 	public function index()
 	{
 
-		$this->load->helper('text');
+		// $this->load->helper('text');
 		// $this->load->library('curl');
 		// $useragent = 'Mozilla/5.0 (Windows NT 5.1; rv:31.0) Gecko/20100101 Firefox/31.0';
 		// $json_url = 'https://tangerangkota.go.id/home/api_get_siaran/';
@@ -57,7 +57,7 @@ class Site extends MX_Controller {
 		if ($this->session->id_user == "") {
 			// $this->logout();
 			// $this->template->render_home('home/index');
-			$data['title'] = 'PPID Kota Tangerang';
+			$data['title'] = 'Dinas Kesehatan Kota Tangerang';
 			$data['profil'] = $this->main_model->get_isi('intro');
 			$data['profil_image'] = $this->main_model->get_isi_file('profil');
 			$data['struktur'] = $this->main_model->get_isi_struktur('struktur');
@@ -73,7 +73,7 @@ class Site extends MX_Controller {
 			// $data['banner'] = $this->site->get_curl('https://tangerangkota.go.id/banner/api-banner/');
 			// $data['berita2'] = $this->berita->get_isi_berita();
 			$data['berita'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_berita/');
-			
+			// $data["video_dinkes"] = $this->db->query("SELECT * FROM t_video WHERE status = 'show' AND trash='0' ")->result();
 			$data['video_tng'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_tng/');
 			$data['video_humas'] = $this->site->get_curl('https://tangerangkota.go.id/home/api_get_video_humas/');
 			// $data['slidebanner']=$this->db->query("SELECT * FROM c_banner")->result_array();
@@ -122,7 +122,8 @@ class Site extends MX_Controller {
 // ================= akhir berita
 
 // ================= Slider banner
-
+			$data['sliderbanner2'] = $this->db->query("SELECT * FROM t_detail_banner")->result();
+			
 			$listProfiles = $this->db->query("SELECT t_banner.*
 
 				FROM t_banner 
@@ -207,6 +208,12 @@ class Site extends MX_Controller {
  // $data7["videoBerita"] = $this->db->query("SELECT * FROM t_video WHERE id_video = '18' AND status = 'show' ")->result();
    // Query Untuk Video;
 			$data["video_dinkes"] = $this->db->query("SELECT * FROM t_video WHERE status = 'show' AND trash='0' ORDER BY tgl_jam DESC LIMIT 4")->result();
+			$data['galeri4'] = $this->db->query("SELECT t_foto_galery.*, t_detail_foto_galery.*
+
+				FROM t_foto_galery 
+				JOIN t_detail_foto_galery ON t_foto_galery.id_galery = t_detail_foto_galery.id_foto_galery
+			                                        -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
+			                                        WHERE t_foto_galery.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC limit 4")->result_array();
 
 // var_dump($data7);
 // die();
