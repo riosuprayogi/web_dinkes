@@ -1324,8 +1324,8 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                                 <img  style="height: 150px" src="<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>"  >
                             </div>
                             <div class="desc" style="text-align: center;">
-                                <a href="javascript:void" title="<?php echo text($v['ket_foto']); ?>" style="font-weight: 700;font-size:14px;color: #000">
-                                 <?php echo text(readMore($v['ket_foto'], 35)); ?>
+                                <a href="javascript:void" title="<?php echo text($v['nama_album']); ?>" style="font-weight: 700;font-size:14px;color: #000">
+                                 <?php echo text(readMore($v['nama_album'], 35)); ?>
                              </a>
                          </div>
                      </div>

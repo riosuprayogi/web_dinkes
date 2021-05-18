@@ -265,8 +265,8 @@ class Site extends MX_Controller {
 			                                        WHERE t_foto_galery.status = 'show' AND trash='0' GROUP BY id_galery  ORDER BY tgl_jam DESC limit 4 ")->result_array();
 			
 
-// var_dump($data7);
-// die();
+			// var_dump($dataas);
+			// die();
 /*echo "<pre>";
 print_r($data);
 echo "<pre>";
