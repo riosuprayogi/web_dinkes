@@ -81,6 +81,11 @@ $db['default'] = array(
 	'password' => 's3ngg0lbac0k###',
 	'database' => 'db_web_dinkes',
 
+	// 'hostname' => 'localhost',
+	// 'username' => 'root',
+	// 'password' => '',
+	// 'database' => 'db_web_dinkes',
+
 	// 'hostname' => 'db-node-21.tangerangkota.go.id',
 	// 'hostname' => '172.16.9.170',
 

@@ -50,72 +50,74 @@
 
 			<div class="row align-left">
 				<div class="col-md-6">
-					<a class="text-dark js-scroll-trigger" href="#dokumen" onclick="link_dokumen(13)">
-						<div class="card">
-							<div class="card-horizontal">
-								<div class="img-square-wrapper">
-									<!-- <img class="icon" src="<?php echo base_url(); ?>assets/img/icon/icon-10.png" alt="Card image cap"> -->
-									<img class="icon" src="<?= base_url('assets/media/image/rak.png') ?>" alt="Card image cap">
+					<!-- <a class="text-dark js-scroll-trigger" href="#dokumen" onclick="link_dokumen(13)"> -->
+						<a class="text-dark js-scroll-trigger" href="https://ppid.tangerangkota.go.id/daftar_informasi" target="__blank">
+							<div class="card">
+								<div class="card-horizontal">
+									<div class="img-square-wrapper">
+										<!-- <img class="icon" src="<?php echo base_url(); ?>assets/img/icon/icon-10.png" alt="Card image cap"> -->
+										<img class="icon" src="<?= base_url('assets/media/image/rak.png') ?>" alt="Card image cap">
 
-								</div>
-								<div class="card-body">
-									<h4 class="card-title">Rencana Kerja Anggaran (RKA)</h4>
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-6">
-					<a class="text-dark js-scroll-trigger" href="#dokumen" onclick="link_dokumen(15)">
-						<div class="card">
-							<div class="card-horizontal">
-								<div class="img-square-wrapper">
-									<!-- <img class="icon" src="<?php echo base_url(); ?>assets/img/icon/icon-11.png" alt="Card image cap"> -->
-									<img class="icon" src="<?= base_url('assets/media/image/renstra.png') ?>" alt="Card image cap">
-								</div>
-								<div class="card-body">
-									<h4 class="card-title">Rencana Strategis (RENSTRA)</h4>
+									</div>
+									<div class="card-body">
+										<h4 class="card-title">Rencana Kerja Anggaran (RKA)</h4>
+									</div>
 								</div>
 							</div>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="media-container-row ">
-			<div class="row align-left">
-				<div class="col-md-6 ">
-					<a class="text-dark js-scroll-trigger" href="#dokumen" onclick="link_dokumen(14)">
-						<div class="card">
-							<div class="card-horizontal">
-								<div class="img-square-wrapper">
-									<!-- <img class="icon" src="<?php echo base_url(); ?>assets/img/icon/icon-12.png" alt="Card image cap"> -->
-									<img class="icon" src="<?= base_url('assets/media/image/dpa.png') ?>" alt="Card image cap">
-								</div>
-								<div class="card-body">
-									<h4 class="card-title">Dokument Pelaksanaan Anggaran (DPA)</h4>
+						</a>
+					</div>
+					<div class="col-md-6">
+						<a class="text-dark js-scroll-trigger" href="#dokumen" onclick="link_dokumen_renstra(15)">
+							<div class="card">
+								<div class="card-horizontal">
+									<div class="img-square-wrapper">
+										<!-- <img class="icon" src="<?php echo base_url(); ?>assets/img/icon/icon-11.png" alt="Card image cap"> -->
+										<img class="icon" src="<?= base_url('assets/media/image/renstra.png') ?>" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h4 class="card-title">Rencana Strategis (RENSTRA)</h4>
+									</div>
 								</div>
 							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-6 ">
-					<a class="text-dark js-scroll-trigger" href="#dokumen" onclick="link_dokumen(16)">
-						<div class="card">
-							<div class="card-horizontal">
-								<div class="img-square-wrapper">
-									<!-- <img class="icon" src="<?php echo base_url(); ?>assets/img/icon/icon-13.png" alt="Card image cap"> -->
-									<img class="icon" src="<?= base_url('assets/media/image/renja.png') ?>" alt="Card image cap">
-								</div>
-								<div class="card-body">
-									<h4 class="card-title">Rencana Kerja (RENJA)</h4>
-								</div>
-							</div>
-						</div>
-					</a>
+						</a>
+					</div>
 				</div>
 			</div>
-		</div>
+			<div class="media-container-row ">
+				<div class="row align-left">
+					<div class="col-md-6 ">
+						<!-- <a class="text-dark js-scroll-trigger" href="#dokumen" onclick="link_dokumen(14)"> -->
+							<a class="text-dark js-scroll-trigger" href="https://ppid.tangerangkota.go.id/daftar_informasi" target="__blank">
+								<div class="card">
+									<div class="card-horizontal">
+										<div class="img-square-wrapper">
+											<!-- <img class="icon" src="<?php echo base_url(); ?>assets/img/icon/icon-12.png" alt="Card image cap"> -->
+											<img class="icon" src="<?= base_url('assets/media/image/dpa.png') ?>" alt="Card image cap">
+										</div>
+										<div class="card-body">
+											<h4 class="card-title">Dokumen Pelaksanaan Anggaran (DPA)</h4>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-6 ">
+							<a class="text-dark js-scroll-trigger" href="#dokumen" onclick="link_dokumen_renja(16)">
+								<div class="card">
+									<div class="card-horizontal">
+										<div class="img-square-wrapper">
+											<!-- <img class="icon" src="<?php echo base_url(); ?>assets/img/icon/icon-13.png" alt="Card image cap"> -->
+											<img class="icon" src="<?= base_url('assets/media/image/renja.png') ?>" alt="Card image cap">
+										</div>
+										<div class="card-body">
+											<h4 class="card-title">Rencana Kerja (RENJA)</h4>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
 		<!-- <div class="media-container-row ">
 			<div class="row align-left">
 				<div class="col-md-6 ">
@@ -184,7 +186,7 @@
 		<!-- <div class="media-container-row ">
 			<div class="row">
 				<div class="col-sm-6 "> -->
-		<!-- ======== -->
+					<!-- ======== -->
 		<!-- <a class="text-dark js-scroll-trigger" href="#dokumen" onclick="link_dokumen(100)">
 						<div class="card">
 							<div class="card-horizontal">
@@ -197,7 +199,7 @@
 							</div>
 						</div>
 					</a> -->
-		<!-- ======== -->
+					<!-- ======== -->
 		<!-- </div>
 				<div class="col-md-6 ">
 					<a class="text-dark js-scroll-trigger" href="#dokumen" onclick="link_dokumen(100)">
@@ -326,14 +328,28 @@
 </style>
 
 <script>
-	function link_dokumen(id) {
+	function link_dokumen_renstra(id) {
 		$("#dokumen").show();
 		$("#footer").show();
 
 		// window.location.href = '<?= base_url('dokumen?key=') ?>'+id;
 		$("#iframe_dokumen").each(function() {
 			// $(this).attr("src", $(this).data("src"));
-			$(this).attr("src", '<?= base_url('dokumen?key=') ?>' + id);
+			$(this).attr("src", '<?= base_url('dokumen/renstra?key=') ?>' + id);
+		});
+
+	}
+</script>
+
+<script>
+	function link_dokumen_renja(id) {
+		$("#dokumen").show();
+		$("#footer").show();
+
+		// window.location.href = '<?= base_url('dokumen?key=') ?>'+id;
+		$("#iframe_dokumen").each(function() {
+			// $(this).attr("src", $(this).data("src"));
+			$(this).attr("src", '<?= base_url('dokumen/renja?key=') ?>' + id);
 		});
 
 	}

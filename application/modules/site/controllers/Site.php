@@ -85,7 +85,7 @@ class Site extends MX_Controller {
 			$listProfiles = $this->db->query("SELECT t_berita.*
 
 				FROM t_berita 
-			    -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
+				-- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
 			    -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
 			    WHERE t_berita.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC LIMIT 4");
 			// var_dump($listProfiles);
@@ -115,11 +115,60 @@ class Site extends MX_Controller {
 			}
 
 			$data["berita3"] = $arrProfile;
-			// var_dump($datae);
+			// var_dump($listProfiles);
+			// echo json_encode($arr);
+		// die();
 			// die();
 
 
 // ================= akhir berita
+
+
+// ================= mitra
+
+			$listProfiles = $this->db->query("SELECT t_mitra.*
+
+				FROM t_mitra 
+				-- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
+			    -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
+			    WHERE t_mitra.status = 'show'   ORDER BY tgl_jam DESC ");
+			// var_dump($listProfiles);
+			            	// die();
+
+			$arrProfile = [];
+			$arr = [];
+			foreach ($listProfiles->result_array() as $key => $row) {
+
+				$result = $this->db->query("SELECT * FROM t_mitra WHERE id_mitra=" . $row['id_mitra'] . "")->result_array();
+			            	// var_dump($result);
+			            	// die();
+				if ($result) {
+
+					$arr = array(
+						"id_mitra" => $row["id_mitra"],
+						// "id_kategori" => $row["id_kategori"],
+						"nama_mitra" => $row["nama_mitra"],
+						"link_mitra" => $row["link_mitra"],
+						// "isi_berita" => $this->batas($row["isi_berita"], 100),
+			                    // "nama_admin"  =>  $row["nama_admin"],
+			                    // "publish" => $row["publish"],
+						"tgl_jam" => $row["tgl_jam"],
+						"path_gambar_mitra" => $result
+					);
+					array_push($arrProfile, $arr);
+				}
+			}
+
+			$data["mitra"] = $arrProfile;
+			// var_dump($listProfiles);
+			// echo json_encode($arr);
+		// die();
+			// die();
+
+
+// ================= akhir mitra
+
+
 
 // ================= Slider banner
 			$data['sliderbanner2'] = $this->db->query("SELECT * FROM t_detail_banner")->result();
@@ -213,7 +262,8 @@ class Site extends MX_Controller {
 				FROM t_foto_galery 
 				JOIN t_detail_foto_galery ON t_foto_galery.id_galery = t_detail_foto_galery.id_foto_galery
 			                                        -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
-			                                        WHERE t_foto_galery.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC limit 4")->result_array();
+			                                        WHERE t_foto_galery.status = 'show' AND trash='0' GROUP BY id_galery  ORDER BY tgl_jam DESC limit 4 ")->result_array();
+			
 
 // var_dump($data7);
 // die();
@@ -244,7 +294,7 @@ public function detail($id)
 		FROM t_berita 
 			    -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
 			    -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
-			    WHERE t_berita.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC LIMIT 4");
+			    WHERE t_berita.status = 'show' AND trash='0' GROUP BY id_berita ORDER BY tgl_jam DESC LIMIT 4");
 			// var_dump($listProfiles);
 			            	// die();
 
@@ -252,7 +302,7 @@ public function detail($id)
 	$arr = [];
 	foreach ($listProfiles->result_array() as $key => $row) {
 
-		$result = $this->db->query("SELECT *, MIN(urutan)AS urutan FROM t_foto_berita WHERE id_berita=" . $row['id_berita'] . "")->result_array();
+		$result = $this->db->query("SELECT * FROM t_foto_berita WHERE id_berita=" . $row['id_berita'] . "")->result_array();
 			            	// var_dump($result);
 			            	// die();
 		if ($result) {

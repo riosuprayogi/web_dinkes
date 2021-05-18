@@ -126,7 +126,10 @@ columns: [
 
 <!-- ==============================berita diklat -->
 
-<section  id="icon-formulir" class="cid-icon-formulir"  data-rv-view="1620"  data-aos="fade-right" style="background-color: white; height: 100%">
+
+
+
+<section  id="icon-formulir"   data-aos="fade-right" style="background-color: white; height: 100%">
 
 
 
@@ -140,15 +143,15 @@ columns: [
 </div> -->
 <div class="container">
     <div class="">
-        <div class="title col-lg-12">
-         <div class="card-img">
-            <img class="logo-video" src="<?= base_url('assets/media/image/diklat.png') ?>" alt="" style="padding-top: 30px; margin-bottom:30px ; width: 200px">
+        <div class="title col-lg-12 col-md-12 col-sm-12">
+            <div class="card-img">
+                <img width="2%" class="logo-video" src="<?php echo base_url(); ?>assets/media/image/diklat.png" alt="" style=" width: 30%; margin-top: 20px; margin-bottom: 20px">
+            </div>
         </div>
-    </div>
-    <div class="" data-flickity='{ "wrapAround": true, "autoPlay":1500, "pageDots": false }'>
-        <?php foreach ($t_diklat as $f) :
-            $string = strip_tags($f["isi_diklat"]);
-            if (strlen($string) > 1000) {
+        <div class="" data-flickity='{ "wrapAround": true, "autoPlay":1500, "pageDots": false }'>
+            <?php foreach ($t_diklat as $f) :
+              $string = strip_tags($f["isi_diklat"]);
+              if (strlen($string) > 1000) {
 
                 // truncate string
                 $stringCut = substr($string, 0, 1000);
@@ -159,59 +162,55 @@ columns: [
                 // $string .= '... <a href="/this/story">Read More</a>';
             }
             ?>
-            <div class="col-md-4 col-sm-4">
-                <div class="" style=" overflow: hidden; margin-bottom: 10px;  padding-right: 10px; ">
-                    <div class="" style="width: 19rem; height: 500px; overflow: hidden; background-color: transparent;">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <!-- <div class="" style=" overflow: hidden; margin-bottom: 10px;  padding-right: 10px; background-color: red" > -->
+                    <div class="img-responsive  " style="width: 100%; height: 500px; overflow: hidden; background-color: transparent;">
                         <a href="<?= base_url('diklat/detail/' . $f["id_diklat"]) ?>" style="text-decoration: none; color: #000000; height: 30%">
                             <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
 
-                                <?php if (count($f["path_foto_diklat"]) > 0) {
-                                    foreach ($f["path_foto_diklat"] as $k) {
-                                      ?>
-                                      <img src="<?= base_url('assets/backend/img/img_diklat/' . $k["path_foto_diklat"]) ?>"  width="100%" height="300px" alt=''>
-                                      <?php
-                                  }
-                              }else{ ?>
-                                 <img src="<?= base_url('assets/img/banner/Dinkes_LOGO.png') ?>"  width="100%" height="300px">
-                              <!--  <div class="rny-thumb" style="background: url('https://i.ytimg.com/vi/<?php echo getidyoutube($v->link_video); ?>/hqdefault.jpg');height: 100px;background-size: cover;">
-                              </div> -->
-                          <?php } ?>
+                             <?php if (count($f["path_foto_diklat"]) > 0) {
+                                foreach ($f["path_foto_diklat"] as $k) {
+                                  ?>
+                                  <img class="cv" src="<?= base_url('assets/backend/img/img_diklat/' . $k["path_foto_diklat"]) ?>"   height="250px" width="100%">
+                                  <?php
+                              }
+                          } ?>
                           <div class="card-body">
-                            <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
-                            <b><?= $f["nama_diklat"] ?></b>
-
-                            <p style="margin-top: 10px"><?= $string?>...<a href="<?= base_url('diklat/detail/' . $f["id_diklat"]) ?>"> Baca Selanjutnya</a>
-
+                            <p ><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
+                            <b class="cv"><?= $f["nama_diklat"] ?></b>
+                            <p class="cv" style="margin-top: 10px"><?= $string?><a href="<?= base_url('diklat/detail/' . $f["id_diklat"]) ?>">Baca Selanjutnya</a>
                             </p>
-
                         </div>
-
                         <!-- <br> -->
                     </a>
                     <span><br><br>
 
-                     <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
-                     <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
-                 </span>
-             </div>
+                       <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
+                       <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
+                   </span>
+               </div>
 
-             <!-- <div class="card-content"> -->
+               <!-- <div class="card-content"> -->
                 <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
                 <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
                 <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
                     <!-- <i style="background-color: blue" ></i> Lihat Video -->
-                </a></center>
-                <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-                <!-- </div> -->
+                    <!-- </a></center> -->
+                    <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+                    <!-- </div> -->
 
-                <!-- </div> -->
-            </div>
+                    <!-- </div> -->
+                    <!-- </div> -->
+                </div>
+            <?php endforeach; ?>
         </div>
-    <?php endforeach; ?>
-</div>
-</div>
+    </div>
 </div>
 </section>
+
+
+
+
 
 
 <!-- ==============================Akhir Berita diklat -->

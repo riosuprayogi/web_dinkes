@@ -390,9 +390,9 @@
 
                     <div class="row">
                         <div class="container">
-                         <div class="" style="padding-top: -100px"><center>
+                           <div class="" style="padding-top: -100px"><center>
                             <div style="width: 450px; padding-left: 10px">
-                             <!-- <div class="col-md-6 offset-lg-2 col-sm-12"> -->
+                               <!-- <div class="col-md-6 offset-lg-2 col-sm-12"> -->
 
                                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" >
                                     <ol class="carousel-indicators">
@@ -586,7 +586,7 @@
     <section class="featured"  data-aos="fade-right">
         <div class="container mb-3 mt-4">
             <div class="row">
-             <div class="col-12 text-center">
+               <div class="col-12 text-center">
                 <?php foreach ($berita4 as $ka) : ?>
                     <!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
                 <?php endforeach; ?>
@@ -618,14 +618,14 @@
 
 
                 ?>
-                <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                     <!-- <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;"> -->
 
                         <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: white; ">
                             <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
                                 <a href="<?= base_url('diklat/detail/' . $f["id_diklat"]) ?>" style="text-decoration: none; color: #000000">
 
-                                   <?php if (count($f["path_foto_diklat"]) > 0) {
+                                 <?php if (count($f["path_foto_diklat"]) > 0) {
                                     foreach ($f["path_foto_diklat"] as $k) {
                                       ?>
                                       <img src="<?= base_url('assets/backend/img/img_diklat/' . $k["path_foto_diklat"]) ?>"  width="100%" height="250px">

@@ -1,6 +1,33 @@
 <!-- <link rel="stylesheet" href="<?php echo base_url();?>assets/home2/mobirise/css/mbr-additional_ppid.css" type="text/css"> -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<!-- <link href="<?php echo base_url('assets/home/css/hover.css')?>" rel="stylesheet"> -->
+<link href="<?php echo base_url('assets/home/css/hover2.css')?>" rel="stylesheet">
+<link href="<?php echo base_url('assets/home/css/hover3.css')?>" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
+<script type="text/javascript" src="<?php echo base_url('assets/js/custom.js')?>"></script>
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<!-- <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"> -->
+<!-- https://npmcdn.com/flickity@2/dist/flickity.pkgd.js -->
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<!-- flickity -->
+<!-- <link href="<?php echo base_url('assets/home/css/styleslider.css')?>" rel="stylesheet"> -->
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.css">
+<!-- <script type="text/javascript" src="<?php echo base_url('assets/js/script.js')?>"></script> -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
+<!-- <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+<script>   
+	AOS.init(); 
+</script>
 <style>
+	<style>
 	.icon{
 		width: 150px !important;
 	}
@@ -266,6 +293,7 @@
 
 							<!-- <img src="<?php echo base_url('assets/media/image/3c9ebd92d3002b6a09d5b05a0a378bbc.png') ?>" media-simple="true" style="width: 100%;"> -->
 
+
 							<?php foreach ($struktur3 as $f) : ?>
 								<div class="col-md-12 col-sm-12    ">
 									<div class="carousel-cell" style="">
@@ -276,7 +304,7 @@
 													<?php if (count($f["isi"]) > 0) {
 														foreach ($f["isi"] as $k) {
 															?>
-															<a href="<?= base_url('assets/media/image/' . $k["isi"]) ?>" target="__blank">
+															<a  class="btn  btn-lg" data-toggle="modal" data-target="#myModal">
 																<img style="width:100% " src="<?= base_url('assets/media/image/' . $k["isi"]) ?>"   height="100%">
 															</a>
 															<?php
@@ -290,7 +318,49 @@
 								</div>
 							</section>
 
+							<section>
+								<center>
+									<!-- <h1>Cara Membuat Pop Up Gambar dengan Bootstrap</h1> -->
+									<!-- <a type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+										<img src="gambar.jpg" alt="" class="img-responsive">asda
+									</a> -->
 
+									<!-- Modal -->
+									<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+										<div class="modal-dialog modal-xl" role="document" >
+											<div class="modal-content" >
+												<div class="modal-header">
+													<!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+													<h4 class="modal-title" id="myModalLabel">STRUKTUR ORGANISASI</h4>
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+												</div>
+												<div class="modal-body">
+													<center>
+														<?php foreach ($struktur3 as $f) : ?>	
+															<?php if (count($f["isi"]) > 0) {
+																foreach ($f["isi"] as $k) {
+																	?>
+																	<a  class="btn  btn-lg" data-toggle="modal" data-target="#myModal">
+																		<img style="width:57%" src="<?= base_url('assets/media/image/' . $k["isi"]) ?>"   height="90%">
+																	</a>
+																	
+																	<img src="gambar.jpg" alt="" class="img-responsive">
+																</center>
+															</div>
+															<div class="modal-footer">
+																<a class="btn btn-primary" href="<?= base_url('profil_opd/downloadimg/' . $k["isi"]) ?>">
+																DOWNLOAD</a>
+																<button href="<?= base_url('profil_opd/downloadimg/' . $k["isi"]) ?>" type="button" class="btn btn-default" data-dismiss="modal">Close</button>	
+															</div>
+															<?php
+														}
+													} ?>
+												<?php endforeach; ?>
+											</div>
+										</div>
+									</div>
+								</center>
+							</section>
 
 							<style>
 								#ppid{
@@ -615,8 +685,6 @@
 </div>
 </SECTION>
 
-
-
 <section id="footer" style="display:none;">
 
 </section>
@@ -646,7 +714,7 @@
 	}
 </style>
 
-<script>
+<!-- <script>
 	function link_dokumen(id){
 		$("#dokumen").show();
 		$("#footer").show();
@@ -660,4 +728,4 @@
 	}
 
 
-</script>
+</script> -->

@@ -12,6 +12,7 @@ class Profil_opd extends MX_Controller {
 		$this->load->helper('admin');
 		// $this->load->library('encrypt');
 		$this->load->library('session');
+		$this->load->helper('download');
 		$this->load->library('cart');
 		$this->load->library('curl');
 		$this->load->model('profil_opd/Profil_opd_model', 'main_model2', TRUE);
@@ -20,6 +21,51 @@ class Profil_opd extends MX_Controller {
 
 	public function index()
 	{
+
+		
+// ================= mitra
+
+		$listProfiles = $this->db->query("SELECT t_mitra.*
+
+			FROM t_mitra 
+				-- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
+			    -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
+			    WHERE t_mitra.status = 'show'   ORDER BY tgl_jam DESC ");
+			// var_dump($listProfiles);
+			            	// die();
+
+		$arrProfile = [];
+		$arr = [];
+		foreach ($listProfiles->result_array() as $key => $row) {
+
+			$result = $this->db->query("SELECT * FROM t_mitra WHERE id_mitra=" . $row['id_mitra'] . "")->result_array();
+			            	// var_dump($result);
+			            	// die();
+			if ($result) {
+
+				$arr = array(
+					"id_mitra" => $row["id_mitra"],
+						// "id_kategori" => $row["id_kategori"],
+					"nama_mitra" => $row["nama_mitra"],
+					"link_mitra" => $row["link_mitra"],
+						// "isi_berita" => $this->batas($row["isi_berita"], 100),
+			                    // "nama_admin"  =>  $row["nama_admin"],
+			                    // "publish" => $row["publish"],
+					"tgl_jam" => $row["tgl_jam"],
+					"path_gambar_mitra" => $result
+				);
+				array_push($arrProfile, $arr);
+			}
+		}
+
+		$data["mitra"] = $arrProfile;
+			// var_dump($listProfiles);
+			// echo json_encode($arr);
+		// die();
+			// die();
+
+
+// ================= akhir mitra
 		$data['gambaranumum'] = $this->main_model2->get_isi('gambaran_umum');
 		$data['ruanglingkup'] = $this->main_model2->get_isi('ruang_lingkup');
 		// $data['struktur1'] = $this->main_model2->get_isi_struktur('struktur1');
@@ -66,6 +112,11 @@ class Profil_opd extends MX_Controller {
 		$this->template->render_home('profil_opd/frontend/index', $data);
 	}
 
+
+	public function downloadimg($id)
+	{
+		force_download('assets/media/image/'.$id, null);
+	}
 
 	public function ajax_tree2(){
 		$id = $this->input->get('key');

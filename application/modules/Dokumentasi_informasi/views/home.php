@@ -18,7 +18,7 @@
 
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
 <script>   
-   AOS.init(); 
+ AOS.init(); 
 </script>
 <style>
     .footer {
@@ -387,6 +387,20 @@
                 text-align: center;
             }
         </style>
+        <style >
+            @media (max-width: 1000px) {
+                .mitrastyle{
+                    height: 100px;
+                    width: 90%;
+                }
+            }
+            @media (max-width: 580px) {
+                .mitrastyle{
+                    height: 100px;
+                    width: 60%;
+                }
+            }
+        </style>
 
 <!-- <style>
     #ppid::after {
@@ -424,7 +438,7 @@
                         if ($k == '0') :
                             ?>
                             <div class="rny-vid-container">
-                                <iframe id="rny_vid_frame" src="<?= $v->link_video?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
+                                <iframe class="img-responsive img-thumbnail" id="rny_vid_frame" src="<?= $v->link_video?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
                             </div>
                         <?php endif;
                     endforeach;
@@ -442,16 +456,16 @@
                                     </div>
                                     <div class="desc" style="text-align: center;">
                                         <a href="javascript:void" title="<?php echo text($v->nama_video); ?>" style="font-weight: 700;font-size:14px;color: #000">
-                                           <?php echo text(readMore($v->nama_video, 35)); ?> 
-                                       </a>
-                                   </div>
-                               </div>
-                           <?php endforeach; ?>
-                       </div>
-                   </div>
+                                         <?php echo text(readMore($v->nama_video, 35)); ?> 
+                                     </a>
+                                 </div>
+                             </div>
+                         <?php endforeach; ?>
+                     </div>
+                 </div>
 
-                   <!-- LEFT AND RIGHT ARROWS -->
-                   <div class="rny-arrows">
+                 <!-- LEFT AND RIGHT ARROWS -->
+                 <div class="rny-arrows">
                     <div class="rny-arrow-left"><i class="fa fa-chevron-left fa-lg"></i></div>
                     <div class="rny-arrow-right"><i class="fa fa-chevron-right fa-lg"></i></div>
                 </div>
@@ -474,75 +488,144 @@
             <div class="container">
                 <div class="row">
                     <!--Titles-->
-                    <div class="title col-12">
-                        <div class="card-img">
-                            <!-- <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;"> -->
-                            <!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;"> -->
-                                <!-- <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_galeri.png" alt=""> -->
-                                <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_galeri.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
-                                <!-- </div> -->
-                            </div>
-                        </div>
-                        <!--Right-->
-                        <div class="col-12 col-md-12">
-                            <?php
-                            foreach ($galeri4 as $k => $v) :
-                                if ($k == '0') :
-                                    ?>
-                                    <div class="rny-vid-container-humas">
-                                        <!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
-                                        <img  id="rny_vid_frame-humas"  src="<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>" height="550 ">
-                                        <!-- <img   src="<?= base_url('assets/backend/img/img_galery/12a065cc7f036251dad165ea9f353394.jpeg') ?>" > -->
-                                    </div>
-                                <?php endif;
-                            endforeach;
-                            ?>
 
-                       <!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
-                            <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_humas.png" alt="">
-                        </div> -->
+                    <!--Right-->
+                    <div class="title col-md-12 col-sm-12">
+                        <div class="card-img">
+                            <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_galeri.png" alt="" style="    padding-left: 60px; padding-bottom: 40px;">
+                        </div>
+
+                        <?php
+                        foreach ($galeri4 as $k => $v) :
+                            if ($k == '0') :
+                                ?>
+                                <div class="">
+                                    <!-- <iframe id="rny_vid_frame" src="<?= $v->link_video?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
+                                    <img style="padding-top: -90px; max-height: 600px; min-height: 320px;" class="img-responsive img-thumbnail"  id="rny_vid_frame-humas"  src="<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>" width="590" height="815">
+                                </div>
+                            <?php endif;
+                        endforeach;
+                        ?>
+
+                        <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
+                            <!-- <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_tngtv.png" alt=""> -->
+                        </div>
 
                         <div class="rny-vid-list-container-humas">
                             <div class="rny-vid-list-humas">
                                 <?php foreach ($galeri4 as $k => $v) : ?>
                                     <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame-humas').src='<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>'">
                                         <div class="rny-thumb" style="height: 100px;background-size: cover;">
-                                            <img   src="<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>" >
+                                            <img  style="height: 150px" src="<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>"  >
                                         </div>
                                         <div class="desc" style="text-align: center;">
-                                            <a href="javascript:void"  style="font-weight: 700;font-size:14px;color: #000">
-                                                <?php echo text(readMore($v['ket_foto'], 35)); ?>
-                                            </a>
-                                        </div>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
+                                            <a href="javascript:void" title="<?php echo text($v['ket_foto']); ?>" style="font-weight: 700;font-size:14px;color: #000">
+                                             <?php echo text(readMore($v['ket_foto'], 35)); ?>
+                                         </a>
+                                     </div>
+                                 </div>
+                             <?php endforeach; ?>
+                         </div>
+                     </div>
 
-                        <!-- LEFT AND RIGHT ARROWS -->
-                        <div class="rny-arrows">
-                            <div class="rny-arrow-left-humas"><i class="fa fa-chevron-left fa-lg"></i></div>
-                            <div class="rny-arrow-right-humas"><i class="fa fa-chevron-right fa-lg"></i></div>
-                        </div>
-
+                     <!-- LEFT AND RIGHT ARROWS -->
+                     <div class="rny-arrows">
+                        <div class="rny-arrow-left-humas"><i class="fa fa-chevron-left fa-lg"></i></div>
+                        <div class="rny-arrow-right-humas"><i class="fa fa-chevron-right fa-lg"></i></div>
                     </div>
+                    <hr>
                 </div>
             </div>
-
         </div>
+
     </div>
-    <!-- ===================== -->
+</div>
+<!-- ===================== -->
 
 
 
 
-    <!-- ===================== -->
-    <!--Right-->
+<!-- ===================== -->
+<!--Right-->
 
 </section>
 
-<!-- ==============================FOto -->
-<!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right"> -->
+
+<section  id="icon-formulir"   data-aos="fade-right" style="background-color:; height: 100%; align-content: center;">
+
+
+
+
+<!-- <div class="container">
+    <div class="row">
+      <div class="">
+        <h2>Video Baznas</h2>
+      </div>
+    </div>
+</div> --><center>
+    <div class="container">
+        <div class="title col-lg-12 col-md-12 col-sm-12">
+            <div class="card-img">
+                <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-top: -10px">
+            </div>
+        </div>
+        <div class="" data-flickity='{ "wrapAround": false, "autoPlay":1500, "pageDots": false }' style="width: 80%">
+            <?php foreach ($mitra as $f) :
+                // $string = strip_tags($f["isi_mitra"]);
+                // if (strlen($string) > 1000) {
+
+                // truncate string
+                    // $stringCut = substr($string, 0, 1000);
+                    // $endPoint = strrpos($stringCut, ' ');
+
+                //if the string doesn't contain any space then it will cut without word basis.
+                    // $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+                // $string .= '... <a href="/this/story">Read More</a>';
+            // }
+                ?>
+                <div class="col-md-2 col-sm-6 col-xs-12" style="background-color: transparent;">
+                    <!-- <div class="" style=" overflow: hidden; margin-bottom: 10px;  padding-right: 10px; background-color: red" > -->
+                        <!-- <div class="" style="width: 100%;  overflow: hidden; background-color: red;"> -->
+                            <a href="<?= ($f["link_mitra"]) ?>" style="text-decoration: none; color: #000000;">
+                                <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
+
+                                    <?php if (count($f["path_gambar_mitra"]) > 0) {
+                                        foreach ($f["path_gambar_mitra"] as $k) {
+                                          ?>
+                                          <img class="mitrastyle" src="<?= base_url('assets/backend/img/img_berita/' . $k["path_gambar_mitra"]) ?>"   height="100px" width="30%">
+                                          <?php
+                                      }
+                                  } ?>
+
+                                  <!-- <br> -->
+                              </a>
+                              <span><br><br>
+
+                                 <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
+                                 <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
+                             </span>
+                             <!-- </div> -->
+
+                             <!-- <div class="card-content"> -->
+                                <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
+                                <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+                                <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
+                                    <!-- <i style="background-color: blue" ></i> Lihat Video -->
+                                    <!-- </a></center> -->
+                                    <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+                                    <!-- </div> -->
+
+                                    <!-- </div> -->
+                                    <!-- </div> -->
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </center>   
+            </section>
+
+            <!-- ==============================FOto -->
+            <!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right"> -->
 
 
 
@@ -1229,11 +1312,11 @@
             </div>
         </div>
         <div class="media-container-row align-center">
-            <div class="col-md-6">
+          <!--   <div class="col-md-6">
                 <a href="javascript:void(0)" data-toggle="modal" data-target="#exampleModal" class="text-reset">
                     <img src="<?php echo base_url(); ?>assets/img/banner/Logo-Skpd.png" style="width:60%; margin:auto;" alt="" media-simple="true">
                 </a>
-            </div>
+            </div> -->
             <div class="col-md-6">
                 <a target="_blank" href="<?= 'https://play.google.com/store/apps/details?id=id.go.tangerangkota.tangeranglive' ?>">
                     <img src="<?php echo base_url(); ?>assets/img/banner/Logo-Laksa.png" style="width:60%; margin:auto;" alt="" media-simple="true">
@@ -1300,55 +1383,6 @@
     </div>
 </div>
 
-<div class="modal fade" id="strukturModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog    modal-lg" role="document">
-        <div class="modal-content" style="overflow:auto;">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Struktur</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-12">
-                        <?php foreach ($struktur as $row) { ?>
-                            <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" class="img-fluid" style="width: 100%;">
-                        <?php } ?>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Tutup</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="perwalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog    modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Keperwal</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-12">
-                        <?php foreach (@$kepwal as $row) { ?>
-                            <iframe style="height:450px; width:100%; overflow:x-hidden;" src="<?php echo base_url('assets/media/image/') . $row->isi ?>" frameborder="0"></iframe>
-                        <?php } ?>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Tutup</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 
