@@ -23,7 +23,7 @@
 <!-- <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
 <script>   
-   AOS.init(); 
+ AOS.init(); 
 </script>
 <style>
     .footer {
@@ -319,8 +319,8 @@
 
         /*.caption {
 				margin-top: 40px;
-               }*/
-               .vid-list-container {
+             }*/
+             .vid-list-container {
                 padding-bottom: 20px;
             }
 
@@ -539,8 +539,8 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                             foreach ($f["path_foto_banner"] as $k) {
                               ?>
                               <div class="col">
-                                 <img style="z-index:1; margin-top: 72px; position: relative; background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="600px"> </div> -->
-                                 <!-- <img class="tes3" src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" > </div> -->
+                               <img style="z-index:1; margin-top: 72px; position: relative; background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="600px"> </div> -->
+                               <!-- <img class="tes3" src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" > </div> -->
                                  <!--  <?php
                               }
                           } ?>
@@ -642,7 +642,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 <!-- <section class="featured" style="background-color: white;" data-aos="fade-right">
     <div class="container mb-3 mt-4">
         <div class="row">
-           <div class="col-12 text-center"> -->
+         <div class="col-12 text-center"> -->
             <!-- <?php foreach ($berita3 as $ka) : ?> -->
             <!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
             <!-- <?php endforeach; ?> -->
@@ -761,7 +761,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                         <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000; height: 30%">
                             <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
 
-                               <?php if (count($f["path_foto_artikel"]) > 0) {
+                             <?php if (count($f["path_foto_artikel"]) > 0) {
                                 foreach ($f["path_foto_artikel"] as $k) {
                                   ?>
                                   <img class="cv" src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"   height="250px">
@@ -778,12 +778,12 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                     </a>
                     <span><br><br>
 
-                     <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
-                     <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
-                 </span>
-             </div>
+                       <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
+                       <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
+                   </span>
+               </div>
 
-             <!-- <div class="card-content"> -->
+               <!-- <div class="card-content"> -->
                 <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
                 <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
                 <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
@@ -1325,16 +1325,16 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                             </div>
                             <div class="desc" style="text-align: center;">
                                 <a href="javascript:void" title="<?php echo text($v['nama_album']); ?>" style="font-weight: 700;font-size:14px;color: #000">
-                                 <?php echo text(readMore($v['nama_album'], 35)); ?>
-                             </a>
-                         </div>
-                     </div>
-                 <?php endforeach; ?>
-             </div>
-         </div>
+                                   <?php echo text(readMore($v['nama_album'], 35)); ?>
+                               </a>
+                           </div>
+                       </div>
+                   <?php endforeach; ?>
+               </div>
+           </div>
 
-         <!-- LEFT AND RIGHT ARROWS -->
-         <div class="rny-arrows">
+           <!-- LEFT AND RIGHT ARROWS -->
+           <div class="rny-arrows">
             <div class="rny-arrow-left-humas"><i class="fa fa-chevron-left fa-lg"></i></div>
             <div class="rny-arrow-right-humas"><i class="fa fa-chevron-right fa-lg"></i></div>
         </div>
@@ -1622,7 +1622,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                 <div class="col-md-4 col-sm-6 col-xs-12" style="background-color: transparent;">
                     <!-- <div class="" style=" overflow: hidden; margin-bottom: 10px;  padding-right: 10px; background-color: red" > -->
                         <!-- <div class="" style="width: 100%;  overflow: hidden; background-color: red;"> -->
-                            <a href="<?= ($f["link_mitra"]) ?>" style="text-decoration: none; color: #000000;">
+                            <a target="__blank" href="<?= ($f["link_mitra"]) ?>" style="text-decoration: none; color: #000000;">
                                 <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
 
                                     <?php if (count($f["path_gambar_mitra"]) > 0) {
@@ -1637,28 +1637,28 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                               </a>
                               <span><br><br>
 
-                                 <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
-                                 <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
-                             </span>
-                             <!-- </div> -->
+                               <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
+                               <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
+                           </span>
+                           <!-- </div> -->
 
-                             <!-- <div class="card-content"> -->
-                                <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
-                                <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-                                <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
-                                    <!-- <i style="background-color: blue" ></i> Lihat Video -->
-                                    <!-- </a></center> -->
-                                    <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-                                    <!-- </div> -->
+                           <!-- <div class="card-content"> -->
+                            <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
+                            <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+                            <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
+                                <!-- <i style="background-color: blue" ></i> Lihat Video -->
+                                <!-- </a></center> -->
+                                <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+                                <!-- </div> -->
 
-                                    <!-- </div> -->
-                                    <!-- </div> -->
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
+                                <!-- </div> -->
+                                <!-- </div> -->
+                            </div>
+                        <?php endforeach; ?>
                     </div>
-                </center>   
-            </section>
+                </div>
+            </center>   
+        </section>
 
 
 
