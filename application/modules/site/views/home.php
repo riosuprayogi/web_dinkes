@@ -1605,7 +1605,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                 <img class="logo-video mitrastyle" src="<?php echo base_url(); ?>assets/tangerangkota/images/mitra_kerja.png" alt="" style="padding-top: -10px; width: 30%; padding-bottom: 40px;">
             </div>
         </div>
-        <div class="" data-flickity='{ "wrapAround": false, "autoPlay":1500, "pageDots": false }' style="width: 80%">
+        <div class="" data-flickity='{ "wrapAround": true, "autoPlay":1500, "pageDots": false }' style="width: 80%">
             <?php foreach ($mitra as $f) :
                 // $string = strip_tags($f["isi_mitra"]);
                 // if (strlen($string) > 1000) {
@@ -1619,7 +1619,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                 // $string .= '... <a href="/this/story">Read More</a>';
             // }
                 ?>
-                <div class="col-md-2 col-sm-6 col-xs-12" style="background-color: transparent;">
+                <div class="col-md-4 col-sm-6 col-xs-12" style="background-color: transparent;">
                     <!-- <div class="" style=" overflow: hidden; margin-bottom: 10px;  padding-right: 10px; background-color: red" > -->
                         <!-- <div class="" style="width: 100%;  overflow: hidden; background-color: red;"> -->
                             <a href="<?= ($f["link_mitra"]) ?>" style="text-decoration: none; color: #000000;">
