@@ -1602,7 +1602,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
     <div class="container">
         <div class="title col-lg-12 col-md-12 col-sm-12">
             <div class="card-img">
-                <img class="logo-video mitrastyle" src="<?php echo base_url(); ?>assets/tangerangkota/images/mitra_kerja.png" alt="" style="padding-top: -10px; width: 35%; padding-bottom: 20px;">
+                <img class="logo-video mitrastyle" src="<?php echo base_url(); ?>assets/tangerangkota/images/mitra_kerja.png" alt="" style="padding-top: -10px; width: 30%; padding-bottom: 40px;">
             </div>
         </div>
         <div class="" data-flickity='{ "wrapAround": false, "autoPlay":1500, "pageDots": false }' style="width: 80%">
