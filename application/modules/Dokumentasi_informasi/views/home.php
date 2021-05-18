@@ -18,7 +18,7 @@
 
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
 <script>   
- AOS.init(); 
+   AOS.init(); 
 </script>
 <style>
     .footer {
@@ -456,16 +456,16 @@
                                     </div>
                                     <div class="desc" style="text-align: center;">
                                         <a href="javascript:void" title="<?php echo text($v->nama_video); ?>" style="font-weight: 700;font-size:14px;color: #000">
-                                         <?php echo text(readMore($v->nama_video, 35)); ?> 
-                                     </a>
-                                 </div>
-                             </div>
-                         <?php endforeach; ?>
-                     </div>
-                 </div>
+                                           <?php echo text(readMore($v->nama_video, 35)); ?> 
+                                       </a>
+                                   </div>
+                               </div>
+                           <?php endforeach; ?>
+                       </div>
+                   </div>
 
-                 <!-- LEFT AND RIGHT ARROWS -->
-                 <div class="rny-arrows">
+                   <!-- LEFT AND RIGHT ARROWS -->
+                   <div class="rny-arrows">
                     <div class="rny-arrow-left"><i class="fa fa-chevron-left fa-lg"></i></div>
                     <div class="rny-arrow-right"><i class="fa fa-chevron-right fa-lg"></i></div>
                 </div>
@@ -520,16 +520,16 @@
                                         </div>
                                         <div class="desc" style="text-align: center;">
                                             <a href="javascript:void" title="<?php echo text($v['ket_foto']); ?>" style="font-weight: 700;font-size:14px;color: #000">
-                                             <?php echo text(readMore($v['ket_foto'], 35)); ?>
-                                         </a>
-                                     </div>
-                                 </div>
-                             <?php endforeach; ?>
-                         </div>
-                     </div>
+                                               <?php echo text(readMore($v['ket_foto'], 35)); ?>
+                                           </a>
+                                       </div>
+                                   </div>
+                               <?php endforeach; ?>
+                           </div>
+                       </div>
 
-                     <!-- LEFT AND RIGHT ARROWS -->
-                     <div class="rny-arrows">
+                       <!-- LEFT AND RIGHT ARROWS -->
+                       <div class="rny-arrows">
                         <div class="rny-arrow-left-humas"><i class="fa fa-chevron-left fa-lg"></i></div>
                         <div class="rny-arrow-right-humas"><i class="fa fa-chevron-right fa-lg"></i></div>
                     </div>
@@ -551,7 +551,7 @@
 </section>
 
 
-<section  id="icon-formulir"   data-aos="fade-right" style="background-color:; height: 100%; align-content: center;">
+<section  id="icon-formulir"   data-aos="fade-right" style="background-color:white; height: 100%; align-content: center;">
 
 
 
@@ -566,7 +566,7 @@
     <div class="container">
         <div class="title col-lg-12 col-md-12 col-sm-12">
             <div class="card-img">
-                <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-top: -10px">
+                <img class="logo-video mitrastyle" src="<?php echo base_url(); ?>assets/tangerangkota/images/mitra_kerja.png" alt="" style="padding-top: -10px; width: 30%; padding-bottom: 40px;">
             </div>
         </div>
         <div class="" data-flickity='{ "wrapAround": false, "autoPlay":1500, "pageDots": false }' style="width: 80%">
@@ -592,7 +592,7 @@
                                     <?php if (count($f["path_gambar_mitra"]) > 0) {
                                         foreach ($f["path_gambar_mitra"] as $k) {
                                           ?>
-                                          <img class="mitrastyle" src="<?= base_url('assets/backend/img/img_berita/' . $k["path_gambar_mitra"]) ?>"   height="100px" width="30%">
+                                          <img class="mitrastyle" src="<?= base_url('assets/backend/img/img_mitra/' . $k["path_gambar_mitra"]) ?>"   height="100px" width="30%">
                                           <?php
                                       }
                                   } ?>
@@ -601,31 +601,31 @@
                               </a>
                               <span><br><br>
 
-                                 <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
-                                 <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
-                             </span>
-                             <!-- </div> -->
+                               <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
+                               <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
+                           </span>
+                           <!-- </div> -->
 
-                             <!-- <div class="card-content"> -->
-                                <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
-                                <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-                                <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
-                                    <!-- <i style="background-color: blue" ></i> Lihat Video -->
-                                    <!-- </a></center> -->
-                                    <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-                                    <!-- </div> -->
+                           <!-- <div class="card-content"> -->
+                            <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
+                            <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+                            <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
+                                <!-- <i style="background-color: blue" ></i> Lihat Video -->
+                                <!-- </a></center> -->
+                                <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+                                <!-- </div> -->
 
-                                    <!-- </div> -->
-                                    <!-- </div> -->
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
+                                <!-- </div> -->
+                                <!-- </div> -->
+                            </div>
+                        <?php endforeach; ?>
                     </div>
-                </center>   
-            </section>
+                </div>
+            </center>   
+        </section>
 
-            <!-- ==============================FOto -->
-            <!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right"> -->
+        <!-- ==============================FOto -->
+        <!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right"> -->
 
 
 
