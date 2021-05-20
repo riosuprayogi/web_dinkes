@@ -1,5 +1,22 @@
 
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<!-- <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"> -->
+<!-- https://npmcdn.com/flickity@2/dist/flickity.pkgd.js -->
 
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<!-- flickity -->
+<!-- <link href="<?php echo base_url('assets/home/css/styleslider.css')?>" rel="stylesheet"> -->
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.css">
+<!-- <script type="text/javascript" src="<?php echo base_url('assets/js/script.js')?>"></script> -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
+<!-- <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+<script>   
+ AOS.init(); 
+</script>
 <style>
     .footer {
         display: block;
@@ -41,6 +58,33 @@
         height: auto;
         margin-left: auto;
         margin-right: auto;
+        
+    }
+    .logo-video2 {
+        max-width: 30%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: 1000px) {
+        .logo-video2 {
+            max-width: 250px;
+        }
+    }
+    @media (max-width: 1200px) {
+        .cardberita {
+            width: 13.5rem;
+            font-size: 10px;
+        }
+    }
+    @media (max-width: 990px) {
+        .cardberita {
+            width: 16.5rem;
+            font-size: 15px
+        }
     }
 
     .logo-info {
@@ -294,8 +338,8 @@
 
         /*.caption {
 				margin-top: 40px;
-             }*/
-             .vid-list-container {
+               }*/
+               .vid-list-container {
                 padding-bottom: 20px;
             }
 
@@ -374,50 +418,115 @@
         }
     </style> -->
     <!-- <section class="py-5"></section> -->
+  <!--   <section data-aos="fade-right" style="text-align: center">
 
+        <center>
+            <div class="container">
+                <div class="row">
 
-    <section id="berita-section" class="services1 cid-news mbr-fullscreen" >
-        <div class="container" >
-            <div class="row">
-
-                <div class="col-md-12" >
-                    <div class="card-img" style="padding-left: 50px">
-                        <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-bottom: 10px;">
-
+                    <div class="col-md-12" >
+                        <div class="card-img" style="padding-left: 50px">
+                            <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-bottom: 10px;">
+                        </div>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay":2500,  "pageDots": false, "pauseAutoPlayOnHover": false }'>
+
+                            <?php foreach ($sliderbanner as $f) : ?>
 
 
 
-                    <div class="row">
-                        <div class="container">
-                           <div class="" style="padding-top: -100px"><center>
-                            <div style="width: 450px; padding-left: 10px">
-                               <!-- <div class="col-md-6 offset-lg-2 col-sm-12"> -->
-                                
 
-                                  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" >
-                                    <ol class="carousel-indicators">
+                                <?php if (count($f["path_foto_artikel"]) > 0) {
+                                    foreach ($f["path_foto_artikel"] as $k) {
+                                      ?>
+
+                                      <img style=" margin:auto; background-size: cover; background-position: center; width: 100% " src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"   height="600px" width="100%">
+                                      <?php
+                                  }
+                              } ?>
+
+
+
+
+                          <?php endforeach; ?>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </center>
+  </section> -->
+
+  <section id="berita-section" class="services1 cid-news mbr-fullscreen" data-aos="fade-right" >
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-12" >
+                <div class="card-img" style="padding-left: 50px">
+                    <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-bottom: 10px;">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay":2500,  "pageDots": false, "pauseAutoPlayOnHover": false }'>
+
+                    <?php foreach ($sliderdetailberita as $f) : ?>
+
+
+
+
+                        <?php if (count($f["path_foto_artikel"]) > 0) {
+                            foreach ($f["path_foto_artikel"] as $k) {
+                              ?>
+
+                              <img style=" margin:auto; background-size: cover; background-position: center; width: 100% " src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"   height="500px" width="100%">
+                              <?php
+                          }
+                      } ?>
+
+
+
+
+                  <?php endforeach; ?>
+              </div>
+          </div>
+      </div>
+
+
+                <!-- <div class="row">
+                    <div class="container">
+                       <div class="" style="padding-top: -100px"><center>
+                        <div style="width: 450px; padding-left: 10px"> -->
+                         <!-- <div class="col-md-6 offset-lg-2 col-sm-12"> -->
+
+
+                           <!--    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" >
+                                <ol class="carousel-indicators">
+                                    <?php foreach ($foto as $b => $value) : ?>
+                                        <?php if ($b == 0) : ?>
+                                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $b ?>" class="active"></li>
+                                            <?php else : ?>
+                                                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $b ?>"></li>
+                                            <?php endif; ?>
+                                        <?php endforeach; ?>
+                                    </ol>
+                                    <div class="carousel-inner">
                                         <?php foreach ($foto as $b => $value) : ?>
                                             <?php if ($b == 0) : ?>
-                                                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $b ?>" class="active"></li>
+                                                <div class="carousel-item active">
+                                                    <img src="<?= base_url('assets/backend/img/img_berita/' . $value->path_foto_artikel) ?>" class="d-block w-100" alt="Banner">
+                                                </div>
                                                 <?php else : ?>
-                                                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $b ?>"></li>
-                                                <?php endif; ?>
-                                            <?php endforeach; ?>
-                                        </ol>
-                                        <div class="carousel-inner">
-                                            <?php foreach ($foto as $b => $value) : ?>
-                                                <?php if ($b == 0) : ?>
-                                                    <div class="carousel-item active">
+                                                    <div class="carousel-item">
                                                         <img src="<?= base_url('assets/backend/img/img_berita/' . $value->path_foto_artikel) ?>" class="d-block w-100" alt="Banner">
                                                     </div>
-                                                    <?php else : ?>
-                                                        <div class="carousel-item">
-                                                            <img src="<?= base_url('assets/backend/img/img_berita/' . $value->path_foto_artikel) ?>" class="d-block w-100" alt="Banner">
-                                                        </div>
-                                                    <?php endif; ?>
-                                                <?php endforeach; ?>
-                                            </div>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
+                                        </div> -->
                                                <!--  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
                                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                     <span class="visually-hidden">Previous</span>
@@ -426,23 +535,23 @@
                                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                                     <span class="visually-hidden">Next</span>
                                                 </a> -->
-                                            </div>
+                                           <!--  </div>
 
                                         </div>
-                                    </center>
-                                </div>
-                                <hr>
-                                <br>
-                                <?php foreach ($detailBerita as $detail) : ?>
-                                    <span data-aos="fade-up">Publish <?= date('d M Y H:i:s', strtotime($detail->tgl_jam)) ?></span><br>
-                                    <h3 class="mt-3"><?= $detail->judul_berita; ?></h3>
-                                    <p style="text-align: justify-all;">
-                                        <?= $detail->isi_berita ?>
-                                    </p>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-                        <hr>
+                                    </center> -->
+                                    <!-- </div> -->
+                                    <hr>
+                                    <br>
+                                    <?php foreach ($detailBerita as $detail) : ?>
+                                        <span data-aos="fade-up">Publish <?= date('d M Y H:i:s', strtotime($detail->tgl_jam)) ?></span><br>
+                                        <h3 class="mt-3"><?= $detail->judul_berita; ?></h3>
+                                        <p style="text-align: justify-all;">
+                                            <?= $detail->isi_berita ?>
+                                        </p>
+                                    <?php endforeach; ?>
+                           <!--  </div>
+                           </div> -->
+                           <hr>
                 <!-- <div class="row">
                     <div class="col-md-12">
                         <div class="card-img">
@@ -584,76 +693,83 @@
 
 
 
-    <section class="featured"  data-aos="fade-right">
-        <div class="container mb-3 mt-4">
-            <div class="row">
-               <div class="col-12 text-center">
-                <?php foreach ($berita4 as $ka) : ?>
-                    <!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </div>
-    <!-- <div class="row"> -->
-        <h2><center> Artikel Terkait</center></h2> <br>
-        <!-- </div> -->
+    <!-- <section  id="icon-formulir"   data-aos="fade-right" style=" height: 100%">
+        <div class="container">
+            <div class="">
+                <div class="title col-lg-12 col-md-12 col-sm-12">
+                    <div class="card-img">
+                        <h2><center> Artikel Terkait</center></h2> <br>
+                    </div>
+                </div>
+                <div class="" data-flickity='{ "wrapAround": true, "pageDots": false }'>
+                    <?php foreach ($berita4 as $f) :
 
-        <div class="container info" >
-            <div class="row align-items-start" >
-              <?php 
-
-
-              foreach ($berita4 as $f) : 
-                  // strip tags to avoid breaking any html
-                $string = strip_tags($f["isi_berita"]);
-                if (strlen($string) > 100) {
-
-                // truncate string
-                    $stringCut = substr($string, 0, 100);
-                    $endPoint = strrpos($stringCut, ' ');
-
-                //if the string doesn't contain any space then it will cut without word basis.
-                    $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
-                // $string .= '... <a href="/this/story">Read More</a>';
-                }
-
-
-                ?>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <!-- <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;"> -->
-
-                        <div class="card berita" style="width: 16.5rem; height: 350px; overflow: hidden; margin-bottom: 50px; background-color: white; ">
-                            <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
-                               <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
-
+                        ?>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="img-responsive  " style="width: 100%; height: 370px; overflow: hidden; background-color: white;">
+                                <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000; height: 30%">
                                  <?php if (count($f["path_foto_artikel"]) > 0) {
                                     foreach ($f["path_foto_artikel"] as $k) {
                                       ?>
-                                      <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
+                                      <img class="cv" src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"   height="250px" width="100%">
                                       <?php
                                   }
                               } ?>
                               <div class="card-body">
-                                <!-- <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p> -->
-                                <b><center> <?= $f["judul_berita"] ?></center></b>
-
-                                <!-- <p><?= $string?> -->
-                                    <span><br><br>
-
-                                        <!-- <a style="margin-top: 0px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
-                                        <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
-                                    </span>
-                                </p>
-
+                                <center> <b class="cv"><?= $f["judul_berita"] ?></b></center>
                             </div>
-
-                            <!-- <br> -->
                         </a>
+                        <span><br><br>
+                        </span>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
     </div>
+</div>
+</section> -->
+
+
+
+
+<section class="featured"  data-aos="fade-right">
+    <div class="container">
+     <div class="row">
+        <div class="col-md-12" >
+            <div class="card-img" style="">
+                <img class="logo-video2" src="<?php echo base_url(); ?>assets/media/image/artikel_terkait.png" alt="" style="padding-bottom: 10px;">
+            </div>
+        </div>
+    </div>
+    <div class="container info" >
+        <div class="row align-items-start" >
+          <?php 
+          foreach ($berita4 as $f) : 
+            ?>
+            <div class="col-lg-3 col-xs-12 col-sm-12">
+                <!-- <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;"> -->
+                    <center>
+                        <div class="card berita img-responsive cardberita" style=" height: 350px; margin-bottom: 50px; background-color: white; ">
+                            <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
+
+                               <?php if (count($f["path_foto_artikel"]) > 0) {
+                                foreach ($f["path_foto_artikel"] as $k) {
+                                  ?>
+                                  <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
+                                  <?php
+                              }
+                          } ?>
+                          <div class="card-body">
+                            <b><center> <?= $f["judul_berita"] ?></center></b>
+                            <span><br><br>
+                            </span>
+                        </div>
+                    </a>
+                </div></center>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
 </section>
 
 
@@ -680,11 +796,11 @@
                       } ?> -->
                           <!-- <div class="col-md-12" >
                               <div class="card-body"  >
-                                <!-- <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p> -->
-                                <!-- <b><?= $f["judul_berita"] ?></b> -->
-                                <!-- <p><?= $f["isi_berita"] ?></p> -->
-                                <!-- </div> -->
-                                <!-- </div> -->
+                               <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p> -->
+                               <!-- <b><?= $f["judul_berita"] ?></b> -->
+                               <!-- <p><?= $f["isi_berita"] ?></p> -->
+                               <!-- </div> -->
+                               <!-- </div> -->
                            <!--  <br>
                         </a>
                     </div>

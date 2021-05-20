@@ -74,10 +74,10 @@ class Diklat extends MX_Controller
 		$data["t_diklat"] = $arrProfile;
 
 		$listProfiles = $this->db->query("SELECT t_diklat.*
-		FROM t_diklat
-		WHERE t_diklat.trash='0' 
-		ORDER BY t_diklat.tgl_jam DESC
-		");
+			FROM t_diklat
+			WHERE t_diklat.trash='0' 
+			ORDER BY t_diklat.tgl_jam DESC
+			");
 		$arrProfile = [];
 		$arr = [];
 		foreach ($listProfiles->result_array() as $key => $row) {
@@ -114,6 +114,51 @@ class Diklat extends MX_Controller
 
 	public function detail($id)
 	{
+
+		$data['foto'] = $this->db->query("SELECT t_diklat.*, t_foto_diklat.*
+			FROM t_diklat
+			JOIN t_foto_diklat ON t_diklat.id_diklat = t_foto_diklat.id_diklat
+			WHERE t_diklat.id_diklat = '$id' AND t_diklat.status = 'show'")->result();
+
+		$data["detailBerita"] = $this->db->query("SELECT * FROM t_diklat WHERE  status = 'show' AND id_diklat='$id'")->result();
+
+
+		$listProfiles = $this->db->query("SELECT t_diklat.*, t_foto_diklat.*
+
+			FROM t_diklat
+			    -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
+			    -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
+			    JOIN t_foto_diklat ON t_diklat.id_diklat = t_foto_diklat.id_diklat
+			    WHERE t_diklat.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC");
+			// var_dump($listProfiles);
+			            	// die();
+
+		$arrProfile = [];
+		$arr = [];
+		foreach ($listProfiles->result_array() as $key => $row) {
+
+			$result = $this->db->query("SELECT * FROM t_foto_diklat WHERE  id_diklat='$id'")->result_array();
+			            	// var_dump($result);
+			            	// die();
+			if ($result) {
+
+				$arr = array(
+					"id_diklat" => $row["id_diklat"],
+						// "id_kategori" => $row["id_kategori"],
+						// "judul_berita" => $row["judul_berita"],
+						// "isi_berita" => $this->batas($row["isi_berita"], 50),
+			                    // "nama_admin"  =>  $row["nama_admin"],
+			                    // "publish" => $row["publish"],
+					"tgl_jam" => $row["tgl_jam"],
+					"path_foto_diklat" => $result
+				);
+				array_push($arrProfile, $arr);
+			}
+		}
+
+		$data["sliderdetaildiklat"] = $arrProfile;
+			// var_dump($datae);
+			// die();
 		// ================= berita
 
 		$listProfiles = $this->db->query("SELECT t_diklat.*
@@ -201,7 +246,7 @@ class Diklat extends MX_Controller
 			}
 		}
 
-		$data["berita4"] = $arrProfile2;
+		$data["diklatterkait"] = $arrProfile2;
 		// var_dump($data4);
 		// die();
 		// var_dump($data);

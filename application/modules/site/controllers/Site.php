@@ -178,7 +178,9 @@ class Site extends MX_Controller {
 				FROM t_banner 
 			    -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
 			    -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
-			    WHERE t_banner.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC LIMIT 4");
+			    -- WHERE t_banner.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC LIMIT 4
+
+			    WHERE t_banner.status = 'show'   ORDER BY tgl_jam DESC LIMIT 4");
 			// var_dump($listProfiles);
 			            	// die();
 
@@ -186,7 +188,7 @@ class Site extends MX_Controller {
 			$arr = [];
 			foreach ($listProfiles->result_array() as $key => $row) {
 
-				$result = $this->db->query("SELECT * FROM t_detail_banner WHERE id_banner=" . $row['id_banner'] . "")->result_array();
+				$result = $this->db->query("SELECT * FROM t_banner WHERE id_banner=" . $row['id_banner'] . "")->result_array();
 			            	// var_dump($result);
 			            	// die();
 				if ($result) {
@@ -199,7 +201,7 @@ class Site extends MX_Controller {
 			                    // "nama_admin"  =>  $row["nama_admin"],
 			                    // "publish" => $row["publish"],
 						"tgl_jam" => $row["tgl_jam"],
-						"path_foto_banner" => $result
+						"path_gambar_banner" => $result
 					);
 					array_push($arrProfile, $arr);
 				}
@@ -287,6 +289,47 @@ $this->template->render_home('site/home',$data);
 
 public function detail($id)
 {
+	$data['foto'] = $this->db->query("SELECT t_berita.*, t_foto_berita.*
+		FROM t_berita
+		JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
+		WHERE t_berita.id_berita = '$id' AND t_berita.status = 'show'")->result();
+
+	$listProfiles = $this->db->query("SELECT t_berita.*, t_foto_berita.*
+
+		FROM t_berita
+			    -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
+			    -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
+			    JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
+			    WHERE t_berita.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC LIMIT 4");
+			// var_dump($listProfiles);
+			            	// die();
+
+	$arrProfile = [];
+	$arr = [];
+	foreach ($listProfiles->result_array() as $key => $row) {
+
+		$result = $this->db->query("SELECT * FROM t_foto_berita WHERE  id_berita='$id'")->result_array();
+			            	// var_dump($result);
+			            	// die();
+		if ($result) {
+
+			$arr = array(
+				"id_berita" => $row["id_berita"],
+						// "id_kategori" => $row["id_kategori"],
+						// "judul_berita" => $row["judul_berita"],
+						// "isi_berita" => $this->batas($row["isi_berita"], 50),
+			                    // "nama_admin"  =>  $row["nama_admin"],
+			                    // "publish" => $row["publish"],
+				"tgl_jam" => $row["tgl_jam"],
+				"path_foto_artikel" => $result
+			);
+			array_push($arrProfile, $arr);
+		}
+	}
+
+	$data["sliderdetailberita"] = $arrProfile;
+			// var_dump($datae);
+			// die();
 	// ================= berita
 
 	$listProfiles = $this->db->query("SELECT t_berita.*
@@ -294,7 +337,7 @@ public function detail($id)
 		FROM t_berita 
 			    -- JOIN t_foto_berita ON t_berita.id_berita = t_foto_berita.id_berita
 			    -- JOIN web_admin ON web_admin.id_admin = web_artikel.id_admin
-			    WHERE t_berita.status = 'show' AND trash='0' GROUP BY id_berita ORDER BY tgl_jam DESC LIMIT 4");
+			    WHERE t_berita.status = 'show' AND trash='0'  ORDER BY tgl_jam DESC LIMIT 4");
 			// var_dump($listProfiles);
 			            	// die();
 
@@ -388,6 +431,11 @@ public function detail($id)
         // $this->load->view('templates_users/navbar');
         // $this->load->view('users/detailBerita', $data);
         // $this->load->view('templates_users/footer');
+}
+
+
+public function detail($id)
+{
 }
 
 public function login() {

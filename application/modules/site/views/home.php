@@ -1,3 +1,6 @@
+<link href="<?php echo base_url('assets/dist/css/lightgallery.css')?>" rel="stylesheet">
+<link href="<?php echo base_url('assets/dist/css/light.css')?>" rel="stylesheet">
+
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <!-- <link href="<?php echo base_url('assets/home/css/hover.css')?>" rel="stylesheet"> -->
 <link href="<?php echo base_url('assets/home/css/hover2.css')?>" rel="stylesheet">
@@ -23,7 +26,7 @@
 <!-- <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
 <script>   
- AOS.init(); 
+   AOS.init(); 
 </script>
 <style>
     .footer {
@@ -319,8 +322,8 @@
 
         /*.caption {
 				margin-top: 40px;
-             }*/
-             .vid-list-container {
+               }*/
+               .vid-list-container {
                 padding-bottom: 20px;
             }
 
@@ -402,6 +405,31 @@
         @media (max-width: 767px) {
             .cv{
                 height: 250px;
+            }
+        }
+        @media (max-width: 767px) {
+            .sliderstyle{
+                height: 250px;
+                margin-top: -25px;
+            }
+        }  
+        @media (max-width: 767px) {
+            .logomitra{
+                width:50%;
+            }
+        }
+        @media (min-width: 770px) {
+            .logomitra{
+                width:30%;
+            }
+        }
+        .logomedia{
+            width: 40%;
+            text-align: center;
+        }
+        @media (min-width: 770px) {
+            .logomedia{
+                width:30%;
             }
         }
     </style>
@@ -539,8 +567,8 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                             foreach ($f["path_foto_banner"] as $k) {
                               ?>
                               <div class="col">
-                               <img style="z-index:1; margin-top: 72px; position: relative; background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="600px"> </div> -->
-                               <!-- <img class="tes3" src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" > </div> -->
+                                 <img style="z-index:1; margin-top: 72px; position: relative; background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="600px"> </div> -->
+                                 <!-- <img class="tes3" src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" > </div> -->
                                  <!--  <?php
                               }
                           } ?>
@@ -575,11 +603,11 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 
 
 
-                    <?php if (count($f["path_foto_banner"]) > 0) {
-                        foreach ($f["path_foto_banner"] as $k) {
+                    <?php if (count($f["path_gambar_banner"]) > 0) {
+                        foreach ($f["path_gambar_banner"] as $k) {
                           ?>
 
-                          <img style=" margin-top: 70px; background-size: cover; background-position: center; width: 100% " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"   height="600px">
+                          <img class="sliderstyle" style=" padding-top: 70px; background-size: cover; background-position: center; width: 100% " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_gambar_banner"]) ?>"   height="630px">
                           <?php
                       }
                   } ?>
@@ -642,7 +670,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 <!-- <section class="featured" style="background-color: white;" data-aos="fade-right">
     <div class="container mb-3 mt-4">
         <div class="row">
-         <div class="col-12 text-center"> -->
+           <div class="col-12 text-center"> -->
             <!-- <?php foreach ($berita3 as $ka) : ?> -->
             <!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
             <!-- <?php endforeach; ?> -->
@@ -716,8 +744,87 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 </section> -->
 <!-- ======================== akhir Berita -->
 
+<!-- ==================== light -->
+<!-- <section>
+    <div class="demo-gallery" id="animated-thumbnails">
+        <ul id="lightgalleryaa" class="list-unstyled row">
+            <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="img/1-375.jpg 375, img/1-480.jpg 480, img/1.jpg 800" data-src="img/1-1600.jpg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>" data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
+                <a href="">
+                    <img class="img-responsive" src="<?php echo base_url(); ?>assets/dist/img2/thumb-1.jpg" alt="Thumb-1">
+                </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="img/2-375.jpg 375, img/2-480.jpg 480, img/2.jpg 800" data-src="img/2-1600.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>" data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
+                <a href="">
+                    <img class="img-responsive" src="<?php echo base_url(); ?>assets/dist/img2/thumb-2.jpg" alt="Thumb-2">
+                </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="img/13-375.jpg 375, img/13-480.jpg 480, img/13.jpg 800" data-src="<?php echo base_url(); ?>assets/dist/img2/thumb-13.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>" data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
+                <a href="">
+                    <img class="img-responsive" src="<?php echo base_url(); ?>assets/dist/img2/thumb-13.jpg" alt="Thumb-3">
+                </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="img/4-375.jpg 375, img/4-480.jpg 480, img/4.jpg 800" data-src="img/4-1600.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>" data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
+                <a href="">
+                    <img class="img-responsive" src="<?php echo base_url(); ?>assets/dist/img2/thumb-4.jpg" alt="Thumb-4">
+                </a>
+            </li>
+        </ul>
+    </div>
+</section> -->
 
-
+<!-- <section  id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="" data-aos="fade-right">
+    <div class="container">
+        <div class="row">
+            <div class="title col-12 col-lg-6 col-md-12 col-sm-12 c">
+                <div class="card-img" >
+                    <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_galeri.png" alt="" style="    padding-left: 60px; padding-bottom: 40px;">
+                </div>
+                <?php
+                foreach ($galeri4 as $k => $v) :
+                    if ($k == '0') :
+                        ?>
+                        <div class="demo-gallery" >
+                          <ul id="lightgallery" class="list-unstyled row">
+                            <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="img/4-375.jpg 375, img/4-480.jpg 480, img/4.jpg 800"  id="rny_vid_frame-humas2"   data-src=""  data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>" data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
+                                <a href="">
+                                    <img style="padding-top: -90px; max-height: 302px; min-height: 302px" class="img-responsive img-thumbnail"  id="rny_vid_framet-humas"  src="<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>" width="590" height="815">
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                <?php endif;
+            endforeach;
+            ?>
+            <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
+            </div>
+            <div class="rny-vid-list-container-humas">
+                <div class="rny-vid-list-humas">
+                    <?php foreach ($galeri4 as $k => $v) : ?>
+                        <div class="rny-vid-item" onClick="document.getElementById('rny_vid_framet-humas').src='<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>' ,document.getElementById('rny_vid_frame-humas2').setAttribute('data-src','<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>')">
+                            <div class="rny-thumb" style="height: 100px;background-size: cover;">
+                                <img  style="height: 150px" src="<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>"  >
+                            </div>
+                            <div class="desc" style="text-align: center;">
+                                <a href="javascript:void" title="<?php echo text($v['nama_album']); ?>" style="font-weight: 700;font-size:14px;color: #000">
+                                 <?php echo text(readMore($v['nama_album'], 35)); ?>
+                             </a>
+                         </div>
+                     </div>
+                 <?php endforeach; ?>
+             </div>
+         </div>
+         <div class="rny-arrows">
+            <div class="rny-arrow-left-humas"><i class="fa fa-chevron-left fa-lg"></i></div>
+            <div class="rny-arrow-right-humas"><i class="fa fa-chevron-right fa-lg"></i></div>
+        </div>
+        <hr>
+    </div>
+</div>
+</div>
+</div>
+</section> -->
+<!-- ======================== AKhir video -->
 
 
 <!-- ==============================Berita Slider -->
@@ -761,7 +868,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                         <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000; height: 30%">
                             <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
 
-                             <?php if (count($f["path_foto_artikel"]) > 0) {
+                               <?php if (count($f["path_foto_artikel"]) > 0) {
                                 foreach ($f["path_foto_artikel"] as $k) {
                                   ?>
                                   <img class="cv" src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"   height="250px">
@@ -778,12 +885,12 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                     </a>
                     <span><br><br>
 
-                       <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
-                       <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
-                   </span>
-               </div>
+                     <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
+                     <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
+                 </span>
+             </div>
 
-               <!-- <div class="card-content"> -->
+             <!-- <div class="card-content"> -->
                 <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
                 <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
                 <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
@@ -1304,10 +1411,12 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
             foreach ($galeri4 as $k => $v) :
                 if ($k == '0') :
                     ?>
-                    <div class="">
-                        <!-- <iframe id="rny_vid_frame" src="<?= $v->link_video?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
-                        <img style="padding-top: -90px; max-height: 302px; min-height: 302px" class="img-responsive img-thumbnail"  id="rny_vid_frame-humas"  src="<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>" width="590" height="815">
-                    </div>
+                    <a href="<?= base_url('site/detail_galeri/' .$v['id_galery'] ) ?>">
+                        <div class="">
+                            <!-- <iframe id="rny_vid_frame" src="<?= $v->link_video?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
+                            <img style="padding-top: -90px; max-height: 302px; min-height: 302px" class="img-responsive img-thumbnail"  id="rny_vid_frame-humas"  src="<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>" width="590" height="815">
+                        </div>
+                    </a>
                 <?php endif;
             endforeach;
             ?>
@@ -1325,16 +1434,16 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                             </div>
                             <div class="desc" style="text-align: center;">
                                 <a href="javascript:void" title="<?php echo text($v['nama_album']); ?>" style="font-weight: 700;font-size:14px;color: #000">
-                                   <?php echo text(readMore($v['nama_album'], 35)); ?>
-                               </a>
-                           </div>
-                       </div>
-                   <?php endforeach; ?>
-               </div>
-           </div>
+                                 <?php echo text(readMore($v['nama_album'], 35)); ?>
+                             </a>
+                         </div>
+                     </div>
+                 <?php endforeach; ?>
+             </div>
+         </div>
 
-           <!-- LEFT AND RIGHT ARROWS -->
-           <div class="rny-arrows">
+         <!-- LEFT AND RIGHT ARROWS -->
+         <div class="rny-arrows">
             <div class="rny-arrow-left-humas"><i class="fa fa-chevron-left fa-lg"></i></div>
             <div class="rny-arrow-right-humas"><i class="fa fa-chevron-right fa-lg"></i></div>
         </div>
@@ -1473,14 +1582,15 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
             <div class="row">
                 <div class="col-md-12">
                     <div class="card" style="background-color: transparent;">
-                        <div class="card-header bg-transparent">
-                            <h3 class="align-center">
-                                Media Sosial
-                            </h3>
+                        <div class="align-center card-header  bg-transparent">
+                            <img class=" logo-video" src="<?php echo base_url(); ?>assets/media/image/media_sosial.png" alt="" style="padding-top: -10px;  width: 30%">
                         </div>
-                        <div class="card-body bg-transparent">
-                            <div class="row">
-                                <div class="col-md-4 align-center">
+                    </div>
+                </div>
+            </div>
+            <div class="card-body bg-transparent">
+                <div class="row">
+                    <div class="col-md-4 align-center">
                             <!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
                                 <hr> -->
                           <!--   <h3>Kota Tangerang</h3>
@@ -1601,8 +1711,8 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 </div> --><center>
     <div class="container">
         <div class="title col-lg-12 col-md-12 col-sm-12">
-            <div class="card-img">
-                <img class="logo-video mitrastyle" src="<?php echo base_url(); ?>assets/tangerangkota/images/mitra_kerja.png" alt="" style="padding-top: -10px; width: 30%; padding-bottom: 40px;">
+            <div class="card-img logomitra">
+                <img class=" logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/mitra_kerja.png" alt="" style="padding-top: -10px;  padding-bottom: 40px;">
             </div>
         </div>
         <div class="" data-flickity='{ "wrapAround": true, "autoPlay":1500, "pageDots": false }' style="width: 80%">
@@ -1637,28 +1747,28 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                               </a>
                               <span><br><br>
 
-                               <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
-                               <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
-                           </span>
-                           <!-- </div> -->
+                                 <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
+                                 <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
+                             </span>
+                             <!-- </div> -->
 
-                           <!-- <div class="card-content"> -->
-                            <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
-                            <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-                            <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
-                                <!-- <i style="background-color: blue" ></i> Lihat Video -->
-                                <!-- </a></center> -->
-                                <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-                                <!-- </div> -->
+                             <!-- <div class="card-content"> -->
+                                <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
+                                <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+                                <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
+                                    <!-- <i style="background-color: blue" ></i> Lihat Video -->
+                                    <!-- </a></center> -->
+                                    <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+                                    <!-- </div> -->
 
-                                <!-- </div> -->
-                                <!-- </div> -->
-                            </div>
-                        <?php endforeach; ?>
+                                    <!-- </div> -->
+                                    <!-- </div> -->
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
-                </div>
-            </center>   
-        </section>
+                </center>   
+            </section>
 
 
 
@@ -2226,4 +2336,29 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
         nav: true,
         items: 2,
     });
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js" integrity="sha512-b4rL1m5b76KrUhDkj2Vf14Y0l1NtbiNXwV+SzOzLGv6Tz1roJHa70yr8RmTUswrauu2Wgb/xBJPR8v80pQYKtQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css" integrity="sha512-kwJUhJJaTDzGp6VTPBbMQWBFUof6+pv0SM3s8fo+E6XnPmVmtfwENK0vHYup3tsYnqHgRDoBDTJWoq7rnQw2+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
+<script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
+<script src="https://cdn.rawgit.com/sachinchoolur/lg-pager.js/master/dist/lg-pager.js"></script>
+<script src="https://cdn.rawgit.com/sachinchoolur/lg-autoplay.js/master/dist/lg-autoplay.js"></script>
+<script src="https://cdn.rawgit.com/sachinchoolur/lg-fullscreen.js/master/dist/lg-fullscreen.js"></script>
+<script src="https://cdn.rawgit.com/sachinchoolur/lg-zoom.js/master/dist/lg-zoom.js"></script>
+<script src="https://cdn.rawgit.com/sachinchoolur/lg-hash.js/master/dist/lg-hash.js"></script>
+<script src="https://cdn.rawgit.com/sachinchoolur/lg-share.js/master/dist/lg-share.js"></script>
+<script src="<?php echo base_url('assets/dist/js2/lg-rotate.js')?>"></script>
+<script src="<?php echo base_url('assets/dist/js2/lg-thumbnail.js')?>"></script>
+<script>
+    lightGallery(document.getElementById('lightgallery'),{
+        thumbnail: true,
+        animateThumb: false,
+        zoomFromOrigin: true,
+        allowMediaOverlap: true,
+        toggleThumb: true,
+    });
+
 </script>

@@ -1,3 +1,6 @@
+<link href="<?php echo base_url('assets/dist/css/lightgallery.css')?>" rel="stylesheet">
+<link href="<?php echo base_url('assets/dist/css/light.css')?>" rel="stylesheet">
+
 <!-- <link rel="stylesheet" href="<?php echo base_url();?>assets/home2/mobirise/css/mbr-additional_ppid.css" type="text/css"> -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <!-- <link href="<?php echo base_url('assets/home/css/hover.css')?>" rel="stylesheet"> -->
@@ -270,10 +273,50 @@
 		</div>
 	</div>
 </section> -->
+<section style="background-color: white"  id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="" data-aos="fade-right" >
+	<div class="container">
+		<div class="row">
+			<div class="title col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				
+				<div class="card-img">
+					<div class="card-img">
+						<img class="logo-video" src="<?= base_url('assets/media/image/struktur.png') ?>" alt="" style="  padding-bottom: 10px; width: 20%; margin-top: 50px">
+						<hr>
+					</div>
+				</div>
+			</div>
+		</div>
+		<?php
+		foreach ($struktur3 as $f) :
+			?>
+			<?php if (count($f["isi"]) > 0) {
+				foreach ($f["isi"] as $k) {
+					?>
+					<div class="demo-gallery" >
+						<ul id="lightgallery" class="list-unstyled row">
+							<li   data-src="<?= base_url('assets/media/image/' . $k["isi"]) ?>"  data-sub-html="<h4>STRUKTUR ORGANISASI<br>DINAS KESEHATAN KOTA TANGERANG </h4>" data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1" data-whatsapp-text="wa">
+								<a href="">
+									<img style="width:100% " src="<?= base_url('assets/media/image/' . $k["isi"]) ?>"   height="100%">
+									<!-- <img style="padding-top: -90px;" class="img-responsive img-thumbnail"    src="<?= base_url('assets/media/image/' . $k["isi"]) ?>" width="500"> -->
+									<?php
+								}
+							} ?>
+						</a>
+					</li>
 
+				</ul>
+			</div>
+			<?php 
+		endforeach;
+		?>
+		<hr>
+	</div>
+</div>
+</div>
+</div>
+</section>
 
-<section   id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" data-aos="fade-right" style="background-color: white">
-	<!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right" style="background-color: white"> -->
+<!-- <section   id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" data-aos="fade-right" style="background-color: white">
 		<div class="container">
 			<div class="">
 				<div class="title col-lg-12">
@@ -282,25 +325,14 @@
 							<img class="logo-video" src="<?= base_url('assets/media/image/struktur.png') ?>" alt="" style="  padding-bottom: 10px; width: 20%; margin-top: 50px">
 							<hr>
 						</div>
-						<!-- <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;"> -->
-						<!-- <h2><b>STRUKTUR</b></h2> -->
 					</div>
 				</div>
 				<div class="" data-flickity='{ "wrapAround": true }'>
-
 					<div class="col-md-12 col-sm-12    ">
 						<div class="carousel-cell" style=" ">
-
-							<!-- <img src="<?php echo base_url('assets/media/image/3c9ebd92d3002b6a09d5b05a0a378bbc.png') ?>" media-simple="true" style="width: 100%;"> -->
-
-
 							<?php foreach ($struktur3 as $f) : ?>
 								<div class="col-md-12 col-sm-12    ">
 									<div class="carousel-cell" style="">
-										<!-- <div class="" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: transparent; "> -->
-											<!-- <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000"> -->
-												<!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
-
 													<?php if (count($f["isi"]) > 0) {
 														foreach ($f["isi"] as $k) {
 															?>
@@ -311,12 +343,11 @@
 														}
 													} ?>
 												<?php endforeach; ?>
-												<!-- </div> -->
 											</div>
 										</div>
 									</div>
 								</div>
-							</section>
+							</section> -->
 
 							<section>
 								<center>
@@ -729,3 +760,27 @@
 
 
 </script> -->
+
+
+
+<script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
+<script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
+<script src="https://cdn.rawgit.com/sachinchoolur/lg-pager.js/master/dist/lg-pager.js"></script>
+<script src="https://cdn.rawgit.com/sachinchoolur/lg-autoplay.js/master/dist/lg-autoplay.js"></script>
+<script src="https://cdn.rawgit.com/sachinchoolur/lg-fullscreen.js/master/dist/lg-fullscreen.js"></script>
+<script src="https://cdn.rawgit.com/sachinchoolur/lg-zoom.js/master/dist/lg-zoom.js"></script>
+<script src="https://cdn.rawgit.com/sachinchoolur/lg-hash.js/master/dist/lg-hash.js"></script>
+<script src="https://cdn.rawgit.com/sachinchoolur/lg-share.js/master/dist/lg-share.js"></script>
+<script src="<?php echo base_url('assets/dist/js2/lg-rotate.js')?>"></script>
+<script src="<?php echo base_url('assets/dist/js2/lg-thumbnail.js')?>"></script>
+<script src="<?php echo base_url('assets/lightbox/lib/AlloyFinger/alloy_finger.min.js')?>"></script>
+<script>
+	lightGallery(document.getElementById('lightgallery'),{
+		thumbnail: true,
+		animateThumb: false,
+		zoomFromOrigin: false,
+		allowMediaOverlap: true,
+		toggleThumb: true,
+	});
+
+</script>
