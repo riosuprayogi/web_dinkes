@@ -2,36 +2,31 @@
 <link href="<?php echo base_url('assets/dist/css/light.css')?>" rel="stylesheet">
 
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<!-- <link href="<?php echo base_url('assets/home/css/hover.css') ?>" rel="stylesheet"> -->
-<link href="<?php echo base_url('assets/home/css/hover2.css') ?>" rel="stylesheet">
-<link href="<?php echo base_url('assets/home/css/hover3.css') ?>" rel="stylesheet">
+<!-- <link href="<?php echo base_url('assets/home/css/hover.css')?>" rel="stylesheet"> -->
+<link href="<?php echo base_url('assets/home/css/hover2.css')?>" rel="stylesheet">
+<link href="<?php echo base_url('assets/home/css/hover3.css')?>" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
-<script type="text/javascript" src="<?php echo base_url('assets/js/custom.js') ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/custom.js')?>"></script>
 
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <!-- <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"> -->
 <!-- https://npmcdn.com/flickity@2/dist/flickity.pkgd.js -->
 
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <!-- flickity -->
-<!-- <link href="<?php echo base_url('assets/home/css/styleslider.css') ?>" rel="stylesheet"> -->
+<!-- <link href="<?php echo base_url('assets/home/css/styleslider.css')?>" rel="stylesheet"> -->
 
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.css">
-<!-- <script type="text/javascript" src="<?php echo base_url('assets/js/script.js') ?>"></script> -->
+<!-- <script type="text/javascript" src="<?php echo base_url('assets/js/script.js')?>"></script> -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
 <!-- <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
-<<<<<<< HEAD
 <script>   
-   AOS.init(); 
-=======
-<script>
-    AOS.init();
->>>>>>> 384168fc25dc44ce9b712c688dc670afb70ab8a9
+ AOS.init(); 
 </script>
 <style>
     .footer {
@@ -327,9 +322,8 @@
 
         /*.caption {
 				margin-top: 40px;
-<<<<<<< HEAD
-               }*/
-               .vid-list-container {
+             }*/
+             .vid-list-container {
                 padding-bottom: 20px;
             }
 
@@ -354,94 +348,65 @@
         .medsos {
             width: 150px !important;
             height: 150px !important;
-=======
-             }*/
-        .vid-list-container {
-            padding-bottom: 20px;
->>>>>>> 384168fc25dc44ce9b712c688dc670afb70ab8a9
         }
 
-        /* reposition left/right arrows */
-        .arrows {
+        .medsoss {
+            width: 100px !important;
+        }
+
+        .cons {
             position: relative;
-            margin: 0 auto;
-            width: 96px;
+            width: 50%;
+            margin-top: 5px;
         }
 
-        .arrow-left {
+        .image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
             left: 0;
-            top: -17px;
-        }
-
-        .arrow-right {
             right: 0;
-            top: -17px;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: rgba(45, 45, 57, 0.83);
         }
-    }
 
-    .medsos {
-        width: 150px !important;
-        height: 150px !important;
-    }
-
-    .medsoss {
-        width: 100px !important;
-    }
-
-    .cons {
-        position: relative;
-        width: 50%;
-        margin-top: 5px;
-    }
-
-    .image {
-        display: block;
-        width: 100%;
-        height: auto;
-    }
-
-    .overlay {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        width: 100%;
-        opacity: 0;
-        transition: .5s ease;
-        background-color: rgba(45, 45, 57, 0.83);
-    }
-
-    .cons:hover .overlay {
-        opacity: 1;
-    }
-
-    .text {
-        color: white;
-        font-size: 14px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
-</style>
-<style>
-    @media (max-width: 1200px) {
-        .cv {
-            height: 150px;
-            font-size: 15px;
+        .cons:hover .overlay {
+            opacity: 1;
         }
-    }
 
-    @media (max-width: 767px) {
-        .cv {
-            height: 250px;
+        .text {
+            color: white;
+            font-size: 14px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
         }
-<<<<<<< HEAD
+    </style>
+    <style >
+        @media (max-width: 1200px) {
+            .cv{
+                height: 150px;
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 767px) {
+            .cv{
+                height: 250px;
+            }
+        }
         @media (max-width: 767px) {
             .sliderstyle{
                 height: 250px;
@@ -468,34 +433,30 @@
             }
         }
     </style>
-=======
-    }
-</style>
->>>>>>> 384168fc25dc44ce9b712c688dc670afb70ab8a9
 
 
 
 
-<!-- Flickity HTML init -->
-<!-- Flickity HTML init -->
-<!--  <div class="carousel carousel-main" data-flickity style="margin-top: 200px">
+    <!-- Flickity HTML init -->
+    <!-- Flickity HTML init -->
+   <!--  <div class="carousel carousel-main" data-flickity style="margin-top: 200px">
      <?php foreach ($sliderbanner as $f) : ?>
 
 
         <?php if (count($f["path_foto_banner"]) > 0) {
-                foreach ($f["path_foto_banner"] as $k) {
-        ?>
+            foreach ($f["path_foto_banner"] as $k) {
+              ?>
               <div class="carousel-cell">
                 <img style=" background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="600px">
             </div>
             <?php
-                }
-            } ?>
+        }
+    } ?>
 
 
 
     <?php endforeach; ?> -->
-<!--  <div class="carousel-cell"></div>
+ <!--  <div class="carousel-cell"></div>
   <div class="carousel-cell"></div>
   <div class="carousel-cell"></div>
   <div class="carousel-cell"></div>
@@ -514,13 +475,13 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 
     <?php if (count($f["path_foto_banner"]) > 0) {
         foreach ($f["path_foto_banner"] as $k) {
-    ?>
+          ?>
           <div class="carousel-cell">
             <img style=" background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="600px">
         </div>
         <?php
-        }
-    } ?>
+    }
+} ?>
 
 
 
@@ -544,12 +505,12 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
         background: rgba(255, 255, 255, 0.92);
         }
     </style> -->
-<!-- <section class="py-5"></section> -->
-<!--  <link  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <!-- <section class="py-5"></section> -->
+   <!--  <link  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="hhttps://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> -->
-<!--  <script >
+   <!--  <script >
      $('.slider-for').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -580,20 +541,20 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 
     <div class="tes slider_wrap">
         <div class="banner_slider"> -->
-<!-- <img src="<?php echo base_url(); ?>assets/img/banner/1.png">
+                    <!-- <img src="<?php echo base_url(); ?>assets/img/banner/1.png">
                     <img src="<?php echo base_url(); ?>assets/img/banner/2.png">
                     <img src="<?php echo base_url(); ?>assets/img/banner/3.png"> -->
 
-<!--          <?php foreach ($sliderbanner as $f) : ?>
+           <!--          <?php foreach ($sliderbanner as $f) : ?>
                         <div  style="">
                             <?php if (count($f["path_foto_banner"]) > 0) {
                                 foreach ($f["path_foto_banner"] as $k) {
-                            ?>
+                                  ?>
 
                                   <img class="tes2" style="margin-top: 50px;" src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>" >
                                   <?php
-                                }
-                            } ?>
+                              }
+                          } ?>
 
                       </div>
                   <?php endforeach; ?>
@@ -603,33 +564,25 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                     <div class="row thumbnail_slider autoplay center">
                       <?php foreach ($sliderbanner as $f) : ?>
                         <?php if (count($f["path_foto_banner"]) > 0) {
-                                foreach ($f["path_foto_banner"] as $k) {
-                        ?>
+                            foreach ($f["path_foto_banner"] as $k) {
+                              ?>
                               <div class="col">
-<<<<<<< HEAD
-                                 <img style="z-index:1; margin-top: 72px; position: relative; background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="600px"> </div> -->
-                                 <!-- <img class="tes3" src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" > </div> -->
+                               <img style="z-index:1; margin-top: 72px; position: relative; background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="600px"> </div> -->
+                               <!-- <img class="tes3" src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" > </div> -->
                                  <!--  <?php
                               }
                           } ?>
-=======
-                               <img style="z-index:1; margin-top: 72px; position: relative; background-size: cover; background-position: center " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" height="600px"> </div> -->
-<!-- <img class="tes3" src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>"  width="100%" > </div> -->
-<!--  <?php
-                                }
-                            } ?>
->>>>>>> 384168fc25dc44ce9b712c688dc670afb70ab8a9
                           <?php endforeach; ?> -->
 
-<!-- <img src="<?php echo base_url(); ?>assets/img/banner/1.png"> -->
+                          <!-- <img src="<?php echo base_url(); ?>assets/img/banner/1.png"> -->
 
-<!--  <div class="col">
+                     <!--  <div class="col">
                         <img src="<?php echo base_url(); ?>assets/img/banner/2.png">
                     </div>
                     <div class="col">
                         <img src="<?php echo base_url(); ?>assets/img/banner/3.png">
                     </div> -->
-<!--      </div>
+           <!--      </div>
             </div>
         </div>
     </div>
@@ -650,7 +603,6 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 
 
 
-<<<<<<< HEAD
                     <?php if (count($f["path_gambar_banner"]) > 0) {
                         foreach ($f["path_gambar_banner"] as $k) {
                           ?>
@@ -659,24 +611,14 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                           <?php
                       }
                   } ?>
-=======
-                    <?php if (count($f["path_foto_banner"]) > 0) {
-                        foreach ($f["path_foto_banner"] as $k) {
-                    ?>
-
-                            <img style=" margin-top: 70px; background-size: cover; background-position: center; width: 100% " src="<?= base_url('assets/backend/img/img_banner/' . $k["path_foto_banner"]) ?>" height="600px">
-                    <?php
-                        }
-                    } ?>
->>>>>>> 384168fc25dc44ce9b712c688dc670afb70ab8a9
 
 
 
 
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </div>
+              <?php endforeach; ?>
+          </div>
+      </div>
+  </div>
 </section>
 
 <!-- ==============================Akhir Slider banner -->
@@ -686,7 +628,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 
 
 
-<!-- <div style="background-image: url('<?= base_url('assets/img/banner/5.png') ?>') ; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+  <!-- <div style="background-image: url('<?= base_url('assets/img/banner/5.png') ?>') ; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
     <section class= "cid-ppid" id="ppid" data-rv-view="1620" style="padding-top: 90px !important; background: rgba(207, 207, 207, 0.33);">
         <div class="container-fluid ">
             <div class="media-container-row ">
@@ -700,8 +642,8 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                                 <img src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" style="width:50%; margin:auto;" alt="" media-simple="true">
                                 <center>  <p style="text-align: center; ">
                                     <?php echo $profil['isi']; ?> -->
-<!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
-<!--     </p></center>
+                                    <!-- Informasi merupakan kebutuhan pokok setiap orang. Bahkan lebih mendasar, hak memperoleh informasi adalah salah satu dari hak asasi manusia, hal ini tercantum dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28 F. Dalam pasal tersebut disebutkan bahwa setiap orang berhak untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, dan menyimpan informasi dengan menggunakan segala jenis saluran yang tersedia.  -->
+                            <!--     </p></center>
                             </div>
 
                         </div>
@@ -728,17 +670,10 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 <!-- <section class="featured" style="background-color: white;" data-aos="fade-right">
     <div class="container mb-3 mt-4">
         <div class="row">
-<<<<<<< HEAD
-           <div class="col-12 text-center"> -->
+         <div class="col-12 text-center"> -->
             <!-- <?php foreach ($berita3 as $ka) : ?> -->
             <!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
             <!-- <?php endforeach; ?> -->
-=======
-         <div class="col-12 text-center"> -->
-<!-- <?php foreach ($berita3 as $ka) : ?> -->
-<!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
-<!-- <?php endforeach; ?> -->
->>>>>>> 384168fc25dc44ce9b712c688dc670afb70ab8a9
 <!--         </div>
     </div>
 </div>
@@ -752,55 +687,55 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 
 <!-- <div class="container info">
     <div class="row align-items-start">
-      <?php
+      <?php 
+      
 
-
-        foreach ($berita3 as $f) :
-            // strip tags to avoid breaking any html
-            $string = strip_tags($f["isi_berita"]);
-            if (strlen($string) > 1000) {
+      foreach ($berita3 as $f) : 
+                  // strip tags to avoid breaking any html
+        $string = strip_tags($f["isi_berita"]);
+        if (strlen($string) > 1000) {
 
                 // truncate string
-                $stringCut = substr($string, 0, 1000);
-                $endPoint = strrpos($stringCut, ' ');
+            $stringCut = substr($string, 0, 1000);
+            $endPoint = strrpos($stringCut, ' ');
 
                 //if the string doesn't contain any space then it will cut without word basis.
-                $string = $endPoint ? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+            $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
                 // $string .= '... <a href="/this/story">Read More</a>';
-            }
+        }
 
-
+        
         ?> -->
-<!-- <div class="col-lg-3 col-md-6 col-sm-12"> -->
-<!-- <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;"> -->
+        <!-- <div class="col-lg-3 col-md-6 col-sm-12"> -->
+            <!-- <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: #F0FFFF; border-color: black; border: 1px solid grey; box-shadow: 2px 4px 10px rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;"> -->
 
-<!-- <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: transparent; "> -->
-<!-- <a href="<?= base_url('site/detail/' . $f["id_berita"] . '/' . $f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
-<!--    <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
+                <!-- <div class="card berita" style="width: 16.5rem; height: 500px; overflow: hidden; margin-bottom: 50px; background-color: transparent; "> -->
+                    <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
+                    <!--    <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
 
                          <?php if (count($f["path_foto_artikel"]) > 0) {
-                                foreach ($f["path_foto_artikel"] as $k) {
-                            ?>
+                            foreach ($f["path_foto_artikel"] as $k) {
+                              ?>
                               <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
                               <?php
-                                }
-                            } ?>
+                          }
+                      } ?>
                       <div class="card-body">
                         <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
                         <b><?= $f["judul_berita"] ?></b>
 
-                        <p><?= $string ?>
+                        <p><?= $string?>
                         <span><br><br> -->
 
-<!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
-<!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"] . '/' . $f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
-<!--      </span>
+                            <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
+                            <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
+                   <!--      </span>
                     </p>
                 -->
-</div>
+            </div>
 
-<!-- <br> -->
-<!--        </a>
+            <!-- <br> -->
+     <!--        </a>
         </div>
     </div>
 <?php endforeach; ?>
@@ -894,64 +829,46 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 
 <!-- ==============================Berita Slider -->
 <!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right" style="background-color: white"> -->
-<section id="icon-formulir" data-aos="fade-right" style="background-color: white; height: 100%">
+    <section  id="icon-formulir"   data-aos="fade-right" style="background-color: white; height: 100%">
 
 
 
 
-    <!-- <div class="container">
+<!-- <div class="container">
     <div class="row">
       <div class="">
         <h2>Video Baznas</h2>
       </div>
     </div>
 </div> -->
-    <div class="container">
-        <div class="">
-            <div class="title col-lg-12 col-md-12 col-sm-12">
-                <div class="card-img">
-                    <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-top: -10px">
-                </div>
+<div class="container">
+    <div class="">
+        <div class="title col-lg-12 col-md-12 col-sm-12">
+            <div class="card-img">
+                <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/berita.png" alt="" style="padding-top: -10px">
             </div>
-            <div class="" data-flickity='{ "wrapAround": true, "autoPlay":1500, "pageDots": false }'>
-                <?php foreach ($berita3 as $f) :
-                    $string = strip_tags($f["isi_berita"]);
-                    if (strlen($string) > 1000) {
+        </div>
+        <div class="" data-flickity='{ "wrapAround": true, "autoPlay":1500, "pageDots": false }'>
+            <?php foreach ($berita3 as $f) :
+              $string = strip_tags($f["isi_berita"]);
+              if (strlen($string) > 1000) {
 
-                        // truncate string
-                        $stringCut = substr($string, 0, 1000);
-                        $endPoint = strrpos($stringCut, ' ');
+                // truncate string
+                $stringCut = substr($string, 0, 1000);
+                $endPoint = strrpos($stringCut, ' ');
 
-                        //if the string doesn't contain any space then it will cut without word basis.
-                        $string = $endPoint ? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
-                        // $string .= '... <a href="/this/story">Read More</a>';
-                    }
-                ?>
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <!-- <div class="" style=" overflow: hidden; margin-bottom: 10px;  padding-right: 10px; background-color: red" > -->
-                        <div class="img-responsive  " style="width: 100%; height: 500px; overflow: hidden; background-color: transparent;">
-                            <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000; height: 30%">
-                                <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"] . '/' . $f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
+                //if the string doesn't contain any space then it will cut without word basis.
+                $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+                // $string .= '... <a href="/this/story">Read More</a>';
+            }
+            ?>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <!-- <div class="" style=" overflow: hidden; margin-bottom: 10px;  padding-right: 10px; background-color: red" > -->
+                    <div class="img-responsive  " style="width: 100%; height: 500px; overflow: hidden; background-color: transparent;">
+                        <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000; height: 30%">
+                            <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
 
-                                <?php if (count($f["path_foto_artikel"]) > 0) {
-                                    foreach ($f["path_foto_artikel"] as $k) {
-                                ?>
-                                        <img class="cv" src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>" height="250px">
-                                <?php
-                                    }
-                                } ?>
-                                <div class="card-body">
-                                    <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
-                                    <b class="cv"><?= $f["judul_berita"] ?></b>
-                                    <p class="cv" style="margin-top: 10px"><?= $string ?><a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a>
-                                    </p>
-                                </div>
-                                <!-- <br> -->
-                            </a>
-                            <span><br><br>
-
-<<<<<<< HEAD
-                               <?php if (count($f["path_foto_artikel"]) > 0) {
+                             <?php if (count($f["path_foto_artikel"]) > 0) {
                                 foreach ($f["path_foto_artikel"] as $k) {
                                   ?>
                                   <img class="cv" src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"   height="250px">
@@ -968,12 +885,12 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                     </a>
                     <span><br><br>
 
-                     <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
-                     <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
-                 </span>
-             </div>
+                       <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
+                       <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
+                   </span>
+               </div>
 
-             <!-- <div class="card-content"> -->
+               <!-- <div class="card-content"> -->
                 <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
                 <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
                 <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
@@ -986,29 +903,9 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                     <!-- </div> -->
                 </div>
             <?php endforeach; ?>
-=======
-                                <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
-                                <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"] . '/' . $f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
-                            </span>
-                        </div>
-
-                        <!-- <div class="card-content"> -->
-                        <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
-                        <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-                        <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
-                        <!-- <i style="background-color: blue" ></i> Lihat Video -->
-                        <!-- </a></center> -->
-                        <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-                        <!-- </div> -->
-
-                        <!-- </div> -->
-                        <!-- </div> -->
-                    </div>
-                <?php endforeach; ?>
-            </div>
->>>>>>> 384168fc25dc44ce9b712c688dc670afb70ab8a9
         </div>
     </div>
+</div>
 </section>
 <!-- ==============================Akhir Berita Slider -->
 
@@ -1048,12 +945,12 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 
                                 <?php if (count($c["path_detail_foto"]) > 0) {
                                     foreach ($c["path_detail_foto"] as $k) {
-                                ?>
+                                      ?>
                                       <img src="<?= base_url('assets/backend/img/img_galery/' . $k["path_detail_foto"]) ?>"  width="100%" height="250px">
                                       <p><?= date('d M Y H:i:s', strtotime($c["tgl_jam"])) ?></p>
                                       <?php
-                                    }
-                                } ?>
+                                  }
+                              } ?>
                               <center> <a href="#" class="btn btn-success btn-sm mt-2" target="__blank">
                                 <i style="background-color: blue" ></i> Lihat Album
                             </a></center>
@@ -1078,10 +975,10 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
   <div class="container mb-3 mt-4">
     <div class="row">
       <div class="col-12 text-center"> -->
-<!-- <?php foreach ($berita3 as $ka) : ?> -->
-<!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
-<!-- <?php endforeach; ?> -->
-<!--    </div>
+        <!-- <?php foreach ($berita3 as $ka) : ?> -->
+        <!-- <h2><?= strtoupper($ka->kategori_artikel) ?></h2> -->
+        <!-- <?php endforeach; ?> -->
+   <!--    </div>
     </div>
   </div>
   <div class="row">
@@ -1092,7 +989,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                     </div>
                 </div>
             -->
-<!-- <div class="container info">
+  <!-- <div class="container info">
     <div class="row align-items-start">
       <?php foreach ($berita33 as $f) : ?>
         <div class="col-lg-3 col-md-6 col-sm-12">
@@ -1100,17 +997,17 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
             <a href="<?= base_url('site/detail/' . $f["id_foto_galery"]) ?>" style="text-decoration: none; color: #000000">
 
               <?php if (count($f["path_detail_foto"]) > 0) {
-                    foreach ($f["path_detail_foto"] as $k) {
-                ?>
+                foreach ($f["path_detail_foto"] as $k) {
+              ?>
                   <img src="<?= base_url('assets/backend/img/img_galery/' . $k["path_detail_foto"]) ?>"  width="100%" height="250px">
               <?php
-                    }
-                } ?>
+                }
+              } ?>
               <div class="card-body" style="text-align: left;" >
                 <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p> -->
-<!-- <b><?= $f["judul_berita"] ?></b> -->
-<!-- <p><?= $f["isi_berita"] ?></p> -->
-<!--       </div>
+                <!-- <b><?= $f["judul_berita"] ?></b> -->
+                <!-- <p><?= $f["isi_berita"] ?></p> -->
+        <!--       </div>
               
               <br>
             </a>
@@ -1137,7 +1034,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 
 
 
-<!-- <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-12">
                         <div class="card-img">
                             <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/modules/home/rilis.png" alt="" style="padding-bottom: 10px;">
@@ -1145,7 +1042,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                     </div>
                 </div>
             -->
-<!-- <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-12">
                         <div id="owl-carousel-siaran" class="owl-carousel owl-theme">
                             <?php
@@ -1183,9 +1080,9 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                         </div>
                     </div>
                 </div> -->
-<!-- </div> -->
+                <!-- </div> -->
 
-<!-- <div class="col-md-12">
+            <!-- <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card-img">
@@ -1194,7 +1091,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                     </div>
                 </div> -->
 
-<!--  <div class="container info">
+                       <!--  <div class="container info">
                         <div class="row align-items-start">
                           <?php foreach ($berita3 as $f) : ?>
                             <div class="col-lg-3 col-md-6 col-sm-12">
@@ -1202,12 +1099,12 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                                 <a href="<?= base_url('site/detail/' . $f["id_berita"]) ?>" style="text-decoration: none; color: #000000">
 
                                   <?php if (count($f["path_foto_artikel"]) > 0) {
-                                        foreach ($f["path_foto_artikel"] as $k) {
-                                    ?>
+                                    foreach ($f["path_foto_artikel"] as $k) {
+                                  ?>
                                       <img src="<?= base_url('assets/backend/img/img_berita/' . $k["path_foto_artikel"]) ?>"  width="100%" height="250px">
                                   <?php
-                                        }
-                                    } ?>
+                                    }
+                                  } ?>
                                   <div class="card-body">
                                     <p><?= date('d M Y H:i:s', strtotime($f["tgl_jam"])) ?></p>
                                     <b><?= $f["judul_berita"] ?></b>
@@ -1220,17 +1117,17 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                         </div>
                     </div> -->
 
-<!--  <div class="row">
+               <!--  <div class="row">
                     <div class="col-md-12">
                         <div id="owl-carousel-berita" class="owl-carousel owl-theme"> -->
-<!--   <?php
-        if (!empty($berita2)) {
-            foreach ($berita2 as $ber) {
-                // var_dump($ber);
-                // die();
-        ?> -->
-<!-- <div class="item"> -->
-<!--  <div class="rny-post-slide">
+                          <!--   <?php
+                            if (!empty($berita2)) {
+                                foreach ($berita2 as $ber) {
+                                    // var_dump($ber);
+                                    // die();
+                                    ?> -->
+                                    <!-- <div class="item"> -->
+                                       <!--  <div class="rny-post-slide">
                                             <div class="post-img">
                                                 <a href="<?php echo base_url('artikel/detail/') . $ber['id_berita'] . '/' . $ber['slug']; ?>">
                                                     <img src="<?php echo $link_kota . $ber['foto']; ?>">
@@ -1255,10 +1152,10 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                                         </div>
                                     </div>
                             <?php }
-                    } ?>
+                            } ?>
                         </div>
                     </div> -->
-<!--        </div>
+         <!--        </div>
             </div>
 
 
@@ -1425,20 +1322,20 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 <!-- ==============================Video Slider -->
 
 <!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right"> -->
-<section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="" data-aos="fade-right">
+    <section  id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="" data-aos="fade-right">
 
 
 
 
-    <!-- <div class="container">
+  <!-- <div class="container">
     <div class="row">
       <div class="">
         <h2>Video Baznas</h2>
       </div>
     </div>
 </div> -->
-    <div class="container">
-        <!--  <div class="row">
+<div class="container">
+   <!--  <div class="row">
         <div class="title col-md-6">
             <div class="card-img">
                 <div class="card-img">
@@ -1453,85 +1350,74 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
         </div>
     </div> -->
 
-        <!--Left-->
-        <!-- ===================== -->
-        <div class="row">
-            <div class="title col-12 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+    <!--Left-->
+    <!-- ===================== -->
+    <div class="row">
+        <div class="title col-12 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <div class="card-img">
                 <div class="card-img">
-                    <div class="card-img">
-                        <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
-                    </div>
+                    <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
                 </div>
-
-
-                <?php
-                foreach ($video_dinkes as $k => $v) :
-                    if ($k == '0') :
-                ?>
-                        <div class="rny-vid-container">
-                            <iframe id="rny_vid_frame" class="img-responsive img-thumbnail" src="<?= $v->link_video ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
-                        </div>
-                <?php endif;
-                endforeach;
-                ?>
-
-                <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
-                    <!-- <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_tngtv.png" alt=""> -->
-                </div>
-
-                <div class="rny-vid-list-container">
-                    <div class="rny-vid-list">
-                        <?php foreach ($video_dinkes as $k => $v) : ?>
-                            <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame').src='<?= $v->link_video ?>?autoplay=1&rel=0&showinfo=0&autohide=1'">
-                                <div class="rny-thumb" style="background: url('https://i.ytimg.com/vi/<?php echo getidyoutube($v->link_video); ?>/hqdefault.jpg');height: 100px;background-size: cover;">
-                                </div>
-                                <div class="desc" style="text-align: center;">
-                                    <a href="javascript:void" title="<?php echo text($v->nama_video); ?>" style="font-weight: 700;font-size:14px;color: #000">
-                                        <?php echo text(readMore($v->nama_video, 35)); ?>
-                                    </a>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-
-                <!-- LEFT AND RIGHT ARROWS -->
-                <div class="rny-arrows">
-                    <div class="rny-arrow-left"><i class="fa fa-chevron-left fa-lg"></i></div>
-                    <div class="rny-arrow-right"><i class="fa fa-chevron-right fa-lg"></i></div>
-                </div>
-                <hr><br>
             </div>
 
 
+            <?php
+            foreach ($video_dinkes as $k => $v) :
+                if ($k == '0') :
+                    ?>
+                    <div class="rny-vid-container">
+                        <iframe id="rny_vid_frame" class="img-responsive img-thumbnail" src="<?= $v->link_video?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
+                    </div>
+                <?php endif;
+            endforeach;
+            ?>
 
-            <div class="title col-12 col-lg-6 col-md-12 col-sm-12 c">
-                <div class="card-img">
-                    <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_galeri.png" alt="" style="    padding-left: 60px; padding-bottom: 40px;">
+            <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
+                <!-- <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_tngtv.png" alt=""> -->
+            </div>
+
+            <div class="rny-vid-list-container">
+                <div class="rny-vid-list">
+                    <?php foreach ($video_dinkes as $k => $v) : ?>
+                        <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame').src='<?= $v->link_video?>?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                            <div class="rny-thumb" style="background: url('https://i.ytimg.com/vi/<?php echo getidyoutube($v->link_video); ?>/hqdefault.jpg');height: 100px;background-size: cover;">
+                            </div>
+                            <div class="desc" style="text-align: center;">
+                                <a href="javascript:void" title="<?php echo text($v->nama_video); ?>" style="font-weight: 700;font-size:14px;color: #000">
+                                    <?php echo text(readMore($v->nama_video, 35)); ?>
+                                </a>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
+            </div>
 
-<<<<<<< HEAD
+            <!-- LEFT AND RIGHT ARROWS -->
+            <div class="rny-arrows">
+                <div class="rny-arrow-left"><i class="fa fa-chevron-left fa-lg"></i></div>
+                <div class="rny-arrow-right"><i class="fa fa-chevron-right fa-lg"></i></div>
+            </div>
+            <hr><br>
+        </div>
+
+
+
+        <div class="title col-12 col-lg-6 col-md-12 col-sm-12 c">
+            <div class="card-img">
+                <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_galeri.png" alt="" style="    padding-left: 60px; padding-bottom: 40px;">
+            </div>
+
             <?php
             foreach ($galeri4 as $k => $v) :
                 if ($k == '0') :
                     ?>
-                    <a href="<?= base_url('site/detail_galeri/' .$v['id_galery'] ) ?>">
+                    <!-- <a href="<?= base_url('site/detail_galeri/' .$v['id_galery'] ) ?>"> -->
                         <div class="">
                             <!-- <iframe id="rny_vid_frame" src="<?= $v->link_video?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
                             <img style="padding-top: -90px; max-height: 302px; min-height: 302px" class="img-responsive img-thumbnail"  id="rny_vid_frame-humas"  src="<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>" width="590" height="815">
                         </div>
-                    </a>
-=======
-                <?php
-                foreach ($galeri4 as $k => $v) :
-                    if ($k == '0') :
-                ?>
-                        <div class="">
-                            <!-- <iframe id="rny_vid_frame" src="<?= $v->link_video ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
-                            <img style="padding-top: -90px; max-height: 302px; min-height: 302px" class="img-responsive img-thumbnail" id="rny_vid_frame-humas" src="<?= base_url('assets/backend/img/img_galery/' . $v['path_detail_foto']) ?>" width="590" height="815">
-                        </div>
->>>>>>> 384168fc25dc44ce9b712c688dc670afb70ab8a9
-                <?php endif;
+                        <!-- </a> -->
+                    <?php endif;
                 endforeach;
                 ?>
 
@@ -1542,47 +1428,27 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                 <div class="rny-vid-list-container-humas">
                     <div class="rny-vid-list-humas">
                         <?php foreach ($galeri4 as $k => $v) : ?>
-                            <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame-humas').src='<?= base_url('assets/backend/img/img_galery/' . $v['path_detail_foto']) ?>'">
+                            <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame-humas').src='<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>'">
                                 <div class="rny-thumb" style="height: 100px;background-size: cover;">
-                                    <img style="height: 150px" src="<?= base_url('assets/backend/img/img_galery/' . $v['path_detail_foto']) ?>">
+                                    <img  style="height: 150px" src="<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>"  >
                                 </div>
                                 <div class="desc" style="text-align: center;">
                                     <a href="javascript:void" title="<?php echo text($v['nama_album']); ?>" style="font-weight: 700;font-size:14px;color: #000">
-                                        <?php echo text(readMore($v['nama_album'], 35)); ?>
-                                    </a>
-                                </div>
-                            </div>
-<<<<<<< HEAD
-                            <div class="desc" style="text-align: center;">
-                                <a href="javascript:void" title="<?php echo text($v['nama_album']); ?>" style="font-weight: 700;font-size:14px;color: #000">
-                                 <?php echo text(readMore($v['nama_album'], 35)); ?>
-                             </a>
-                         </div>
-                     </div>
-                 <?php endforeach; ?>
-             </div>
-         </div>
+                                       <?php echo text(readMore($v['nama_album'], 35)); ?>
+                                   </a>
+                               </div>
+                           </div>
+                       <?php endforeach; ?>
+                   </div>
+               </div>
 
-         <!-- LEFT AND RIGHT ARROWS -->
-         <div class="rny-arrows">
-            <div class="rny-arrow-left-humas"><i class="fa fa-chevron-left fa-lg"></i></div>
-            <div class="rny-arrow-right-humas"><i class="fa fa-chevron-right fa-lg"></i></div>
-        </div>
-        <hr>
-    </div>
-=======
-                        <?php endforeach; ?>
-                    </div>
-                </div>
->>>>>>> 384168fc25dc44ce9b712c688dc670afb70ab8a9
-
-                <!-- LEFT AND RIGHT ARROWS -->
-                <div class="rny-arrows">
-                    <div class="rny-arrow-left-humas"><i class="fa fa-chevron-left fa-lg"></i></div>
-                    <div class="rny-arrow-right-humas"><i class="fa fa-chevron-right fa-lg"></i></div>
-                </div>
-                <hr>
+               <!-- LEFT AND RIGHT ARROWS -->
+               <div class="rny-arrows">
+                <div class="rny-arrow-left-humas"><i class="fa fa-chevron-left fa-lg"></i></div>
+                <div class="rny-arrow-right-humas"><i class="fa fa-chevron-right fa-lg"></i></div>
             </div>
+            <hr>
+        </div>
 
 
 
@@ -1592,31 +1458,31 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 
 
 
-            <!-- 
+<!-- 
 <div class="col-6 col-md-6">
     <?php
     foreach ($galeri4 as $k => $v) :
         if ($k == '0') :
-    ?>
+            ?>
             <div class="rny-vid-container-humas">
                 <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
-                <img style="margin-top: -30px"  id="rny_vid_frame-humas"  src="<?= base_url('assets/backend/img/img_galery/' . $v['path_detail_foto']) ?>" height="300 "> -->
-            <!-- <img   src="<?= base_url('assets/backend/img/img_galery/12a065cc7f036251dad165ea9f353394.jpeg') ?>" > -->
-            <!--  </div>
+                <img style="margin-top: -30px"  id="rny_vid_frame-humas"  src="<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>" height="300 "> -->
+                <!-- <img   src="<?= base_url('assets/backend/img/img_galery/12a065cc7f036251dad165ea9f353394.jpeg') ?>" > -->
+           <!--  </div>
         <?php endif;
     endforeach;
-        ?> -->
+    ?> -->
 
-            <!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
+                       <!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
                             <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_humas.png" alt="">
                         </div> -->
 
-            <!--      <div class="rny-vid-list-container-humas">
+                   <!--      <div class="rny-vid-list-container-humas">
                             <div class="rny-vid-list-humas">
                                 <?php foreach ($galeri4 as $k => $v) : ?>
-                                    <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame-humas').src='<?= base_url('assets/backend/img/img_galery/' . $v['path_detail_foto']) ?>'">
+                                    <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame-humas').src='<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>'">
                                         <div class="rny-thumb" style="height: 100px;background-size: cover; margin-top: 20px">
-                                            <img  style="height: 150px" src="<?= base_url('assets/backend/img/img_galery/' . $v['path_detail_foto']) ?>"  >
+                                            <img  style="height: 150px" src="<?= base_url('assets/backend/img/img_galery/' .$v['path_detail_foto'] ) ?>"  >
                                         </div>
                                         <div class="desc" style="text-align: center;">
                                             <a href="javascript:void"  style="font-weight: 700;font-size:14px;color: #000">
@@ -1628,28 +1494,28 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                             </div>
                         </div> -->
 
-            <!-- LEFT AND RIGHT ARROWS -->
-            <!--  <div class="rny-arrows">
+                        <!-- LEFT AND RIGHT ARROWS -->
+                       <!--  <div class="rny-arrows">
                             <div class="rny-arrow-left-humas"><i class="fa fa-chevron-left fa-lg"></i></div>
                             <div class="rny-arrow-right-humas"><i class="fa fa-chevron-right fa-lg"></i></div>
                         </div> -->
-        </div>
-    </div>
-    </div>
-</section>
-<!-- ======================== AKhir video -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======================== AKhir video -->
 
 
 
-<!-- ==============================Video Slider -->
+        <!-- ==============================Video Slider -->
 
-<!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right"> -->
-<!-- <section  id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="" data-aos="fade-right">
+        <!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right"> -->
+            <!-- <section  id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="" data-aos="fade-right">
             -->
 
 
 
-<!-- <div class="container">
+  <!-- <div class="container">
     <div class="row">
       <div class="">
         <h2>Video Baznas</h2>
@@ -1681,14 +1547,14 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 
                     <div class="card-content">
                         <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-<!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-<!--     <center>
+                        <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+                    <!--     <center>
                             <a href="<?= $tv->link_video ?>" class="btn btn-success btn-sm mt-2" target="__blank">
                                 <i style="background-color: blue" ></i> Lihat Video
                             </a>
                         </center> -->
-<!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-<!--                </div>
+                        <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+     <!--                </div>
 
                 </div>
             </div>
@@ -1708,11 +1574,10 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 <!-- ==============================Video Slider -->
 
 <!-- <section  id="video" class="cid-video mbr-parallax-background mbr-fullscreen" data-rv-view="1620" data-aos="fade-right" style="background-color: white"> -->
-<section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" data-aos="fade-right" style="background-color: white">
+    <section   id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" data-aos="fade-right" style="background-color: white">
 
 
 
-<<<<<<< HEAD
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -1727,23 +1592,8 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                 <div class="row">
                     <div class="col-md-4 align-center">
                             <!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
-=======
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card" style="background-color: transparent;">
-                    <div class="card-header bg-transparent">
-                        <h3 class="align-center">
-                            Media Sosial
-                        </h3>
-                    </div>
-                    <div class="card-body bg-transparent">
-                        <div class="row">
-                            <div class="col-md-4 align-center">
-                                <!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
->>>>>>> 384168fc25dc44ce9b712c688dc670afb70ab8a9
                                 <hr> -->
-                                <!--   <h3>Kota Tangerang</h3>
+                          <!--   <h3>Kota Tangerang</h3>
                             <div class="row">
                                 <a class="align-center col-md-4" target="_blank" href="https://id-id.facebook.com/kotatng/">
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-07.png') ?>" alt="">
@@ -1755,16 +1605,16 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt="">
                                 </a>
                             </div> -->
-                            </div>
-                            <div class="col-lg-4 align-center">
-                                <!-- <img class="medsos" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt=""> -->
-                                <!-- <hr> -->
-                                <h3>DINAS KESEHATAN</h3>
-                                <div class="row">
-                                    <a class="align-center col-md-6" target="_blank" href="https://www.youtube.com/channel/UCKGFxu_Sb2LFwMoi5h_zDow">
-                                        <img class="medsoss" src="<?= base_url('assets/img/sosmed-10.png') ?>" alt="">
-                                    </a>
-                                    <!-- <a class="align-center col-md-4" target="_blank" href="https://twitter.com/HumasTangerang"> -->
+                        </div>
+                        <div class="col-lg-4 align-center">
+                            <!-- <img class="medsos" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt=""> -->
+                            <!-- <hr> -->
+                            <h3>DINAS KESEHATAN</h3>
+                            <div class="row">
+                                <a class="align-center col-md-6" target="_blank" href="https://www.youtube.com/channel/UCKGFxu_Sb2LFwMoi5h_zDow">
+                                    <img class="medsoss" src="<?= base_url('assets/img/sosmed-10.png') ?>" alt="">
+                                </a>
+                                <!-- <a class="align-center col-md-4" target="_blank" href="https://twitter.com/HumasTangerang"> -->
                                     <!-- <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt=""> -->
                                     <!-- </a> -->
                                     <a class="align-center col-md-4" target="_blank" href="https://www.instagram.com/dinkes.kotatangerang/?hl=id">
@@ -1772,7 +1622,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                                     </a>
                                 </div>
                             </div>
-                            <!-- <div class="col-md-4 align-center">
+                        <!-- <div class="col-md-4 align-center">
                             <img class="medsos" src="<?= base_url('assets/img/logo kecil2-06.png') ?>" alt="">
                             <hr>
                             <h3>Tangerang TV</h3>
@@ -1782,23 +1632,23 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                                 </a>
                             </div>
                         </div> -->
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
 
-    <!-- <div class="container">
+  <!-- <div class="container">
     <div class="row">
       <div class="">
         <h2>Video Baznas</h2>
       </div>
     </div>
 </div> -->
-    <!-- <div class="container">
+<!-- <div class="container">
     <div class="">
         <div class="title col-lg-12">
             <div class="card-img">
@@ -1823,14 +1673,14 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 
                     <div class="card-content">
                         <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-    <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-    <!--  <center>
+                        <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+                       <!--  <center>
                             <a href="<?= $tv->link_video ?>" class="btn btn-success btn-sm mt-2" target="__blank">
                                 <i style="background-color: blue" ></i> Lihat Video
                             </a>
                         </center> -->
-    <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-    <!--            </div>
+                        <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+         <!--            </div>
 
                 </div>
             </div>
@@ -1847,51 +1697,41 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 
 
 
-<section id="icon-formulir" data-aos="fade-right" style="background-color:white; height: 100%; align-content: center;">
+<section  id="icon-formulir"   data-aos="fade-right" style="background-color:white; height: 100%; align-content: center;">
 
 
 
 
-    <!-- <div class="container">
+<!-- <div class="container">
     <div class="row">
       <div class="">
         <h2>Video Baznas</h2>
       </div>
     </div>
-<<<<<<< HEAD
 </div> --><center>
     <div class="container">
         <div class="title col-lg-12 col-md-12 col-sm-12">
             <div class="card-img logomitra">
                 <img class=" logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/mitra_kerja.png" alt="" style="padding-top: -10px;  padding-bottom: 40px;">
-=======
-</div> -->
-    <center>
-        <div class="container">
-            <div class="title col-lg-12 col-md-12 col-sm-12">
-                <div class="card-img">
-                    <img class="logo-video mitrastyle" src="<?php echo base_url(); ?>assets/tangerangkota/images/mitra_kerja.png" alt="" style="padding-top: -10px; width: 30%; padding-bottom: 40px;">
-                </div>
->>>>>>> 384168fc25dc44ce9b712c688dc670afb70ab8a9
             </div>
-            <div class="" data-flickity='{ "wrapAround": true, "autoPlay":1500, "pageDots": false }' style="width: 80%">
-                <?php foreach ($mitra as $f) :
-                    // $string = strip_tags($f["isi_mitra"]);
-                    // if (strlen($string) > 1000) {
+        </div>
+        <div class="" data-flickity='{ "wrapAround": true, "autoPlay":1500, "pageDots": false }' style="width: 80%">
+            <?php foreach ($mitra as $f) :
+                // $string = strip_tags($f["isi_mitra"]);
+                // if (strlen($string) > 1000) {
 
-                    // truncate string
+                // truncate string
                     // $stringCut = substr($string, 0, 1000);
                     // $endPoint = strrpos($stringCut, ' ');
 
-                    //if the string doesn't contain any space then it will cut without word basis.
+                //if the string doesn't contain any space then it will cut without word basis.
                     // $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
-                    // $string .= '... <a href="/this/story">Read More</a>';
-                    // }
+                // $string .= '... <a href="/this/story">Read More</a>';
+            // }
                 ?>
-                    <div class="col-md-4 col-sm-6 col-xs-12" style="background-color: transparent;">
-                        <!-- <div class="" style=" overflow: hidden; margin-bottom: 10px;  padding-right: 10px; background-color: red" > -->
+                <div class="col-md-4 col-sm-6 col-xs-12" style="background-color: transparent;">
+                    <!-- <div class="" style=" overflow: hidden; margin-bottom: 10px;  padding-right: 10px; background-color: red" > -->
                         <!-- <div class="" style="width: 100%;  overflow: hidden; background-color: red;"> -->
-<<<<<<< HEAD
                             <a target="__blank" href="<?= ($f["link_mitra"]) ?>" style="text-decoration: none; color: #000000;">
                                 <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
 
@@ -1907,67 +1747,28 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                               </a>
                               <span><br><br>
 
-                                 <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
-                                 <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
-                             </span>
-                             <!-- </div> -->
+                               <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
+                               <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"].'/'.$f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
+                           </span>
+                           <!-- </div> -->
 
-                             <!-- <div class="card-content"> -->
-                                <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
-                                <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-                                <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
-                                    <!-- <i style="background-color: blue" ></i> Lihat Video -->
-                                    <!-- </a></center> -->
-                                    <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-                                    <!-- </div> -->
+                           <!-- <div class="card-content"> -->
+                            <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
+                            <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
+                            <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
+                                <!-- <i style="background-color: blue" ></i> Lihat Video -->
+                                <!-- </a></center> -->
+                                <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
+                                <!-- </div> -->
 
-                                    <!-- </div> -->
-                                    <!-- </div> -->
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
+                                <!-- </div> -->
+                                <!-- </div> -->
+                            </div>
+                        <?php endforeach; ?>
                     </div>
-                </center>   
-            </section>
-=======
-                        <a target="__blank" href="<?= ($f["link_mitra"]) ?>" style="text-decoration: none; color: #000000;">
-                            <!-- <a href="<?= base_url('site/detail/' . $f["id_berita"] . '/' . $f["id_kategori"]) ?>" style="text-decoration: none; color: #000000"> -->
-
-                            <?php if (count($f["path_gambar_mitra"]) > 0) {
-                                foreach ($f["path_gambar_mitra"] as $k) {
-                            ?>
-                                    <img class="mitrastyle" src="<?= base_url('assets/backend/img/img_mitra/' . $k["path_gambar_mitra"]) ?>" height="100px" width="30%">
-                            <?php
-                                }
-                            } ?>
-
-                            <!-- <br> -->
-                        </a>
-                        <span><br><br>
-
-                            <!--  <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"]) ?>">Baca Selanjutnya</a> -->
-                            <!-- <a style="margin-top: 40px; margin-bottom: 10px; float: right" href="<?= base_url('site/detail/' . $f["id_berita"] . '/' . $f["id_kategori"]) ?>">Baca Selanjutnya</a> -->
-                        </span>
-                        <!-- </div> -->
-
-                        <!-- <div class="card-content"> -->
-                        <!-- <p class="d-inline" style="margin-left: 0px;">DINAS KESEHATAN | <?= date('d M Y H:i:s', strtotime($c->tgl_jam)) ?></p> -->
-                        <!-- <span class="card-title">DINKES News | <?= $tv->nama_video ?></span><br> -->
-                        <!-- <center> <a href="" class="btn btn-success btn-sm mt-2" target="__blank"> -->
-                        <!-- <i style="background-color: blue" ></i> Lihat Video -->
-                        <!-- </a></center> -->
-                        <!-- <p class="d-inline" style="margin-left: 70px;">DINKES | <?= date('d M Y H:i:s', strtotime($tv->tgl_jam)) ?></p> -->
-                        <!-- </div> -->
-
-                        <!-- </div> -->
-                        <!-- </div> -->
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </center>
-</section>
->>>>>>> 384168fc25dc44ce9b712c688dc670afb70ab8a9
+                </div>
+            </center>   
+        </section>
 
 
 
@@ -1977,20 +1778,20 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 
     <div class="container">
         <div class="row"> -->
-<!--Titles-->
-<!-- <div class="title col-12">
+            <!--Titles-->
+            <!-- <div class="title col-12">
                 <div class="card-img">
                     <img class="logo-video" src="<?php echo base_url(); ?>assets/tangerangkota/images/title_video.png" alt="" style="    padding-left: 60px; padding-bottom: 10px;">
                 </div>
             </div> -->
-<!--Left-->
-<!-- ===================== -->
-<!--   <div class="col-12 col-md-6">
+            <!--Left-->
+            <!-- ===================== -->
+          <!--   <div class="col-12 col-md-6">
                 <?php
                 foreach ($video_tng as $k => $v) :
                     if ($k == '0') :
-                ?> -->
-<!--          <div class="rny-vid-container">
+                    ?> -->
+               <!--          <div class="rny-vid-container">
                             <iframe id="rny_vid_frame" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
                         </div>
                 <?php endif;
@@ -2001,7 +1802,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                     <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_tngtv.png" alt="">
                 </div>
             -->
-<!--   <div class="rny-vid-list-container">
+              <!--   <div class="rny-vid-list-container">
                     <div class="rny-vid-list">
                         <?php foreach ($video_tng as $k => $v) : ?>
                             <div class="rny-vid-item" onClick="document.getElementById('rny_vid_frame').src='<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=1&rel=0&showinfo=0&autohide=1'">
@@ -2017,36 +1818,36 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                     </div>
                 </div> -->
 
-<!-- LEFT AND RIGHT ARROWS -->
-<!--    <div class="rny-arrows">
+                <!-- LEFT AND RIGHT ARROWS -->
+             <!--    <div class="rny-arrows">
                     <div class="rny-arrow-left"><i class="fa fa-chevron-left fa-lg"></i></div>
                     <div class="rny-arrow-right"><i class="fa fa-chevron-right fa-lg"></i></div>
                 </div>
 
             </div> -->
-<!-- ===================== -->
-<!--Right-->
-<!--  <div class="col-12 col-md-12">
+            <!-- ===================== -->
+            <!--Right-->
+           <!--  <div class="col-12 col-md-12">
                 <?php
                 foreach ($video_humas as $k => $v) :
                     if ($k == '0') :
                         // var_dump($video_humas);
                         // die();
-                ?> -->
-<!--  <div class="rny-vid-container-humas"> -->
-<!-- <p><?= $v["judul_berita"] ?></p> -->
-<!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
-<!-- <iframe id="rny_vid_frame-humas" src="https://www.youtube.com/embed/OZ2GIqfs0SY" frameborder="0" width="560" height="315"></iframe> -->
-<!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>" frameborder="0" width="560" height="315"></iframe> -->
-<!-- </div> -->
-<!--   <?php endif;
+                    ?> -->
+                    <!--  <div class="rny-vid-container-humas"> -->
+                        <!-- <p><?= $v["judul_berita"] ?></p> -->
+                        <!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>?autoplay=0&rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe> -->
+                        <!-- <iframe id="rny_vid_frame-humas" src="https://www.youtube.com/embed/OZ2GIqfs0SY" frameborder="0" width="560" height="315"></iframe> -->
+                        <!-- <iframe id="rny_vid_frame-humas" src="<?php echo str_replace('watch?v=', 'embed/', $v['video_url']); ?>" frameborder="0" width="560" height="315"></iframe> -->
+                        <!-- </div> -->
+              <!--   <?php endif;
                 endforeach;
-        ?> -->
+                ?> -->
 
-<!-- <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
+                <!-- <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
                     <img class="logo-liputan" src="<?php echo base_url(); ?>assets/tangerangkota/images/logo_humas.png" alt="">
                 </div>  -->
-<!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
+               <!--  <div class="logo-liputan" style="padding-top: 10px; padding-bottom: 10px;">
                     <img class="logo-liputan" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt="">
                 </div>
 
@@ -2066,8 +1867,8 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                     </div>
                 </div> -->
 
-<!-- LEFT AND RIGHT ARROWS -->
-<!-- <div class="rny-arrows">
+                <!-- LEFT AND RIGHT ARROWS -->
+                <!-- <div class="rny-arrows">
                     <div class="rny-arrow-left-humas"><i class="fa fa-chevron-left fa-lg"></i></div>
                     <div class="rny-arrow-right-humas"><i class="fa fa-chevron-right fa-lg"></i></div>
                 </div>
@@ -2121,9 +1922,9 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                 <div class="card-body bg-transparent">
                     <div class="row">
                         <div class="col-md-4 align-center"> -->
-<!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
+                            <!-- <img class="medsos" src="<?= base_url('assets/img/logo kecil2-11-11.png') ?>" alt="">
                                 <hr> -->
-<!--   <h3>Kota Tangerang</h3>
+                          <!--   <h3>Kota Tangerang</h3>
                             <div class="row">
                                 <a class="align-center col-md-4" target="_blank" href="https://id-id.facebook.com/kotatng/">
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-07.png') ?>" alt="">
@@ -2135,24 +1936,24 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt="">
                                 </a>
                             </div> -->
-<!--  </div>
+                       <!--  </div>
                         <div class="col-lg-4 align-center"> -->
-<!-- <img class="medsos" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt=""> -->
-<!-- <hr> -->
-<!--  <h3>DINAS KESEHATAN</h3>
+                            <!-- <img class="medsos" src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" alt=""> -->
+                            <!-- <hr> -->
+                           <!--  <h3>DINAS KESEHATAN</h3>
                             <div class="row">
                                 <a class="align-center col-md-6" target="_blank" href="https://www.youtube.com/channel/UCKGFxu_Sb2LFwMoi5h_zDow">
                                     <img class="medsoss" src="<?= base_url('assets/img/sosmed-10.png') ?>" alt="">
                                 </a> -->
-<!-- <a class="align-center col-md-4" target="_blank" href="https://twitter.com/HumasTangerang"> -->
-<!-- <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt=""> -->
-<!-- </a> -->
-<!--  <a class="align-center col-md-4" target="_blank" href="https://www.instagram.com/dinkes.kotatangerang/?hl=id">
+                                <!-- <a class="align-center col-md-4" target="_blank" href="https://twitter.com/HumasTangerang"> -->
+                                    <!-- <img class="medsoss" src="<?= base_url('assets/img/sosmed-09.png') ?>" alt=""> -->
+                                    <!-- </a> -->
+                                   <!--  <a class="align-center col-md-4" target="_blank" href="https://www.instagram.com/dinkes.kotatangerang/?hl=id">
                                         <img class="medsoss" src="<?= base_url('assets/img/sosmed-08.png') ?>" alt="">
                                     </a>
                                 </div>
                             </div> -->
-<!-- <div class="col-md-4 align-center">
+                        <!-- <div class="col-md-4 align-center">
                             <img class="medsos" src="<?= base_url('assets/img/logo kecil2-06.png') ?>" alt="">
                             <hr>
                             <h3>Tangerang TV</h3>
@@ -2162,7 +1963,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                                 </a>
                             </div>
                         </div> -->
-<!--  </div>
+                   <!--  </div>
                 </div>
             </div>
         </div>
@@ -2170,9 +1971,9 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 </div> -->
 <!-- <hr> -->
 <!-- <section id="struktur" class="cid-struktur mbr-fullscreen" data-rv-view="1620"> -->
-<!-- <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style=""> -->
-<!-- <div class="container align-center"> -->
-<!-- <div class="media-container-row align-center">
+    <!-- <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style=""> -->
+        <!-- <div class="container align-center"> -->
+        <!-- <div class="media-container-row align-center">
 			<div class="row justify-content-md-center" style="padding-top:50px; padding-bottom: 50px;">
 				<h3 class="mbr-section-title mbr-bold mbr-fonts-style">
 					STRUKTUR ORGANISASI
@@ -2180,50 +1981,50 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 			</div>
 		</div> -->
 
-<!--    <div class="media-container-row align-center">
+     <!--    <div class="media-container-row align-center">
             <div class="card-wrapper">
                 <div class="card-img">
                     <?php foreach ($profil_image as $row) { ?> -->
-<!-- <div class="col-lg-3 col-md-4 col-6">
+                        <!-- <div class="col-lg-3 col-md-4 col-6">
 						<button type="button" onclick='del("<?= $row->isi ?>")' class="btn btn-danger btn-sm btn-block"><i class="fas fa-fw fa-trash"></i></button>
 						<a href="javascript:void(0)" onclick="magnify('<?= $row->isi ?>')" class="d-block mb-4 h-100">
 							<img class="img-fluid img-responsive img-thumbnail" src="<?php echo base_url('assets/media/image/') . $row->isi ?>" alt="">
 						</a>
 					</div> -->
-<!--  <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" media-simple="true" style="width: 100%;">
+                   <!--  <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" media-simple="true" style="width: 100%;">
 
                     <?php } ?> -->
-<!-- <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/struktur_ppid.png" media-simple="true" style="width: 100%;"> -->
-<!--  </div>
+                    <!-- <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/struktur_ppid.png" media-simple="true" style="width: 100%;"> -->
+           <!--  </div>
         </div>
     </div>
     <div class="media-container-row">
         <div class="col-md-6"> -->
-<!-- <?php foreach (@$kepwal as $row) { ?>
+                <!-- <?php foreach (@$kepwal as $row) { ?>
                 <a href="<?php echo base_url('assets/media/image/') . $row->isi ?>" class="text-dark">
                     <img style="width:20%; margin:auto;" src="https://img.icons8.com/fluent/48/000000/file.png" alt="">
                     <p><span>Keputusan Walikota Kota Tangerang</span><br><span>Tentang Struktur Organisasi, Uraian Tugas dan Fungsi</span></p>
                 </a>
                 <?php } ?> -->
-<!-- </div> -->
-<!--  <div class="col-md-6">
+                <!-- </div> -->
+           <!--  <div class="col-md-6">
                 <img src="<?php echo base_url(); ?>assets/img/banner/Dinkes_LOGO.png" style="width:50%; margin:auto;" alt="" media-simple="true">
             </div> -->
-<!--  </div>
+       <!--  </div>
     </div>
 </section> -->
 <hr>
 <!-- <section id="visi-misi" class="cid-visi-misi mbr-fullscreen bg-white" data-rv-view="1620"> -->
-<!-- <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="background-color: white">
+ <!-- <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="background-color: white">
     <div class="container align-center">
         <div class="media-container-row align-center"> -->
-<!-- <div class="row float-center justify-content-md-center" style="width:100%; margin:auto; padding-top:50px;padding-bottom: 50px;">
+            <!-- <div class="row float-center justify-content-md-center" style="width:100%; margin:auto; padding-top:50px;padding-bottom: 50px;">
 				<h2 class="mbr-section-title mbr-bold mbr-fonts-style">
 					<strong>Visi dan Misi PPID</strong>
                 </h2>
 			</div>
             <img class="float-right" src="<?php echo base_url(); ?>assets/img/banner/PPID LOGO.png" style="width:150px; position:absolute; right: 10px;top: 28px;" alt="" media-simple="true"> -->
-<!-- </div>
+        <!-- </div>
         <div class="media-container-row align-center">
             <div class="row justify-content-md-center" style="text-align:justify; color: #000000;">
                 <h4 class="mbr-section-title mbr-fonts-style">
@@ -2239,7 +2040,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 </section> -->
 <hr>
 <!-- <section id="maklumat" class="cid-struktur mbr-fullscreen" data-rv-view="1620"> -->
-<!-- <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="">
+   <!-- <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="">
     <div class="container align-center">
 
 
@@ -2249,9 +2050,9 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                     <?php foreach ($maklumat as $row) { ?>
                         <img src="<?php echo base_url('assets/media/image/') . $row->isi ?>" media-simple="true" style="width: 100%;">
                         <?php } ?> -->
-<!-- <?= $maklumat['isi'] ?> -->
-<!-- <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/struktur_ppid.png" media-simple="true" style="width: 100%;"> -->
-<!--    </div>
+                        <!-- <?= $maklumat['isi'] ?> -->
+                        <!-- <img src="<?php echo base_url(); ?>assets/home2/modules/ppid/images/struktur_ppid.png" media-simple="true" style="width: 100%;"> -->
+             <!--    </div>
             </div>
         </div>
     </div>
@@ -2297,31 +2098,31 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
             },
             order: [1, 'desc'],
             columns: [{
-                    'data': 'no',
-                    'orderable': false
-                },
-                {
-                    'data': 'id_daftar_pembantu',
-                    "visible": false
-                },
-                {
-                    'data': 'skpd'
-                },
-                {
-                    'data': 'kategori'
-                },
-                {
-                    'data': 'alamat'
-                },
-                {
-                    'data': 'no_tlp'
-                },
-                {
-                    'data': 'email'
-                },
-                {
-                    'data': 'website'
-                },
+                'data': 'no',
+                'orderable': false
+            },
+            {
+                'data': 'id_daftar_pembantu',
+                "visible": false
+            },
+            {
+                'data': 'skpd'
+            },
+            {
+                'data': 'kategori'
+            },
+            {
+                'data': 'alamat'
+            },
+            {
+                'data': 'no_tlp'
+            },
+            {
+                'data': 'email'
+            },
+            {
+                'data': 'website'
+            },
             ]
         });
     });
@@ -2340,7 +2141,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
     }
 </script>
 <!-- <section id="icon" class="cid-icon" data-rv-view="1620"> -->
-<!--   <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="background-color: white">
+  <!--   <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620" style="background-color: white">
         <div class="container align-center">
             <div class="media-container-row">
                 <div class="col-lg-4 col-md-6 col-sm-12 p-5">
@@ -2353,7 +2154,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                         </a>
                     </div>
                 </div> -->
-<!-- <div class="col-lg-4 col-md-12 col-sm-12 p-5">
+            <!-- <div class="col-lg-4 col-md-12 col-sm-12 p-5">
 					<a href="javascript:void(0)" data-toggle="modal" data-target="#strukturModal" class="text-reset">
                         <div class="card-wrapper">
                             <div class="card-img">
@@ -2363,7 +2164,7 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
                         </div>
 					</a>
                 </div> -->
-<!--  <div class="col-lg-4 col-md-6 col-sm-12 p-5">
+               <!--  <div class="col-lg-4 col-md-6 col-sm-12 p-5">
                     <a href="javascript:void(0)" data-toggle="modal" data-target="#perwalModal" class="text-reset">
                         <div class="card-wrapper">
                             <div class="card-img">
@@ -2378,22 +2179,22 @@ data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": fals
 
     </section> -->
 
-<section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620">
-    <div class="container align-center">
+    <section id="icon-formulir" class="cid-icon-formulir" data-rv-view="1620">
+        <div class="container align-center">
 
-        <div class="media-container-row align-center">
-            <div class="row justify-content-md-center" style="text-align:justify; color: #000000;">
-                <h5 class="mbr-section-title mbr-fonts-style" style="padding-top: 50px;">
-                    <p style="text-align: center;">
+            <div class="media-container-row align-center">
+                <div class="row justify-content-md-center" style="text-align:justify; color: #000000;">
+                    <h5 class="mbr-section-title mbr-fonts-style" style="padding-top: 50px;">
+                        <p style="text-align: center;">
 
-                        <strong>DINAS KESEHATAN KOTA TANGERANG</strong>
-                    </p>
-                    <p style="text-align: center; font-weight: normal;">
-                        <?= $kontak['alamat'] ?>
-                    </p>
-                    <p style="text-align: center; font-weight: normal;">
-                        Telp: <?= $kontak['no_tlp'] . ',' ?> Fax: <?= $kontak['no_fax'] ?>
-                    </p>
+                            <strong>DINAS KESEHATAN KOTA TANGERANG</strong>
+                        </p>
+                        <p style="text-align: center; font-weight: normal;">
+                            <?= $kontak['alamat'] ?>
+                        </p>
+                        <p style="text-align: center; font-weight: normal;">
+                            Telp: <?= $kontak['no_tlp'] . ',' ?> Fax: <?= $kontak['no_fax'] ?>
+                        </p>
                     <!-- <p style="text-align: center; font-weight: normal;">
 
                     </p> -->
